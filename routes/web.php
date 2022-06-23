@@ -13,10 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')
+    ->namespace('Admin')
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(function () {
+    Route::get('/', 'HomeController@index')->name('index');
+
+        // Route::get('/', 'HomeController@index')
+        //     ->name('index');
+        // Route::resource('/posts','PostController');
+    });
+    
+
+
+
+//tutte le rotte non autenticate, quindi gli utenti non registrati
+// verranno mandati qui
+Route::get("{any?}", function () {
+
+    // Lavorazioni in corso
+    return view('guest.home');
+
+})->where("any", ".*");
