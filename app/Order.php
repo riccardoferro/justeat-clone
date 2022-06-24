@@ -15,4 +15,11 @@ class Order extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function plates(){
+
+        return $this->belongsToMany('App\Plate', 'plate_order', 'order_id' , 'plate_id' );
+
+    }
+
+
 }

@@ -18,4 +18,11 @@ class Plate extends Model
 
     }
 
+
+    public function orders(){
+
+        return $this->belongsToMany('App\Order', 'plate_order','plate_id' , 'order_id' );
+
+    }
+
 }
