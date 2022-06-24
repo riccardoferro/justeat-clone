@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'company', 'address', 'partita_iva', 'image'
+        'name', 'email', 'password', 'company', 'address', 'partita_iva', 'image', 'slug'
     ];
 
     /**
@@ -55,5 +56,23 @@ class User extends Authenticatable
     {
 
         return $this->hasMany('App\Order');
+    }
+
+    // funzione per la creazione della slug
+
+    public static function generateToSlug($company)
+    {
+        $slugPrefix = Str::slug($company);
+        $slug = $slugPrefix;
+        $userFound = User::where('slug', $slug)->first();
+        $counter = 1;
+
+        while ($userFound) {
+            $slug = $slugPrefix . '_' . $counter;
+            $counter++;
+            $userFound = User::where('slug', $slug)->first();
+        }
+
+        return $slug;
     }
 }
