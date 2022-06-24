@@ -19,7 +19,7 @@ class UpdateUsersTable extends Migration
             $table->string('company');
             $table->string('address');
             $table->string('partita_iva')->unique();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('slug')->unique();
         });
     }
