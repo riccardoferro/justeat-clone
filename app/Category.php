@@ -10,5 +10,10 @@ class Category extends Model
 
     protected $table = 'categories';
 
+    public function users(){
+
+        return $this->belongsToMany('App\User');
+
+    }
 
 }
