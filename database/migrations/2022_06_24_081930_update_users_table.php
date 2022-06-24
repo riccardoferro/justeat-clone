@@ -21,8 +21,6 @@ class UpdateUsersTable extends Migration
             $table->string('partita_iva')->unique();
             $table->string('image');
             $table->string('slug')->unique();
-
-
         });
     }
 
@@ -40,7 +38,6 @@ class UpdateUsersTable extends Migration
             $table->dropColumn('partita_iva');
             $table->dropColumn('image');
             $table->dropColumn('slug');
-
         });
     }
 }
