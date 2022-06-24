@@ -71,7 +71,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'company' => $data['company'],
             'address' => $data['address'],
-            'partita_iva' => $data['partita_iva']
+            'partita_iva' => $data['partita_iva'],
+            'slug' => User::generateToSlug($data['company'])
         ]);
     }
 }
