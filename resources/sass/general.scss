@@ -1,0 +1,83 @@
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+body{
+    background-color: $t4_bg_black;
+}
+
+.t4-logo{
+    height:100%;
+    a{
+        height:100%;
+    }
+    img{
+        height:100%;
+    }
+}
+
+.t4-orange-text{
+    color:$t4_orange_text;
+}
+
+a{
+    text-decoration:none;
+
+    &:hover{
+        text-decoration:none;
+    }
+}
+// Login e Register Navbar
+.nav-item{
+    &:hover {
+            transform: scale(1.1);
+        }
+    a{
+        height:100%;
+        &:hover{
+            color: $t4_orange_text;
+        }
+
+        img{
+            height:100%;
+        }
+    }
+}
+
+
+// JumboRegister
+.t4-jumbo-register{
+    img{
+        width:100%;
+    }
+}
+.t4-register-title{
+    color:$t4_white_text;
+}
+.t4-btn-group{
+    display:flex;
+    justify-content: space-between;
+
+    button,a.t4-btn{
+        width:40%;
+        border-radius:25px;
+        background-color:$t4_bg_black;
+        border:3px solid $t4_orange_text;
+        color:$t4_orange_text;
+        text-align: center;
+
+    }
+}
+
+input{
+    background-color: $t4_bg_input !important;
+    border-radius: 25px !important;
+    color:$t4_orange_text !important;
+    border:none !important;
+
+    &::placeholder{
+        color:$t4_orange_text !important;
+    }
+}

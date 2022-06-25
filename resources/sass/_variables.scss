@@ -17,3 +17,30 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+// Team 4
+
+$t4_bg_black:#0B100C;
+$t4_orange_text:#E68B3F;
+$t4_bg_orange:#FF9741;
+$t4_white_text:#FFFFFF;
+$t4_bg_input:#393838;
+
+// colori
+.t4-bg-black{
+    background-color: $t4_bg_black;
+}
+
+// altezze
+.t4-10vh{
+    height:10vh;
+}
+.t4-5vh{
+    height:5vh;
+}
+.t4-3vh{
+    height:3vh;
+}
+.t4-h100{
+    height:100%;
+}
