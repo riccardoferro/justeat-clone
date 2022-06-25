@@ -28,7 +28,7 @@ class CategoriesTableSeeder extends Seeder
 
          $newCategory->name = $category['name'];
          $newCategory->image = $category['image'];
-         $newCategory->slug = Str::slug(generateToSlug($category['name']));
+         $newCategory->slug = Str::slug($category['name']);
          $newCategory->save();
 
       }
