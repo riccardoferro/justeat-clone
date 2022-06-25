@@ -4,27 +4,28 @@
 
 return [
     [
-
-
-      
-        "name" => "italiana",
-        "image" => "immagina_cucina_italiana",
+      "name" => "Fast Food",
+      "image" => "/public/images/category_img/fast-food.jpg",
     ],
     [
-      "name" => "messicana",
-      "image" => "immagina_cucina_messicana",
+      "name" => "Pizza",
+      "image" => "/public/images/category_img/pizza-category.jpg",
     ],
     [
-      "name" => "cinese",
-      "image" => "immagina_cucina_cinese",
+      "name" => "Cinese",
+      "image" => "/public/images/category_img/chinese-category.jpg",
     ],
     [
-      "name" => "giapponese",
-      "image" => "immagina_cucina_giapponese",
+      "name" => "Giapponese",
+      "image" => "/public/images/category_img/sushi-category.jpg",
     ],
     [
-      "name" => "americana",
-      "image" => "immagina_cucina_americana",
+      "name" => "Poke",
+      "image" => "/public/images/category_img/poke-category.jpg",
     ],
+    [
+        "name" => "Dessert",
+        "image" => "/public/images/category_img/dessert-category.jpg",
+      ],
 
 ];

@@ -18,28 +18,26 @@ class Category extends Model
 
     }
 
+    protected $fillable = ['name', 'image', 'slug'];
+
      // Siccome vogliamo usarla non nell'istanza ma nella classe utilizziamo la proprieta' statica
     // take a string as input and return a unique slug version
-    public static function convertToSlug($name){
+    // funzione per la creazione della slug
 
+    public static function generateToSlug($name)
+    {
         $slugPrefix = Str::slug($name);
-
-        $Slug = $slugPrefix;
-
-        // andiamo ad interrogare il DB per vedere se esiste gia' questo slug
-
-        // where 'slug' = $slug
-        $postFound = Category::where('slug',$slugPrefix)->first();
-        
+        $slug = $slugPrefix;
+        $categoryFound = Category::where('slug', $slug)->first();
         $counter = 1;
 
-        while($postFound){
-            $Slug = $slugPrefix . '_' . $counter;
+        while ($categoryFound) {
+            $slug = $slugPrefix . '_' . $counter;
             $counter++;
-            $postFound = Category::where('slug',$Slug)->first();
+            $categoryFound = Category::where('slug', $slug)->first();
         }
 
-        return $Slug;
+        return $slug;
     }
 
 }
