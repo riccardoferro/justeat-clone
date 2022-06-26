@@ -23499,7 +23499,8 @@ a:hover {
   height: 100%;
 }
 
-.t4-jumbo-register img {
+.t4-jumbo-register img,
+.t4-jumbo-login img {
   width: 100%;
 }
 
