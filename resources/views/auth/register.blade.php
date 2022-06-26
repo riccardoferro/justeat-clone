@@ -150,7 +150,7 @@
                                         <h2 class="fs-xl-1 fs-md-2 fs-sm-4">Registrati subito e diventa nostro
                                             partner</h2>
                                     </div>
-                                    <img class="col-xxl-3 d-md-none d-sm-none d-none d-xl-block  p-xl-3"
+                                    <img class="col-xxl-3 col-xl-12 d-md-none d-sm-none d-none d-xl-block  p-xl-3"
                                         src="../images/food-service.png" alt="">
                                 </div>
 
