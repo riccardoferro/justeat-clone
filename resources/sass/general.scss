@@ -6,6 +6,7 @@
 
 body{
     background-color: $t4_bg_black;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .t4-logo{
@@ -17,6 +18,7 @@ body{
         height:100%;
     }
 }
+
 
 .t4-orange-text{
     color:$t4_orange_text;
@@ -53,21 +55,48 @@ a{
         width:100%;
     }
 }
+
+.t4-form-register{
+    display: flex;
+
+}
+
+.t4-register-text{
+    margin-left: 10px;
+}
+
 .t4-register-title{
     color:$t4_white_text;
+    p {
+        font-weight:100;
+        font-size: 1.2rem;
+    }
+
 }
 .t4-btn-group{
-    display:flex;
-    justify-content: space-between;
-
-    button,a.t4-btn{
-        width:40%;
+display: flex;
+justify-content: center;
+    button{
         border-radius:25px;
         background-color:$t4_bg_black;
-        border:3px solid $t4_orange_text;
+        border:2px solid $t4_orange_text;
         color:$t4_orange_text;
         text-align: center;
-
+        font-size: 0.8rem;
+        padding: 2px 25px;
+        &:hover{
+            background-color: $t4_bg_orange;
+            color: #000000;
+            border: none;
+            // outline-offset: 3px;
+            // outline: 2px solid $t4_orange_text;
+        }
+        &:hover > a {
+            color: #000000;
+        }
+        a {
+            color:$t4_orange_text;
+        }
     }
 }
 
@@ -76,8 +105,18 @@ input{
     border-radius: 25px !important;
     color:$t4_orange_text !important;
     border:none !important;
+    margin-bottom: 20px !important;
+    font-size: 0.8rem !important;
+    font-weight: 100 !important;
+    textarea:focus, input:focus{ border: none; }
 
     &::placeholder{
         color:$t4_orange_text !important;
     }
+}
+
+
+.form-control:focus {
+    border-color:$t4_orange_text;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 144, 80, 0.995);
 }
