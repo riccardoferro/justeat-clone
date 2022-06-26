@@ -23573,8 +23573,19 @@ input::placeholder {
   color: #E68B3F !important;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-check-input:focus {
   border-color: #E68B3F;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 144, 80, 0.995);
+}
+
+.t4-checkbox-text,
+.t4-forgot {
+  color: #E68B3F;
+  font-size: 0.8rem;
+}
+
+.t4-forgot:hover {
+  color: rgb(178, 80, 0);
 }
 
