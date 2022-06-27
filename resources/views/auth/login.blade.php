@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row align-items-center justify-content-center">
+        <div class="row justify-content-center">
 
-            <div class="col-xxl-4 col-xl-5 col-md-6 order-md-1 order-sm-2 order-2 col-12 t4-jumbo-login">
+            <div class="col-xxl-4 col-xl-7 col-md-6 order-md-1 order-sm-2 order-2 col-12 t4-jumbo-login">
 
 
                 {{-- Form --}}
@@ -13,9 +13,9 @@
                     @csrf
                     {{-- left side --}}
                     <div
-                        class="col-xxl-12 col-xl-5 col-md-9 col-sm-10 order-xxl-1 order-xl-1 order-md-1 order-sm-1 order-1 t4-register-text">
-                        <div class="row justify-content-md-start justify-content-sm-start">
-                            <div class="d-md-flex flex-md-column text-md-start t4-register-title mb-3">
+                        class="col-xxl-12 col-xl-4 col-md-9 col-sm-10 order-xxl-1 order-xl-1 order-md-1 order-sm-1 order-1 t4-register-text">
+                        <div class="row justify-content-sm-start">
+                            <div class="d-md-flex flex-md-column align-items-md-center text-md-start t4-register-title mb-5">
 
                                 <div class="col-xxl-5">
                                     <p>Login</p>
@@ -27,9 +27,10 @@
                         </div>
 
                     </div>
-                    <div class="col-xxl-10 col-xl-9 order-xxl-2 order-xl-2 order-md-2 order-sm-2 order-2 me-xxl-5">
-                        <div class="form-group row justify-content-center">
-                            <div class="col-xl-4 col-md-2 col-4 mb-3">
+                    <div
+                        class="col-xxl-10 col-xl-6 col-md-10 order-xxl-2 order-xl-2 order-md-2 order-sm-2 order-2 me-xxl-5">
+                        <div class="form-group row flex-md-column align-items-md-center justify-content-center ">
+                            <div class="col-xl-3 col-md-3 col-sm-3 col-4 mb-4">
                                 <img src="/images/login.png" alt="logo-login">
                             </div>
 
@@ -76,7 +77,7 @@
                         </div>
 
                         <div class="form-group row flex-column mb-0 justify-content-center align-items-center t4-btn-group">
-                            <div class="col-xl-6 col-md-8 d-flex flex-column">
+                            <div class="col-xl-4 col-md-4 col-5 d-flex flex-column">
                                 <button type="submit" class="">
                                     {{ __('Login') }}
                                 </button>
@@ -94,7 +95,7 @@
 
 
             </div>
-            <div class="col-xxl-4 col-xl-4 col-md-6 order-md-1 order-sm-2 order-2 col-12 t4-jumbo-register">
+            <div class="col-xxl-4 col-xl-5 col-md-6 order-md-1 order-sm-2 order-2 col-12 t4-jumbo-register">
                 <img src="/images/JumboLogin.webp" alt="Jumbotron-login">
             </div>
         </div>
