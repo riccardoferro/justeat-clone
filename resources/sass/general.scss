@@ -88,7 +88,7 @@ justify-content: center;
         &:hover{
             background-color: $t4_bg_orange;
             color: #000000;
-            border: none;
+            border:2px solid $t4_bg_black;
             // outline-offset: 3px;
             // outline: 2px solid $t4_orange_text;
         }
@@ -136,4 +136,24 @@ input{
 
 .t4-jumbo-login {
     margin-top:150px
+}
+
+// required fields
+form label {
+    color: $t4_orange_text;
+}
+form  label.required::before {
+    content: '*';
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #c00;
+    margin-right: 5px;
+}
+
+form  label.required:after {
+    content: '(Questo campo è obbligatorio)';
+    font-size: 90%;
+    font-weight: normal;
+    color:#c00;
+    padding-left: 0.5em;
 }
