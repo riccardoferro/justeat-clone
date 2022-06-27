@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+/* @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;800;900&display=swap);
+@charset "UTF-8"; */
 
 .t4-bg-black {
   background-color: #0B100C;
@@ -20,7 +22,11 @@
   height: 100%;
 }
 
-/*!
+.t4-h100vh {
+  height: 100vh;
+}
+
+/*
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
@@ -11754,6 +11760,10 @@ fieldset:disabled .btn {
   height: 100%;
 }
 
+.t4-h100vh {
+  height: 100vh;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -23447,6 +23457,7 @@ fieldset:disabled .btn {
 
 body {
   background-color: #0B100C;
+  font-family: "Montserrat", sans-serif;
 }
 
 .t4-logo {
@@ -23489,27 +23500,55 @@ a:hover {
   height: 100%;
 }
 
-.t4-jumbo-register img {
+.t4-jumbo-register img,
+.t4-jumbo-login img {
   width: 100%;
+}
+
+.t4-form-register {
+  display: flex;
+}
+
+.t4-register-text {
+  margin-left: 10px;
 }
 
 .t4-register-title {
   color: #FFFFFF;
 }
 
-.t4-btn-group {
-  display: flex;
-  justify-content: space-between;
+.t4-register-title p {
+  font-weight: 100;
+  font-size: 1.2rem;
 }
 
-.t4-btn-group button,
-.t4-btn-group a.t4-btn {
-  width: 40%;
+.t4-btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+.t4-btn-group button {
   border-radius: 25px;
   background-color: #0B100C;
-  border: 3px solid #E68B3F;
+  border: 2px solid #E68B3F;
   color: #E68B3F;
   text-align: center;
+  font-size: 0.8rem;
+  padding: 2px 25px;
+}
+
+.t4-btn-group button:hover {
+  background-color: #FF9741;
+  color: #000000;
+  border: none;
+}
+
+.t4-btn-group button:hover > a {
+  color: #000000;
+}
+
+.t4-btn-group button a {
+  color: #E68B3F;
 }
 
 input {
@@ -23517,6 +23556,14 @@ input {
   border-radius: 25px !important;
   color: #E68B3F !important;
   border: none !important;
+  margin-bottom: 20px !important;
+  font-size: 0.8rem !important;
+  font-weight: 100 !important;
+}
+
+input textarea:focus,
+input input:focus {
+  border: none;
 }
 
 input::-moz-placeholder {
@@ -23525,5 +23572,25 @@ input::-moz-placeholder {
 
 input::placeholder {
   color: #E68B3F !important;
+}
+
+.form-control:focus,
+.form-check-input:focus {
+  border-color: #E68B3F;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 144, 80, 0.995);
+}
+
+.t4-checkbox-text,
+.t4-forgot {
+  color: #E68B3F;
+  font-size: 0.8rem;
+}
+
+.t4-forgot:hover {
+  color: rgb(178, 80, 0);
+}
+
+.t4-jumbo-login {
+  margin-top: 150px;
 }
 
