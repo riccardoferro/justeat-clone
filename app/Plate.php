@@ -9,7 +9,7 @@ class Plate extends Model
 
     protected $table = 'plates';
 
-    protected $fillable = ['name', 'price', 'description', 'visible'];
+    protected $fillable = ['name', 'price', 'description', 'visible','image'];
 
 
 

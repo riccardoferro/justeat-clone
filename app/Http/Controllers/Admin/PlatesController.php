@@ -18,7 +18,7 @@ class PlatesController extends Controller
      */
     public function index()
     {
-        $plates = Plate::where('id',Auth::user()->id)->first();
+        $plates = Plate::where('user_id',Auth::user()->id)->get();
         return view('admin.plates.index', compact('plates'));
     }
 
@@ -57,14 +57,10 @@ class PlatesController extends Controller
         //     'image'=>'Il file deve essere un immagine'
         // ]);
         $data = $request->all();
-        if (array_key_exists('image', $data)) {
-            $img_path = Storage::put('uploads', $data['image']);
-            $data['image'] = $img_path;
-        }
-        if (array_key_exists('image', $data)) {
-            $img_path = Storage::put('uploads', $data['image']);
-            $data['image'] = $img_path;
-        }
+        // if (array_key_exists('image', $data)) {
+        //     $img_path = Storage::put('uploads', $data['image']);
+        //     $data['image'] = $img_path;
+        // }
 
         // we insert this check cause we have set that the image can be NULL
         // if(array_key_exists('image',$DatasPost)){
@@ -73,6 +69,12 @@ class PlatesController extends Controller
         // }
 
         $newPlate = new Plate();
+
+        $img_path = Storage::put('uploads', $data['image']);
+
+        $newPlate->image= $img_path;
+
+        $newPlate->user_id = Auth::user()->id;
 
         $newPlate->fill($data);
 
@@ -100,7 +102,12 @@ class PlatesController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Questo pezzo di codice ci servirà come ulteriore controllo per gli utenti
+        // if ($plate->user_id != Auth::user()->id) {
+        //     return view('404.notFound');
+        // } else {
+        //     return view('admin.plate.edit', compact('plate'));
+        // }
     }
 
     /**
