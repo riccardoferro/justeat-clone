@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
+
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+
 use App\User;
-use Illuminate\Support\Facades\Auth;
+use App\Plate;
+use App\Category;
+
 class UserController extends Controller
 {
     /**
@@ -16,7 +22,7 @@ class UserController extends Controller
     public function index()
     {
         //
-        $user = User::where('id',Auth::user()->id)->first();;
+        $user = User::where('id',Auth::user()->id)->first();
         return view('admin.user.index', compact('user'));
     }
 

@@ -27,6 +27,7 @@ Route::middleware('auth')
         // Route::get('/', 'HomeController@index')
         //     ->name('index');
          Route::resource('/user','UserController');
+         Route::resource('/plates', 'PlatesController');
     });
 
 
