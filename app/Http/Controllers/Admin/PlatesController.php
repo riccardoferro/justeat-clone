@@ -18,7 +18,7 @@ class PlatesController extends Controller
      */
     public function index()
     {
-        $plates = Plate::where('user_id',Auth::user()->id)->get();
+        $plates = Plate::where('user_id', Auth::user()->id)->get();
         return view('admin.plates.index', compact('plates'));
     }
 
@@ -40,27 +40,25 @@ class PlatesController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'title'=>'required|max:250',
-        //     'content'=>'required|min:5|max:100',
-        //     'category_id'=>'required|exists:categories,id',
-        //     'tags[]'=>'exists:tags,id',
-        //     'image'=>'nullable|image'
-        // ],[
-        //     'title.required' => 'Titolo deve essere valorizzato',
-        //     'title.max' => 'Hai superato i 250 caratter',
-        //     'content.required' => ':attribute deve avere minimo essere compilato ',
-        //     'content.min' => 'Il contenuto deve avere almeno :min caratteri',
-        //     'content.max' => 'Il contenuto deve avere almeno :max caratteri',
-        //     'category.exists'=>'La categoria selezionata non esiste',
-        //     'tags[]' =>'Tag non esiste',
-        //     'image'=>'Il file deve essere un immagine'
-        // ]);
+        $request->validate([
+            'name' => 'required|max:50',
+            'description' => 'required|min:10|max:200',
+            'price' => 'required',
+            'visible' => 'required',
+            'image' => 'nullable|image'
+        ], [
+            'required' => 'Questo campo è obbligatorio',
+            'max' => 'Massimo :max caratteri',
+            // 'description.required' => '',
+            'min' => 'Minimo :min caratteri',
+            // 'content.max' => 'La descrizione è troppo lunga, mi è passata la fame! riprova con un massimo di :max caratteri',
+            'image' => 'Penso che sai distinguere le immagini da altri tipi di file... Riprova!'
+        ]);
         $data = $request->all();
-        // if (array_key_exists('image', $data)) {
-        //     $img_path = Storage::put('uploads', $data['image']);
-        //     $data['image'] = $img_path;
-        // }
+        if (array_key_exists('image', $data)) {
+            $img_path = Storage::put('uploads', $data['image']);
+            $data['image'] = $img_path;
+        }
 
         // we insert this check cause we have set that the image can be NULL
         // if(array_key_exists('image',$DatasPost)){
@@ -72,7 +70,7 @@ class PlatesController extends Controller
 
         $img_path = Storage::put('uploads', $data['image']);
 
-        $newPlate->image= $img_path;
+        $newPlate->image = $img_path;
 
         $newPlate->user_id = Auth::user()->id;
 
