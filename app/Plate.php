@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plate extends Model
 {
-    
+
     protected $table = 'plates';
 
-    
+    protected $fillable = ['name', 'price', 'description', 'visible'];
+
+
 
 
     public function user(){

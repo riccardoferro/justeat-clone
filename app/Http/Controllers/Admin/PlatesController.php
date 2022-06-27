@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 use App\Plate;
 
@@ -56,6 +57,14 @@ class PlatesController extends Controller
         //     'image'=>'Il file deve essere un immagine'
         // ]);
         $data = $request->all();
+        if (array_key_exists('image', $data)) {
+            $img_path = Storage::put('uploads', $data['image']);
+            $data['image'] = $img_path;
+        }
+        if (array_key_exists('image', $data)) {
+            $img_path = Storage::put('uploads', $data['image']);
+            $data['image'] = $img_path;
+        }
 
         // we insert this check cause we have set that the image can be NULL
         // if(array_key_exists('image',$DatasPost)){
