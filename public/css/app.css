@@ -1,7 +1,6 @@
-/* @import url(https://fonts.googleapis.com/css?family=Nunito);
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;800;900&display=swap);
-@charset "UTF-8"; */
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;
 
+300;400;600;700;800;900&display=swap);@charset "UTF-8";
 .t4-bg-black {
   background-color: #0B100C;
 }
@@ -26,7 +25,7 @@
   height: 100vh;
 }
 
-/*
+/*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
@@ -23540,7 +23539,7 @@ a:hover {
 .t4-btn-group button:hover {
   background-color: #FF9741;
   color: #000000;
-  border: none;
+  border: 2px solid #0B100C;
 }
 
 .t4-btn-group button:hover > a {
@@ -23592,5 +23591,25 @@ input::placeholder {
 
 .t4-jumbo-login {
   margin-top: 150px;
+}
+
+form label {
+  color: #E68B3F;
+}
+
+form label.required::before {
+  content: "*";
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #c00;
+  margin-right: 5px;
+}
+
+form label.required:after {
+  content: "(Questo campo \E8   obbligatorio)";
+  font-size: 90%;
+  font-weight: normal;
+  color: #c00;
+  padding-left: 0.5em;
 }
 
