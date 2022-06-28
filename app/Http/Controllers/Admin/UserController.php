@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use illuminate\Support\Str;
 
 use App\User;
 use App\Plate;
@@ -86,11 +87,23 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+            'categories'=>'required'
+        ],[
+            'categories.required' => 'DEVI INSERIRE ALMENO UNA CATEGORIA'
+        ]);
+
         $dataCategory = $request->all();
         $user= User::find($id);
 
         $user->categories()->sync($dataCategory['categories']);
-        $user->categories->slug= Category::generateToSlug($user->categories->name);
+
+
+        // dd($dataCategory['categories']);
+
+        // $user->categories->slug = Category::generateToSlug($user->categories->name;
+
         $user->update();
         return redirect()->route('admin.user.index');
     }

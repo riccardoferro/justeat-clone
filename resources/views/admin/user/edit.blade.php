@@ -12,24 +12,38 @@
     {{-- Token --}}
     @csrf
     @method('PUT')
-    <div class="form-group">
-        <h3>Categorie Booleat</h3>
-        @foreach ($categories as $category)
-            {{-- name is an array --}}
-            {{-- RAGAZZI QUI ANDRANNO ANCHE LE IMMAGINI ($all->image) --}}
-            <input class="form-check-input" type="checkbox" value="{{ $all->id }}" name="categories[]"
-                {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }} />
-            <div class="form-check-label"> {{ $category->name }} </div>
-        @endforeach
 
-        @error('categories[]')
-            <div class="invalid-feedback"> {{ $message }} </div>
-        @enderror
+    <div class="form-group">
+
+        <h3>Categorie BoolEat</h3>
+
+        <div>
+                @foreach ($categories as $category)
+                        {{-- name is an array --}}
+                        {{-- RAGAZZI QUI ANDRANNO ANCHE LE IMMAGINI ($all->image) --}}
+
+                        <input name="categories[]" class="form-check-input @error('categories') is-invalid @enderror " type="checkbox" value="{{ $category->id }}"  
+                                {{ $user->categories->contains($category) ? 'checked' : '' }}
+                        />
+
+                        {{-- <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]"
+                                {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }} 
+                        /> --}}
+            
+                        {{-- Nome categoria --}}
+                        <div class="form-check-label"> {{ $category->name }} </div>
+                @endforeach
+
+                @error('categories')
+                    <div class="invalid-feedback" style="color: red ; margin:20px;" > {{ $message }} </div>
+                @enderror
+        </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-success">
-                Clicca per la Modifica
-            </button>
+                <button type="submit" class="btn btn-success">
+                        Clicca per la Modifica
+                </button>
         </div>
+
     </div>
 </form>
