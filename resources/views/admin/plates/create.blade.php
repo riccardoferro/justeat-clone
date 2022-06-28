@@ -11,12 +11,12 @@
                 </div>
             </div>
             {{-- jumbo-create --}}
-            <div class="col-xxl-6 col-xl-6 col-md-5">
+            <div class="col-xxl-6 col-xl-6 col-md-6">
                 <img class="t4-jumbo-create" src="/images/jumbo-create.jpeg" alt="">
             </div>
 
             {{-- Form --}}
-            <div class="col-xxl-6 col-xl-4 col-md-5 mt-5">
+            <div class="col-xxl-4 col-xl-4 col-md-5 mt-5">
                 <form action="{{ route('admin.plates.store') }}" method="POST" enctype='multipart/form-data'>
                     @csrf
                     <div class="mb-3">
@@ -54,9 +54,9 @@
                         <input class="radio" type="radio" value="0" name='visible' />
 
                     </div>
-                    <div class="mb-3 t4-input-img">
-                        <label for="cover" class="form-label">Image</label>
-                        <input type="file" name='cover' />
+                    <div class="mb-3">
+                        <label for="cover" class="form-label">Cover</label>
+                        <input class="t4-input-img" type="file" name='cover' />
                         @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
