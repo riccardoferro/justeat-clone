@@ -53,11 +53,17 @@ a{
 
 // JumboRegister
 .t4-jumbo-register,
-.t4-jumbo-login,
-.t4-jumbo-create{
-
+.t4-jumbo-login
+{
+    img {
         width:100%;
+    }
 
+
+}
+
+.t4-jumbo-create {
+    width: 100%;
 }
 
 .t4-form-register{
