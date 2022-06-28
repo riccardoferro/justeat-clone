@@ -22,7 +22,7 @@ class UserController extends Controller
     public function index()
     {
         //
-        $user = User::where('id',Auth::user()->id)->get();
+        $user = User::where('id',Auth::user()->id)->first();
         return view('admin.user.index', compact('user'));
     }
 
