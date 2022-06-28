@@ -23719,3 +23719,19 @@ input[type=radio]:checked:after {
   border: 2px solid #393838;
 }
 
+input[type=file] {
+  display: none;
+}
+
+.t4-photo-label {
+  border: 2px solid #393838;
+  border-radius: 25px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.t4-photo-label img {
+  height: 1.2rem;
+}
+

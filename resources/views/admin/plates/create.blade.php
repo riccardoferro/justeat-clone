@@ -5,7 +5,7 @@
         <div class="row justify-content-center align-items-center t4-h80vh">
             {{-- Title --}}
             <div class="row">
-                <div class="col text-white text-center t4-title-create">
+                <div class="col text-white text-center t4-title-create mb-md-3 mb-2">
                     <h2>Aggiungi nuovo prodotto</h2>
                     <h4>Qui potrai aggiungere tanti nuovi prodotti da aggiungere al tuo menù</h4>
                 </div>
@@ -55,8 +55,10 @@
 
                     </div>
                     <div class="mb-3">
-                        <label for="cover" class="form-label">Cover</label>
-                        <input class="t4-input-img" type="file" name='cover' />
+                        <label for="cover" class="form-label t4-photo-label">
+                            Seleziona Foto <img src="/images/upload.png" alt="">
+                            <input class="t4-input-img" type="file" name='cover' id="cover" />
+                        </label>
                         @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

@@ -233,5 +233,19 @@ input[type='radio']:checked:after {
     visibility: visible;
     border: 2px solid $t4_bg_input;
 }
+input[type="file"] {
+    display: none;
+}
+.t4-photo-label{
+    border: 2px solid $t4_bg_input;
+    border-radius:25px;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        img{
+            height:1.2rem;
+
+        }
+}
 
 
