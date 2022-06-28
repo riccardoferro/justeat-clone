@@ -9,6 +9,7 @@
 body{
     background-color: $t4_bg_black;
     font-family: 'Montserrat', sans-serif;
+    color:$t4_white_text;
 }
 
 .t4-logo{
@@ -171,6 +172,7 @@ form  label.required:after {
 .t4-add-btn {
     border: 2px solid $t4_orange_text;
     border-radius: 25px;
+    color:$t4_orange_text !important;
     &:hover {
 
         transform: scale(1.1);

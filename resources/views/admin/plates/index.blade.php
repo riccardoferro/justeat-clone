@@ -3,10 +3,21 @@
 @section('content')
     <div class="container-fluid">
         <div class="row flex-column justify-content-center">
-            <div class="col-12">
-                <h1>I tuoi piatti</h1>
+            <div class="col-12 text-alig-center d-flex justify-content-center flex-sm-column flex-xl-row">
+                <h1>Il tuo menù</h1>
+
+
+                <div class="ms-a">
+                    <a href="{{ route('admin.plates.create') }}" class="btn t4-add-btn d-flex align-items-center">
+                        <span class="me-2">Aggiungi </span>
+                        <img src="/images/add2.png" alt="">
+                    </a>
+                </div>
+
             </div>
-            <a href="{{ route('admin.plates.create') }}">Aggiungi Piatto al menù</a>
+
+
+
             <div class="row">
                 @if ($plates)
                     @foreach ($plates as $plate)
@@ -35,9 +46,11 @@
                                 d-flex justify-content-between">
                                 {{-- MODIFICA PIATTO --}}
 
+
                                 <a href="{{ route('admin.plates.edit', ['plate' => $plate->id]) }}"
-                                    class="btn btn-warning">
-                                    Modifica
+                                    class="btn t4-add-btn d-flex align-items-center">
+                                    <span class="me-2">Modifica </span>
+                                    <img src="/images/edit-document.png" alt="">
                                 </a>
                                 {{-- ELIMINA PIATTO --}}
 
@@ -47,8 +60,11 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">
-                                        Elimina
+
+
+                                    <button type="submit" class="btn t4-add-btn d-flex align-items-center">
+                                        <span class="me-2">Elimina</span>
+                                        <img src="/images/delete.png" alt="">
                                     </button>
                                 </form>
                             </div>
