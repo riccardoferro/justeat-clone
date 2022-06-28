@@ -13,6 +13,8 @@
     @endforeach
     <a href="{{ route('admin.user.edit', $user->id) }}">Modifica le tue categorie</a>
 @else
+    <p>Al momento non possiedi alcuna categoria</p>
+    <a href="{{ route('admin.user.create', $user->id) }}">Aggiungi categoria</a>
 @endif
 
 
