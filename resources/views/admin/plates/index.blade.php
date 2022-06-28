@@ -18,32 +18,32 @@
 
 
 
-            <div class="row">
+            <div class="row col-xxl-10 col-xl-10 col-md-11 col-sm-12 m-auto mt-3">
                 @if ($plates)
                     @foreach ($plates as $plate)
-                        <div class="col-sm-10 col-md-5 col-xl-3  d-flex flex-column t4-card">
+                        <div class="col-sm-10 col-md-5 col-xl-3  d-flex flex-column t4-card ">
                             <div class="t4-card-img">
                                 <img src="{{ asset('storage/' . $plate->image) }}" alt="{{ $plate->name }}">
                             </div>
                             <div class="t4-card-title">
-                                <p class="t4-card-label">Nome Piatto</p>
+                                <span class="t4-card-label">Nome Piatto</span>
                                 <p> {{ $plate->name }} </p>
 
                             </div>
                             <div class="t4-card-description">
-                                <p class="t4-card-label">Descrizione </p>
+                                <span class="t4-card-label">Descrizione </span>
                                 <p>{{ $plate->description }}</p>
                             </div>
                             <div class="t4-card-info d-flex justify-content-between">
-                                <p>{{ $plate->price }}</p>
+                                <p><span>Prezzo: </span>{{ $plate->price }} &euro;</p>
                                 @if ($plate->visible == 1)
-                                    <p>Disponibile</p>
+                                    <p style="color:rgb(4, 165, 4)">Disponibile</p>
                                 @else
-                                    <p>Non disponibile</p>
+                                    <p style="color:rgb(165, 4, 4)">Non disponibile</p>
                                 @endif
                             </div>
                             <div class="t4-card-buttons
-                                d-flex justify-content-between">
+                                d-flex justify-content-around">
                                 {{-- MODIFICA PIATTO --}}
 
 

@@ -23742,3 +23742,26 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
+.t4-card {
+  margin: 20px;
+}
+
+.t4-card span {
+  color: #E68B3F;
+}
+
+.t4-card .t4-card-img {
+  margin-bottom: 20px;
+}
+
+.t4-card .t4-card-img img {
+  width: 100%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.t4-card .t4-card-info {
+  margin-top: auto;
+}
+

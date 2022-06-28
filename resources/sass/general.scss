@@ -258,4 +258,25 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+// card -index
+.t4-card {
+    margin:20px;
+    span{
+        color:$t4_orange_text;
+    }
+    .t4-card-img{
+        margin-bottom:20px;
+
+        img{
+            width:100%;
+            aspect-ratio:1;
+            object-fit: cover;
+        }
+    }
+
+    .t4-card-info{
+        margin-top:auto;
+    }
+}
+
 
