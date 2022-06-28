@@ -125,6 +125,22 @@
                             </div>
                         </div>
 
+
+                         {{-- Image
+                        <div class="form-group row justify-content-center">
+                            <div class="col-xl-10 col-md-9 col-sm-10 mb-3">
+                                <div class="mb-3 t4-input-img">
+
+                                    <label for="cover" class="form-label">Image</label>
+                                    <input type="file" name='cover' />
+                                    @error('image')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+
+                                </div>
+                            </div>
+                        </div> --}}
+
                         {{-- Buttons --}}
                         <div class="t4-btn-group order-md-2 order-sm-3 order-3 mb-5">
                             <button type="submit" class="t4-btn me-3">
