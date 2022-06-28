@@ -25,6 +25,10 @@
   height: 100vh;
 }
 
+.t4-h80vh {
+  height: 80vh;
+}
+
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11002,6 +11006,10 @@ a.text-dark:focus {
   height: 100vh;
 }
 
+.t4-h80vh {
+  height: 80vh;
+}
+
 .t4-bg-black {
   background-color: #0B100C;
 }
@@ -11024,6 +11032,10 @@ a.text-dark:focus {
 
 .t4-h100vh {
   height: 100vh;
+}
+
+.t4-h80vh {
+  height: 80vh;
 }
 
 /*!
@@ -22013,8 +22025,9 @@ a:hover {
   height: 100%;
 }
 
-.t4-jumbo-register img,
-.t4-jumbo-login img {
+.t4-jumbo-register,
+.t4-jumbo-login,
+.t4-jumbo-create {
   width: 100%;
 }
 
@@ -22125,5 +22138,70 @@ form label.required:after {
   font-weight: normal;
   color: #c00;
   padding-left: 0.5em;
+}
+
+.t4-add-btn {
+  border: 2px solid #E68B3F;
+  border-radius: 25px;
+}
+
+.t4-add-btn:hover {
+  transform: scale(1.1);
+}
+
+.t4-add-btn img {
+  width: 17px;
+  margin-left: 2px;
+}
+
+.t4-add-btn span {
+  color: #E68B3F;
+}
+
+.t4-title-create h4 {
+  font-weight: 200;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0B100C;
+  box-shadow: 0 0 0px 1000px #FF9741 inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type=radio]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #393838;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #E68B3F;
+}
+
+input[type=radio]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #E68B3F;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #393838;
 }
 
