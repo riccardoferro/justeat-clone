@@ -18,6 +18,21 @@
             Modifica
 
         </a>
+
+        {{-- ELIMINA PIATTO --}}
+
+        <form action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}" class="d-inline-block"
+            method="POST">
+
+            @csrf
+            @method('DELETE')
+
+            <button type="submit" class="btn btn-danger">
+
+                Elimina
+
+            </button>
+        </form>
     @endforeach
     {{-- @dd($plates) --}}
     <a href="{{ route('admin.plates.create') }}">Aggiungi Piatto al menù</a>
