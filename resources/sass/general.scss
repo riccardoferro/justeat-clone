@@ -1,5 +1,7 @@
 @import 'variables';
 
+@import 'general-index';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
@@ -51,10 +53,11 @@ a{
 
 // JumboRegister
 .t4-jumbo-register,
-.t4-jumbo-login{
-    img{
+.t4-jumbo-login,
+.t4-jumbo-create{
+
         width:100%;
-    }
+
 }
 
 .t4-form-register{
@@ -157,3 +160,72 @@ form  label.required:after {
     color:#c00;
     padding-left: 0.5em;
 }
+
+
+.t4-add-btn {
+    border: 2px solid $t4_orange_text;
+    border-radius: 25px;
+    &:hover {
+
+        transform: scale(1.1);
+    }
+   img{
+    width: 17px;
+    margin-left: 2px;
+   }
+   span {
+    color: $t4_orange_text;
+   }
+}
+
+.t4-title-create{
+    h4 {
+        font-weight: 200;
+    }
+}
+
+// Change autocomplete styles in WebKit
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $t4_bg_black;
+  box-shadow: 0 0 0px 1000px $t4_bg_orange inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+//change checkbox color
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: $t4_bg_input;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid $t4_orange_text;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color:$t4_orange_text  ;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid $t4_bg_input;
+}
+
+
