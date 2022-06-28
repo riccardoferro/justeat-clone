@@ -33,7 +33,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('admin.user.create',compact('categories'));
     }
 
     /**
@@ -44,7 +45,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataCategory = $request->all();
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        $user->categories()->sync($dataCategory['categories']);
+        $user->save();
+        return redirect()->route('admin.user.index');
     }
 
     /**
