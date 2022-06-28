@@ -39,8 +39,11 @@
                     <div class="mb-3">
 
                         <label for="price" class="form-label">Prezzo</label>
+
                         <input type="number" step="any" class="form-control @error('price') is-invalid @enderror"
-                            id="name" placeholder="Prezzo" name='price' value="{{ old('price', $plate->price) }}">
+                            id="price-input" placeholder="Prezzo" name='price'
+                            value="{{ old('price', $plate->price) }}">
+
                         @error('price')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -77,9 +80,13 @@
                 </form>
             </div>
             {{-- jumbo-edit --}}
+
             <div class="col-xxl-4 col-xl-4 col-md-6 mt-5">
-                <img class="t4-jumbo-create" src="{{ asset('storage/' . $plate->image) }}" alt="{{ $plate->name }}">
+                <label for="cover" style="cursor: pointer">
+                    <img class="t4-jumbo-create" src="{{ asset('storage/' . $plate->image) }}" alt="{{ $plate->name }}">
+                </label>
             </div>
+
 
 
 
