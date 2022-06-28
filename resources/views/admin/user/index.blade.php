@@ -6,9 +6,14 @@
 <p>{{ $user->partita_iva }}</p>
 <p>{{ $user->image }}</p>
 <h1>Le tue Categorie</h1>
-@foreach ($user->categories as $category)
-    <p>{{ $category->name }}</p>
-    <img src="{{ $category->image }}" alt="{{ $category->name }}">
-@endforeach
+@if ($user->categories)
+    @foreach ($user->categories as $category)
+        <p>{{ $category->name }}</p>
+        <img src="{{ $category->image }}" alt="{{ $category->name }}">
+    @endforeach
+    <a href="{{ route('admin.user.edit', $user->id) }}">Modifica le tue categorie</a>
+@else
+@endif
+
 
 {{-- Da inserire una crud per la modifica delle categorie dei Ristoranti --}}

@@ -72,7 +72,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user= User::find($id);
+        $allCategories = Category::all();
+        return view('admin.user.edit', compact('allCategories','user'));
     }
 
     /**
