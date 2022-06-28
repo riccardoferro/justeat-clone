@@ -86,8 +86,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user= User::find($id);
         $dataCategory = $request->all();
+        $user= User::find($id);
+
         $user->categories()->sync($dataCategory['categories']);
         $user->categories->slug= Category::generateToSlug($user->categories->name);
         $user->update();
