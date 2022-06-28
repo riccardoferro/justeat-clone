@@ -96,14 +96,14 @@ class PlatesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
         // Questo pezzo di codice ci servirà come ulteriore controllo per gli utenti
-        // if ($plate->user_id != Auth::user()->id) {
-        //     return view('404.notFound');
-        // } else {
-        //     return view('admin.plate.edit', compact('plate'));
-        // }
+        if ($plate->user_id != Auth::user()->id) {
+            return view('404.notFound');
+        } else {
+            return view('admin.plates.edit', compact('plate'));
+        }
     }
 
     /**
@@ -115,7 +115,33 @@ class PlatesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:50',
+            'description' => 'required|min:10|max:200',
+            'price' => 'required',
+            'visible' => 'required',
+            'image' => 'nullable|image'
+        ], [
+            'required' => 'Questo campo è obbligatorio',
+            'max' => 'Massimo :max caratteri',
+            'min' => 'Minimo :min caratteri',
+            'image' => 'Penso che sai distinguere le immagini da altri tipi di file... Riprova!'
+        ]);
+        $data = $request->all();
+        if (array_key_exists('cover', $data)) {
+            $img_path = Storage::put('uploads', $data['cover']);
+            $data['image'] = $img_path;
+        }
+
+        $plate = Plate::find($id);
+
+
+        $plate->fill($data);
+
+
+        $plate->update();
+
+        return redirect()->route('admin.plates.index');
     }
 
     /**

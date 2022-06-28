@@ -32,7 +32,7 @@
                 <div class="mb-3">
 
                     <label for="price" class="form-label">Prezzo</label>
-                    <input type="number" step="0.5" class="form-control @error('price') is-invalid @enderror"
+                    <input type="number" step="any" class="form-control @error('price') is-invalid @enderror"
                         id="name" placeholder="Prezzo" name='price' value='{{ old('price') }}'>
                     @error('price')
                         <div class="invalid-feedback">{{ $message }}</div>
