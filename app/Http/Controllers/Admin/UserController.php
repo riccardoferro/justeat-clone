@@ -73,8 +73,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user= User::find($id);
-        $allCategories = Category::all();
-        return view('admin.user.edit', compact('allCategories','user'));
+        $categories = Category::all();
+        return view('admin.user.edit', compact('categories','user'));
     }
 
     /**
@@ -86,7 +86,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user= User::find($id);
+        $dataCategory = $request->all();
+        $user->categories()->sync($dataCategory['categories']);
+        $user->categories->slug= Category::generateToSlug($user->categories->name);
+        $user->update();
+        return redirect()->route('admin.user.index');
     }
 
     /**
