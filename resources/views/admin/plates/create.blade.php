@@ -2,7 +2,12 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row">
+        <div class="row justify-content-center">
+
+
+
+
+
             {{-- Form --}}
             <form action="{{ route('admin.plates.store') }}" method="POST" enctype='multipart/form-data'>
                 @csrf
@@ -36,16 +41,17 @@
                 <div class="mb-3">
 
                     <label for="visible" class="form-label">Disponibile</label>
-                    <input type="boolean" class="form-control @error('price') is-invalid @enderror" id="name"
-                        placeholder="Disponibile" name='visible' value='{{ old('visible') }}'>
-                    @error('visible')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                    <input class="radio" type="radio" value="1" name='visible' checked />
+                    <label for="visible" class="form-label">Non diponibile</label>
+                    <input class="radio" type="radio" value="0" name='visible' />
+
                 </div>
                 <div class="mb-3">
-
-                    <label for="image" class="form-label">Image</label>
-                    <input type="file" name='image' />
+                    <label for="cover" class="form-label">Image</label>
+                    <input type="file" name='cover' />
+                    @error('image')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary">Aggiungi</button>

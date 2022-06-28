@@ -49,14 +49,12 @@ class PlatesController extends Controller
         ], [
             'required' => 'Questo campo è obbligatorio',
             'max' => 'Massimo :max caratteri',
-            // 'description.required' => '',
             'min' => 'Minimo :min caratteri',
-            // 'content.max' => 'La descrizione è troppo lunga, mi è passata la fame! riprova con un massimo di :max caratteri',
             'image' => 'Penso che sai distinguere le immagini da altri tipi di file... Riprova!'
         ]);
         $data = $request->all();
-        if (array_key_exists('image', $data)) {
-            $img_path = Storage::put('uploads', $data['image']);
+        if (array_key_exists('cover', $data)) {
+            $img_path = Storage::put('uploads', $data['cover']);
             $data['image'] = $img_path;
         }
 
@@ -68,7 +66,7 @@ class PlatesController extends Controller
 
         $newPlate = new Plate();
 
-        $img_path = Storage::put('uploads', $data['image']);
+        $img_path = Storage::put('uploads', $data['cover']);
 
         $newPlate->image = $img_path;
 
