@@ -6,7 +6,8 @@
 <p>{{ $user->partita_iva }}</p>
 <p>{{ $user->image }}</p>
 <h1>Le tue Categorie</h1>
-@if ($user->categories)
+
+@if (count($user->categories))
     @foreach ($user->categories as $category)
         <p>{{ $category->name }}</p>
         <img src="{{ $category->image }}" alt="{{ $category->name }}">
