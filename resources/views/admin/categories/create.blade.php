@@ -1,6 +1,6 @@
 <h1>Ecco tutte le categorie</h1>
 
-<form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('admin.categories.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">
