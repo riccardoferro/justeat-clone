@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         $newUser->company = "La Parolaccia";
         $newUser->address = "Via Torrente 45";
         $newUser->partita_iva = "12345678402";
-        $newUser->image = '';
+        $newUser->image = 'company-default.png';
         $newUser->slug = User::generateToSlug($newUser->company);
         $newUser->save();
 
@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
         $newUser->company = "Tulbu Sushi";
         $newUser->address = "Via Fiume 31";
         $newUser->partita_iva = "12345678912";
-        $newUser->image = '';
+        $newUser->image = 'company-default.png';
         $newUser->slug = User::generateToSlug($newUser->company);
         $newUser->save();
 
@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
         $newUser->company = "Gelso Food";
         $newUser->address = "Viale Aldo Moro 7";
         $newUser->partita_iva = "12345678931";
-        $newUser->image = '';
+        $newUser->image = 'company-default.png';
         $newUser->slug = User::generateToSlug($newUser->company);
         $newUser->save();
 
@@ -53,7 +53,7 @@ class UsersTableSeeder extends Seeder
         $newUser->company = "Pizzeria da Silvione";
         $newUser->address = "Piazza San Marco 1";
         $newUser->partita_iva = "12345678759";
-        $newUser->image = '';
+        $newUser->image = 'company-default.png';
         $newUser->slug = User::generateToSlug($newUser->company);
         $newUser->save();
 
@@ -64,7 +64,7 @@ class UsersTableSeeder extends Seeder
         $newUser->company = "La Torta di Ferro";
         $newUser->address = "Via Gallo 14";
         $newUser->partita_iva = "12345678446";
-        $newUser->image = '';
+        $newUser->image = 'company-default.png';
         $newUser->slug = User::generateToSlug($newUser->company);
         $newUser->save();
 
