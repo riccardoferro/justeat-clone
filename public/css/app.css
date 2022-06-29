@@ -11799,6 +11799,27 @@ fieldset:disabled .btn {
   height: 80vh;
 }
 
+#decrement,
+#increment {
+  width: 30px;
+  aspect-ratio: 1;
+}
+
+#decrement img,
+#increment img {
+  width: 100%;
+}
+
+#price-input {
+  width: 20%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.t4-w20 {
+  width: 20%;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

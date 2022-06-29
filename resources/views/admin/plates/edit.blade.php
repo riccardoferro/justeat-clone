@@ -36,17 +36,20 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 ">
+                        <label id='test' for="price" class="form-label">Prezzo</label>
+                        <div class="d-flex justify-content-start align-items-center">
 
-                        <label for="price" class="form-label">Prezzo</label>
+                            <div id="decrement"><img src="/images/minus.png" alt=""></div>
+                            <input type="number" step="any"
+                                class="form-control mb-0  @error('price') is-invalid @enderror" id="price-input"
+                                placeholder="Prezzo" name='price' value="{{ old('price', $plate->price) }}">
+                            <div id="increment"><img src="/images/plus.png" alt=""></div>
 
-                        <input type="number" step="any" class="form-control @error('price') is-invalid @enderror"
-                            id="price-input" placeholder="Prezzo" name='price'
-                            value="{{ old('price', $plate->price) }}">
-
-                        @error('price')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                            @error('price')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
                     </div>
                     <div class="mb-3">
 
