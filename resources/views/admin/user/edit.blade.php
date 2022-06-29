@@ -3,7 +3,8 @@
 <h2>Le tue categorie</h2>
 @foreach ($user->categories as $category)
     <p>{{ $category->name }}</p>
-    <img src="{{ $category->image }}" alt="{{ $category->name }}">
+    <img src="{{ asset('storage/images/category_img/' . $category->image ) }}" alt="{{ $category->name }}" style="width:150px">
+
 @endforeach
 
 {{-- Qui ci sarà un form per modificare --}}
