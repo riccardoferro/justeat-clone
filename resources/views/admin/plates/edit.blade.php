@@ -12,7 +12,7 @@
             </div>
 
             {{-- Form --}}
-            <div class="col-xxl-4 col-xl-4 col-md-5 mt-5">
+            <div class="col-xxl-4 col-xl-4 col-md-5 mt-5 order-xx-1 order-xl-1 order-md-1 order-sm-2 order-2">
                 <form action="{{ route('admin.plates.update', $plate->id) }}" method="POST" enctype='multipart/form-data'>
                     @csrf
                     @method('PUT')
@@ -89,7 +89,7 @@
             </div>
             {{-- jumbo-edit --}}
 
-            <div class="col-xxl-4 col-xl-4 col-md-6 mt-5">
+            <div class="col-xxl-4 col-xl-4 col-md-6 mt-5 order-xxl-2 order-xl-2 order-md-2 order-sm-1 order-1">
                 <label for="cover" style="cursor: pointer">
                     <img class="t4-jumbo-create" src="{{ asset('storage/' . $plate->image) }}"
                         alt="{{ $plate->name }}">

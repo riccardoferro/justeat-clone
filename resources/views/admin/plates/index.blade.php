@@ -63,7 +63,7 @@
                                 @endif
                             </div>
                             <div class="t4-card-buttons
-                                d-flex justify-content-around">
+                                d-flex justify-content-between">
                                 {{-- MODIFICA PIATTO --}}
 
 
