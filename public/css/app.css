@@ -23793,3 +23793,11 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: auto;
 }
 
+.t4-bg-dash {
+  background-color: #0B100C;
+}
+
+.t4-dashboard-img img {
+  width: 25px;
+}
+

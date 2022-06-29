@@ -282,4 +282,13 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
+.t4-bg-dash {
+    background-color: $t4_bg_black;
+}
+
+.t4-dashboard-img{
+    img {
+        width: 25px;
+    }
+}
 
