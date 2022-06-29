@@ -54,7 +54,17 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:5', 'confirmed'],
+            'company' => ['required', 'string', 'min:2'],
+            'address' => ['required', 'string', 'min:8'],
+            'partita_iva' => ['required', 'string', 'min:12'],
+
+        ], [
+            'required' => 'Questo campo è obbligatorio',
+            'max' => 'Massimo :max caratteri',
+            'min' => 'Minimo :min caratteri',
+            'confirmed' => 'Le due password non sono uguali!',
+            'email' => 'Email non valida!'
         ]);
     }
 
@@ -74,8 +84,8 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'partita_iva' => $data['partita_iva'],
 
-            
-            'image'=> 'company-default.png',
+
+            'image' => 'company-default.png',
 
 
             'slug' => User::generateToSlug($data['company'])

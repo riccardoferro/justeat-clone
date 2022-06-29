@@ -19,9 +19,10 @@
 
 
                             <div class="col-xl-10 col-md-9 col-sm-10">
+                                <label for="name">Nome *</label>
                                 <input id="name" type="text" placeholder="Nome"
                                     class="form-control @error('name') is-invalid @enderror" name="name"
-                                    value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    value="{{ old('name') }}" autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -35,9 +36,10 @@
 
 
                             <div class="col-xl-10 col-md-9 col-sm-10">
-                                <input id="email" type="email" placeholder="E-mail"
+                                <label for="email">E-mail *</label>
+                                <input id="email" placeholder="E-mail"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email">
+                                    value="{{ old('email') }}" autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -51,8 +53,9 @@
 
 
                             <div class="col-xl-10 col-md-9 col-sm-10">
+                                <label for="password">Password *</label>
                                 <input id="password" type="password" placeholder="Password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password" required
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
                                     autocomplete="new-password">
 
                                 @error('password')
@@ -67,9 +70,15 @@
 
 
                             <div class="col-xl-10 col-md-9 col-sm-10">
+                                <label for="password-confirm">Conferma Password *</label>
                                 <input id="password-confirm" type="password" class="form-control"
-                                    placeholder="Conferma Password" name="password_confirmation" required
+                                    placeholder="Conferma Password" name="password_confirmation"
                                     autocomplete="new-password">
+                                @error('password_confirmation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         {{-- Aggiunta nuovi campi input --}}
@@ -79,8 +88,9 @@
 
 
                             <div class="col-xl-10 col-md-9 col-sm-10">
+                                <label for="company">Azienda *</label>
                                 <input id="company" type="company" placeholder="Azienda"
-                                    class="form-control @error('company') is-invalid @enderror" name="company" required
+                                    class="form-control @error('company') is-invalid @enderror" name="company"
                                     autocomplete="new-company">
 
                                 @error('company')
@@ -96,8 +106,9 @@
 
 
                             <div class="col-xl-10 col-md-9 col-sm-10">
+                                <label for="address">Indirizzo *</label>
                                 <input id="address" type="address" placeholder="Indirizzo"
-                                    class="form-control @error('address') is-invalid @enderror" name="address" required
+                                    class="form-control @error('address') is-invalid @enderror" name="address"
                                     autocomplete="new-address">
 
                                 @error('address')
@@ -113,9 +124,10 @@
 
 
                             <div class="col-xl-10 col-md-9 col-sm-10 mb-3">
+                                <label for="partita_iva">Partita Iva *</label>
                                 <input id="partita_iva" type="partita_iva" placeholder="P.IVA"
                                     class="form-control @error('partita_iva') is-invalid @enderror" name="partita_iva"
-                                    required autocomplete="new-partita_iva">
+                                    autocomplete="new-partita_iva">
 
                                 @error('partita_iva')
                                     <span class="invalid-feedback" role="alert">
@@ -126,7 +138,7 @@
                         </div>
 
 
-                         {{-- Image
+                        {{-- Image
                         <div class="form-group row justify-content-center">
                             <div class="col-xl-10 col-md-9 col-sm-10 mb-3">
                                 <div class="mb-3 t4-input-img">

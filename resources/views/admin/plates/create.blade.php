@@ -40,11 +40,17 @@
                     <div class="mb-3">
 
                         <label for="price" class="form-label">Prezzo</label>
-                        <input type="number" step="any" class="form-control @error('price') is-invalid @enderror"
-                            id="name" placeholder="Prezzo" name='price' value='{{ old('price') }}'>
-                        @error('price')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                        <div class="d-flex justify-content-start align-items-center">
+
+                            <div id="decrement"><img src="/images/minus.png" alt=""></div>
+                            <input type="number" step="any"
+                                class="form-control mb-0 @error('price') is-invalid @enderror" id="price-input"
+                                placeholder="Prezzo" name='price' value='{{ old('price') }}'>
+                            <div id="increment"><img src="/images/plus.png" alt=""></div>
+                            @error('price')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
                     </div>
                     <div class="mb-3">
 

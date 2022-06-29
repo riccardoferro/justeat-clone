@@ -23576,6 +23576,14 @@ a:hover {
   display: flex;
 }
 
+.t4-form-register input {
+  margin-bottom: 5px !important;
+}
+
+.t4-form-register label {
+  margin-left: 10px;
+}
+
 .t4-register-text {
   margin-left: 10px;
 }
