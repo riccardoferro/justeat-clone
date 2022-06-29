@@ -8,44 +8,57 @@
                 <h4>In questa sezione potrai visualizzare e modificare i tuoi dati</h4>
             </div>
         </div>
-        <h1>I tuoi Dati</h1>
-        <p>{{ $user->email }}</p>
-        <p>{{ $user->company }}</p>
-        <p>{{ $user->address }}</p>
-        <p>{{ $user->partita_iva }}</p>
+        <div class="row">
 
-        <form action="{{ route('admin.user.update', $user->id) }}" method="POST" enctype='multipart/form-data'>
-            @csrf
-            @method('PUT')
-            <div class="mb-3">
-                {{-- <div class="pb-5">
-                    <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->image }}">
-                </div> --}}
-                <label for="coverUser" style="cursor: pointer">
-                    <img class="t4-jumbo-create" src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}">
-                </label>
+            {{-- Immagine profilo --}}
+            <div class="col-xl-2 col-md-4 col-sm-10 m-auto ">
+                <form action="{{ route('admin.user.update', $user->id) }}" method="POST" enctype='multipart/form-data'>
+                    @csrf
+                    @method('PUT')
+                    <div class="mb-3 d-flex flex-column align-items-center justify-content-around">
+
+                        <label class='t4-label-coverUser' for="coverUser" style="cursor: pointer">
+                            <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}">
+                        </label>
 
 
-                <label for="coverUser" class="form-label"><input id='coverUser' type="file"
-                        name='coverUser' />Image</label>
+                        <label for="coverUser" class="form-label"><input id='coverUser' type="file"
+                                name='coverUser' /></label>
 
 
 
-                @error('cover')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                        @error('coverUser')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-success">
-                        Clicca per la Modifica
-                    </button>
-                </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn t4-add-btn d-flex align-items-center me-3">
+                                <span class="me-2">Cambia Foto Profilo </span>
+                                <img src="/images/upload.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+                {{-- /fine form immagine --}}
+
 
             </div>
-        </form>
-        <div>
-            <a href="{{ route('admin.user.edit', $user->id) }}">Inserisci una nuova Immagine Profilo</a>
+
+            {{-- Dati Utenti --}}
+            <div class="col-xl-6 col-md-7 col-sm-10 m-auto">
+                <h1>I tuoi Dati</h1>
+                <p>{{ $user->email }}</p>
+                <p>{{ $user->company }}</p>
+                <p>{{ $user->address }}</p>
+                <p>{{ $user->partita_iva }}</p>
+            </div>
+
+
         </div>
+
+
 
 
         <h1>Le tue Categorie</h1>

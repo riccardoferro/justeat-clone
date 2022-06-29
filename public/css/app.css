@@ -11825,6 +11825,23 @@ fieldset:disabled .btn {
   aspect-ratio: 1;
 }
 
+.t4-label-coverUser {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 5px solid #E68B3F;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px 6px #393838;
+}
+
+.t4-label-coverUser img {
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: 50%;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
