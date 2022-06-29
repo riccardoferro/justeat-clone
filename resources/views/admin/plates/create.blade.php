@@ -63,11 +63,15 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div>
-                        <button type="submit" class="btn t4-add-btn d-flex align-items-center">
-                            <span>Aggiungi</span>
-                            <img src="/images/plus.png" alt="">
+                    <div class="d-flex">
+                        <button type="submit" class="btn t4-add-btn d-flex align-items-center me-3">
+                            <span class="me-2">Modifica </span>
+                            <img src="/images/edit-document.png" alt="">
                         </button>
+                        <a href="{{ route('admin.plates.index') }}" class="btn t4-add-btn d-flex align-items-center">
+                            <span class="me-2">Indietro </span>
+                            <img src="/images/replay.png" alt="">
+                        </a>
                     </div>
                 </form>
             </div>
