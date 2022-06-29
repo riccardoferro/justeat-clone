@@ -11825,6 +11825,12 @@ fieldset:disabled .btn {
   aspect-ratio: 1;
 }
 
+#t4-delete-page {
+  display: none;
+  width: 100%;
+  height: 100vh;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

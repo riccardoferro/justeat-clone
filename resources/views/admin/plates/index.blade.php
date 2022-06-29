@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
+
+
+
+
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 ">
@@ -72,9 +79,10 @@
                                     <span class="me-2">Modifica </span>
                                     <img src="/images/edit-document.png" alt="">
                                 </a>
+                                <span id='open-form'>Elimina</span>
                                 {{-- ELIMINA PIATTO --}}
 
-                                <form action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
+                                {{-- <form action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
                                     class="d-inline-block" method="POST">
 
                                     @csrf
@@ -86,9 +94,23 @@
                                         <span class="me-2">Elimina</span>
                                         <img src="/images/delete.png" alt="">
                                     </button>
-                                </form>
+                                </form> --}}
                             </div>
                         </div>
+                        <form id="t4-delete-page" action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
+                            method="POST">
+
+                            @csrf
+                            @method('DELETE')
+
+
+
+                            <button type="submit" class="btn t4-add-btn d-flex align-items-center">
+                                <span class="me-2">Elimina</span>
+                                <img src="/images/delete.png" alt="">
+                            </button>
+                            <span id='close-form'>Annulla</span>
+                        </form>
                     @endforeach
                 @else
                     <div class="col-4 text-center mt-5">
@@ -124,5 +146,13 @@
 
 
 
-
 @endsection
+{{-- <script>
+    function openForm() {
+        document.querySelector("#delete-page").style.display = "flex";
+    }
+
+    function closeForm() {
+        document.querySelector("#delete-page").style.display = "none";
+    }
+</script> --}}
