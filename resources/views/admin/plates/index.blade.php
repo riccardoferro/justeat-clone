@@ -39,7 +39,7 @@
 
             <div class="row col-xxl-10 col-xl-10 col-md-11 col-sm-12 m-auto mt-3 justify-content-center">
 
-                @if ($plates)
+                @if (count($plates))
                     @foreach ($plates as $plate)
                         <div class="col-sm-10 col-md-5 col-xl-3  d-flex flex-column t4-card ">
                             <div class="t4-card-img">
