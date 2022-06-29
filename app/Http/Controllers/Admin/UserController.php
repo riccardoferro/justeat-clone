@@ -23,7 +23,7 @@ class UserController extends Controller
     public function index()
     {
         //
-        $user = User::where('id',Auth::user()->id)->first();
+        $user = User::where('id', Auth::user()->id)->first();
         return view('admin.user.index', compact('user'));
     }
 
@@ -34,7 +34,6 @@ class UserController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -45,7 +44,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
     }
 
     /**
@@ -67,7 +65,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user= User::find($id);
+        $user = User::find($id);
         return view('admin.user.edit', compact('user'));
     }
 
@@ -83,17 +81,17 @@ class UserController extends Controller
 
         $request->validate([
             'image' => 'nullable|image'
-        ],[
+        ], [
             'image' => 'Inserisci una tipologia di immagine corretta... Riprova!'
         ]);
 
         $data = $request->all();
-        if (array_key_exists('cover', $data)) {
-            $img_path = Storage::put('uploads', $data['cover']);
+        if (array_key_exists('coverUser', $data)) {
+            $img_path = Storage::put('uploads', $data['coverUser']);
             $data['image'] = $img_path;
         }
 
-        $user= User::find($id);
+        $user = User::find($id);
 
         $user->fill($data);
 

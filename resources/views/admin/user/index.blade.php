@@ -14,7 +14,35 @@
         <p>{{ $user->address }}</p>
         <p>{{ $user->partita_iva }}</p>
 
-        <img src="{{ asset('storage/' . $user->image) }}" alt="image-company" style="width:150px">
+        <form action="{{ route('admin.user.update', $user->id) }}" method="POST" enctype='multipart/form-data'>
+            @csrf
+            @method('PUT')
+            <div class="mb-3">
+                {{-- <div class="pb-5">
+                    <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->image }}">
+                </div> --}}
+                <label for="coverUser" style="cursor: pointer">
+                    <img class="t4-jumbo-create" src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}">
+                </label>
+
+
+                <label for="coverUser" class="form-label"><input id='coverUser' type="file"
+                        name='coverUser' />Image</label>
+
+
+
+                @error('cover')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">
+                        Clicca per la Modifica
+                    </button>
+                </div>
+
+            </div>
+        </form>
         <div>
             <a href="{{ route('admin.user.edit', $user->id) }}">Inserisci una nuova Immagine Profilo</a>
         </div>
