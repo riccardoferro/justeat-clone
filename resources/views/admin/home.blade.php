@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center align-items-center t4-h80vh">
-            <div class="col-xxl-12 col-xl-12 col-md-12 col-1 col-sm-1 t4-card">
+            <div class="col-xxl-12 col-xl-12 col-md-12 col-1 col-sm-1 t4-card-app">
                 <div class="row flex-column align-items-center justify-content-center t4-container-text">
                     <div class="col-12">
                         @if (session('status'))
