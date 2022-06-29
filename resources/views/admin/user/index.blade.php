@@ -8,7 +8,7 @@
                 <h4>In questa sezione potrai visualizzare e modificare i tuoi dati</h4>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-5 justify-content-around">
 
             {{-- Immagine profilo --}}
             <div class="col-xl-2 col-md-4 col-sm-10 m-auto ">
@@ -34,7 +34,8 @@
 
                         <div class="form-group">
                             <button type="submit" class="btn t4-add-btn d-flex align-items-center me-3">
-                                <span class="me-2">Cambia Foto Profilo </span>
+                                <img src="/images/upload.png" alt="">
+                                <span class="me-2 ms-2">Cambia</span>
                                 <img src="/images/upload.png" alt="">
                             </button>
                         </div>
@@ -47,12 +48,19 @@
             </div>
 
             {{-- Dati Utenti --}}
-            <div class="col-xl-6 col-md-7 col-sm-10 m-auto">
-                <h1>I tuoi Dati</h1>
-                <p>{{ $user->email }}</p>
+
+            <div class="col-xl-4 col-md-7 col-sm-10 m-auto d-flex flex-column align-items-start t4-dataUser">
+
+                <h2>I tuoi Dati</h2>
+                <label for="">Nome azienda</label>
                 <p>{{ $user->company }}</p>
+                <label for="">E-mail</label>
+                <p>{{ $user->email }}</p>
+                <label for="">Indirizzo</label>
                 <p>{{ $user->address }}</p>
+                <label for="">Partita IVA</label>
                 <p>{{ $user->partita_iva }}</p>
+
             </div>
 
 
