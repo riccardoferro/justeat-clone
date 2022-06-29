@@ -11820,6 +11820,11 @@ fieldset:disabled .btn {
   width: 20%;
 }
 
+.t4-empty-plates {
+  width: 20%;
+  aspect-ratio: 1;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
