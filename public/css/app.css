@@ -11825,6 +11825,7 @@ fieldset:disabled .btn {
   aspect-ratio: 1;
 }
 
+<<<<<<< HEAD
 #t4-delete-page {
   display: none;
   width: 100%;
@@ -11834,6 +11835,39 @@ fieldset:disabled .btn {
   position: absolute;
   left: 0;
   top: 0;
+=======
+.t4-label-coverUser {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 5px solid #E68B3F;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0px 0px 10px 6px #393838;
+}
+
+.t4-label-coverUser img {
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.t4-dataUser label {
+  color: #E68B3F;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.t4-dataUser p {
+  width: 50%;
+  background-color: #FF9741;
+  color: #0B100C;
+  border-radius: 25px;
+  border: 2px solid #393838;
+  padding: 5px 5px 5px 10px;
+>>>>>>> new-admin-home
 }
 
 /*!
@@ -23816,7 +23850,35 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #0B100C;
 }
 
+.t4-card-app {
+  background-color: #ccc;
+  border-radius: 20px;
+  background-image: url("/images/banner-app.png");
+  background-size: cover;
+  padding: 250px;
+  background-position: center;
+  position: relative;
+  background-blend-mode: multiply;
+}
+
 .t4-dashboard-img img {
   width: 25px;
+}
+
+.t4-banner-app img {
+  width: 100%;
+}
+
+.t4-bg-black {
+  background-color: rgba(30, 30, 30, 0.602);
+}
+
+.t4-container-text {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 30px;
 }
 
