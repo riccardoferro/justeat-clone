@@ -5,27 +5,63 @@
 return [
     [
       "name" => "Fast Food",
-      "image" => "/public/images/category_img/fast-food.jpg",
+      "image" => "fast-food.jpg",
     ],
     [
       "name" => "Pizza",
-      "image" => "/public/images/category_img/pizza-category.jpg",
+      "image" => "pizza-category.jpg",
     ],
     [
       "name" => "Cinese",
-      "image" => "/public/images/category_img/chinese-category.jpg",
+      "image" => "chinese-category.jpg",
     ],
     [
       "name" => "Giapponese",
-      "image" => "/public/images/category_img/sushi-category.jpg",
+      "image" => "sushi-category.jpg",
     ],
     [
       "name" => "Poke",
-      "image" => "/public/images/category_img/poke-category.jpg",
+      "image" => "poke-category.jpg",
     ],
     [
-        "name" => "Dessert",
-        "image" => "/public/images/category_img/dessert-category.jpg",
-      ],
+      "name" => "Dessert",
+      "image" => "dessert-category.jpg",
+    ],
+
+    [
+      "name" => "Tailandese",
+      "image" => "thailandese-category.jpeg",
+    ],
+
+    [
+      "name" => "Italiano",
+      "image" => "italiano-category.jpeg",
+    ],
+
+    [
+      "name" => "Smoothie",
+      "image" => "smoothie-category.jpeg",
+    ],
+
+    [
+      "name" => "Gelato",
+      "image" => "gelato-category.webp",
+    ],
+
+    [
+      "name" => "Vegano",
+      "image" => "vegan-category.webp",
+    ],
+
+    [
+      "name" => "Gluten Free",
+      "image" => "gluten-free-category.jpeg",
+    ],
+
+    [
+      "name" => "Vegetariano",
+      "image" => "vegetariano-category.jpeg",
+    ],
+      
 
 ];

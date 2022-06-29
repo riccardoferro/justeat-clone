@@ -9,6 +9,7 @@
 body{
     background-color: $t4_bg_black;
     font-family: 'Montserrat', sans-serif;
+    color:$t4_white_text;
 }
 
 .t4-logo{
@@ -64,6 +65,7 @@ a{
 
 .t4-jumbo-create {
     width: 100%;
+    border-radius: 20px;
 }
 
 .t4-form-register{
@@ -171,6 +173,7 @@ form  label.required:after {
 .t4-add-btn {
     border: 2px solid $t4_orange_text;
     border-radius: 25px;
+    color:$t4_orange_text !important;
     &:hover {
 
         transform: scale(1.1);
@@ -232,6 +235,51 @@ input[type='radio']:checked:after {
     display: inline-block;
     visibility: visible;
     border: 2px solid $t4_bg_input;
+}
+input[type="file"] {
+    display: none;
+}
+.t4-photo-label{
+    border: 2px solid $t4_bg_input;
+    border-radius:25px;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        img{
+            height:1.2rem;
+
+        }
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+
+}
+
+// card -index
+.t4-card {
+    margin:20px;
+    span{
+        color:$t4_orange_text;
+    }
+    .t4-card-img{
+        margin-bottom:20px;
+
+
+        img{
+            width:100%;
+            aspect-ratio:1;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }
+
+    .t4-card-info{
+        margin-top:auto;
+    }
 }
 
 

@@ -28,6 +28,7 @@ Route::middleware('auth')
         //     ->name('index');
          Route::resource('/user','UserController');
          Route::resource('/plates', 'PlatesController');
+         Route::resource('/categories', 'CategoriesController');
     });
 
 

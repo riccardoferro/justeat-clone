@@ -53574,6 +53574,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./general */ "./resources/js/general.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -53712,6 +53714,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/general.js":
+/*!*********************************!*\
+  !*** ./resources/js/general.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log('ok');
+  document.getElementById('increment').addEventListener('click', function () {
+    document.getElementById('price-input').value++;
+  });
+  document.getElementById('decrement').addEventListener('click', function () {
+    document.getElementById('price-input').value--;
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -53730,8 +53751,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Utente\Desktop\BooleanProject\BoolEat\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\BooleanProject\BoolEat\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> 3b86e1219fe297f4ebc65866fa79226e20d2eda3
 
 
 /***/ })

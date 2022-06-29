@@ -11799,6 +11799,32 @@ fieldset:disabled .btn {
   height: 80vh;
 }
 
+#decrement,
+#increment {
+  width: 30px;
+  aspect-ratio: 1;
+}
+
+#decrement img,
+#increment img {
+  width: 100%;
+}
+
+#price-input {
+  width: 20%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.t4-w20 {
+  width: 20%;
+}
+
+.t4-empty-plates {
+  width: 20%;
+  aspect-ratio: 1;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -23493,6 +23519,7 @@ fieldset:disabled .btn {
 body {
   background-color: #0B100C;
   font-family: "Montserrat", sans-serif;
+  color: #FFFFFF;
 }
 
 .t4-logo {
@@ -23542,6 +23569,7 @@ a:hover {
 
 .t4-jumbo-create {
   width: 100%;
+  border-radius: 20px;
 }
 
 .t4-form-register {
@@ -23656,6 +23684,7 @@ form label.required:after {
 .t4-add-btn {
   border: 2px solid #E68B3F;
   border-radius: 25px;
+  color: #E68B3F !important;
 }
 
 .t4-add-btn:hover {
@@ -23717,5 +23746,50 @@ input[type=radio]:checked:after {
   display: inline-block;
   visibility: visible;
   border: 2px solid #393838;
+}
+
+input[type=file] {
+  display: none;
+}
+
+.t4-photo-label {
+  border: 2px solid #393838;
+  border-radius: 25px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.t4-photo-label img {
+  height: 1.2rem;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.t4-card {
+  margin: 20px;
+}
+
+.t4-card span {
+  color: #E68B3F;
+}
+
+.t4-card .t4-card-img {
+  margin-bottom: 20px;
+}
+
+.t4-card .t4-card-img img {
+  width: 100%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+
+.t4-card .t4-card-info {
+  margin-top: auto;
 }
 

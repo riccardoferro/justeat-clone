@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use illuminate\Support\Str;
 
 use App\User;
 use App\Plate;
 use App\Category;
 
-class UserController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,8 +21,6 @@ class UserController extends Controller
     public function index()
     {
         //
-        $user = User::where('id',Auth::user()->id)->first();
-        return view('admin.user.index', compact('user'));
     }
 
     /**
@@ -34,7 +30,8 @@ class UserController extends Controller
      */
     public function create()
     {
-
+        $categories = Category::all();
+        return view('admin.categories.create',compact('categories'));
     }
 
     /**
@@ -45,7 +42,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
+        $dataCategory = $request->all();
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        $user->categories()->sync($dataCategory['categories']);
+        $user->save();
+        return redirect()->route('admin.user.index');
     }
 
     /**
@@ -68,7 +70,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user= User::find($id);
-        return view('admin.user.edit', compact('user'));
+        $categories = Category::all();
+        return view('admin.categories.edit', compact('categories','user'));
     }
 
     /**
@@ -80,38 +83,24 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $request->validate([
-            'image' => 'nullable|image'
+            'categories'=>'required'
         ],[
-            'image' => 'Inserisci una tipologia di immagine corretta... Riprova!'
+            'categories.required' => 'DEVI INSERIRE ALMENO UNA CATEGORIA'
         ]);
 
-        $data = $request->all();
-        if (array_key_exists('cover', $data)) {
-            $img_path = Storage::put('uploads', $data['cover']);
-            $data['image'] = $img_path;
-        }
-
+        $dataCategory = $request->all();
         $user= User::find($id);
 
-        $user->fill($data);
+        $user->categories()->sync($dataCategory['categories']);
+
+
+        // dd($dataCategory['categories']);
+
+        // $user->categories->slug = Category::generateToSlug($user->categories->name;
 
         $user->update();
-
         return redirect()->route('admin.user.index');
-        // $dataCategory = $request->all();
-
-
-        // $user->categories()->sync($dataCategory['categories']);
-
-
-        // // dd($dataCategory['categories']);
-
-        // // $user->categories->slug = Category::generateToSlug($user->categories->name;
-
-
-        // return redirect()->route('admin.user.index');
     }
 
     /**
