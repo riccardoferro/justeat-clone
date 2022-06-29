@@ -76,6 +76,11 @@
                             <span class="me-2">Modifica </span>
                             <img src="/images/edit-document.png" alt="">
                         </button>
+                        <a href="{{ route('admin.plates.edit', ['plate' => $plate->id]) }}"
+                            class="btn t4-add-btn d-flex align-items-center">
+                            <span class="me-2">Modifica </span>
+                            <img src="/images/edit-document.png" alt="">
+                        </a>
                     </div>
                 </form>
             </div>
@@ -83,7 +88,8 @@
 
             <div class="col-xxl-4 col-xl-4 col-md-6 mt-5">
                 <label for="cover" style="cursor: pointer">
-                    <img class="t4-jumbo-create" src="{{ asset('storage/' . $plate->image) }}" alt="{{ $plate->name }}">
+                    <img class="t4-jumbo-create" src="{{ asset('storage/' . $plate->image) }}"
+                        alt="{{ $plate->name }}">
                 </label>
             </div>
 

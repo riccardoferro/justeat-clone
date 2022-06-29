@@ -2,9 +2,27 @@
 
 @section('content')
     <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 ">
+
+                <div class="d-flex justify-content-center">
+                    <h1>Il tuo menù</h1>
+                    <a href="{{ route('admin.plates.create') }}" class=" btn t4-add-btn d-flex align-items-center ms-5">
+                        <span class="me-2">Aggiungi </span>
+                        <img src="/images/add2.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
         <div class="row flex-column justify-content-center">
-            <div class="col-12 text-alig-center d-flex justify-content-center flex-sm-column flex-xl-row">
-                <h1>Il tuo menù</h1>
+            {{-- <div class="col-12 text-alig-center d-flex justify-content-center flex-sm-column flex-xl-row">
+                <div class="col-xl-9 col-md-9 col-sm-12">
+                    <h1>Il tuo menù</h1>
+                </div>
+
 
 
                 <div class="ms-a">
@@ -14,11 +32,13 @@
                     </a>
                 </div>
 
-            </div>
+            </div> --}}
 
 
 
-            <div class="row col-xxl-10 col-xl-10 col-md-11 col-sm-12 m-auto mt-3">
+
+            <div class="row col-xxl-10 col-xl-10 col-md-11 col-sm-12 m-auto mt-3 justify-content-center">
+
                 @if ($plates)
                     @foreach ($plates as $plate)
                         <div class="col-sm-10 col-md-5 col-xl-3  d-flex flex-column t4-card ">
