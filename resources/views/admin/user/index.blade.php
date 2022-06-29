@@ -5,7 +5,7 @@
 <p>{{ $user->address }}</p>
 <p>{{ $user->partita_iva }}</p>
 
-<img src="{{ asset('storage/images/' . $user->image) }}" alt="image-company" style="width:150px">
+<img src="{{ asset('storage/' . $user->image) }}" alt="image-company" style="width:150px">
 <div>
     <a href="{{ route('admin.user.edit', $user->id) }}">Inserisci una nuova Immagine Profilo</a>
 </div>

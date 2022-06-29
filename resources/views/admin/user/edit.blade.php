@@ -5,7 +5,7 @@
     @method('PUT')
     <div class="mb-3">
         <div class="pb-5">
-            <img src="{{ asset('storage/images/' . $user->image) }}" alt="{{ $user->image }}">
+            <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->image }}">
         </div>
 
 
