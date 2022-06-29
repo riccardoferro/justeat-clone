@@ -65,6 +65,7 @@ a{
 
 .t4-jumbo-create {
     width: 100%;
+    border-radius: 20px;
 }
 
 .t4-form-register{
@@ -267,10 +268,12 @@ input[type=number]::-webkit-outer-spin-button {
     .t4-card-img{
         margin-bottom:20px;
 
+
         img{
             width:100%;
             aspect-ratio:1;
             object-fit: cover;
+            border-radius: 20px;
         }
     }
 

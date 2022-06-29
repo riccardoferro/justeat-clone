@@ -23543,6 +23543,7 @@ a:hover {
 
 .t4-jumbo-create {
   width: 100%;
+  border-radius: 20px;
 }
 
 .t4-form-register {
@@ -23759,6 +23760,7 @@ input[type=number]::-webkit-outer-spin-button {
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 20px;
 }
 
 .t4-card .t4-card-info {
