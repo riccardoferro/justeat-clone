@@ -73,7 +73,11 @@ class RegisterController extends Controller
             'company' => $data['company'],
             'address' => $data['address'],
             'partita_iva' => $data['partita_iva'],
-            'image'=> '',
+
+            
+            'image'=> 'company-default.png',
+
+
             'slug' => User::generateToSlug($data['company'])
         ]);
     }
