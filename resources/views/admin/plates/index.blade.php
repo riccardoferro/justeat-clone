@@ -8,7 +8,7 @@
 
 
 
-    <div class="container-fluid">
+    <div class="container-fluid position-relative">
         <div class="row justify-content-center">
             <div class="col-12 ">
 
@@ -79,10 +79,10 @@
                                     <span class="me-2">Modifica </span>
                                     <img src="/images/edit-document.png" alt="">
                                 </a>
-                                <span id='open-form'>Elimina</span>
+                                {{-- <span class='open-form' id="open-form">Elimina</span> --}}
                                 {{-- ELIMINA PIATTO --}}
 
-                                {{-- <form action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
+                                <form action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
                                     class="d-inline-block" method="POST">
 
                                     @csrf
@@ -94,23 +94,29 @@
                                         <span class="me-2">Elimina</span>
                                         <img src="/images/delete.png" alt="">
                                     </button>
-                                </form> --}}
+                                </form>
                             </div>
                         </div>
-                        <form id="t4-delete-page" action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
+                        {{-- <form id="t4-delete-page" action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
                             method="POST">
 
                             @csrf
                             @method('DELETE')
+                            <h1>Sei sicuro di voler eliminare?</h1>
+                            <div class="t4-delete-page-inner">
+                                <button type="submit" class="btn t4-add-btn d-flex align-items-center">
+                                    <span class="me-2">Elimina</span>
+                                    <img src="/images/delete.png" alt="">
+                                </button>
+                                <span id='close-form'>Annulla</span>
+
+
+                            </div>
 
 
 
-                            <button type="submit" class="btn t4-add-btn d-flex align-items-center">
-                                <span class="me-2">Elimina</span>
-                                <img src="/images/delete.png" alt="">
-                            </button>
-                            <span id='close-form'>Annulla</span>
-                        </form>
+
+                        </form> --}}
                     @endforeach
                 @else
                     <div class="col-4 text-center mt-5">
@@ -146,13 +152,26 @@
 
 
 
-@endsection
-{{-- <script>
-    function openForm() {
-        document.querySelector("#delete-page").style.display = "flex";
-    }
 
-    function closeForm() {
-        document.querySelector("#delete-page").style.display = "none";
+
+@endsection
+
+{{-- <script defer>
+    window.onload = function() {
+
+
+        document.querySelectorAll(".open-form").forEach(elem => elem.addEventListener("click",
+            () => {
+                document.getElementById("t4-delete-page").style.display = "flex";
+            }));
+        document.querySelectorAll("#close-form").forEach(elem => elem.addEventListener("click",
+            () => {
+                document.getElementById("t4-delete-page").style.display = "none";
+            }));
+        console.log('Console.log 3');
+
+
+        console.log('Console.log 4');
+
     }
 </script> --}}
