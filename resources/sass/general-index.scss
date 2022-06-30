@@ -72,3 +72,20 @@
 
     }
 }
+
+.t4-card-categories{
+    width:150px;
+    border-radius: 25px;
+    span{
+        width:100%;
+        border-radius:25px;
+        margin-bottom:5px;
+        background-color:$t4_bg_orange;
+        color:$t4_bg_black;
+        text-align:center;
+    }
+    img{
+        width:100%;
+        border-radius: 25px;
+    }
+}

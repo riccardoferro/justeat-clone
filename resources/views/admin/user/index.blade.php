@@ -68,19 +68,35 @@
 
 
 
+        <div class="row text-center">
+            <h1>Le tue Categorie</h1>
+        </div>
 
-        <h1>Le tue Categorie</h1>
-
+        {{-- Sezione Categorie --}}
         @if (count($user->categories))
-            @foreach ($user->categories as $category)
-                <p>{{ $category->name }}</p>
-                <img src="{{ asset('storage/images/category_img/' . $category->image) }}" alt="{{ $category->name }}"
-                    style="width:150px">
-            @endforeach
-            <a href="{{ route('admin.categories.edit', $user->id) }}">Modifica le tue categorie</a>
+            <div class="row justify-content-center mt-3 ">
+                @foreach ($user->categories as $category)
+                    <div class="col-auto d-flex flex-column align-items-center t4-card-categories">
+                        <span>{{ $category->name }}</span>
+                        <img src="{{ asset('storage/images/category_img/' . $category->image) }}"
+                            alt="{{ $category->name }}" style="width:150px">
+                    </div>
+                @endforeach
+            </div>
+
+
+
+            <div class="d-flex t4-w100 justify-content-center mt-5">
+
+                <button class="btn t4-add-btn d-flex align-items-center me-3"
+                    href="{{ route('admin.categories.edit', $user->id) }}">Modifica
+                    le tue categorie</button>
+
+            </div>
         @else
             <p>Al momento non possiedi alcuna categoria</p>
-            <a href="{{ route('admin.categories.create', $user->id) }}">Aggiungi categoria</a>
+            <a class="btn t4-add-btn d-flex align-items-center me-3"
+                href="{{ route('admin.categories.create', $user->id) }}">Aggiungi categoria</a>
         @endif
     </div>
 
