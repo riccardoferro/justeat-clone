@@ -23,10 +23,10 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md  pl-0 pr-0 ">
+        <nav class="navbar navbar-expand-md  pl-0 pr-0 sticky-top t4-bg-nav">
             <div class="container-fluid t4-10vh">
                 {{-- Logo --}}
-                <div class="col-xl-2 t4-logo t4-h100 p-0">
+                <div class="col-xl-1 t4-logo t4-h100 p-0">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="/images/logo.png" alt="Booleat">
                     </a>
@@ -50,8 +50,9 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle t4-orange-text" href="#"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -94,8 +95,9 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle t4-orange-text" href="#"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 

@@ -11890,14 +11890,17 @@ fieldset:disabled .btn {
   width: 100%;
   border-radius: 25px;
   margin-bottom: 5px;
-  background-color: #FF9741;
-  color: #0B100C;
+  color: #fff;
   text-align: center;
 }
 
 .t4-card-categories img {
   width: 100%;
   border-radius: 25px;
+}
+
+.t4-img-data img {
+  width: 100%;
 }
 
 /*!
@@ -23597,6 +23600,15 @@ body {
   color: #FFFFFF;
 }
 
+.t4-bg-nav {
+  background-color: #0B100C;
+  z-index: 1000;
+}
+
+.t4-nav-items {
+  font-size: 0.7rem;
+}
+
 .t4-logo {
   height: 100%;
 }
@@ -23609,7 +23621,8 @@ body {
   height: 100%;
 }
 
-.t4-orange-text {
+.t4-orange-text,
+.t4-nav-link {
   color: #E68B3F;
 }
 
@@ -23912,7 +23925,11 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 30px;
 }
 
-.t4-link-hover:hover {
+.t4-link-hover:hover > a {
   color: rgb(178, 80, 0);
+}
+
+.t4-link-hover:hover > button {
+  border-color: #E68B3F;
 }
 
