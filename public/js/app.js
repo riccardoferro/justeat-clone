@@ -53722,13 +53722,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log('ok');
   document.getElementById('increment').addEventListener('click', function () {
     document.getElementById('price-input').value++;
   });
+  console.log('ok');
   document.getElementById('decrement').addEventListener('click', function () {
     document.getElementById('price-input').value--;
   });
+  console.log('Ok 2');
 });
 
 /***/ }),
