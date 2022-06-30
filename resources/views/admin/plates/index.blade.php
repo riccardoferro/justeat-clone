@@ -120,7 +120,7 @@
                     @endforeach
                 @else
                     <div class="col-4 text-center mt-5">
-                        <img src="/images/empty.png" alt="" class="t4-empty-plates">
+                        <img src="/images/sad.png" alt="" class="t4-empty-plates">
                         <h1>Non hai nessuno Prodotto</h1>
                     </div>
                 @endif
