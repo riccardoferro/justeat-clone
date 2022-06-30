@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid align-items-center">
         <div class="row mt-5 mb-5">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center d-flex flex-column align-items-center">
                 <h2>Categorie
                     <span class="t4-category-icon">
                         <img src="/images/pizza.png" alt="pizza-icon">
@@ -16,6 +16,12 @@
                     </span>
                 </h2>
                 <h4>Seleziona una o più categorie tra Pizza, Fast Food e tante altre!</h4>
+                <div class="col-xxl-1 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-6">
+                    <a href="{{ route('admin.user.index') }}" class="btn t4-add-btn d-flex align-items-center">
+                        <span class="me-2">Indietro </span>
+                        <img src="/images/replay.png" alt="">
+                    </a>
+                </div>
             </div>
         </div>
 
