@@ -62,7 +62,7 @@
                                 class="form-check-input @error('categories') is-invalid @enderror " 
                                 type="checkbox"
                                 value="{{ $category->id }}"
-                                {{-- {{ $user->categories->contains($category) ? 'checked' : '' }}  --}}
+                                {{ $user->categories->contains($category) ? 'checked' : '' }} 
                             />
 
 
