@@ -67,7 +67,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if ($user->id != Auth::user()->id) {
-            return view('admin.notFound');
+            return view('layouts.notFound');
         } else {
             return view('admin.user.edit', compact('plate'));
         }

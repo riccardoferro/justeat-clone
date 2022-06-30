@@ -40,5 +40,5 @@ Route::middleware('auth')
 Route::get("{any?}", function () {
 
     // Lavorazioni in corso
-    return view('layouts.notFound');
+    return view('guest.home');
 })->where("any", ".*");

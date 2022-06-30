@@ -31,7 +31,7 @@ class CategoriesController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.categories.create',compact('categories'));
+        return view('admin.categories.create', compact('categories'));
     }
 
     /**
@@ -69,13 +69,13 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $user= User::find($id);
+        $user = User::find($id);
         $categories = Category::all();
 
         if ($user->id != Auth::user()->id) {
-            return view('admin.notfound');
+            return view('layouts.notFound');
         } else {
-            return view('admin.categories.edit', compact('categories','user'));
+            return view('admin.categories.edit', compact('categories', 'user'));
         }
     }
 
@@ -89,13 +89,13 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'categories'=>'required'
-        ],[
+            'categories' => 'required'
+        ], [
             'categories.required' => 'Inserire almeno una categoria'
         ]);
 
         $dataCategory = $request->all();
-        $user= User::find($id);
+        $user = User::find($id);
 
         $user->categories()->sync($dataCategory['categories']);
 
