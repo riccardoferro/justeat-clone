@@ -16,7 +16,7 @@
 @section('content')
     <div class="container-fluid t4-h100vh mt-5">
         <div class="row text-center mt-5 mb-5 justify-content-center">
-            <div class="col-8">
+            <div class="col-xxl-6 col-xl-8 col-lg-8 col-md-10 col-sm-11 col-12">
                 <div class="t4-glass-card d-flex flex-column align-items-center py-5">
                     <h2>Benvenuto {{ $user->name }}!</h2>
                     <h4>In questa sezione potrai visualizzare e modificare i tuoi dati</h4>
@@ -27,7 +27,7 @@
                             </span>
                             Ricordati di inserire almeno una categoria per poter utilizzare tutte le funzioni di Booleat
                         </p>
-                        <div class="col-xxl-3 col-xl-3  col-md-4 col-sm-6 col-5">
+                        <div class="col-xxl-3 col-xl-3 col-md-4 col-sm-6 col-8">
                             <a class="btn t4-add-btn t4-btn-group d-flex align-items-center text-center"
                                 href="{{ route('admin.categories.create', $user->id) }}">Aggiungi Categoria
                                 <img class="ms-2" src="/images/plus.png" alt=""></a>
@@ -37,10 +37,10 @@
 
             </div>
         </div>
-        <div class="row mt-5 justify-content-xl-center justify-content-md-end mb-5">
+        <div class="row mt-5 justify-content-xl-center justify-content-md justify-content-center mb-5">
 
             {{-- Immagine profilo --}}
-            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+            <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-8">
                 <form action="{{ route('admin.user.update', $user->id) }}" method="POST" enctype='multipart/form-data'>
                     @csrf
                     @method('PUT')
@@ -83,7 +83,8 @@
 
             {{-- Dati Utenti --}}
 
-            <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-7 d-flex flex-column align-items-start t4-dataUser">
+            <div
+                class="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-8 col-12 d-flex flex-column align-items-start t4-dataUser">
 
                 <h2>I tuoi Dati</h2>
                 <label for="">Nome azienda</label>
@@ -107,7 +108,7 @@
 
 
 
-        <div class="row text-center">
+        <div class="row text-center pt-5">
             <h2>Le tue Categorie</h2>
         </div>
 
