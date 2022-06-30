@@ -71,6 +71,14 @@
                     </ul>
                 </button>
 
+                <div>
+                    <a href="{{ url('admin/user') }}" style="color: orange"> Profilo</a>
+                    <a href="{{ url('#') }}" style="color: orange" > Categorie </a>
+                    <a href="{{ url('admin/plates') }}" style="color: orange">Menu'</a>
+                    <a href="{{ url('#') }}" style="color: orange"> Ordini </a>
+                    <a href="{{ url('#') }}" style="color: orange"> Statistiche </a>
+                </div>
+
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
 
