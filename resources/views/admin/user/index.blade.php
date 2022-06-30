@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('navcategory')
+<<<<<<< HEAD
     <a class="me-3" href="{{ url('admin/user') }}" style="color: orange"> PROFILO</a>
     @if (count($user->categories))
         <a class="me-3" href="{{ route('admin.categories.edit', $user->id) }}" style="color: orange"> CATEGORIE </a>
@@ -11,11 +12,24 @@
     @endif
     <a class="me-3" href="{{ url('#') }}" style="color: orange"> ORDINI </a>
     <a class="me-3" href="{{ url('#') }}" style="color: orange"> STATISTICHE </a>
+=======
+    <div class="t4-nav-items">
+        <a class="me-3" href="{{ url('admin/user') }}" style="color: orange"> PROFILO</a>
+        @if (count($user->categories))
+            <a class="me-3" href="{{ route('admin.categories.edit', $user->id) }}" style="color: orange"> CATEGORIE </a>
+        @else
+            <a class="me-3" href="{{ route('admin.categories.create', $user->id) }}" style="color: orange"> CATEGORIE </a>
+        @endif
+        <a class="me-3" href="{{ url('admin/plates') }}" style="color: orange">PIATTI</a>
+        <a class="me-3" href="{{ url('#') }}" style="color: orange"> ORDINI </a>
+        <a class="me-3" href="{{ url('#') }}" style="color: orange"> STATISTICHE </a>
+    </div>
+>>>>>>> new-layouts
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row text-center">
+    <div class="container-fluid t4-h100vh mt-5">
+        <div class="row text-center mt-5 mb-5">
             <div class="col-12">
                 <h2>Benvenuto {{ $user->name }}!</h2>
                 <h4>In questa sezione potrai visualizzare e modificare i tuoi dati</h4>
@@ -28,10 +42,10 @@
                 @endif
             </div>
         </div>
-        <div class="row mt-5 justify-content-around">
+        <div class="row mt-5 justify-content-xl-center justify-content-md-end mb-5">
 
             {{-- Immagine profilo --}}
-            <div class="col-xl-2 col-md-4 col-sm-10 m-auto ">
+            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
                 <form action="{{ route('admin.user.update', $user->id) }}" method="POST" enctype='multipart/form-data'>
                     @csrf
                     @method('PUT')
@@ -74,7 +88,7 @@
 
             {{-- Dati Utenti --}}
 
-            <div class="col-xl-4 col-md-7 col-sm-10 m-auto d-flex flex-column align-items-start t4-dataUser">
+            <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-6 d-flex flex-column align-items-start t4-dataUser">
 
                 <h2>I tuoi Dati</h2>
                 <label for="">Nome azienda</label>
@@ -86,6 +100,11 @@
                 <label for="">Partita IVA</label>
                 <p>{{ $user->partita_iva }}</p>
 
+            </div>
+
+            <div
+                class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 t4-img-data d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none">
+                <img src="/images/video-call.png" alt="">
             </div>
 
 
@@ -113,10 +132,13 @@
 
             <div class="d-flex t4-w100 justify-content-center mt-5 mb-5">
 
-                <button class="btn t4-add-btn d-flex align-items-center me-3">
-                    <a class="t4-orange-text t4-link-hover"
-                        href="{{ route('admin.categories.edit', $user->id) }}">Modificale tue
-                        categorie</a> </button>
+                <button class="btn t4-add-btn d-flex align-items-center me-3 t4-link-hover">
+                    <a class="t4-orange-text" href="{{ route('admin.categories.edit', $user->id) }}">Modificale tue
+                        categorie <span>
+                            <img src="/images/edit-document.png" alt="edit-icon">
+                        </span>
+                    </a>
+                </button>
 
             </div>
         @else

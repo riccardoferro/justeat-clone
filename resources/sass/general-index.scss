@@ -80,12 +80,17 @@
         width:100%;
         border-radius:25px;
         margin-bottom:5px;
-        background-color:$t4_bg_orange;
-        color:$t4_bg_black;
+        color:#fff;
         text-align:center;
     }
     img{
         width:100%;
         border-radius: 25px;
+    }
+}
+
+.t4-img-data {
+    img{
+        width: 100%;
     }
 }

@@ -12,6 +12,15 @@ body {
     color: $t4_white_text;
 }
 
+.t4-bg-nav {
+    background-color: $t4_bg_black;
+    z-index: 1000;
+}
+
+.t4-nav-items {
+    font-size: 0.7rem
+}
+
 .t4-logo {
     height: 100%;
 
@@ -24,8 +33,8 @@ body {
     }
 }
 
-
-.t4-orange-text {
+.t4-orange-text,
+.t4-nav-link {
     color: $t4_orange_text;
 }
 
@@ -356,6 +365,12 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 30px;
 }
 
-.t4-link-hover:hover {
+.t4-link-hover:hover > a{
     color: rgb(178, 80, 0);
 }
+.t4-link-hover:hover > button {
+    border-color: $t4_orange_text;
+}
+
+
+
