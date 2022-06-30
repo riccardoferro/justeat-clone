@@ -416,3 +416,30 @@ margin-bottom: 20px;
 
 }
 
+// Home
+
+.t4-carousel {
+    img{
+        width: 100%;
+        aspect-ratio:1.7;
+    }
+}
+
+.t4-carousel-p{
+    position: relative;
+}
+
+.t4-carousel-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+.t4-search{
+    img{
+        width: 25px;
+        height: 25px;
+    }
+}
+
