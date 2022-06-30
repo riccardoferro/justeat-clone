@@ -23933,3 +23933,37 @@ input[type=number]::-webkit-outer-spin-button {
   border-color: #E68B3F;
 }
 
+.t4-warning img {
+  width: 30px;
+}
+
+.t4-warning-text {
+  font-weight: 200;
+  font-size: 1rem;
+  color: #E68B3F;
+}
+
+.t4-glass-card {
+  background: rgba(19, 18, 18, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  margin-bottom: 50px;
+}
+
+.t4-not-category img {
+  width: 50px;
+}
+
+.t4-category-icon img {
+  width: 40px;
+}
+
+.t4-img-categories {
+  border-radius: 5px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+

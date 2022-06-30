@@ -85,7 +85,7 @@ class RegisterController extends Controller
             'partita_iva' => $data['partita_iva'],
 
 
-            'image' => 'company-default.png',
+            'image' => 'avatar-2.png',
 
 
             'slug' => User::generateToSlug($data['company'])

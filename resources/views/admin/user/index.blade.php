@@ -15,17 +15,26 @@
 
 @section('content')
     <div class="container-fluid t4-h100vh mt-5">
-        <div class="row text-center mt-5 mb-5">
-            <div class="col-12">
-                <h2>Benvenuto {{ $user->name }}!</h2>
-                <h4>In questa sezione potrai visualizzare e modificare i tuoi dati</h4>
-                @if (count($user->categories) == 0)
-                    <h5>Inserisci almeno una Categoria per poter utilizzare tutte le funzioni</h5>
-                    <div>
-                        <a class="btn t4-add-btn d-flex align-items-center me-3"
-                            href="{{ route('admin.categories.create', $user->id) }}">Aggiungi categoria</a>
-                    </div>
-                @endif
+        <div class="row text-center mt-5 mb-5 justify-content-center">
+            <div class="col-8">
+                <div class="t4-glass-card d-flex flex-column align-items-center py-5">
+                    <h2>Benvenuto {{ $user->name }}!</h2>
+                    <h4>In questa sezione potrai visualizzare e modificare i tuoi dati</h4>
+                    @if (count($user->categories) == 0)
+                        <p class="t4-warning-text">
+                            <span class="t4-warning">
+                                <img src="/images/warning.png" alt="">
+                            </span>
+                            Ricordati di inserire almeno una categoria per poter utilizzare tutte le funzioni di Booleat
+                        </p>
+                        <div class="col-xxl-3 col-xl-3  col-md-4 col-sm-6 col-5">
+                            <a class="btn t4-add-btn t4-btn-group d-flex align-items-center text-center"
+                                href="{{ route('admin.categories.create', $user->id) }}">Aggiungi Categoria
+                                <img class="ms-2" src="/images/plus.png" alt=""></a>
+                        </div>
+                    @endif
+                </div>
+
             </div>
         </div>
         <div class="row mt-5 justify-content-xl-center justify-content-md-end mb-5">
@@ -38,7 +47,7 @@
                     <div class="mb-3 d-flex flex-column align-items-center justify-content-around">
 
                         <label class='t4-label-coverUser' for="coverUser" style="cursor: pointer">
-                            @if ($user->image == 'company-default.png')
+                            @if ($user->image == 'avatar-2.png')
                                 <img src="{{ asset('storage/images/' . $user->image) }}" alt="{{ $user->name }}">
                             @else
                                 <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}">
@@ -74,7 +83,7 @@
 
             {{-- Dati Utenti --}}
 
-            <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-6 d-flex flex-column align-items-start t4-dataUser">
+            <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-7 d-flex flex-column align-items-start t4-dataUser">
 
                 <h2>I tuoi Dati</h2>
                 <label for="">Nome azienda</label>
@@ -99,7 +108,7 @@
 
 
         <div class="row text-center">
-            <h1>Le tue Categorie</h1>
+            <h2>Le tue Categorie</h2>
         </div>
 
         {{-- Sezione Categorie --}}
@@ -120,7 +129,8 @@
 
                 <button class="btn t4-add-btn d-flex align-items-center me-3 t4-link-hover">
                     <a class="t4-orange-text" href="{{ route('admin.categories.edit', $user->id) }}">Modificale tue
-                        categorie <span>
+                        categorie
+                        <span>
                             <img src="/images/edit-document.png" alt="edit-icon">
                         </span>
                     </a>
@@ -128,9 +138,17 @@
 
             </div>
         @else
-            <p>Al momento non possiedi alcuna categoria</p>
-            <a class="btn t4-add-btn d-flex align-items-center me-3"
-                href="{{ route('admin.categories.create', $user->id) }}">Aggiungi categoria</a>
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h4>Al momento non è presente alcuna categoria
+                        <span class="t4-not-category">
+                            <img src="/images/sad.png" alt="sad-face">
+                        </span>
+                    </h4>
+                </div>
+            </div>
+            {{-- <a class="btn t4-add-btn d-flex align-items-center me-3"
+                href="{{ route('admin.categories.create', $user->id) }}">Aggiungi categoria</a> --}}
         @endif
     </div>
 @endsection
