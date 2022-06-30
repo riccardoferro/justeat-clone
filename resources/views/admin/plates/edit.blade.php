@@ -49,7 +49,7 @@
                         <div class="d-flex justify-content-start align-items-center">
 
                             <div id="decrement"><img src="/images/minus.png" alt=""></div>
-                            <input type="number" step="any"
+                            <input type="number" step="any" min='0'
                                 class="form-control mb-0  @error('price') is-invalid @enderror" id="price-input"
                                 placeholder="Prezzo" name='price' value="{{ old('price', $plate->price) }}">
                             <div id="increment"><img src="/images/plus.png" alt=""></div>
