@@ -4,10 +4,11 @@
     <a class="me-3" href="{{ url('admin/user') }}" style="color: orange"> PROFILO</a>
     @if (count($user->categories))
         <a class="me-3" href="{{ route('admin.categories.edit', $user->id) }}" style="color: orange"> CATEGORIE </a>
+        <a class="me-3" href="{{ url('admin/plates') }}" style="color: orange">PIATTI</a>
     @else
         <a class="me-3" href="{{ route('admin.categories.create', $user->id) }}" style="color: orange"> CATEGORIE </a>
+        <a class="me-3" href="#" style="color: orange">PIATTI</a>
     @endif
-    <a class="me-3" href="{{ url('admin/plates') }}" style="color: orange">PIATTI</a>
     <a class="me-3" href="{{ url('#') }}" style="color: orange"> ORDINI </a>
     <a class="me-3" href="{{ url('#') }}" style="color: orange"> STATISTICHE </a>
 @endsection
@@ -18,6 +19,13 @@
             <div class="col-12">
                 <h2>Benvenuto {{ $user->name }}!</h2>
                 <h4>In questa sezione potrai visualizzare e modificare i tuoi dati</h4>
+                @if (count($user->categories) == 0)
+                    <h5>Inserisci almeno una Categoria per poter utilizzare tutte le funzioni</h5>
+                    <div>
+                        <a class="btn t4-add-btn d-flex align-items-center me-3"
+                            href="{{ route('admin.categories.create', $user->id) }}">Aggiungi categoria</a>
+                    </div>
+                @endif
             </div>
         </div>
         <div class="row mt-5 justify-content-around">

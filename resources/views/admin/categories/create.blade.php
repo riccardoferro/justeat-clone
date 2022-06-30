@@ -18,9 +18,6 @@
     </div>
 
     <div class="form-group">
-        <div class="col-4 text-center mt-5">
-            <img src="/images/sad.png" alt="" class="t4-empty-plates">
-        </div>
         <button type="submit" class="btn btn-success">
             Aggiungi le tue categorie
         </button>

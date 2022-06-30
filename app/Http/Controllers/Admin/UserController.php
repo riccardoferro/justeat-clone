@@ -66,7 +66,12 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.user.edit', compact('user'));
+        if ($user->id != Auth::user()->id) {
+            return view('admin.notfound');
+        } else {
+            return view('admin.user.edit', compact('plate'));
+        }
+        // return view('admin.user.edit', compact('user'));
     }
 
     /**
@@ -98,18 +103,6 @@ class UserController extends Controller
         $user->update();
 
         return redirect()->route('admin.user.index');
-        // $dataCategory = $request->all();
-
-
-        // $user->categories()->sync($dataCategory['categories']);
-
-
-        // // dd($dataCategory['categories']);
-
-        // // $user->categories->slug = Category::generateToSlug($user->categories->name;
-
-
-        // return redirect()->route('admin.user.index');
     }
 
     /**

@@ -71,7 +71,12 @@ class CategoriesController extends Controller
     {
         $user= User::find($id);
         $categories = Category::all();
-        return view('admin.categories.edit', compact('categories','user'));
+
+        if ($user->id != Auth::user()->id) {
+            return view('admin.notfound');
+        } else {
+            return view('admin.categories.edit', compact('categories','user'));
+        }
     }
 
     /**
