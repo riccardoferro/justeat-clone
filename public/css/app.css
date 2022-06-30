@@ -5,6 +5,10 @@
   background-color: #0B100C;
 }
 
+.t4-orangeText {
+  color: #E68B3F;
+}
+
 .t4-10vh {
   height: 10vh;
 }
@@ -11751,6 +11755,10 @@ fieldset:disabled .btn {
   background-color: #0B100C;
 }
 
+.t4-orangeText {
+  color: #E68B3F;
+}
+
 .t4-10vh {
   height: 10vh;
 }
@@ -11781,6 +11789,10 @@ fieldset:disabled .btn {
 
 .t4-bg-black {
   background-color: #0B100C;
+}
+
+.t4-orangeText {
+  color: #E68B3F;
 }
 
 .t4-10vh {

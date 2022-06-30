@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,13 +23,13 @@ Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin')
     ->group(function () {
-    Route::get('/', 'HomeController@index')->name('index');
+        Route::get('/', 'HomeController@index')->name('index');
 
         // Route::get('/', 'HomeController@index')
         //     ->name('index');
-         Route::resource('/user','UserController');
-         Route::resource('/plates', 'PlatesController');
-         Route::resource('/categories', 'CategoriesController');
+        Route::resource('/user', 'UserController');
+        Route::resource('/plates', 'PlatesController');
+        Route::resource('/categories', 'CategoriesController');
     });
 
 
@@ -39,6 +40,5 @@ Route::middleware('auth')
 Route::get("{any?}", function () {
 
     // Lavorazioni in corso
-    return view('guest.home');
-
+    return view('layouts.notFound');
 })->where("any", ".*");

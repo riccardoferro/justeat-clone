@@ -100,7 +100,7 @@ class PlatesController extends Controller
     {
         // Questo pezzo di codice ci servirà come ulteriore controllo per gli utenti
         if ($plate->user_id != Auth::user()->id) {
-            return view('admin.notfound');
+            return view('admin.notFound');
         } else {
             return view('admin.plates.edit', compact('plate'));
         }
