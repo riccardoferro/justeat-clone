@@ -22,7 +22,7 @@
                                 <label for="name">Nome *</label>
                                 <input id="name" type="text" placeholder="Nome"
                                     class="form-control @error('name') is-invalid @enderror" name="name"
-                                    value="{{ old('name') }}" autocomplete="name" autofocus>
+                                    value="{{ old('name') }}" autocomplete="name" autofocus required>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -37,9 +37,9 @@
 
                             <div class="col-xl-10 col-md-9 col-sm-10">
                                 <label for="email">E-mail *</label>
-                                <input id="email" placeholder="E-mail"
+                                <input type='email' id="email" placeholder="E-mail"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" autocomplete="email">
+                                    value="{{ old('email') }}" autocomplete="email" required>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -56,7 +56,7 @@
                                 <label for="password">Password *</label>
                                 <input id="password" type="password" placeholder="Password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
-                                    autocomplete="new-password">
+                                    autocomplete="new-password" required>
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -72,8 +72,8 @@
                             <div class="col-xl-10 col-md-9 col-sm-10">
                                 <label for="password-confirm">Conferma Password *</label>
                                 <input id="password-confirm" type="password" class="form-control"
-                                    placeholder="Conferma Password" name="password_confirmation"
-                                    autocomplete="new-password">
+                                    placeholder="Conferma Password" name="password_confirmation" autocomplete="new-password"
+                                    required>
                                 @error('password_confirmation')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -91,7 +91,7 @@
                                 <label for="company">Azienda *</label>
                                 <input id="company" type="company" placeholder="Azienda"
                                     class="form-control @error('company') is-invalid @enderror" name="company"
-                                    autocomplete="new-company">
+                                    autocomplete="new-company" value="{{ old('company') }}" required>
 
                                 @error('company')
                                     <span class="invalid-feedback" role="alert">
@@ -109,7 +109,7 @@
                                 <label for="address">Indirizzo *</label>
                                 <input id="address" type="address" placeholder="Indirizzo"
                                     class="form-control @error('address') is-invalid @enderror" name="address"
-                                    autocomplete="new-address">
+                                    autocomplete="new-address" value="{{ old('address') }}" required>
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -127,7 +127,7 @@
                                 <label for="partita_iva">Partita Iva *</label>
                                 <input id="partita_iva" type="partita_iva" placeholder="P.IVA"
                                     class="form-control @error('partita_iva') is-invalid @enderror" name="partita_iva"
-                                    autocomplete="new-partita_iva">
+                                    autocomplete="new-partita_iva" value="{{ old('partita_iva') }}" required>
 
                                 @error('partita_iva')
                                     <span class="invalid-feedback" role="alert">
