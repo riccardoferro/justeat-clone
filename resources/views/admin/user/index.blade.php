@@ -30,7 +30,12 @@
                     <div class="mb-3 d-flex flex-column align-items-center justify-content-around">
 
                         <label class='t4-label-coverUser' for="coverUser" style="cursor: pointer">
-                            <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}">
+                            @if ($user->image == 'company-default.png')
+                                <img src="{{ asset('storage/images/' . $user->image) }}" alt="{{ $user->name }}">
+                            @else
+                                <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}">
+                            @endif
+
                         </label>
 
 
