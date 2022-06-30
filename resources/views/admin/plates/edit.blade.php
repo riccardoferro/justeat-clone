@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('navcategory')
+    <a href="{{ route('admin.user.index') }}" class="btn t4-add-btn d-flex align-items-center">
+        <span class="me-2">Torna al Profilo </span>
+        <img src="/images/replay.png" alt="">
+    </a>
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -13,7 +20,8 @@
 
             {{-- Form --}}
             <div class="col-xxl-4 col-xl-4 col-md-5 mt-5 order-xx-1 order-xl-1 order-md-1 order-sm-2 order-2">
-                <form action="{{ route('admin.plates.update', $plate->id) }}" method="POST" enctype='multipart/form-data'>
+                <form action="{{ route('admin.plates.update', $plate->id) }}" method="POST"
+                    enctype='multipart/form-data'>
                     @csrf
                     @method('PUT')
 
@@ -79,8 +87,7 @@
                             <span class="me-2">Modifica </span>
                             <img src="/images/edit-document.png" alt="">
                         </button>
-                        <button href="{{ route('admin.plates.index') }}"
-                            class="btn t4-add-btn d-flex align-items-center">
+                        <button href="{{ route('admin.plates.index') }}" class="btn t4-add-btn d-flex align-items-center">
                             <span class="me-2">Indietro </span>
                             <img src="/images/replay.png" alt="">
                         </button>

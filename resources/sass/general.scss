@@ -6,47 +6,52 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-body{
+body {
     background-color: $t4_bg_black;
     font-family: 'Montserrat', sans-serif;
-    color:$t4_white_text;
+    color: $t4_white_text;
 }
 
-.t4-logo{
-    height:100%;
-    a{
-        height:100%;
+.t4-logo {
+    height: 100%;
+
+    a {
+        height: 100%;
     }
-    img{
-        height:100%;
-    }
-}
 
-
-.t4-orange-text{
-    color:$t4_orange_text;
-}
-
-a{
-    text-decoration:none;
-
-    &:hover{
-        text-decoration:none;
+    img {
+        height: 100%;
     }
 }
-// Login e Register Navbar
-.nav-item{
+
+
+.t4-orange-text {
+    color: $t4_orange_text;
+}
+
+a {
+    text-decoration: none;
+
     &:hover {
-            transform: scale(1.1);
-        }
-    a{
-        height:100%;
-        &:hover{
+        text-decoration: none;
+    }
+}
+
+// Login e Register Navbar
+.nav-item {
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    a {
+        height: 100%;
+
+        &:hover {
             color: $t4_orange_text;
         }
 
-        img{
-            height:100%;
+        img {
+            height: 100%;
         }
     }
 }
@@ -54,10 +59,9 @@ a{
 
 // JumboRegister
 .t4-jumbo-register,
-.t4-jumbo-login
-{
+.t4-jumbo-login {
     img {
-        width:100%;
+        width: 100%;
     }
 
 
@@ -68,76 +72,88 @@ a{
     border-radius: 20px;
 }
 
-.t4-form-register{
+.t4-form-register {
     display: flex;
-    input{
-        margin-bottom:5px !important;
+
+    input {
+        margin-bottom: 5px !important;
     }
-    label{
-        margin-left:10px;
+
+    label {
+        margin-left: 10px;
     }
 
 
 }
 
-.t4-register-text{
+.t4-register-text {
     margin-left: 10px;
 }
 
-.t4-register-title{
-    color:$t4_white_text;
+.t4-register-title {
+    color: $t4_white_text;
+
     p {
-        font-weight:100;
+        font-weight: 100;
         font-size: 1.2rem;
     }
 
 }
-.t4-btn-group{
-display: flex;
-justify-content: center;
-    button{
-        border-radius:25px;
-        background-color:$t4_bg_black;
-        border:2px solid $t4_orange_text;
-        color:$t4_orange_text;
+
+.t4-btn-group {
+    display: flex;
+    justify-content: center;
+
+    button {
+        border-radius: 25px;
+        background-color: $t4_bg_black;
+        border: 2px solid $t4_orange_text;
+        color: $t4_orange_text;
         text-align: center;
         font-size: 0.8rem;
         padding: 2px 25px;
-        &:hover{
+
+        &:hover {
             background-color: $t4_bg_orange;
             color: #000000;
-            border:2px solid $t4_bg_black;
+            border: 2px solid $t4_bg_black;
             // outline-offset: 3px;
             // outline: 2px solid $t4_orange_text;
         }
-        &:hover > a {
+
+        &:hover>a {
             color: #000000;
         }
+
         a {
-            color:$t4_orange_text;
+            color: $t4_orange_text;
         }
     }
 }
 
-input{
-    background-color: $t4_bg_input !important;
+input {
+    background-color: $t4_bg_input  !important;
     border-radius: 25px !important;
-    color:$t4_orange_text !important;
-    border:none !important;
+    color: $t4_orange_text  !important;
+    border: none !important;
     margin-bottom: 20px !important;
     font-size: 0.8rem !important;
     font-weight: 100 !important;
-    textarea:focus, input:focus{ border: none; }
 
-    &::placeholder{
-        color:$t4_orange_text !important;
+    textarea:focus,
+    input:focus {
+        border: none;
+    }
+
+    &::placeholder {
+        color: $t4_orange_text  !important;
     }
 }
 
 // change color input
 .form-control:focus,
-.form-check-input:focus  {
-    border-color:$t4_orange_text;
+.form-check-input:focus {
+    border-color: $t4_orange_text;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 144, 80, 0.995);
 }
 
@@ -147,20 +163,21 @@ input{
     font-size: 0.8rem;
 }
 
-.t4-forgot:hover{
+.t4-forgot:hover {
     color: rgb(178, 80, 0);
 }
 
 
 .t4-jumbo-login {
-    margin-top:150px
+    margin-top: 150px
 }
 
 // required fields
 form label {
     color: $t4_orange_text;
 }
-form  label.required::before {
+
+form label.required::before {
     content: '*';
     font-size: 1.1em;
     font-weight: bold;
@@ -168,11 +185,11 @@ form  label.required::before {
     margin-right: 5px;
 }
 
-form  label.required:after {
+form label.required:after {
     content: '(Questo campo è obbligatorio)';
     font-size: 90%;
     font-weight: normal;
-    color:#c00;
+    color: #c00;
     padding-left: 0.5em;
 }
 
@@ -180,21 +197,24 @@ form  label.required:after {
 .t4-add-btn {
     border: 2px solid $t4_orange_text;
     border-radius: 25px;
-    color:$t4_orange_text !important;
+    color: $t4_orange_text  !important;
+
     &:hover {
 
         transform: scale(1.1);
     }
-   img{
-    width: 17px;
-    margin-left: 2px;
-   }
-   span {
-    color: $t4_orange_text;
-   }
+
+    img {
+        width: 17px;
+        margin-left: 2px;
+    }
+
+    span {
+        color: $t4_orange_text;
+    }
 }
 
-.t4-title-create{
+.t4-title-create {
     h4 {
         font-weight: 200;
     }
@@ -210,9 +230,9 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: $t4_bg_black;
-  box-shadow: 0 0 0px 1000px $t4_bg_orange inset;
-  transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: $t4_bg_black;
+    box-shadow: 0 0 0px 1000px $t4_bg_orange inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 //change checkbox color
@@ -237,25 +257,28 @@ input[type='radio']:checked:after {
     top: -2px;
     left: -1px;
     position: relative;
-    background-color:$t4_orange_text  ;
+    background-color: $t4_orange_text ;
     content: '';
     display: inline-block;
     visibility: visible;
     border: 2px solid $t4_bg_input;
 }
+
 input[type="file"] {
     display: none;
 }
-.t4-photo-label{
-    border: 2px solid $t4_bg_input;
-    border-radius:25px;
-        display: inline-block;
-        padding: 6px 12px;
-        cursor: pointer;
-        img{
-            height:1.2rem;
 
-        }
+.t4-photo-label {
+    border: 2px solid $t4_bg_input;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+
+    img {
+        height: 1.2rem;
+
+    }
 }
 
 
@@ -268,24 +291,26 @@ input[type=number]::-webkit-outer-spin-button {
 
 // card -index
 .t4-card {
-    margin:20px;
-    span{
-        color:$t4_orange_text;
+    margin: 20px;
+
+    span {
+        color: $t4_orange_text;
     }
-    .t4-card-img{
-        margin-bottom:20px;
+
+    .t4-card-img {
+        margin-bottom: 20px;
 
 
-        img{
-            width:100%;
-            aspect-ratio:1;
+        img {
+            width: 100%;
+            aspect-ratio: 1;
             object-fit: cover;
             border-radius: 20px;
         }
     }
 
-    .t4-card-info{
-        margin-top:auto;
+    .t4-card-info {
+        margin-top: auto;
     }
 }
 
@@ -293,8 +318,8 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: $t4_bg_black;
 }
 
-.t4-card-app{
-    background-color:#ccc ;
+.t4-card-app {
+    background-color: #ccc;
     border-radius: 20px;
     background-image: url('/images/banner-app.png');
     background-size: cover;
@@ -304,31 +329,33 @@ input[type=number]::-webkit-outer-spin-button {
     background-blend-mode: multiply;
 }
 
-.t4-dashboard-img{
+.t4-dashboard-img {
     img {
         width: 25px;
     }
 }
 
-.t4-banner-app{
-    img{
+.t4-banner-app {
+    img {
         width: 100%;
     }
 }
 
 .t4-bg-black {
 
-    background-color:rgba(30, 30, 30, 0.602);
+    background-color: rgba(30, 30, 30, 0.602);
 
 }
 
 .t4-container-text {
-   position: absolute;
-   top: 25px;
-   left: 25px;
-   background-color: rgba(0, 0, 0, 0.5);
-   border-radius: 20px;
-   padding: 30px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 30px;
 }
 
-
+.t4-link-hover:hover {
+    color: rgb(178, 80, 0);
+}

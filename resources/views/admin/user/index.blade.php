@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+@section('navcategory')
+    <a class="me-3" href="{{ url('admin/user') }}" style="color: orange"> PROFILO</a>
+    @if (count($user->categories))
+        <a class="me-3" href="{{ route('admin.categories.edit', $user->id) }}" style="color: orange"> CATEGORIE </a>
+    @else
+        <a class="me-3" href="{{ route('admin.categories.create', $user->id) }}" style="color: orange"> CATEGORIE </a>
+    @endif
+    <a class="me-3" href="{{ url('admin/plates') }}" style="color: orange">PIATTI</a>
+    <a class="me-3" href="{{ url('#') }}" style="color: orange"> ORDINI </a>
+    <a class="me-3" href="{{ url('#') }}" style="color: orange"> STATISTICHE </a>
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row text-center">
@@ -86,11 +98,12 @@
 
 
 
-            <div class="d-flex t4-w100 justify-content-center mt-5">
+            <div class="d-flex t4-w100 justify-content-center mt-5 mb-5">
 
-                <button class="btn t4-add-btn d-flex align-items-center me-3"
-                    href="{{ route('admin.categories.edit', $user->id) }}">Modifica
-                    le tue categorie</button>
+                <button class="btn t4-add-btn d-flex align-items-center me-3">
+                    <a class="t4-orange-text t4-link-hover"
+                        href="{{ route('admin.categories.edit', $user->id) }}">Modificale tue
+                        categorie</a> </button>
 
             </div>
         @else
@@ -99,8 +112,4 @@
                 href="{{ route('admin.categories.create', $user->id) }}">Aggiungi categoria</a>
         @endif
     </div>
-
-
-    {{-- Da inserire una crud per la modifica delle categorie dei Ristoranti --}}
-
 @endsection
