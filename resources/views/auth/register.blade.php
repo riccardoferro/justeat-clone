@@ -39,7 +39,8 @@
                                 <label for="email">E-mail *</label>
                                 <input type='email' id="email" placeholder="E-mail"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" autocomplete="email" required>
+                                    value="{{ old('email') }}" autocomplete="email"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
