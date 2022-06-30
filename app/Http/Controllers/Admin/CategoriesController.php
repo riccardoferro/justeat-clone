@@ -86,7 +86,7 @@ class CategoriesController extends Controller
         $request->validate([
             'categories'=>'required'
         ],[
-            'categories.required' => 'DEVI INSERIRE ALMENO UNA CATEGORIA'
+            'categories.required' => 'Inserire almeno una categoria'
         ]);
 
         $dataCategory = $request->all();
