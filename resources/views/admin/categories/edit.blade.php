@@ -10,9 +10,9 @@
 @section('content')
     <div class="container-fluid">
 
-        {{-- <h1>Modifica le tue categorie</h1> --}}
-        {{-- Visualizzazione delle categorie presenti --}}
-        <h3 class="text-center">Le tue categorie</h2>
+            {{-- <h1>Modifica le tue categorie</h1> --}}
+            {{-- Visualizzazione delle categorie presenti --}}
+            <h3 class="text-center">Le tue categorie</h2>
 
             <div class="row">
                 @foreach ($user->categories as $category)
@@ -28,57 +28,62 @@
                 @endforeach
             </div>
 
-            <div class="row pt-5 mt-5 text-center pb-5 mb-5">
-                {{-- Qui ci sarà un form per modificare --}}
 
-                <div class="col-12">
+            <form action="{{ route('admin.categories.update', $user->id) }}" 
+                method="POST" enctype="multipart/form-data" 
+                class="row pt-5 mt-5 text-center pb-5 mb-5 justify-content-center flex-column align-items-center"
+            >
 
-                    <form action="{{ route('admin.categories.update', $user->id) }}" method="POST"
-                        enctype="multipart/form-data">
-                        {{-- Token --}}
-                        @csrf
-                        @method('PUT')
+                {{-- Token --}}
+                @csrf
+                @method('PUT')
 
-                        <div class="form-group row text-center">
+                <h3 class="col-auto">Categorie BoolEat</h3>
+                
+                {{-- Qui controlliamo se ci sono errori e li mostrera' --}}
+                @if ($errors->any())
+                        <div class="alert alert-danger col-auto">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                @endif
 
-                            <div class="col-12 pt-5 ">
-                                <h3>Categorie BoolEat</h3>
-                            </div>
+                {{-- CATEGORIE --}}
+                <div class="form-group col-6 d-flex text-center justify-content-around flex-wrap">
+                    @foreach ($categories as $category)
 
-                            @foreach ($categories as $category)
+                        <div class="col-auto  justify-content-center pt-5">
+                            <input 
                                 {{-- name is an array --}}
-                                {{-- RAGAZZI QUI ANDRANNO ANCHE LE IMMAGINI ($all->image) --}}
-                                <div class="col-2 col-auto align-items-centes justify-content-center pt-5">
-                                    <input name="categories[]"
-                                        class="form-check-input @error('categories') is-invalid @enderror " type="checkbox"
-                                        value="{{ $category->id }}"
-                                        {{ $user->categories->contains($category) ? 'checked' : '' }} />
+                                name="categories[]"
+                                class="form-check-input @error('categories') is-invalid @enderror " 
+                                type="checkbox"
+                                value="{{ $category->id }}"
+                                {{-- {{ $user->categories->contains($category) ? 'checked' : '' }}  --}}
+                            />
 
-                                    {{-- <input class="form-check-input" type="checkbox" value="{{ $category->id }}" name="categories[]"
-                                                                {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }}
-                                                        /> --}}
 
-                                    {{-- Nome categoria --}}
-                                    <div class="form-check-label"> {{ $category->name }} </div>
-                                </div>
-                            @endforeach
-
-                            {{-- Qui controlliamo se ci sono errori --}}
-                            @error('categories')
-                                <div class="invalid-feedback" style="color: red ; margin:20px;"> {{ $message }} </div>
-                            @enderror
-
+                            {{-- Nome categoria --}}
+                            <div class="form-check-label"> {{ $category->name }} </div>
                         </div>
+                    @endforeach
 
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success">
-                                Clicca per la Modifica
-                            </button>
-                        </div>
 
-                    </form>
+                    @error('categories')
+                        <div class="invalid-feedback"> {{ $message }} </div>
+                    @enderror
 
                 </div>
-            </div>
+
+                
+                <button type="submit" class="btn col-auto t4-add-btn mt-5 ">
+                    Clicca per la Modifica
+                </button>
+
+            </form>
+
     </div>
 @endsection
