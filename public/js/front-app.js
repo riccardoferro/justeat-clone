@@ -42411,7 +42411,7 @@ var render = function () {
           [
             _c("div", { staticClass: "text-center" }, [
               _c(
-                "h6",
+                "h4",
                 {
                   staticClass:
                     "t4-orange-text t4-fw-6 d-flex align-items-center",
@@ -42431,7 +42431,7 @@ var render = function () {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "d-flex col-8 justify-content-between flex-wrap" },
+              { staticClass: "d-flex col-8 justify-content-start flex-wrap" },
               _vm._l(user.categories, function (category) {
                 return _c(
                   "div",

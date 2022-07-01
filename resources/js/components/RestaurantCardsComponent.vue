@@ -16,17 +16,17 @@
         :key="user.id"
       >
         <div class="text-center">
-          <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
+          <h4 class="t4-orange-text t4-fw-6 d-flex align-items-center">
             {{ user.company }}
             <span class="t4-icon-company ms-2">
               <img src="/images/posate.png" alt="" />
             </span>
-          </h6>
+          </h4>
         </div>
         <div class="col-8 t4-img-company">
           <img :src="imagePut(user.image)" alt="" />
         </div>
-        <div class="d-flex col-8 justify-content-between flex-wrap">
+        <div class="d-flex col-8 justify-content-start flex-wrap">
           <div
             v-for="category in user.categories"
             :key="category.slug"
