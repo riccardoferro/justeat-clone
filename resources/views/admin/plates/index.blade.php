@@ -68,22 +68,7 @@
                                 {{-- fine modifica Piatto  \\\\\\\\\ --}}
 
 
-                                {{-- ////////// ELIMINA PIATTO --}}
-                                <form action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
-                                    class="d-inline-block" method="POST">
 
-                                    @csrf
-                                    @method('DELETE')
-
-
-
-                                    <button id='delete_button' type="submit"
-                                        class="btn t4-add-btn d-flex align-items-center">
-                                        <span class="me-2">Elimina</span>
-                                        <img src="/images/delete.png" alt="">
-                                    </button>
-                                </form>
-                                {{-- Fine Elimina piatto \\\\\\\\\ --}}
 
                             </div>
                             {{-- Fine Sezione Bottoni \\\\\\\\\\\ --}}
