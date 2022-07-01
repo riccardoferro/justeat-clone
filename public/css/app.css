@@ -25,6 +25,10 @@
   height: 100%;
 }
 
+.t4-50vh {
+  height: 50vh;
+}
+
 .t4-h100vh {
   height: 100vh;
 }
@@ -11787,6 +11791,10 @@ fieldset:disabled .btn {
   height: 100%;
 }
 
+.t4-50vh {
+  height: 50vh;
+}
+
 .t4-h100vh {
   height: 100vh;
 }
@@ -11833,6 +11841,10 @@ fieldset:disabled .btn {
 
 .t4-h100 {
   height: 100%;
+}
+
+.t4-50vh {
+  height: 50vh;
 }
 
 .t4-h100vh {
@@ -24093,5 +24105,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .t4-nav-toggle img {
   width: 100%;
+}
+
+.t4-footer {
+  box-shadow: 0px -6px 11px -7px #6E6E6E;
 }
 
