@@ -5384,8 +5384,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "RestaurantCardsComponent"
+  name: "RestaurantCardsComponent",
+  props: {
+    users: Array
+  }
 });
 
 /***/ }),
@@ -5416,6 +5436,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -5431,6 +5454,43 @@ __webpack_require__.r(__webpack_exports__);
     BannerInfoComponent: _components_BannerInfoComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     FooterComponent: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
     RestaurantCardsComponent: _components_RestaurantCardsComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  },
+  data: function data() {
+    return {
+      users: [] // currentPage:1,
+      // previusPageLink:"",
+      // nextPageLink:"",
+
+    };
+  },
+  mounted: function mounted() {
+    this.loadPage("http://127.0.0.1:8000/api/users");
+  },
+  methods: {
+    loadPage: function loadPage(url) {
+      var _this = this;
+
+      window.axios.get(url).then(function (results) {
+        console.log(results);
+
+        if (results.status === 200 && results.data.success) {
+          _this.users = results.data.results; // this.currentPage = results.data.results.current_page;
+          // this.previousPageLink = results.data.results.prev_page_url;
+          // this.nextPageLink = results.data.results.next_page_url;
+        }
+
+        console.log(_this.users);
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    } // Funzioni Cambio Pagina
+    // goPreviousPage() {
+    //   this.loadPage(this.previousPageLink);
+    // },
+    // goNextPage() {
+    //   this.loadPage(this.nextPageLink);
+    // },
+
   }
 });
 
@@ -42093,7 +42153,38 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" })
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.users, function (user) {
+        return _c(
+          "div",
+          {
+            key: user.id,
+            staticClass: "col-4 mb-5",
+            staticStyle: { color: "white" },
+          },
+          [
+            _c("p", [_vm._v(_vm._s(user.name))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(user.company))]),
+            _vm._v(" "),
+            _c(
+              "p",
+              _vm._l(user.categories, function (category) {
+                return _c("span", { key: category.slug }, [
+                  _vm._v("\n          " + _vm._s(category.name)),
+                ])
+              }),
+              0
+            ),
+          ]
+        )
+      }),
+      0
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -42122,7 +42213,7 @@ var render = function () {
     [
       _c("JumbotronComponent"),
       _vm._v(" "),
-      _c("RestaurantCardsComponent"),
+      _c("RestaurantCardsComponent", { attrs: { users: _vm.users } }),
       _vm._v(" "),
       _c("BannerAppComponent"),
       _vm._v(" "),
@@ -58252,7 +58343,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
