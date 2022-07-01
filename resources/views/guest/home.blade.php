@@ -21,13 +21,17 @@
                                     <h2>Mangia con un click</h2>
                                     <h5 class="mb-5">Ordina online dai tuoi ristoranti preferiti</h5>
                                 </div>
-                                <div class="d-flex align-items-baseline mt-sm-5">
+                                <div
+                                    class="d-flex flex-xxl-row flex-xl-row flex-lg-row flex-md-column flex-sm-column align-items-baseline mt-sm-5">
 
                                     <p class="d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block">Ordina online
                                         dai tuoi ristoranti preferiti</p>
-                                    <input id="password" type="search" placeholder="Cerca per ristorante"
-                                        class="form-control">
-                                    <span class="t4-search ms-2"><img src="/images/search.png" alt=""></span>
+                                    <div class="row justify-content-center">
+                                        <input id="password" type="search" placeholder="Cerca per ristorante"
+                                            class="form-control">
+                                        <span class="t4-search ms-2"><img src="/images/search.png" alt=""></span>
+                                    </div>
+
 
 
                                 </div>
@@ -54,28 +58,49 @@
                 </div>
             </div>
         </div>
-        {{-- Sezione Categorie --}}
-        <div class="row t4-50vh"></div>
-        {{-- Banner --}}
-        <div class="row t4-bg-banner-top py-5 justify-content-evenly align-items-center">
-            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-6 col-12 mb-5">
-                <div class="d-flex flex-column t4-card-download">
-                    <h2>Ordina comodamente da casa</h2>
-                    <h4>I nostri Rider arriveranno subito da te</h4>
-                    <p class="t4-orange-text">Scarica l'app e otterai il 25% sul tuo primo ordine!</p>
-                    <div class="row t4-download">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-                            <img src="/images/appstore.svg.png" alt="">
-                        </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-                            <img src="/images/googleplay.png" alt="">
-                        </div>
+        {{-- Main --}}
+        <main>
+            {{-- Sezione Ristoranti --}}
+            <div class="row t4-50vh text-center mt-5">
+                <h2>In evidenza</h2>
+            </div>
+            {{-- Banner download --}}
+            <div class="row t4-bg-banner-top py-5 justify-content-evenly align-items-center">
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-6 col-12 mb-5">
+                    <div class="d-flex flex-column t4-card-download">
+                        <h2>Ordina comodamente da casa</h2>
+                        <h4>I nostri Rider arriveranno subito da te</h4>
+                        <p class="t4-orange-text t4-fw-6">Scarica l'app e otterai il 25% sul tuo primo ordine!</p>
+                        <div class="row t4-download">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                <a href="https://www.apple.com/it/app-store/">
+                                    <img src="/images/appstore.svg.png" alt="">
+                                </a>
 
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                <a href="https://play.google.com/store/games?hl=it&gl=US">
+                                    <img src="/images/googleplay.png" alt="">
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+                <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-8 t4-banner-app">
+                    <img src="/images/Booleat-Tel.png" alt="">
+                </div>
             </div>
-            <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-8 t4-banner-app">
-                <img src="/images/Booleat-Tel.png" alt="">
+            {{-- Banner Loghi partners --}}
+            <div class="row text-center pt-5 t4-50vh">
+                <div class="col-12">
+                    <h2>I nostri Partners</h2>
+
+                </div>
             </div>
-        </div>
+            {{-- Sezione con tre Cards --}}
+            <div class="row t4-50vh t4-bg-orange"></div>
+            {{-- Banner Info --}}
+            <div class="row t4-50vh"></div>
+        </main>
     @endsection
