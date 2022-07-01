@@ -5450,12 +5450,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
     users: Array
   },
   methods: {
+    // Funzione per l'immagine profilo ristoratorante!
     imagePut: function imagePut(string) {
       var newString;
       console.log("stringa presa");
@@ -5467,6 +5495,49 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return newString;
+    },
+    // Funzione immagine categoria
+    categoryIcon: function categoryIcon(string) {
+      switch (string) {
+        case "Fast Food":
+          return string = "/images/category_img/burger.png";
+
+        case "Pizza":
+          return string = "/images/category_img/pizza.png";
+
+        case "Cinese":
+          return string = "/images/category_img/noodles.png";
+
+        case "Giapponese":
+          return string = "/images/category_img/sushi.png";
+
+        case "Poke":
+          return string = "/images/category_img/rice.png";
+
+        case "Dessert":
+          return string = "/images/category_img/dessert.png";
+
+        case "Tailandese":
+          return string = "/images/category_img/pad-thai.png";
+
+        case "Italiano":
+          return string = "/images/category_img/pasta.png";
+
+        case "Smoothie":
+          return string = "/images/category_img/boba.png";
+
+        case "Gelato":
+          return string = "/images/category_img/ice-cream.png";
+
+        case "Vegano":
+          return string = "/images/category_img/vegan.png";
+
+        case "Gluten Free":
+          return string = "/images/category_img/wheat.png";
+
+        case "Vegetariano":
+          return string = "/images/category_img/vegetarian-food.png";
+      }
     }
   }
 });
@@ -42334,8 +42405,8 @@ var render = function () {
           "div",
           {
             key: user.id,
-            staticClass: "col-4 mb-5 d-flex flex-column align-items-center",
-            staticStyle: { color: "white" },
+            staticClass:
+              "\n        col-4\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-card\n      ",
           },
           [
             _c("div", { staticClass: "text-center" }, [
@@ -42352,32 +42423,28 @@ var render = function () {
                   _vm._m(0, true),
                 ]
               ),
-              _vm._v(" "),
-              _c(
-                "h6",
-                { staticClass: "mb-3 t4-fw-6" },
-                [
-                  _c("span", { staticClass: "t4-orange-text" }, [
-                    _vm._v("Categorie:"),
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(user.categories, function (category) {
-                    return _c("span", { key: category.slug }, [
-                      _vm._v(
-                        "\n            " +
-                          _vm._s(category.name) +
-                          "\n          "
-                      ),
-                    ])
-                  }),
-                ],
-                2
-              ),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-8 t4-img-company" }, [
               _c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } }),
             ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "d-flex col-8 justify-content-between flex-wrap" },
+              _vm._l(user.categories, function (category) {
+                return _c(
+                  "div",
+                  { key: category.slug, staticClass: "t4-restaurant-label" },
+                  [
+                    _c("img", {
+                      attrs: { src: _vm.categoryIcon(category.name), alt: "" },
+                    }),
+                  ]
+                )
+              }),
+              0
+            ),
           ]
         )
       }),

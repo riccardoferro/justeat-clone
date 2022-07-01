@@ -24193,3 +24193,17 @@ input[type=number]::-webkit-outer-spin-button {
   width: 25px;
 }
 
+.t4-resturant-card {
+  color: white;
+}
+
+.t4-restaurant-label {
+  margin: 10px auto 10px auto;
+  width: 10%;
+}
+
+.t4-restaurant-label img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
