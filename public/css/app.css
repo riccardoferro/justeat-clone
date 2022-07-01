@@ -37,6 +37,14 @@
   width: 100%;
 }
 
+.t4-w50 {
+  width: 50%;
+}
+
+.t4-w40 {
+  width: 40%;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11787,6 +11795,14 @@ fieldset:disabled .btn {
   width: 100%;
 }
 
+.t4-w50 {
+  width: 50%;
+}
+
+.t4-w40 {
+  width: 40%;
+}
+
 .t4-bg-black {
   background-color: #0B100C;
 }
@@ -11823,6 +11839,14 @@ fieldset:disabled .btn {
   width: 100%;
 }
 
+.t4-w50 {
+  width: 50%;
+}
+
+.t4-w40 {
+  width: 40%;
+}
+
 #decrement,
 #increment {
   width: 30px;
@@ -11845,7 +11869,7 @@ fieldset:disabled .btn {
 }
 
 .t4-empty-plates {
-  width: 20%;
+  width: 30%;
   aspect-ratio: 1;
 }
 
@@ -11913,6 +11937,45 @@ fieldset:disabled .btn {
 
 .t4-img-data img {
   width: 100%;
+}
+
+#t4-delete-form {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgb(11, 16, 12);
+  background: linear-gradient(0deg, rgb(11, 16, 12) 0%, rgb(230, 139, 63) 37%, rgb(255, 151, 65) 100%);
+  border-radius: 25px;
+  color: black;
+}
+
+#t4-delete-form button,
+#t4-delete-form span {
+  width: 40%;
+  height: 100%;
+  background-color: black;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+#t4-delete-form button img,
+#t4-delete-form span img {
+  width: 30%;
+  aspect-ratio: 1;
+}
+
+.op-0 {
+  opacity: 0%;
+}
+
+.op-100 {
+  opacity: 100%;
 }
 
 /*!
