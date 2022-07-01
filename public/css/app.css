@@ -24159,7 +24159,8 @@ input[type=number]::-webkit-outer-spin-button {
   width: 50px;
 }
 
-.t4-nav-toggle img {
+.t4-nav-toggle img,
+.t4-icon-company img {
   width: 35px;
 }
 
@@ -24169,5 +24170,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .t4-nav-item img {
   width: 25px;
+}
+
+.t4-img-company img {
+  width: 100%;
+  border-radius: 25px;
 }
 

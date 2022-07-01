@@ -5402,6 +5402,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -42170,33 +42180,51 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("h2", { staticClass: "text-center pt-5" }, [_vm._v("In evidenza")]),
+    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row" },
+      { staticClass: "row pt-5 justify-content-center" },
       _vm._l(_vm.users, function (user) {
         return _c(
           "div",
           {
             key: user.id,
-            staticClass: "col-4 mb-5",
+            staticClass: "col-4 mb-5 d-flex flex-column align-items-center",
             staticStyle: { color: "white" },
           },
           [
-            _c("p", [_vm._v(_vm._s(user.name))]),
+            _c("div", { staticClass: "text-center" }, [
+              _c("h6", { staticClass: "t4-orange-text" }, [
+                _vm._v("\n          " + _vm._s(user.company) + "\n          "),
+                _vm._m(0, true),
+              ]),
+              _vm._v(" "),
+              _c(
+                "h6",
+                { staticClass: "mb-3" },
+                [
+                  _c("span", { staticClass: "t4-orange-text" }, [
+                    _vm._v("Categorie:"),
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(user.categories, function (category) {
+                    return _c("span", { key: category.slug }, [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(category.name) +
+                          "\n          "
+                      ),
+                    ])
+                  }),
+                ],
+                2
+              ),
+            ]),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(user.company))]),
-            _vm._v(" "),
-            _c(
-              "p",
-              _vm._l(user.categories, function (category) {
-                return _c("span", { key: category.slug }, [
-                  _vm._v("\n          " + _vm._s(category.name)),
-                ])
-              }),
-              0
-            ),
-            _vm._v(" "),
-            _c("img", { attrs: { src: "/storage/" + user.image, alt: "" } }),
+            _c("div", { staticClass: "col-8 t4-img-company" }, [
+              _c("img", { attrs: { src: "/storage/" + user.image, alt: "" } }),
+            ]),
           ]
         )
       }),
@@ -42204,7 +42232,16 @@ var render = function () {
     ),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "t4-icon-company" }, [
+      _c("img", { attrs: { src: "/images/posate.png", alt: "" } }),
+    ])
+  },
+]
 render._withStripped = true
 
 
