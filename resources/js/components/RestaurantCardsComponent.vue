@@ -14,7 +14,7 @@
             {{ category.name }}</span
           >
         </p>
-        <img :src="'/storage/' + user.image" alt="" />
+        <img :src="imagePut(user.image)" alt="" />
       </div>
     </div>
   </div>
@@ -25,6 +25,18 @@ export default {
   name: "RestaurantCardsComponent",
   props: {
     users: Array,
+  },
+  methods: {
+    imagePut(string) {
+      let newString;
+      console.log("stringa presa");
+      if (string.includes("uploads")) {
+        newString = `/storage/${string}`;
+      } else {
+        newString = `/images/${string}`;
+      }
+      return newString;
+    },
   },
 };
 </script>
