@@ -43,7 +43,7 @@ export default {
       if (string.includes("uploads")) {
         newString = `/storage/${string}`;
       } else {
-        newString = `/images/${string}`;
+        newString = `/images/default-restaurant.jpeg`;
       }
       return newString;
     },

@@ -5463,7 +5463,7 @@ __webpack_require__.r(__webpack_exports__);
       if (string.includes("uploads")) {
         newString = "/storage/".concat(string);
       } else {
-        newString = "/images/".concat(string);
+        newString = "/images/default-restaurant.jpeg";
       }
 
       return newString;
