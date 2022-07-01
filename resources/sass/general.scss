@@ -443,3 +443,18 @@ margin-bottom: 20px;
     }
 }
 
+.t4-bg-orange {
+    background-color: $t4_orange_text;
+}
+
+.t4-text-black{
+    color: $t4_bg_black;
+}
+
+.t4-banner-app {
+    img{
+        width: 100%;
+        border-radius: 25px;
+    };
+}
+

@@ -9,6 +9,14 @@
   color: #E68B3F;
 }
 
+.t4-50vh {
+  height: 50vh;
+}
+
+.t4-30vh {
+  height: 30vh;
+}
+
 .t4-10vh {
   height: 10vh;
 }
@@ -11767,6 +11775,14 @@ fieldset:disabled .btn {
   color: #E68B3F;
 }
 
+.t4-50vh {
+  height: 50vh;
+}
+
+.t4-30vh {
+  height: 30vh;
+}
+
 .t4-10vh {
   height: 10vh;
 }
@@ -11809,6 +11825,14 @@ fieldset:disabled .btn {
 
 .t4-orangeText {
   color: #E68B3F;
+}
+
+.t4-50vh {
+  height: 50vh;
+}
+
+.t4-30vh {
+  height: 30vh;
 }
 
 .t4-10vh {
@@ -24061,5 +24085,18 @@ input[type=number]::-webkit-outer-spin-button {
 .t4-search img {
   width: 25px;
   height: 25px;
+}
+
+.t4-bg-orange {
+  background-color: #E68B3F;
+}
+
+.t4-text-black {
+  color: #0B100C;
+}
+
+.t4-banner-app img {
+  width: 100%;
+  border-radius: 25px;
 }
 

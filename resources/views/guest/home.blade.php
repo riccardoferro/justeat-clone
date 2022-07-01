@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
+        {{-- Jumbotron + Carousel --}}
         <div class="row">
             <div class="col-12 t4-carousel">
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -51,6 +52,24 @@
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+        {{-- Sezione Categorie --}}
+        <div class="row t4-50vh"></div>
+        {{-- Banner --}}
+        <div class="row t4-bg-orange py-5 ps-3">
+            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-3 col-6 t4-text-black">
+                <div class="d-flex flex-column">
+                    <h2>Ordina comodamente da casa</h2>
+                    <h4>I nostri Rider arriveranno subito da te</h4>
+                    <p>Scarica l'app e otterai il 25% sul tuo primo ordine!</p>
+                    <div class="d-flex">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-3 col-6 t4-banner-app">
+                <img src="/images/banner-2.jpeg" alt="">
             </div>
         </div>
     @endsection
