@@ -12,9 +12,10 @@
         <div class="row justify-content-center">
             <div class="col-12 ">
 
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mt-4">
                     <h1>Il tuo menù</h1>
-                    <a href="{{ route('admin.plates.create') }}" class=" btn t4-add-btn d-flex align-items-center ms-5">
+                    <a href="{{ route('admin.plates.create') }}"
+                        class=" btn t4-add-btn d-flex align-items-center ms-5 t4-h80">
                         <span class="me-2">Aggiungi </span>
                         <img src="/images/add2.png" alt="">
                     </a>
@@ -57,7 +58,7 @@
 
                             {{-- /////////////   Sezione Bottoni --}}
                             <div class="t4-card-buttons
-                                d-flex justify-content-between">
+                                d-flex justify-content-center">
 
                                 {{-- ///////   MODIFICA PIATTO --}}
                                 <a href="{{ route('admin.plates.edit', ['plate' => $plate->id]) }}"

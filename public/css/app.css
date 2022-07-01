@@ -33,6 +33,10 @@
   height: 80vh;
 }
 
+.t4-h80 {
+  height: 80%;
+}
+
 .t4-w100 {
   width: 100%;
 }
@@ -11791,6 +11795,10 @@ fieldset:disabled .btn {
   height: 80vh;
 }
 
+.t4-h80 {
+  height: 80%;
+}
+
 .t4-w100 {
   width: 100%;
 }
@@ -11833,6 +11841,10 @@ fieldset:disabled .btn {
 
 .t4-h80vh {
   height: 80vh;
+}
+
+.t4-h80 {
+  height: 80%;
 }
 
 .t4-w100 {
