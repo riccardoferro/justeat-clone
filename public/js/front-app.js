@@ -41422,9 +41422,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 text-center" }, [
-          _vm._v("\n      Benvenuti nel sito Booleat!!!!! FUCK LOSERS\n    "),
-        ]),
+        _c("div", { staticClass: "col-12 text-center" }),
       ]),
     ])
   },
