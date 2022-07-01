@@ -5416,6 +5416,20 @@ __webpack_require__.r(__webpack_exports__);
   name: "RestaurantCardsComponent",
   props: {
     users: Array
+  },
+  methods: {
+    imagePut: function imagePut(string) {
+      var newString;
+      console.log("stringa presa");
+
+      if (string.includes("uploads")) {
+        newString = "/storage/".concat(string);
+      } else {
+        newString = "/images/".concat(string);
+      }
+
+      return newString;
+    }
   }
 });
 
@@ -42222,9 +42236,13 @@ var render = function () {
               ),
             ]),
             _vm._v(" "),
+<<<<<<< HEAD
             _c("div", { staticClass: "col-8 t4-img-company" }, [
               _c("img", { attrs: { src: "/storage/" + user.image, alt: "" } }),
             ]),
+=======
+            _c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } }),
+>>>>>>> f0b1f526f8d6044ae7a6c8c487a4fcbd0a8643a2
           ]
         )
       }),
@@ -58398,7 +58416,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
