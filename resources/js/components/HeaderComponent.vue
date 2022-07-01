@@ -15,11 +15,11 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon t4-nav-toggle">
+          <span class="t4-nav-toggle">
             <img src="/images/menu.png" alt="" />
           </span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse ms-5" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="t4-nav-item t4-orange-text me-3" href="/login"
               ><img src="/images/user.png" alt="Login Booleat" />

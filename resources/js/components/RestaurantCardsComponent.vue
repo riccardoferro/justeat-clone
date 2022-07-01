@@ -14,6 +14,7 @@
             {{ category.name }}</span
           >
         </p>
+        <img :src="'/storage/' + user.image" alt="" />
       </div>
     </div>
   </div>

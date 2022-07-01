@@ -5401,6 +5401,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -41878,18 +41879,16 @@ var staticRenderFns = [
                 },
               },
               [
-                _c(
-                  "span",
-                  { staticClass: "navbar-toggler-icon t4-nav-toggle" },
-                  [_c("img", { attrs: { src: "/images/menu.png", alt: "" } })]
-                ),
+                _c("span", { staticClass: "t4-nav-toggle" }, [
+                  _c("img", { attrs: { src: "/images/menu.png", alt: "" } }),
+                ]),
               ]
             ),
             _vm._v(" "),
             _c(
               "div",
               {
-                staticClass: "collapse navbar-collapse",
+                staticClass: "collapse navbar-collapse ms-5",
                 attrs: { id: "navbarNavAltMarkup" },
               },
               [
@@ -42179,6 +42178,8 @@ var render = function () {
               }),
               0
             ),
+            _vm._v(" "),
+            _c("img", { attrs: { src: "/storage/" + user.image, alt: "" } }),
           ]
         )
       }),
