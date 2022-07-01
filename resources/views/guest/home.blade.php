@@ -57,7 +57,7 @@
         {{-- Sezione Categorie --}}
         <div class="row t4-50vh"></div>
         {{-- Banner --}}
-        <div class="row t4-bg-orange py-5 ps-3">
+        <div class="row t4-bg-orange py-5 justify-content-evenly">
             <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-3 col-6 t4-text-black">
                 <div class="d-flex flex-column">
                     <h2>Ordina comodamente da casa</h2>
@@ -68,8 +68,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-3 col-6 t4-banner-app">
-                <img src="/images/banner-2.jpeg" alt="">
+            <div class="col-xxl-5 col-xl-3 col-lg-3 col-md-5 col-sm-3 col-6 t4-banner-app">
+                <img src="/images/Booleat-Tel.png" alt="">
             </div>
         </div>
     @endsection
