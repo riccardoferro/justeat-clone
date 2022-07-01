@@ -5137,6 +5137,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "BannerAppComponent"
 });
@@ -41768,7 +41806,99 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h2", { staticClass: "text-success" }, [_vm._v("Banner")]),
+      _c(
+        "div",
+        {
+          staticClass:
+            "\n      row\n      t4-bg-banner-top\n      py-5\n      justify-content-evenly\n      align-items-center\n    ",
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-6 col-12 mb-5",
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "d-flex flex-column t4-card-download" },
+                [
+                  _c("h2", [_vm._v("Ordina comodamente da casa")]),
+                  _vm._v(" "),
+                  _c("h4", [_vm._v("I nostri Rider arriveranno subito da te")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "t4-orange-text t4-fw-6" }, [
+                    _vm._v(
+                      "\n          Scarica l'app e otterai il 25% sul tuo primo ordine!\n        "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row t4-download" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6",
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "https://www.apple.com/it/app-store/",
+                            },
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "/images/appstore.svg.png",
+                                alt: "",
+                              },
+                            }),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6",
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "https://play.google.com/store/games?hl=it&gl=US",
+                            },
+                          },
+                          [
+                            _c("img", {
+                              attrs: { src: "/images/googleplay.png", alt: "" },
+                            }),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "\n        col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-8\n        t4-banner-app\n      ",
+            },
+            [_c("img", { attrs: { src: "/images/Booleat-Tel.png", alt: "" } })]
+          ),
+        ]
+      ),
     ])
   },
 ]
@@ -42209,14 +42339,23 @@ var render = function () {
           },
           [
             _c("div", { staticClass: "text-center" }, [
-              _c("h6", { staticClass: "t4-orange-text" }, [
-                _vm._v("\n          " + _vm._s(user.company) + "\n          "),
-                _vm._m(0, true),
-              ]),
+              _c(
+                "h6",
+                {
+                  staticClass:
+                    "t4-orange-text t4-fw-6 d-flex align-items-center",
+                },
+                [
+                  _vm._v(
+                    "\n          " + _vm._s(user.company) + "\n          "
+                  ),
+                  _vm._m(0, true),
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "h6",
-                { staticClass: "mb-3" },
+                { staticClass: "mb-3 t4-fw-6" },
                 [
                   _c("span", { staticClass: "t4-orange-text" }, [
                     _vm._v("Categorie:"),
@@ -42251,7 +42390,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "t4-icon-company" }, [
+    return _c("span", { staticClass: "t4-icon-company ms-2" }, [
       _c("img", { attrs: { src: "/images/posate.png", alt: "" } }),
     ])
   },
@@ -58412,7 +58551,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })

@@ -65,6 +65,10 @@
   font-weight: 500;
 }
 
+.t4-fw-6 {
+  font-weight: 600;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11843,6 +11847,10 @@ fieldset:disabled .btn {
   font-weight: 500;
 }
 
+.t4-fw-6 {
+  font-weight: 600;
+}
+
 .t4-bg-black {
   background-color: #0B100C;
 }
@@ -11905,6 +11913,10 @@ fieldset:disabled .btn {
 
 .t4-fw-5 {
   font-weight: 500;
+}
+
+.t4-fw-6 {
+  font-weight: 600;
 }
 
 #decrement,
@@ -24175,5 +24187,9 @@ input[type=number]::-webkit-outer-spin-button {
 .t4-img-company img {
   width: 100%;
   border-radius: 25px;
+}
+
+.t4-icon-company img {
+  width: 25px;
 }
 

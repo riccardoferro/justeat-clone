@@ -9,13 +9,13 @@
         :key="user.id"
       >
         <div class="text-center">
-          <h6 class="t4-orange-text">
+          <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
             {{ user.company }}
-            <span class="t4-icon-company">
+            <span class="t4-icon-company ms-2">
               <img src="/images/posate.png" alt="" />
             </span>
           </h6>
-          <h6 class="mb-3">
+          <h6 class="mb-3 t4-fw-6">
             <span class="t4-orange-text">Categorie:</span>
             <span v-for="category in user.categories" :key="category.slug">
               {{ category.name }}
