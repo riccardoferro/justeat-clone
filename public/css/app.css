@@ -24087,8 +24087,20 @@ input[type=number]::-webkit-outer-spin-button {
   height: 25px;
 }
 
-.t4-bg-orange {
-  background-color: #E68B3F;
+.t4-bg-banner-top {
+  background-image: url("/images/banner-top.jpeg");
+  background-size: cover;
+  aspect-ratio: 2.5;
+}
+
+.t4-card-download {
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(18.5px);
+  -webkit-backdrop-filter: blur(18.5px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 25px;
 }
 
 .t4-text-black {
@@ -24097,6 +24109,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .t4-banner-app img {
   width: 100%;
-  border-radius: 25px;
+}
+
+.t4-download img {
+  width: 100%;
 }
 
