@@ -42236,13 +42236,9 @@ var render = function () {
               ),
             ]),
             _vm._v(" "),
-<<<<<<< HEAD
             _c("div", { staticClass: "col-8 t4-img-company" }, [
-              _c("img", { attrs: { src: "/storage/" + user.image, alt: "" } }),
+              _c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } }),
             ]),
-=======
-            _c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } }),
->>>>>>> f0b1f526f8d6044ae7a6c8c487a4fcbd0a8643a2
           ]
         )
       }),

@@ -23,7 +23,7 @@
           </h6>
         </div>
         <div class="col-8 t4-img-company">
-          <img :src="'/storage/' + user.image" alt="" />
+          <img :src="imagePut(user.image)" alt="" />
         </div>
       </div>
     </div>
