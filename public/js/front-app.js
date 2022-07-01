@@ -5136,6 +5136,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent"
 });
@@ -41389,7 +41424,84 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", [_c("div", [_vm._v("Questo è il mio Header")])])
+    return _c("header", [
+      _c("nav", { staticClass: "navbar navbar-expand-lg" }, [
+        _c("div", { staticClass: "container-fluid" }, [
+          _c(
+            "a",
+            { staticClass: "navbar-brand t4-logo-nav", attrs: { href: "#" } },
+            [
+              _c("img", {
+                attrs: { src: "/images/logo.png", alt: "logo-booleat" },
+              }),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "navbar-toggler",
+              attrs: {
+                type: "button",
+                "data-bs-toggle": "collapse",
+                "data-bs-target": "#navbarNavAltMarkup",
+                "aria-controls": "navbarNavAltMarkup",
+                "aria-expanded": "false",
+                "aria-label": "Toggle navigation",
+              },
+            },
+            [_c("span", { staticClass: "navbar-toggler-icon" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse navbar-collapse",
+              attrs: { id: "navbarNavAltMarkup" },
+            },
+            [
+              _c("div", { staticClass: "navbar-nav" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "t4-nav-item t4-orange-text",
+                    attrs: { href: "/login" },
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/images/user.png", alt: "Login Booleat" },
+                    }),
+                    _vm._v("\n            Login\n          "),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "t4-nav-item t4-orange-text",
+                    attrs: { href: "/register" },
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/images/register.png",
+                        alt: "Register Booleat",
+                      },
+                    }),
+                    _vm._v("\n            Registrati\n          "),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("a", {
+                  staticClass: "nav-link disabled",
+                  attrs: { href: "#", tabindex: "-1", "aria-disabled": "true" },
+                }),
+              ]),
+            ]
+          ),
+        ]),
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -57129,7 +57241,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
