@@ -86,8 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/@popperjs/core/lib/createPopper.js":
 /*!*********************************************************!*\
   !*** ./node_modules/@popperjs/core/lib/createPopper.js ***!
@@ -56996,23 +56994,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
->>>>>>> Routes-VueHome
 /***/ "./resources/js/front-app.js":
 /*!***********************************!*\
   !*** ./resources/js/front-app.js ***!
   \***********************************/
 /*! no exports provided */
-<<<<<<< HEAD
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\MAMP\\htdocs\\Progetti PHP\\booleat\\booleat\\resources\\js\\front-app.js'");
-=======
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_AppComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/AppComponent */ "./resources/js/app/AppComponent.vue");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 console.log("Ok Js:)");
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
@@ -57027,7 +57019,7 @@ var app = new Vue({
   render: function render(h) {
     return h(_app_AppComponent__WEBPACK_IMPORTED_MODULE_0__["default"]);
   },
-  router: _routes__WEBPACK_IMPORTED_MODULE_2__["default"]
+  router: _routes__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 
 /***/ }),
@@ -57129,7 +57121,6 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
->>>>>>> Routes-VueHome
 
 /***/ }),
 
