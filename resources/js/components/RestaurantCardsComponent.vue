@@ -8,7 +8,6 @@
         v-for="user in users"
         :key="user.id"
       >
-<<<<<<< HEAD
         <div class="text-center">
           <h6 class="t4-orange-text">
             {{ user.company }}
@@ -26,16 +25,6 @@
         <div class="col-8 t4-img-company">
           <img :src="'/storage/' + user.image" alt="" />
         </div>
-=======
-        <p>{{ user.name }}</p>
-        <p>{{ user.company }}</p>
-        <p>
-          <span v-for="category in user.categories" :key="category.slug">
-            {{ category.name }}</span
-          >
-        </p>
-        <img :src="imagePut(user.image)" alt="" />
->>>>>>> f0b1f526f8d6044ae7a6c8c487a4fcbd0a8643a2
       </div>
     </div>
   </div>
