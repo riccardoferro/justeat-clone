@@ -15,13 +15,20 @@
                         <div class="carousel-item active t4-carousel-p">
                             <img src="/images/jumbo-home.jpeg" class="d-block w-100" alt="jumbo-home">
                             <div class="text-center t4-carousel-text">
-                                <p>#1 Miglior sito di food delivery</p>
-                                <h2>Mangia con un click</h2>
-                                <h5 class="mb-5">Ordina online dai tuoi ristoranti preferiti</h5>
-                                <div class="d-flex align-items-baseline">
-                                    <input id="password" type="search" placeholder="Cerca per categoria"
+                                <div class="d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none">
+                                    <p>#1 Miglior sito di food delivery</p>
+                                    <h2>Mangia con un click</h2>
+                                    <h5 class="mb-5">Ordina online dai tuoi ristoranti preferiti</h5>
+                                </div>
+                                <div class="d-flex align-items-baseline mt-sm-5">
+
+                                    <p class="d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block">Ordina online
+                                        dai tuoi ristoranti preferiti</p>
+                                    <input id="password" type="search" placeholder="Cerca per ristorante"
                                         class="form-control">
                                     <span class="t4-search ms-2"><img src="/images/search.png" alt=""></span>
+
+
                                 </div>
 
                             </div>
