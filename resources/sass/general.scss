@@ -446,6 +446,9 @@ margin-bottom: 20px;
 //Navbar front-end
 
 .t4-nav-item{
+    &:hover {
+        color:rgb(178, 80, 0) ;
+    }
     img{
         width: 25px;
     }
@@ -454,5 +457,16 @@ margin-bottom: 20px;
 .t4-logo-nav{
     img{
         width: 50px;
+    }
+}
+
+.t4-navbar{
+    -webkit-box-shadow: 0px 6px 11px -7px #6E6E6E;
+box-shadow: 0px 6px 11px -7px #6E6E6E;
+}
+
+.t4-nav-toggle{
+    img{
+        width: 100%;
     }
 }
