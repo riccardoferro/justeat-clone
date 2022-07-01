@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "BannerComponent",
+  name: "BannerAppComponent",
 };
 </script>
 
