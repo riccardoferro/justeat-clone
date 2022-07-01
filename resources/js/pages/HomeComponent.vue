@@ -32,17 +32,24 @@ export default {
   data() {
     return {
       users: [],
+      categories: [],
       // currentPage:1,
       // previusPageLink:"",
       // nextPageLink:"",
+      // currentCategoriesPage:1,
+      // previusCategoriesPageLink:"",
+      // nextPageCategoriesLink:"",
     };
   },
   mounted() {
-    this.loadPage("http://127.0.0.1:8000/api/users");
+    this.loadPage(
+      "http://127.0.0.1:8000/api/users",
+      "http://127.0.0.1:8000/api/categories"
+    );
   },
 
   methods: {
-    loadPage(url) {
+    loadPage(url, url2) {
       window.axios
         .get(url)
         .then((results) => {
@@ -54,6 +61,21 @@ export default {
             // this.nextPageLink = results.data.results.next_page_url;
           }
           console.log(this.users);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      window.axios
+        .get(url2)
+        .then((results2) => {
+          console.log(results2);
+          if (results2.status === 200 && results2.data.success) {
+            this.categories = results2.data.results2;
+            // this.currentPage = results.data.results.current_page;
+            // this.previousPageCategoriesLink = results.data.results.prev_page_url;
+            // this.nextPageCategoriesLink = results.data.results.next_page_url;
+          }
+          console.log(this.categories);
         })
         .catch((e) => {
           console.log(e);
