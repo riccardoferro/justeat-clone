@@ -53,14 +53,14 @@ export default {
       window.axios
         .get(url)
         .then((results) => {
-          console.log(results);
+          //   console.log(results);
           if (results.status === 200 && results.data.success) {
             this.users = results.data.results;
             // this.currentPage = results.data.results.current_page;
             // this.previousPageLink = results.data.results.prev_page_url;
             // this.nextPageLink = results.data.results.next_page_url;
           }
-          console.log(this.users);
+          //   console.log(this.users);
         })
         .catch((e) => {
           console.log(e);
@@ -68,14 +68,14 @@ export default {
       window.axios
         .get(url2)
         .then((results2) => {
-          console.log(results2);
+          //   console.log(results2);
           if (results2.status === 200 && results2.data.success) {
             this.categories = results2.data.results2;
             // this.currentPage = results.data.results.current_page;
             // this.previousPageCategoriesLink = results.data.results.prev_page_url;
             // this.nextPageCategoriesLink = results.data.results.next_page_url;
           }
-          console.log(this.categories);
+          //   console.log(this.categories);
         })
         .catch((e) => {
           console.log(e);
