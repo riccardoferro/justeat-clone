@@ -3,12 +3,18 @@
     <h2 class="text-center pt-5">In evidenza</h2>
     <div class="row pt-5 justify-content-center">
       <div
-        class="col-4 mb-5 d-flex flex-column align-items-center"
+        class="
+          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10
+          mb-5
+          d-flex
+          flex-column
+          align-items-center
+        "
         style="color: white"
         v-for="user in users"
         :key="user.id"
       >
-        <div class="text-center">
+        <div class="">
           <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
             {{ user.company }}
             <span class="t4-icon-company ms-2">
@@ -22,7 +28,12 @@
             </span>
           </h6>
         </div>
-        <div class="col-8 t4-img-company">
+        <div
+          class="
+            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12
+            t4-img-company
+          "
+        >
           <img :src="imagePut(user.image)" alt="" />
         </div>
       </div>
