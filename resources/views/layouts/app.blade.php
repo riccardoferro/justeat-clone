@@ -26,11 +26,18 @@
         <nav class="navbar navbar-expand-md  pl-0 pr-0 sticky-top t4-bg-nav">
             <div class="container-fluid t4-10vh">
                 {{-- Logo --}}
+
+
+
+
                 <div class="col-xl-1 t4-logo t4-h100 p-0">
                     <a class="navbar-brand" href="{{ url('/admin/user') }}">
                         <img src="/images/logo.png" alt="Booleat">
                     </a>
                 </div>
+
+
+
                 {{-- /Logo --}}
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

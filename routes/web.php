@@ -32,7 +32,9 @@ Route::middleware('auth')
         Route::resource('/plates', 'PlatesController');
         Route::resource('/categories', 'CategoriesController');
     });
-
+Route::get('/', function () {
+    return view('guest.home');
+});
 
 
 

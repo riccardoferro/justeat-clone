@@ -5216,7 +5216,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "CategoriesCardComponent"
+  name: "CategoriesCardComponent",
+  props: {
+    categories: Array
+  }
 });
 
 /***/ }),
@@ -5484,7 +5487,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
 //
 //
 //
@@ -5501,8 +5503,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-=======
->>>>>>> 46b4d5869f73fb0c7e09c39b8d923b719a69ce54
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -42455,15 +42460,10 @@ var render = function () {
           {
             key: user.id,
             staticClass:
-<<<<<<< HEAD
-              "\n        col-4\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-card\n      ",
-=======
-              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n      ",
-            staticStyle: { color: "white" },
->>>>>>> 46b4d5869f73fb0c7e09c39b8d923b719a69ce54
+              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-card\n      ",
           },
           [
-            _c("div", {}, [
+            _c("div", { staticClass: "text-center" }, [
               _c(
                 "h4",
                 {
@@ -42479,10 +42479,14 @@ var render = function () {
               ),
             ]),
             _vm._v(" "),
-<<<<<<< HEAD
-            _c("div", { staticClass: "col-8 t4-img-company" }, [
-              _c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } }),
-            ]),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "\n          col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n          t4-img-company\n        ",
+              },
+              [_c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } })]
+            ),
             _vm._v(" "),
             _c(
               "div",
@@ -42499,15 +42503,6 @@ var render = function () {
                 )
               }),
               0
-=======
-            _c(
-              "div",
-              {
-                staticClass:
-                  "\n          col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n          t4-img-company\n        ",
-              },
-              [_c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } })]
->>>>>>> 46b4d5869f73fb0c7e09c39b8d923b719a69ce54
             ),
           ]
         )
@@ -42556,7 +42551,7 @@ var render = function () {
       _vm._v(" "),
       _c("BannerAppComponent"),
       _vm._v(" "),
-      _c("CategoriesCardsComponent"),
+      _c("CategoriesCardsComponent", { attrs: { categories: _vm.categories } }),
       _vm._v(" "),
       _c("BannerInfoComponent"),
       _vm._v(" "),
