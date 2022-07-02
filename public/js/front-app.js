@@ -58623,7 +58623,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'home-booleat',
     component: _pages_HomeComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/:slug',
+    path: '/restaurant/:slug',
     name: 'single-restaurant',
     component: _pages_HomeComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   }]

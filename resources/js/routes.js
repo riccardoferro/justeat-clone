@@ -4,7 +4,7 @@ Vue.use(VueRouter);
 
 // Qui andranno tutte le rotte import delle pages
 import HomeComponent from './pages/HomeComponent'
-import SingleRestaurant from './pages/HomeComponent'
+import SingleRestaurantComponent from './pages/HomeComponent'
 
 
 // Inseriamo le rotte disponibili
@@ -17,9 +17,9 @@ const router = new VueRouter({
             component: HomeComponent
         },
         {
-            path: '/:slug',
+            path: '/restaurant/:slug',
             name: 'single-restaurant',
-            component: SingleRestaurant
+            component: SingleRestaurantComponent
         }
     ]
 })
