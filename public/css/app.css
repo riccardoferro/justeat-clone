@@ -24186,10 +24186,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 .t4-img-company img {
   width: 100%;
-  border-radius: 20px;
 }
 
 .t4-icon-company img {
   width: 25px;
+}
+
+.t4-category-label img {
+  width: 100%;
+  aspect-ratio: 1.4;
 }
 

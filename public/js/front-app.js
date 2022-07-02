@@ -5215,8 +5215,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "CategoriesCardComponent"
+  name: "CategoriesCardComponent",
+  props: {
+    categories: Array
+  }
 });
 
 /***/ }),
@@ -41984,18 +41998,36 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "row t4-bg-orange" },
+    [
+      _c("h2", { staticClass: "text-center pt-5 pb-5 mt-5 mb-5" }, [
+        _vm._v("Cerchi qualcos'altro?"),
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.categories, function (category) {
+        return _c(
+          "div",
+          {
+            key: category.id,
+            staticClass:
+              "\n      col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12\n      t4-category-label\n    ",
+          },
+          [
+            _c("h2", [_vm._v(_vm._s(category.name))]),
+            _vm._v(" "),
+            _c("img", {
+              attrs: { src: "/images/category_img/" + category.image, alt: "" },
+            }),
+          ]
+        )
+      }),
+    ],
+    2
+  )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row t4-50vh" }, [
-      _c("h2", { staticClass: "text-success" }, [_vm._v("Cards")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -42488,7 +42520,7 @@ var render = function () {
       _vm._v(" "),
       _c("BannerAppComponent"),
       _vm._v(" "),
-      _c("CategoriesCardsComponent"),
+      _c("CategoriesCardsComponent", { attrs: { categories: _vm.categories } }),
       _vm._v(" "),
       _c("BannerInfoComponent"),
       _vm._v(" "),
