@@ -5734,38 +5734,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoryRestaurantsFilter",
   data: function data() {
     return {
-      restaurant: [],
-      plates: [],
-      categories: []
+      restaurants: [],
+      category: undefined
     };
-  } // mounted() {
-  //     const slug = this.$route.params.slug;
-  //     console.log(slug);
-  //     window.axios
-  //         .get("http://127.0.0.1:8000/api/users/" + slug)
-  //         .then((results) => {
-  //           if (results.status === 200 && results.data.success) {
-  //             this.restaurant = results.data.results;
-  //             this.plates = this.restaurant.plates;
-  //             this.categories = this.restaurant.categories; //   console.log('category'.)
-  //           }
-  //           console.log(this.restaurant);
-  //         })
-  //         .catch((e) => {
-  //           console.log(e);
-  //         });
-  // },
+  },
+  mounted: function mounted() {
+    var _this = this;
 
+    var slug = this.$route.params.slug;
+    console.log(slug);
+    window.axios.get("http://127.0.0.1:8000/api/categories/" + slug).then(function (results) {
+      console.log(results);
+
+      if (results.status === 200 && results.data.success) {
+        _this.category = results.data.results;
+        _this.restaurants = _this.category.users;
+        console.log(_this.restaurants);
+      }
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  }
 });
 
 /***/ }),
@@ -43541,7 +43534,23 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n CIAO\n   ")])
+  return _c("div", [
+    _c("h3", [
+      _vm._v(" I ristoranti appartenenti a questa categoria cliccata"),
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      _vm._l(_vm.restaurants, function (restaurant) {
+        return _c("p", { key: restaurant.slug }, [
+          _vm._v(
+            "\n         " + _vm._s(restaurant.company) + "\n       \n     "
+          ),
+        ])
+      }),
+      0
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
