@@ -24177,7 +24177,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .t4-nav-item:hover {
-  color: rgb(178, 80, 0);
+  color: #b25000;
 }
 
 .t4-nav-item img {
@@ -24191,5 +24191,19 @@ input[type=number]::-webkit-outer-spin-button {
 
 .t4-icon-company img {
   width: 25px;
+}
+
+.t4-resturant-card {
+  color: white;
+}
+
+.t4-restaurant-label {
+  margin: 10px 10px 10px 0;
+  width: 10%;
+}
+
+.t4-restaurant-label img {
+  width: 100%;
+  aspect-ratio: 1;
 }
 

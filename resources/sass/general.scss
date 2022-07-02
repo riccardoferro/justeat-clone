@@ -495,7 +495,7 @@ box-shadow: 0px -6px 11px -7px #6E6E6E;
 
 .t4-nav-item {
     &:hover{
-        color: rgb(178, 80, 0) ;
+        color: #b25000 ;
     }
     img{
         width: 25px;
@@ -515,3 +515,27 @@ box-shadow: 0px -6px 11px -7px #6E6E6E;
         width: 25px;
     }
 }
+
+// restaurant-cards
+.t4-resturant-card{
+    color:white;
+
+}
+ .t4-restaurant-label {
+
+     margin:10px 10px 10px 0;
+     width:10%;
+     img{
+        width:100%;
+        aspect-ratio: 1;
+
+     }
+
+
+
+
+
+     }
+
+
+
