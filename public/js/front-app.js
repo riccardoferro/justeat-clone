@@ -5492,6 +5492,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -5580,28 +5581,24 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       window.axios.get(url).then(function (results) {
-        console.log(results);
-
+        //   console.log(results);
         if (results.status === 200 && results.data.success) {
           _this.users = results.data.results; // this.currentPage = results.data.results.current_page;
           // this.previousPageLink = results.data.results.prev_page_url;
           // this.nextPageLink = results.data.results.next_page_url;
-        }
+        } //   console.log(this.users);
 
-        console.log(_this.users);
       })["catch"](function (e) {
         console.log(e);
       });
       window.axios.get(url2).then(function (results2) {
-        console.log(results2);
-
+        //   console.log(results2);
         if (results2.status === 200 && results2.data.success) {
           _this.categories = results2.data.results2; // this.currentPage = results.data.results.current_page;
           // this.previousPageCategoriesLink = results.data.results.prev_page_url;
           // this.nextPageCategoriesLink = results.data.results.next_page_url;
-        }
+        } //   console.log(this.categories);
 
-        console.log(_this.categories);
       })["catch"](function (e) {
         console.log(e);
       });
@@ -42404,56 +42401,73 @@ var render = function () {
             staticStyle: { color: "white" },
           },
           [
-            _c("router-link", {
-              attrs: {
-                to: { name: "single-restaurant", params: { slug: user.slug } },
-              },
-            }),
-            _vm._v(" "),
-            _c("div", {}, [
-              _c(
-                "h6",
-                {
-                  staticClass:
-                    "t4-orange-text t4-fw-6 d-flex align-items-center",
+            _c(
+              "router-link",
+              {
+                attrs: {
+                  to: {
+                    name: "single-restaurant",
+                    params: { slug: user.slug },
+                  },
                 },
-                [
-                  _vm._v(
-                    "\n          " + _vm._s(user.company) + "\n          "
-                  ),
-                  _vm._m(0, true),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "h6",
-                { staticClass: "mb-3 t4-fw-6" },
-                [
-                  _c("span", { staticClass: "t4-orange-text" }, [
-                    _vm._v("Categorie:"),
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(user.categories, function (category) {
-                    return _c("span", { key: category.slug }, [
+              },
+              [
+                _c("div", {}, [
+                  _c(
+                    "h6",
+                    {
+                      staticClass:
+                        "t4-orange-text t4-fw-6 d-flex align-items-center",
+                    },
+                    [
                       _vm._v(
                         "\n            " +
-                          _vm._s(category.name) +
-                          "\n          "
+                          _vm._s(user.company) +
+                          "\n            "
                       ),
-                    ])
-                  }),
-                ],
-                2
-              ),
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "\n          col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n          t4-img-company\n        ",
-              },
-              [_c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } })]
+                      _c("span", { staticClass: "t4-icon-company ms-2" }, [
+                        _c("img", {
+                          attrs: { src: "/images/posate.png", alt: "" },
+                        }),
+                      ]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "h6",
+                    { staticClass: "mb-3 t4-fw-6" },
+                    [
+                      _c("span", { staticClass: "t4-orange-text" }, [
+                        _vm._v("Categorie:"),
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(user.categories, function (category) {
+                        return _c("span", { key: category.slug }, [
+                          _vm._v(
+                            "\n              " +
+                              _vm._s(category.name) +
+                              "\n            "
+                          ),
+                        ])
+                      }),
+                    ],
+                    2
+                  ),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n            t4-img-company\n          ",
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: _vm.imagePut(user.image), alt: "" },
+                    }),
+                  ]
+                ),
+              ]
             ),
           ],
           1
@@ -42463,16 +42477,7 @@ var render = function () {
     ),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "t4-icon-company ms-2" }, [
-      _c("img", { attrs: { src: "/images/posate.png", alt: "" } }),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
