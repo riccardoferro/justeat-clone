@@ -14,7 +14,7 @@
 
                         <h2 class="t4-orange-title">{{ __('Hai effettuato l\'accesso!') }}</h2>
                     </div>
-                    <div class="col-xxl-8 col-xl-8 col-md-1o col-sm-10 col-12">
+                    <div class="col-xxl-8 col-xl-8 col-md-12 col-sm-12 col-12">
                         <a href="{{ route('admin.user.index') }}" class="btn t4-add-btn t4-bg-black ">
                             Vai alla Dashboard
                             <span class="t4-dashboard-img ms-2"><img src="/images/report.png" alt="dashboard-logo"></span>
