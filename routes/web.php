@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,9 @@ Route::middleware('auth')
         Route::resource('/plates', 'PlatesController');
         Route::resource('/categories', 'CategoriesController');
     });
-
+Route::get('/', function () {
+    return view('guest.home');
+});
 
 
 
@@ -40,5 +43,5 @@ Route::middleware('auth')
 Route::get("{any?}", function () {
 
     // Lavorazioni in corso
-    return view('guest.home');
+    return view('layouts.notFound');
 })->where("any", ".*");

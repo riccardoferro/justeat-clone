@@ -9,6 +9,14 @@
   color: #E68B3F;
 }
 
+.t4-50vh {
+  height: 50vh;
+}
+
+.t4-30vh {
+  height: 30vh;
+}
+
 .t4-10vh {
   height: 10vh;
 }
@@ -51,6 +59,14 @@
 
 .t4-w40 {
   width: 40%;
+}
+
+.t4-fw-5 {
+  font-weight: 500;
+}
+
+.t4-fw-6 {
+  font-weight: 600;
 }
 
 /*!
@@ -11775,6 +11791,14 @@ fieldset:disabled .btn {
   color: #E68B3F;
 }
 
+.t4-50vh {
+  height: 50vh;
+}
+
+.t4-30vh {
+  height: 30vh;
+}
+
 .t4-10vh {
   height: 10vh;
 }
@@ -11817,6 +11841,14 @@ fieldset:disabled .btn {
 
 .t4-w40 {
   width: 40%;
+}
+
+.t4-fw-5 {
+  font-weight: 500;
+}
+
+.t4-fw-6 {
+  font-weight: 600;
 }
 
 .t4-bg-black {
@@ -11827,6 +11859,14 @@ fieldset:disabled .btn {
   color: #E68B3F;
 }
 
+.t4-50vh {
+  height: 50vh;
+}
+
+.t4-30vh {
+  height: 30vh;
+}
+
 .t4-10vh {
   height: 10vh;
 }
@@ -11869,6 +11909,14 @@ fieldset:disabled .btn {
 
 .t4-w40 {
   width: 40%;
+}
+
+.t4-fw-5 {
+  font-weight: 500;
+}
+
+.t4-fw-6 {
+  font-weight: 600;
 }
 
 #decrement,
@@ -24017,8 +24065,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .t4-container-text {
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   padding: 30px;
@@ -24087,27 +24136,79 @@ input[type=number]::-webkit-outer-spin-button {
   height: 25px;
 }
 
-.t4-nav-item:hover {
-  color: rgb(178, 80, 0);
+.t4-bg-banner-top {
+  background-image: url("/images/banner-top.jpeg");
+  background-size: cover;
+  aspect-ratio: 2.5;
 }
 
-.t4-nav-item img {
-  width: 25px;
+.t4-card-download {
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(18.5px);
+  -webkit-backdrop-filter: blur(18.5px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 25px;
+}
+
+.t4-text-black {
+  color: #0B100C;
+}
+
+.t4-banner-app img {
+  width: 100%;
+}
+
+.t4-download img {
+  width: 100%;
+}
+
+.t4-footer {
+  box-shadow: 0px -6px 11px -7px #6E6E6E;
 }
 
 .t4-logo-nav img {
   width: 50px;
 }
 
-.t4-navbar {
-  box-shadow: 0px 6px 11px -7px #6E6E6E;
+.t4-nav-toggle img,
+.t4-icon-company img {
+  width: 35px;
 }
 
-.t4-nav-toggle img {
+.t4-nav-item:hover {
+  color: #b25000;
+}
+
+.t4-nav-item img {
+  width: 25px;
+}
+
+.t4-img-company img {
   width: 100%;
 }
 
-.t4-footer {
-  box-shadow: 0px -6px 11px -7px #6E6E6E;
+.t4-icon-company img {
+  width: 25px;
+}
+
+.t4-category-label img {
+  width: 100%;
+  aspect-ratio: 1.6;
+}
+
+.t4-resturant-card {
+  color: white;
+}
+
+.t4-restaurant-label {
+  margin: 10px 10px 10px 0;
+  width: 10%;
+}
+
+.t4-restaurant-label img {
+  width: 100%;
+  aspect-ratio: 1;
 }
 

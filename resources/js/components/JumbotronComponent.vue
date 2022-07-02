@@ -41,23 +41,39 @@
                   Ordina online dai tuoi ristoranti preferiti
                 </h5>
               </div>
-              <div class="d-flex align-items-baseline mt-sm-5">
-                <p
-                  class="
-                    d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block
-                  "
-                >
-                  Ordina online dai tuoi ristoranti preferiti
-                </p>
-                <input
-                  id="password"
-                  type="search"
-                  placeholder="Cerca per ristorante"
-                  class="form-control"
-                />
-                <span class="t4-search ms-2"
-                  ><img src="/images/search.png" alt=""
-                /></span>
+              <div
+                class="
+                  d-flex
+                  justify-content-center
+                  align-items-baseline
+                  mt-sm-5
+                "
+              >
+                <div class="d-flex flex-column">
+                  <p
+                    class="
+                      d-xxl-none
+                      d-xl-none
+                      d-lg-none
+                      d-md-none
+                      d-sm-block
+                      d-block
+                    "
+                  >
+                    Ordina online dai tuoi ristoranti preferiti
+                  </p>
+                  <div class="d-flex align-items-baseline">
+                    <input
+                      id="password"
+                      type="search"
+                      placeholder="Cerca per ristorante"
+                      class="form-control col-12"
+                    />
+                    <span class="t4-search ms-2"
+                      ><img src="/images/search.png" alt="" />
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

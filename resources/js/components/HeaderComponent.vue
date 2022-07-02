@@ -15,11 +15,14 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon t4-nav-toggle">
+          <span class="t4-nav-toggle">
             <img src="/images/menu.png" alt="" />
           </span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div
+          class="collapse navbar-collapse ms-5 justify-content-end"
+          id="navbarNavAltMarkup"
+        >
           <div class="navbar-nav">
             <a class="t4-nav-item t4-orange-text me-3" href="/login"
               ><img src="/images/user.png" alt="Login Booleat" />
@@ -31,12 +34,16 @@
               ><img src="/images/register.png" alt="Register Booleat" />
               Registrati
             </a>
+
             <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-            ></a>
+              class="
+                t4-nav-item t4-orange-text
+                ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0
+                mt-lg-0 mt-md-2 mt-sm-2 mt-2
+              "
+              href=""
+              ><img src="/images/shopping.png" alt="shorp-cart" />
+            </a>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-3 d-flex justify-content-center">
-                    <a href="/" class="btn t4-add-btn d-flex align-items-center">
+                    <a href="/admin/user" class="btn t4-add-btn d-flex align-items-center">
                         <span class="me-2">Indietro </span>
                         <img src="/images/replay.png" alt="">
                     </a>
