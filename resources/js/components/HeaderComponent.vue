@@ -7,27 +7,40 @@
           <img src="/images/logo.png" alt="logo-booleat" />
         </a>
         <div class="d-flex justify-content-end align-items-center">
-          <div class="btn-group">
-            <button
-              type="button"
-              class="btn"
-              data-bs-toggle="dropdown"
-              data-bs-display="static"
-              aria-expanded="false"
-            >
-              <a class="t4-nav-item t4-orange-text" href=""
-                ><img src="/images/shopping.png" alt="shorp-cart" />
-              </a>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-              <li>
-                <button class="dropdown-item" type="button">
-                  Il tuo carrelo è vuoto!
-                </button>
-              </li>
-            </ul>
+          <!-- Carrello -->
+          <button
+            class="btn"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          >
+            <div class="t4-nav-item">
+              <img src="/images/shopping.png" alt="shorp-cart" />
+            </div>
+          </button>
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="offcanvas-header">
+              <h3 class="t4-orange-text" id="offcanvasRightLabel">Carrello</h3>
+              <button
+                type="button"
+                class="t4-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                <img src="/images/cross.png" alt="" />
+              </button>
+            </div>
+            <div class="offcanvas-body">Il tuo carrello è vuoto!</div>
           </div>
 
+          <!-- Hamburger menu -->
           <button
             class="navbar-toggler t4-toggle-btn"
             type="button"
@@ -42,7 +55,7 @@
             </span>
           </button>
         </div>
-
+        <!-- Login e Register -->
         <div
           class="
             collapse

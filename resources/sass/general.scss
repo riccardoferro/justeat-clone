@@ -581,4 +581,16 @@ box-shadow: 0px -6px 11px -7px #6E6E6E;
     box-shadow: none !important;
 }
 
+.offcanvas{
+    background-color: $t4_bg_black !important;
+}
+
+.t4-close{
+    background-color: transparent !important;
+    border: 0 !important;
+    img{
+        width: 35px;
+    };
+}
+
 

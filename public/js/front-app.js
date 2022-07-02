@@ -5376,6 +5376,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent"
 });
@@ -43012,61 +43025,70 @@ var staticRenderFns = [
             "div",
             { staticClass: "d-flex justify-content-end align-items-center" },
             [
-              _c("div", { staticClass: "btn-group" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn",
-                    attrs: {
-                      type: "button",
-                      "data-bs-toggle": "dropdown",
-                      "data-bs-display": "static",
-                      "aria-expanded": "false",
-                    },
+              _c(
+                "button",
+                {
+                  staticClass: "btn",
+                  attrs: {
+                    type: "button",
+                    "data-bs-toggle": "offcanvas",
+                    "data-bs-target": "#offcanvasRight",
+                    "aria-controls": "offcanvasRight",
                   },
-                  [
+                },
+                [
+                  _c("div", { staticClass: "t4-nav-item" }, [
+                    _c("img", {
+                      attrs: { src: "/images/shopping.png", alt: "shorp-cart" },
+                    }),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "offcanvas offcanvas-end",
+                  attrs: {
+                    tabindex: "-1",
+                    id: "offcanvasRight",
+                    "aria-labelledby": "offcanvasRightLabel",
+                  },
+                },
+                [
+                  _c("div", { staticClass: "offcanvas-header" }, [
                     _c(
-                      "a",
+                      "h3",
                       {
-                        staticClass: "t4-nav-item t4-orange-text",
-                        attrs: { href: "" },
+                        staticClass: "t4-orange-text",
+                        attrs: { id: "offcanvasRightLabel" },
+                      },
+                      [_vm._v("Carrello")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "t4-close",
+                        attrs: {
+                          type: "button",
+                          "data-bs-dismiss": "offcanvas",
+                          "aria-label": "Close",
+                        },
                       },
                       [
                         _c("img", {
-                          attrs: {
-                            src: "/images/shopping.png",
-                            alt: "shorp-cart",
-                          },
+                          attrs: { src: "/images/cross.png", alt: "" },
                         }),
                       ]
                     ),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    staticClass:
-                      "dropdown-menu dropdown-menu-end dropdown-menu-lg-start",
-                  },
-                  [
-                    _c("li", [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "dropdown-item",
-                          attrs: { type: "button" },
-                        },
-                        [
-                          _vm._v(
-                            "\n                Il tuo carrelo è vuoto!\n              "
-                          ),
-                        ]
-                      ),
-                    ]),
-                  ]
-                ),
-              ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "offcanvas-body" }, [
+                    _vm._v("Il tuo carrello è vuoto!"),
+                  ]),
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "button",
