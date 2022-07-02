@@ -5303,6 +5303,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent"
 });
@@ -5318,6 +5319,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -42133,7 +42141,7 @@ var staticRenderFns = [
                     "a",
                     {
                       staticClass:
-                        "\n              t4-nav-item t4-orange-text\n              ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0\n            ",
+                        "\n              t4-nav-item t4-orange-text\n              ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0\n              mt-lg-0 mt-md-2 mt-sm-2 mt-2\n            ",
                       attrs: { href: "" },
                     },
                     [
@@ -42245,7 +42253,10 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "d-flex align-items-baseline mt-sm-5" },
+                    {
+                      staticClass:
+                        "\n                d-flex\n                justify-content-center\n                align-items-baseline\n                mt-sm-5\n              ",
+                    },
                     [
                       _c("div", { staticClass: "d-flex flex-column" }, [
                         _c(
@@ -42266,7 +42277,7 @@ var staticRenderFns = [
                           { staticClass: "d-flex align-items-baseline" },
                           [
                             _c("input", {
-                              staticClass: "form-control",
+                              staticClass: "form-control col-12",
                               attrs: {
                                 id: "password",
                                 type: "search",

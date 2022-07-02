@@ -39,6 +39,7 @@
               class="
                 t4-nav-item t4-orange-text
                 ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0
+                mt-lg-0 mt-md-2 mt-sm-2 mt-2
               "
               href=""
               ><img src="/images/shopping.png" alt="shorp-cart" />

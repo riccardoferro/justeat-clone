@@ -41,7 +41,14 @@
                   Ordina online dai tuoi ristoranti preferiti
                 </h5>
               </div>
-              <div class="d-flex align-items-baseline mt-sm-5">
+              <div
+                class="
+                  d-flex
+                  justify-content-center
+                  align-items-baseline
+                  mt-sm-5
+                "
+              >
                 <div class="d-flex flex-column">
                   <p
                     class="
@@ -60,7 +67,7 @@
                       id="password"
                       type="search"
                       placeholder="Cerca per ristorante"
-                      class="form-control"
+                      class="form-control col-12"
                     />
                     <span class="t4-search ms-2"
                       ><img src="/images/search.png" alt="" />
