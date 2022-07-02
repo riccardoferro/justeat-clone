@@ -41074,6 +41074,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./general */ "./resources/js/general.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -41118,6 +41120,60 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/general.js":
+/*!*********************************!*\
+  !*** ./resources/js/general.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    isNull = _require.isNull; // Funzione Incremento e Decremento Prezzo
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.getElementById('price-input')) {
+    var price = document.getElementById('price-input');
+  }
+
+  if (price) {
+    console.log('price not null');
+    document.getElementById('increment').addEventListener('click', function () {
+      price.value++;
+    });
+    document.getElementById('decrement').addEventListener('click', function () {
+      // decrementa solamente il prezzo superiore a 0
+      if (price.value > 0) {
+        price.value--;
+      } else {
+        price.value = 0;
+      }
+
+      ;
+    });
+  }
+}); // Funzione per la conferma cancellazione
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Prende Elemento Div conferma Eliminazione
+  if (document.getElementById('t4-delete-form')) ;
+  {
+    var deleteForm = document.getElementById('t4-delete-form');
+  } // mostra la div controllo
+
+  if (deleteForm) {
+    document.getElementById('t4-delete-span').addEventListener('click', function () {
+      deleteForm.style.display = 'flex';
+    }); // nasconde la div di controllo
+
+    document.getElementById('t4-cancel-delete').addEventListener('click', function () {
+      deleteForm.style.display = 'none';
+    });
+  }
+});
 
 /***/ }),
 
