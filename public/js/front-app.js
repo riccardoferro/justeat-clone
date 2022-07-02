@@ -5511,6 +5511,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "JumbotronComponent"
 });
@@ -43234,14 +43248,34 @@ var staticRenderFns = [
                     "div",
                     {
                       staticClass:
-                        "\n                d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none\n              ",
+                        "\n                d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none\n                t4-grad-orange\n              ",
                     },
                     [
-                      _c("p", [_vm._v("#1 Miglior sito di food delivery")]),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "\n                  d-flex\n                  t4-jumbo-logo\n                  align-items-end\n                  justify-content-center\n                ",
+                        },
+                        [
+                          _c("h1", { staticClass: "t4-grad-orange t4-fw" }, [
+                            _vm._v("Booleat"),
+                          ]),
+                          _vm._v(" "),
+                          _c("img", {
+                            attrs: {
+                              src: "/images/delivery-bike.png",
+                              alt: "",
+                            },
+                          }),
+                        ]
+                      ),
                       _vm._v(" "),
-                      _c("h2", [_vm._v("Mangia con un click")]),
+                      _c("h1", { staticClass: "t4-fw" }, [
+                        _vm._v("Mangia con un click"),
+                      ]),
                       _vm._v(" "),
-                      _c("h5", { staticClass: "mb-5" }, [
+                      _c("h4", { staticClass: "mb-5" }, [
                         _vm._v(
                           "\n                Ordina online dai tuoi ristoranti preferiti\n              "
                         ),
@@ -43261,7 +43295,7 @@ var staticRenderFns = [
                           "p",
                           {
                             staticClass:
-                              "\n                    d-xxl-none\n                    d-xl-none\n                    d-lg-none\n                    d-md-none\n                    d-sm-block\n                    d-block\n                  ",
+                              "\n                    d-xxl-none\n                    d-xl-none\n                    d-lg-none\n                    d-md-none\n                    d-sm-block\n                    d-block\n                    t4-grad-orange\n                  ",
                           },
                           [
                             _vm._v(

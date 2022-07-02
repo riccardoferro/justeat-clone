@@ -24267,3 +24267,20 @@ input[type=number]::-webkit-outer-spin-button {
   width: 35px;
 }
 
+.t4-grad-orange {
+  background: -webkit-linear-gradient(315deg, #f9484a 0%, #fbd72b 74%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.t4-jumbo-logo img {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+}
+
+.t4-fw {
+  font-weight: 400;
+}
+
