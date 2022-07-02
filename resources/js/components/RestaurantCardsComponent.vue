@@ -14,6 +14,11 @@
         v-for="user in users"
         :key="user.id"
       >
+        <!-- SEZIONE CHE TI PORTA AL SINGOLO RISTORANTE  -->
+        <router-link
+          :to="{ name: 'single-restaurant', params: { slug: user.slug } }"
+        ></router-link>
+        <!-- FINE SEZIONE SINGOLO RISTORANTE  -->
         <div class="">
           <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
             {{ user.company }}

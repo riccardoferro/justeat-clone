@@ -5487,6 +5487,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -42399,6 +42404,12 @@ var render = function () {
             staticStyle: { color: "white" },
           },
           [
+            _c("router-link", {
+              attrs: {
+                to: { name: "single-restaurant", params: { slug: user.slug } },
+              },
+            }),
+            _vm._v(" "),
             _c("div", {}, [
               _c(
                 "h6",
@@ -42444,7 +42455,8 @@ var render = function () {
               },
               [_c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } })]
             ),
-          ]
+          ],
+          1
         )
       }),
       0
@@ -58596,6 +58608,7 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); // Qui andranno tutte le rotte import delle pages
 
+
  // Inseriamo le rotte disponibili
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -58603,6 +58616,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: [{
     path: '/',
     name: 'home-booleat',
+    component: _pages_HomeComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
+    path: '/restaurant/:slug',
+    name: 'single-restaurant',
     component: _pages_HomeComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   }]
 });
