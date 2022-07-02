@@ -5508,19 +5508,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-=======
->>>>>>> Route-UserShow
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -42557,43 +42546,6 @@ var render = function () {
               "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-card\n      ",
           },
           [
-<<<<<<< HEAD
-            _c("div", { staticClass: "text-center" }, [
-              _c(
-                "h4",
-                {
-                  staticClass:
-                    "t4-orange-text t4-fw-6 d-flex align-items-center",
-                },
-                [
-                  _vm._v(
-                    "\n          " + _vm._s(user.company) + "\n          "
-                  ),
-                  _vm._m(0, true),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-12 t4-img-company" }, [
-              _c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } }),
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "d-flex col-8 justify-content-start flex-wrap" },
-              _vm._l(user.categories, function (category) {
-                return _c(
-                  "div",
-                  { key: category.slug, staticClass: "t4-restaurant-label" },
-                  [
-                    _c("img", {
-                      attrs: { src: _vm.categoryIcon(category.name), alt: "" },
-                    }),
-                  ]
-                )
-              }),
-              0
-=======
             _c(
               "router-link",
               {
@@ -42661,7 +42613,6 @@ var render = function () {
                   ]
                 ),
               ]
->>>>>>> Route-UserShow
             ),
           ],
           1
@@ -58953,7 +58904,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
