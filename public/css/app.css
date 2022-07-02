@@ -24177,7 +24177,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .t4-nav-item:hover {
-  color: rgb(178, 80, 0);
+  color: #b25000;
 }
 
 .t4-nav-item img {
@@ -24192,8 +24192,23 @@ input[type=number]::-webkit-outer-spin-button {
   width: 25px;
 }
 
+<<<<<<< HEAD
 .t4-category-label img {
   width: 100%;
   aspect-ratio: 1.4;
+=======
+.t4-resturant-card {
+  color: white;
+}
+
+.t4-restaurant-label {
+  margin: 10px 10px 10px 0;
+  width: 10%;
+}
+
+.t4-restaurant-label img {
+  width: 100%;
+  aspect-ratio: 1;
+>>>>>>> 262916fe278c1dbcf6f861f5bdcafa661923d7fb
 }
 
