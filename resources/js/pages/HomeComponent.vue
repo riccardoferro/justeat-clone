@@ -6,7 +6,7 @@
 
     <BannerAppComponent />
 
-    <CategoriesCardsComponent />
+    <CategoriesCardsComponent :categories="categories" />
     <BannerInfoComponent />
     <FooterComponent />
   </div>
