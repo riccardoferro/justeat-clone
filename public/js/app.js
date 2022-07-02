@@ -41195,8 +41195,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Utente\Desktop\BooleanProject\BoolEat\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\BooleanProject\BoolEat\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/PHP_Projects_Boolean/booleat/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/PHP_Projects_Boolean/booleat/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
