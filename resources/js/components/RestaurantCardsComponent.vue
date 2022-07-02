@@ -5,7 +5,7 @@
       <!-- inizio card -->
       <div
         class="
-          col-4
+          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10
           mb-5
           d-flex
           flex-column
@@ -23,7 +23,12 @@
             </span>
           </h4>
         </div>
-        <div class="col-8 t4-img-company">
+        <div
+          class="
+            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12
+            t4-img-company
+          "
+        >
           <img :src="imagePut(user.image)" alt="" />
         </div>
         <div class="d-flex col-8 justify-content-start flex-wrap">

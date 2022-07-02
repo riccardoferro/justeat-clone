@@ -7,6 +7,9 @@
 <script>
 export default {
   name: "CategoriesCardComponent",
+  props: {
+    categories: Array,
+  },
 };
 </script>
 

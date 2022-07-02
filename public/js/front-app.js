@@ -5297,6 +5297,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent"
 });
@@ -5312,6 +5319,22 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5461,6 +5484,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 //
 //
 //
@@ -5477,6 +5501,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+=======
+>>>>>>> 46b4d5869f73fb0c7e09c39b8d923b719a69ce54
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -41888,7 +41914,7 @@ var staticRenderFns = [
             "div",
             {
               staticClass:
-                "col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-6 col-12 mb-5",
+                "col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-7 col-12 mb-5",
             },
             [
               _c(
@@ -41924,7 +41950,7 @@ var staticRenderFns = [
                             _c("img", {
                               attrs: {
                                 src: "/images/appstore.svg.png",
-                                alt: "",
+                                alt: "logo-appstore",
                               },
                             }),
                           ]
@@ -41948,7 +41974,10 @@ var staticRenderFns = [
                           },
                           [
                             _c("img", {
-                              attrs: { src: "/images/googleplay.png", alt: "" },
+                              attrs: {
+                                src: "/images/googleplay.png",
+                                alt: "logo-googleplay",
+                              },
                             }),
                           ]
                         ),
@@ -41964,7 +41993,7 @@ var staticRenderFns = [
             "div",
             {
               staticClass:
-                "\n        col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-8\n        t4-banner-app\n      ",
+                "\n        col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-7\n        t4-banner-app\n      ",
             },
             [_c("img", { attrs: { src: "/images/Booleat-Tel.png", alt: "" } })]
           ),
@@ -42130,7 +42159,8 @@ var staticRenderFns = [
             _c(
               "div",
               {
-                staticClass: "collapse navbar-collapse ms-5",
+                staticClass:
+                  "collapse navbar-collapse ms-5 justify-content-end",
                 attrs: { id: "navbarNavAltMarkup" },
               },
               [
@@ -42170,14 +42200,22 @@ var staticRenderFns = [
                     ]
                   ),
                   _vm._v(" "),
-                  _c("a", {
-                    staticClass: "nav-link disabled",
-                    attrs: {
-                      href: "#",
-                      tabindex: "-1",
-                      "aria-disabled": "true",
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "\n              t4-nav-item t4-orange-text\n              ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0\n              mt-lg-0 mt-md-2 mt-sm-2 mt-2\n            ",
+                      attrs: { href: "" },
                     },
-                  }),
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/images/shopping.png",
+                          alt: "shorp-cart",
+                        },
+                      }),
+                    ]
+                  ),
                 ]),
               ]
             ),
@@ -42278,34 +42316,45 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "d-flex align-items-baseline mt-sm-5" },
+                    {
+                      staticClass:
+                        "\n                d-flex\n                justify-content-center\n                align-items-baseline\n                mt-sm-5\n              ",
+                    },
                     [
-                      _c(
-                        "p",
-                        {
-                          staticClass:
-                            "\n                  d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block\n                ",
-                        },
-                        [
-                          _vm._v(
-                            "\n                Ordina online dai tuoi ristoranti preferiti\n              "
-                          ),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "password",
-                          type: "search",
-                          placeholder: "Cerca per ristorante",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "t4-search ms-2" }, [
-                        _c("img", {
-                          attrs: { src: "/images/search.png", alt: "" },
-                        }),
+                      _c("div", { staticClass: "d-flex flex-column" }, [
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "\n                    d-xxl-none\n                    d-xl-none\n                    d-lg-none\n                    d-md-none\n                    d-sm-block\n                    d-block\n                  ",
+                          },
+                          [
+                            _vm._v(
+                              "\n                  Ordina online dai tuoi ristoranti preferiti\n                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "d-flex align-items-baseline" },
+                          [
+                            _c("input", {
+                              staticClass: "form-control col-12",
+                              attrs: {
+                                id: "password",
+                                type: "search",
+                                placeholder: "Cerca per ristorante",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "t4-search ms-2" }, [
+                              _c("img", {
+                                attrs: { src: "/images/search.png", alt: "" },
+                              }),
+                            ]),
+                          ]
+                        ),
                       ]),
                     ]
                   ),
@@ -42406,10 +42455,15 @@ var render = function () {
           {
             key: user.id,
             staticClass:
+<<<<<<< HEAD
               "\n        col-4\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-card\n      ",
+=======
+              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n      ",
+            staticStyle: { color: "white" },
+>>>>>>> 46b4d5869f73fb0c7e09c39b8d923b719a69ce54
           },
           [
-            _c("div", { staticClass: "text-center" }, [
+            _c("div", {}, [
               _c(
                 "h4",
                 {
@@ -42425,6 +42479,7 @@ var render = function () {
               ),
             ]),
             _vm._v(" "),
+<<<<<<< HEAD
             _c("div", { staticClass: "col-8 t4-img-company" }, [
               _c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } }),
             ]),
@@ -42444,6 +42499,15 @@ var render = function () {
                 )
               }),
               0
+=======
+            _c(
+              "div",
+              {
+                staticClass:
+                  "\n          col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n          t4-img-company\n        ",
+              },
+              [_c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } })]
+>>>>>>> 46b4d5869f73fb0c7e09c39b8d923b719a69ce54
             ),
           ]
         )
