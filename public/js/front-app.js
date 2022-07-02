@@ -5226,6 +5226,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoriesCardComponent",
   props: {
@@ -5455,11 +5459,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
 //
 //
 //
@@ -42067,9 +42066,7 @@ var render = function () {
     "div",
     { staticClass: "row t4-bg-orange" },
     [
-      _c("h2", { staticClass: "text-center pt-5 pb-5 mt-5 mb-5" }, [
-        _vm._v("Cerchi qualcos'altro?"),
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _vm._l(_vm.categories, function (category) {
         return _c(
@@ -42092,7 +42089,18 @@ var render = function () {
     2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center py-5" }, [
+      _c("h2", [_vm._v("Cerchi qualcos'altro?")]),
+      _vm._v(" "),
+      _c("h4", [_vm._v("Scegli tra tutte le categorie disponibili")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -42482,7 +42490,7 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row pt-5 justify-content-center" },
+      { staticClass: "row pt-5" },
       _vm._l(_vm.users, function (user) {
         return _c(
           "div",
@@ -42508,14 +42516,9 @@ var render = function () {
               ),
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "\n          col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n          t4-img-company\n        ",
-              },
-              [_c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } })]
-            ),
+            _c("div", { staticClass: "col-12 t4-img-company" }, [
+              _c("img", { attrs: { src: _vm.imagePut(user.image), alt: "" } }),
+            ]),
             _vm._v(" "),
             _c(
               "div",
@@ -58706,7 +58709,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="text-center pt-5">In evidenza</h2>
-    <div class="row pt-5 justify-content-center">
+    <div class="row pt-5">
       <!-- inizio card -->
       <div
         class="
@@ -23,12 +23,7 @@
             </span>
           </h4>
         </div>
-        <div
-          class="
-            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12
-            t4-img-company
-          "
-        >
+        <div class="col-12 t4-img-company">
           <img :src="imagePut(user.image)" alt="" />
         </div>
         <div class="d-flex col-8 justify-content-start flex-wrap">
