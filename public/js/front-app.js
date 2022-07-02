@@ -5544,13 +5544,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
 //
 //
-=======
-//
-//
->>>>>>> SingleRestaurant-Branch
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -59793,15 +59788,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
-=======
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
->>>>>>> 86fe5a48f037fca628843ba95d730b7b9db370fa
-=======
-module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
->>>>>>> SingleRestaurant-Branch
 
 
 /***/ })
