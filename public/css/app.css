@@ -24192,11 +24192,11 @@ input[type=number]::-webkit-outer-spin-button {
   width: 25px;
 }
 
-<<<<<<< HEAD
 .t4-category-label img {
   width: 100%;
   aspect-ratio: 1.4;
-=======
+}
+
 .t4-resturant-card {
   color: white;
 }
@@ -24209,6 +24209,5 @@ input[type=number]::-webkit-outer-spin-button {
 .t4-restaurant-label img {
   width: 100%;
   aspect-ratio: 1;
->>>>>>> 262916fe278c1dbcf6f861f5bdcafa661923d7fb
 }
 
