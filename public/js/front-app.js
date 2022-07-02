@@ -5357,6 +5357,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent"
 });
@@ -5543,8 +5544,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 //
 //
+=======
+//
+//
+>>>>>>> SingleRestaurant-Branch
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -5720,6 +5726,51 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -42922,107 +42973,102 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("header", [
-      _c(
-        "nav",
-        { staticClass: "navbar navbar-expand-lg t4-navbar sticky-top" },
-        [
-          _c("div", { staticClass: "container-fluid" }, [
-            _c(
-              "a",
-              { staticClass: "navbar-brand t4-logo-nav", attrs: { href: "#" } },
-              [
-                _c("img", {
-                  attrs: { src: "/images/logo.png", alt: "logo-booleat" },
-                }),
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "navbar-toggler",
-                attrs: {
-                  type: "button",
-                  "data-bs-toggle": "collapse",
-                  "data-bs-target": "#navbarNavAltMarkup",
-                  "aria-controls": "navbarNavAltMarkup",
-                  "aria-expanded": "false",
-                  "aria-label": "Toggle navigation",
+      _c("nav", { staticClass: "navbar navbar-expand-lg t4-sticky" }, [
+        _c("div", { staticClass: "container-fluid" }, [
+          _c(
+            "a",
+            { staticClass: "navbar-brand t4-logo-nav", attrs: { href: "#" } },
+            [
+              _c("img", {
+                attrs: { src: "/images/logo.png", alt: "logo-booleat" },
+              }),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "d-flex justify-content-end align-items-center" },
+            [
+              _c(
+                "a",
+                {
+                  staticClass: "t4-nav-item t4-orange-text",
+                  attrs: { href: "" },
                 },
-              },
-              [
-                _c("span", { staticClass: "t4-nav-toggle" }, [
-                  _c("img", { attrs: { src: "/images/menu.png", alt: "" } }),
-                ]),
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "collapse navbar-collapse ms-5 justify-content-end",
-                attrs: { id: "navbarNavAltMarkup" },
-              },
-              [
-                _c("div", { staticClass: "navbar-nav" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "t4-nav-item t4-orange-text me-3",
-                      attrs: { href: "/login" },
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "/images/user.png",
-                          alt: "Login Booleat",
-                        },
-                      }),
-                      _vm._v("\n            Login\n          "),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass:
-                        "t4-nav-item t4-orange-text mt-lg-0 mt-md-2 mt-sm-2 mt-2",
-                      attrs: { href: "/register" },
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "/images/register.png",
-                          alt: "Register Booleat",
-                        },
-                      }),
-                      _vm._v("\n            Registrati\n          "),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass:
-                        "\n              t4-nav-item t4-orange-text\n              ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0\n              mt-lg-0 mt-md-2 mt-sm-2 mt-2\n            ",
-                      attrs: { href: "" },
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "/images/shopping.png",
-                          alt: "shorp-cart",
-                        },
-                      }),
-                    ]
-                  ),
-                ]),
-              ]
-            ),
-          ]),
-        ]
-      ),
+                [
+                  _c("img", {
+                    attrs: { src: "/images/shopping.png", alt: "shorp-cart" },
+                  }),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "navbar-toggler",
+                  attrs: {
+                    type: "button",
+                    "data-bs-toggle": "collapse",
+                    "data-bs-target": "#navbarNavAltMarkup",
+                    "aria-controls": "navbarNavAltMarkup",
+                    "aria-expanded": "false",
+                    "aria-label": "Toggle navigation",
+                  },
+                },
+                [
+                  _c("span", { staticClass: "t4-nav-toggle" }, [
+                    _c("img", { attrs: { src: "/images/menu.png", alt: "" } }),
+                  ]),
+                ]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "\n          collapse\n          navbar-collapse\n          ms-0 ms-md-0 ms-lg-0\n          justify-content-end\n        ",
+              attrs: { id: "navbarNavAltMarkup" },
+            },
+            [
+              _c("div", { staticClass: "navbar-nav" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "t4-nav-item t4-orange-text me-3",
+                    attrs: { href: "/login" },
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/images/user.png", alt: "Login Booleat" },
+                    }),
+                    _vm._v("\n            Login\n          "),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "t4-nav-item t4-orange-text mt-lg-0 mt-md-2 mt-sm-2 mt-2",
+                    attrs: { href: "/register" },
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/images/register.png",
+                        alt: "Register Booleat",
+                      },
+                    }),
+                    _vm._v("\n            Registrati\n          "),
+                  ]
+                ),
+              ]),
+            ]
+          ),
+        ]),
+      ]),
     ])
   },
 ]
@@ -43398,31 +43444,105 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", [_vm._v("Benvenuto nel ristorante X")]),
+    _c("div", { staticClass: "row text-center mt-5" }, [
+      _c("h2", [
+        _vm._v("Benvenuto da " + _vm._s(_vm.restaurant.company) + "!"),
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _vm._v(
+          "\n      Ordina i tuoi piatti oppure prenota un ritiro in\n      " +
+            _vm._s(_vm.restaurant.address) +
+            "\n    "
+        ),
+      ]),
+    ]),
     _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.restaurant.company))]),
+    _c("div", { staticClass: "row text-center mt-3" }, [
+      _c(
+        "div",
+        { staticClass: "col-12" },
+        [
+          _c("span", { staticClass: "t4-orange-text" }, [_vm._v("Categorie:")]),
+          _vm._v(" "),
+          _vm._l(_vm.categories, function (category) {
+            return _c(
+              "span",
+              { key: category.slug, staticClass: "t4-badge-category" },
+              [_vm._v("\n        " + _vm._s(category.name) + "\n      ")]
+            )
+          }),
+        ],
+        2
+      ),
+    ]),
     _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.restaurant.address))]),
-    _vm._v(" "),
-    _c(
-      "div",
-      _vm._l(_vm.categories, function (category) {
-        return _c("p", { key: category.slug }, [
-          _vm._v("\n      " + _vm._s(category.name) + "\n    "),
-        ])
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      _vm._l(_vm.plates, function (plate) {
-        return _c("p", { key: plate.name + plate.id }, [
-          _vm._v("\n      " + _vm._s(plate.name) + "\n    "),
-        ])
-      }),
-      0
-    ),
+    _c("div", { staticClass: "row flex-column justify-content-center" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "\n        row\n        col-xxl-10 col-xl-10 col-md-11 col-sm-12\n        m-auto\n        mt-3\n        justify-content-center\n      ",
+        },
+        _vm._l(_vm.plates, function (plate) {
+          return _c(
+            "div",
+            {
+              key: plate.name + plate.id,
+              staticClass:
+                "col-sm-10 col-md-5 col-xl-3 d-flex flex-column t4-card",
+            },
+            [
+              _c("div", { staticClass: "t4-card-img" }, [
+                _c("img", {
+                  attrs: { src: "storage/" + plate.image, alt: "" },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "t4-card-title" }, [
+                _c("span", { staticClass: "t4-card-label" }, [
+                  _vm._v("Nome Piatto"),
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(plate.name))]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "t4-card-description" }, [
+                _c("span", { staticClass: "t4-card-label" }, [
+                  _vm._v("Descrizione "),
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(plate.description))]),
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "t4-card-info d-flex justify-content-between" },
+                [
+                  _c("p", [
+                    _c("span", [_vm._v("Prezzo: ")]),
+                    _vm._v(_vm._s(plate.price) + " €"),
+                  ]),
+                  _vm._v(" "),
+                  plate.visible == 1
+                    ? _c("div", [
+                        _c("p", { staticStyle: { color: "rgb(4, 165, 4)" } }, [
+                          _vm._v("Disponibile"),
+                        ]),
+                      ])
+                    : _c("div", [
+                        _c("p", { staticStyle: { color: "rgb(165, 4, 4)" } }, [
+                          _vm._v("Non disponibile"),
+                        ]),
+                      ]),
+                ]
+              ),
+            ]
+          )
+        }),
+        0
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []
@@ -59674,10 +59794,14 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /***/ (function(module, exports, __webpack_require__) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 =======
 module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
 >>>>>>> 86fe5a48f037fca628843ba95d730b7b9db370fa
+=======
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
+>>>>>>> SingleRestaurant-Branch
 
 
 /***/ })

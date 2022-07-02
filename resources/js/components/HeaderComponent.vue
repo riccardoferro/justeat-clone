@@ -1,26 +1,37 @@
 <template>
   <header>
     <!-- DANI qui andrà il nostro Header con login e register -->
-    <nav class="navbar navbar-expand-lg t4-navbar sticky-top">
+    <nav class="navbar navbar-expand-lg t4-sticky">
       <div class="container-fluid">
         <a class="navbar-brand t4-logo-nav" href="#">
           <img src="/images/logo.png" alt="logo-booleat" />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="t4-nav-toggle">
-            <img src="/images/menu.png" alt="" />
-          </span>
-        </button>
+        <div class="d-flex justify-content-end align-items-center">
+          <a class="t4-nav-item t4-orange-text" href=""
+            ><img src="/images/shopping.png" alt="shorp-cart" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="t4-nav-toggle">
+              <img src="/images/menu.png" alt="" />
+            </span>
+          </button>
+        </div>
+
         <div
-          class="collapse navbar-collapse ms-5 justify-content-end"
+          class="
+            collapse
+            navbar-collapse
+            ms-0 ms-md-0 ms-lg-0
+            justify-content-end
+          "
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
@@ -33,16 +44,6 @@
               href="/register"
               ><img src="/images/register.png" alt="Register Booleat" />
               Registrati
-            </a>
-
-            <a
-              class="
-                t4-nav-item t4-orange-text
-                ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0
-                mt-lg-0 mt-md-2 mt-sm-2 mt-2
-              "
-              href=""
-              ><img src="/images/shopping.png" alt="shorp-cart" />
             </a>
           </div>
         </div>
