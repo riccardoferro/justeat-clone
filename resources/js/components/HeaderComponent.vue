@@ -1,17 +1,35 @@
 <template>
-  <header>
-    <!-- DANI qui andrà il nostro Header con login e register -->
-    <nav class="navbar navbar-expand-lg t4-sticky">
+  <!-- DANI qui andrà il nostro Header con login e register -->
+  <div class="sticky-top t4-bg-black">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand t4-logo-nav" href="#">
           <img src="/images/logo.png" alt="logo-booleat" />
         </a>
         <div class="d-flex justify-content-end align-items-center">
-          <a class="t4-nav-item t4-orange-text" href=""
-            ><img src="/images/shopping.png" alt="shorp-cart" />
-          </a>
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn"
+              data-bs-toggle="dropdown"
+              data-bs-display="static"
+              aria-expanded="false"
+            >
+              <a class="t4-nav-item t4-orange-text" href=""
+                ><img src="/images/shopping.png" alt="shorp-cart" />
+              </a>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+              <li>
+                <button class="dropdown-item" type="button">
+                  Il tuo carrelo è vuoto!
+                </button>
+              </li>
+            </ul>
+          </div>
+
           <button
-            class="navbar-toggler"
+            class="navbar-toggler t4-toggle-btn"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup"
@@ -49,7 +67,7 @@
         </div>
       </div>
     </nav>
-  </header>
+  </div>
 </template>
 
 <script>

@@ -5358,6 +5358,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent"
 });
@@ -42667,12 +42685,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      { staticClass: "container-fluid" },
-      [_c("HeaderComponent"), _vm._v(" "), _c("router-view")],
-      1
-    ),
+    _c("div", [_c("HeaderComponent"), _vm._v(" "), _c("router-view")], 1),
   ])
 }
 var staticRenderFns = []
@@ -42982,8 +42995,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", [
-      _c("nav", { staticClass: "navbar navbar-expand-lg t4-sticky" }, [
+    return _c("div", { staticClass: "sticky-top t4-bg-black" }, [
+      _c("nav", { staticClass: "navbar navbar-expand-lg" }, [
         _c("div", { staticClass: "container-fluid" }, [
           _c(
             "a",
@@ -42999,23 +43012,66 @@ var staticRenderFns = [
             "div",
             { staticClass: "d-flex justify-content-end align-items-center" },
             [
-              _c(
-                "a",
-                {
-                  staticClass: "t4-nav-item t4-orange-text",
-                  attrs: { href: "" },
-                },
-                [
-                  _c("img", {
-                    attrs: { src: "/images/shopping.png", alt: "shorp-cart" },
-                  }),
-                ]
-              ),
+              _c("div", { staticClass: "btn-group" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn",
+                    attrs: {
+                      type: "button",
+                      "data-bs-toggle": "dropdown",
+                      "data-bs-display": "static",
+                      "aria-expanded": "false",
+                    },
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "t4-nav-item t4-orange-text",
+                        attrs: { href: "" },
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src: "/images/shopping.png",
+                            alt: "shorp-cart",
+                          },
+                        }),
+                      ]
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  {
+                    staticClass:
+                      "dropdown-menu dropdown-menu-end dropdown-menu-lg-start",
+                  },
+                  [
+                    _c("li", [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "dropdown-item",
+                          attrs: { type: "button" },
+                        },
+                        [
+                          _vm._v(
+                            "\n                Il tuo carrelo è vuoto!\n              "
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ]
+                ),
+              ]),
               _vm._v(" "),
               _c(
                 "button",
                 {
-                  staticClass: "navbar-toggler",
+                  staticClass: "navbar-toggler t4-toggle-btn",
                   attrs: {
                     type: "button",
                     "data-bs-toggle": "collapse",
