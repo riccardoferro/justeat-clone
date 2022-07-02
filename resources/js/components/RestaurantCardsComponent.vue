@@ -10,7 +10,7 @@
           d-flex
           flex-column
           align-items-center
-          t4-resturant-card
+          t4-resturant-label
         "
         v-for="user in users"
         :key="user.id"
@@ -20,7 +20,7 @@
           :to="{ name: 'single-restaurant', params: { slug: user.slug } }"
         >
           <!-- FINE SEZIONE SINGOLO RISTORANTE  -->
-          <div class="">
+          <div>
             <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
               {{ user.company }}
               <span class="t4-icon-company ms-2">

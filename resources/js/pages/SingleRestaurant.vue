@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <div class="row text-center mt-5">
       <h2>Benvenuto da {{ restaurant.company }}!</h2>
       <h4>
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="row flex-column justify-content-center">
+    <div class="row flex-column justify-content-center mt-5">
       <div
         class="
           row
@@ -56,8 +56,23 @@
               <p style="color: rgb(165, 4, 4)">Non disponibile</p>
             </div>
           </div>
+          <div class="t4-card-buttons d-flex justify-content-center">
+            <a href="#" class="btn t4-add-btn d-flex align-items-center">
+              <span class="me-2">Aggiungi al carrello</span>
+              <img src="/images/shopping-bag.png" alt="shopping-bag" />
+            </a>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="t4-card-buttons d-flex justify-content-end mt-5 mb-2">
+      <a
+        href="http://127.0.0.1:8000/"
+        class="btn t4-add-btn d-flex align-items-center"
+      >
+        <span class="me-2">Torna alla Home</span>
+        <img src="/images/home.png" alt="home" />
+      </a>
     </div>
   </div>
 </template>

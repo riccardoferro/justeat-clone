@@ -5785,6 +5785,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
@@ -43297,7 +43312,7 @@ var render = function () {
           {
             key: user.id,
             staticClass:
-              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-card\n      ",
+              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-label\n      ",
           },
           [
             _c(
@@ -43311,7 +43326,7 @@ var render = function () {
                 },
               },
               [
-                _c("div", {}, [
+                _c("div", [
                   _c(
                     "h6",
                     {
@@ -43438,7 +43453,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", {}, [
     _c("div", { staticClass: "row text-center mt-5" }, [
       _c("h2", [
         _vm._v("Benvenuto da " + _vm._s(_vm.restaurant.company) + "!"),
@@ -43472,7 +43487,7 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row flex-column justify-content-center" }, [
+    _c("div", { staticClass: "row flex-column justify-content-center mt-5" }, [
       _c(
         "div",
         {
@@ -43532,15 +43547,70 @@ var render = function () {
                       ]),
                 ]
               ),
+              _vm._v(" "),
+              _vm._m(0, true),
             ]
           )
         }),
         0
       ),
     ]),
+    _vm._v(" "),
+    _vm._m(1),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "t4-card-buttons d-flex justify-content-center" },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "btn t4-add-btn d-flex align-items-center",
+            attrs: { href: "#" },
+          },
+          [
+            _c("span", { staticClass: "me-2" }, [
+              _vm._v("Aggiungi al carrello"),
+            ]),
+            _vm._v(" "),
+            _c("img", {
+              attrs: { src: "/images/shopping-bag.png", alt: "shopping-bag" },
+            }),
+          ]
+        ),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "t4-card-buttons d-flex justify-content-end mt-5 mb-2" },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "btn t4-add-btn d-flex align-items-center",
+            attrs: { href: "http://127.0.0.1:8000/" },
+          },
+          [
+            _c("span", { staticClass: "me-2" }, [_vm._v("Torna alla Home")]),
+            _vm._v(" "),
+            _c("img", { attrs: { src: "/images/home.png", alt: "home" } }),
+          ]
+        ),
+      ]
+    )
+  },
+]
 render._withStripped = true
 
 
