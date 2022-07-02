@@ -14,7 +14,8 @@ body {
 
 .t4-bg-nav {
     background-color: $t4_bg_black;
-    z-index: 1000;
+    z-index: 1 ;
+    position: sticky ;
 }
 
 .t4-nav-items {
@@ -490,7 +491,7 @@ box-shadow: 0px -6px 11px -7px #6E6E6E;
 .t4-nav-toggle,
 .t4-icon-company{
     img{
-        width: 35px;
+        width: 25px;
     }
 }
 
@@ -538,5 +539,15 @@ box-shadow: 0px -6px 11px -7px #6E6E6E;
      }
      }
 
-
-
+// Single Reastaurant
+.t4-badge-category{
+    border-radius: 25px;
+    color: $t4_bg_black;
+    background-color: $t4_bg_orange;
+    outline: 2px solid $t4_orange_text;
+    outline-offset: 2px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 0px 10px;
+}

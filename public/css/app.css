@@ -23749,7 +23749,9 @@ body {
 
 .t4-bg-nav {
   background-color: #0B100C;
-  z-index: 1000;
+  z-index: 1;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .t4-nav-items {
@@ -24174,7 +24176,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .t4-nav-toggle img,
 .t4-icon-company img {
-  width: 35px;
+  width: 25px;
 }
 
 .t4-nav-item:hover {
@@ -24210,5 +24212,17 @@ input[type=number]::-webkit-outer-spin-button {
 .t4-restaurant-label img {
   width: 100%;
   aspect-ratio: 1;
+}
+
+.t4-badge-category {
+  border-radius: 25px;
+  color: #0B100C;
+  background-color: #FF9741;
+  outline: 2px solid #E68B3F;
+  outline-offset: 2px;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 0px 10px;
 }
 
