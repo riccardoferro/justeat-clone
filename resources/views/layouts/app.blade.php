@@ -27,7 +27,7 @@
             <div class="container-fluid t4-10vh">
                 {{-- Logo --}}
                 <div class="col-xl-1 t4-logo t4-h100 p-0">
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/admin/user') }}">
                         <img src="/images/logo.png" alt="Booleat">
                     </a>
                 </div>
