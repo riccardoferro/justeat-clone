@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <JumbotronComponent />
 
     <RestaurantCardsComponent :users="users" />

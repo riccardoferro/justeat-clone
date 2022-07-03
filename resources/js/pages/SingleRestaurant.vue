@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="container">
     <div class="row text-center mt-5">
       <h2>Benvenuto da {{ restaurant.company }}!</h2>
       <h4>
@@ -24,7 +24,7 @@
     <div class="row flex-column justify-content-center mt-5">
       <div
         class="
-          row
+          d-flex
           col-xxl-10 col-xl-10 col-md-11 col-sm-12
           m-auto
           mt-3

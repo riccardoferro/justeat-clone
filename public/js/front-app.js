@@ -5886,6 +5886,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5898,14 +5922,19 @@ __webpack_require__.r(__webpack_exports__);
       users: [],
       categories: [],
       selected: [],
-      categoriesArr: [this.$route.params.slug]
+      categoriesArr: [this.$route.params.slug],
+      currentPage: "",
+      prevPage: "",
+      nextPage: "",
+      url_getUsers: "http://127.0.0.1:8000/api/category/"
     };
   },
   mounted: function mounted() {
-    this.getUsersPerCategories("http://127.0.0.1:8000/api/category/");
+    this.getUsersPerCategories(this.url_getUsers);
     this.getAllCategories("http://127.0.0.1:8000/api/categories");
   },
   methods: {
+    // Prende tutti ristoranti in base alle categorie
     getUsersPerCategories: function getUsersPerCategories(url) {
       var _this = this;
 
@@ -5918,21 +5947,22 @@ __webpack_require__.r(__webpack_exports__);
         console.log(results);
 
         if (results.status === 200) {
-          _this.users = results.data;
+          _this.users = results.data.data;
+          _this.nextPage = results.data.next_page_url;
+          _this.prevPage = results.data.prev_page_url;
           console.log(_this.users);
         }
       })["catch"](function (e) {
         console.log(e);
       });
     },
+    // Prende tutte le categoria
     getAllCategories: function getAllCategories(url) {
       var _this2 = this;
 
       window.axios.get(url).then(function (results2) {
         if (results2.status === 200 && results2.data.success) {
-          _this2.categories = results2.data.results2; // this.currentPage = results.data.results.current_page;
-          // this.previousPageCategoriesLink = results.data.results.prev_page_url;
-          // this.nextPageCategoriesLink = results.data.results.next_page_url;
+          _this2.categories = results2.data.results2;
         } //   console.log(this.categories);
 
       })["catch"](function (e) {
@@ -6002,6 +6032,14 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.categoriesArr.push(el);
       }
+    },
+    nextPageFunction: function nextPageFunction() {
+      this.url_getUsers = this.nextPage;
+      this.getUsersPerCategories(this.url_getUsers);
+    },
+    prevPageFunction: function prevPageFunction() {
+      this.url_getUsers = this.prevPage;
+      this.getUsersPerCategories(this.url_getUsers);
     } //
 
   }
@@ -43978,7 +44016,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "container-fluid" }, [
     _c("h3", [
       _vm._v("Seleziona una categoria e vedi i ristoranti a disposizione"),
     ]),
@@ -44000,9 +44038,7 @@ var render = function () {
               on: {
                 click: function () {
                   _vm.toggleCheckbox(category.slug)
-                  _vm.getUsersPerCategories(
-                    "http://127.0.0.1:8000/api/category/"
-                  )
+                  _vm.getUsersPerCategories(_vm.url_getUsers)
                 },
               },
             }),
@@ -44109,7 +44145,39 @@ var render = function () {
           }),
           0
         )
-      : _c("div", [_vm._v("Piattela in culo")]),
+      : _c("div", [_vm._v("Nessun ristorante da mostrare")]),
+    _vm._v(" "),
+    _vm.users.length > 0
+      ? _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col d-flex justify-content-center" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn t4-add-btn",
+                on: {
+                  click: function () {
+                    _vm.prevPageFunction()
+                  },
+                },
+              },
+              [_vm._v("\n        Precedente\n      ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn t4-add-btn",
+                on: {
+                  click: function () {
+                    _vm.nextPageFunction()
+                  },
+                },
+              },
+              [_vm._v("\n        Successivo\n      ")]
+            ),
+          ]),
+        ])
+      : _vm._e(),
   ])
 }
 var staticRenderFns = []
@@ -44136,6 +44204,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "container-fluid" },
     [
       _c("JumbotronComponent"),
       _vm._v(" "),
@@ -44209,7 +44278,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {}, [
+  return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row text-center mt-5" }, [
       _c("h2", [
         _vm._v("Benvenuto da " + _vm._s(_vm.restaurant.company) + "!"),
@@ -44248,7 +44317,7 @@ var render = function () {
         "div",
         {
           staticClass:
-            "\n        row\n        col-xxl-10 col-xl-10 col-md-11 col-sm-12\n        m-auto\n        mt-3\n        justify-content-center\n      ",
+            "\n        d-flex\n        col-xxl-10 col-xl-10 col-md-11 col-sm-12\n        m-auto\n        mt-3\n        justify-content-center\n      ",
         },
         _vm._l(_vm.plates, function (plate) {
           return _c(

@@ -66,7 +66,7 @@ class CategoryController extends Controller
                 $q->whereIn("slug", $selectedCategories);
             });
         }
-        $users = $query->get();
+        $users = $query->paginate(2);
 
 
 

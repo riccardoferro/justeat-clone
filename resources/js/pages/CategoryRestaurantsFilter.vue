@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <h3>Seleziona una categoria e vedi i ristoranti a disposizione</h3>
 
     <!-- <div class="row">
@@ -23,7 +23,7 @@
           @click="
             () => {
               toggleCheckbox(category.slug);
-              getUsersPerCategories('http://127.0.0.1:8000/api/category/');
+              getUsersPerCategories(url_getUsers);
             }
           "
         />
@@ -80,7 +80,31 @@
       </div>
       <!-- fine card -->
     </div>
-    <div v-else>Piattela in culo</div>
+    <div v-else>Nessun ristorante da mostrare</div>
+    <div v-if="users.length > 0" class="row justify-content-center">
+      <div class="col d-flex justify-content-center">
+        <button
+          class="btn t4-add-btn"
+          @click="
+            () => {
+              prevPageFunction();
+            }
+          "
+        >
+          Precedente
+        </button>
+        <button
+          class="btn t4-add-btn"
+          @click="
+            () => {
+              nextPageFunction();
+            }
+          "
+        >
+          Successivo
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -100,13 +124,18 @@ export default {
       categories: [],
       selected: [],
       categoriesArr: [this.$route.params.slug],
+      currentPage: "",
+      prevPage: "",
+      nextPage: "",
+      url_getUsers: "http://127.0.0.1:8000/api/category/",
     };
   },
   mounted() {
-    this.getUsersPerCategories("http://127.0.0.1:8000/api/category/");
+    this.getUsersPerCategories(this.url_getUsers);
     this.getAllCategories("http://127.0.0.1:8000/api/categories");
   },
   methods: {
+    // Prende tutti ristoranti in base alle categorie
     getUsersPerCategories(url) {
       console.log("this selected", this.categoriesArr);
       window.axios
@@ -118,7 +147,9 @@ export default {
         .then((results) => {
           console.log(results);
           if (results.status === 200) {
-            this.users = results.data;
+            this.users = results.data.data;
+            this.nextPage = results.data.next_page_url;
+            this.prevPage = results.data.prev_page_url;
             console.log(this.users);
           }
         })
@@ -126,16 +157,13 @@ export default {
           console.log(e);
         });
     },
-
+    // Prende tutte le categoria
     getAllCategories(url) {
       window.axios
         .get(url)
         .then((results2) => {
           if (results2.status === 200 && results2.data.success) {
             this.categories = results2.data.results2;
-            // this.currentPage = results.data.results.current_page;
-            // this.previousPageCategoriesLink = results.data.results.prev_page_url;
-            // this.nextPageCategoriesLink = results.data.results.next_page_url;
           }
           //   console.log(this.categories);
         })
@@ -195,6 +223,14 @@ export default {
       } else {
         this.categoriesArr.push(el);
       }
+    },
+    nextPageFunction() {
+      this.url_getUsers = this.nextPage;
+      this.getUsersPerCategories(this.url_getUsers);
+    },
+    prevPageFunction() {
+      this.url_getUsers = this.prevPage;
+      this.getUsersPerCategories(this.url_getUsers);
     },
 
     //
