@@ -5854,6 +5854,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5865,22 +5888,20 @@ __webpack_require__.r(__webpack_exports__);
     return {
       users: [],
       category: undefined,
-      categoriesArr: []
+      categoriesArr: [this.$route.params.slug]
     };
   },
   mounted: function mounted() {
-    var _this = this;
-
-    var slug = this.$route.params.slug;
-    console.log(slug);
-    window.axios.get("http://127.0.0.1:8000/api/category/" + slug).then(function (results) {
+    console.log("Prova");
+    window.axios.get("http://127.0.0.1:8000/api/category/", {
+      params: {
+        value: this.categoriesArr
+      }
+    }).then(function (results) {
       console.log(results);
 
       if (results.status === 200 && results.data.success) {
-        _this.category = results.data.results;
-        _this.users = _this.category.users;
-        _this.categoriesArr = results.data.categories;
-        console.log(_this.users);
+        console.log(results);
       }
     })["catch"](function (e) {
       console.log(e);
@@ -5942,7 +5963,7 @@ __webpack_require__.r(__webpack_exports__);
         case "Vegetariano":
           return string = "/images/category_img/vegetarian-food.png";
       }
-    } // 
+    } //
 
   }
 });
@@ -6007,24 +6028,14 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.loadPage("http://127.0.0.1:8000/api/users", "http://127.0.0.1:8000/api/categories");
+    this.getAllUsers("http://127.0.0.1:8000/api/users");
+    this.getAllCategories("http://127.0.0.1:8000/api/categories");
   },
   methods: {
-    loadPage: function loadPage(url, url2) {
+    getAllCategories: function getAllCategories(url) {
       var _this = this;
 
-      window.axios.get(url).then(function (results) {
-        //   console.log(results);
-        if (results.status === 200 && results.data.success) {
-          _this.users = results.data.results; // this.currentPage = results.data.results.current_page;
-          // this.previousPageLink = results.data.results.prev_page_url;
-          // this.nextPageLink = results.data.results.next_page_url;
-        } //   console.log(this.users);
-
-      })["catch"](function (e) {
-        console.log(e);
-      });
-      window.axios.get(url2).then(function (results2) {
+      window.axios.get(url).then(function (results2) {
         //   console.log(results2);
         if (results2.status === 200 && results2.data.success) {
           _this.categories = results2.data.results2; // this.currentPage = results.data.results.current_page;
@@ -6035,14 +6046,30 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (e) {
         console.log(e);
       });
-    } // Funzioni Cambio Pagina
+    },
+    // Funzioni Cambio Pagina
     // goPreviousPage() {
     //   this.loadPage(this.previousPageLink);
     // },
     // goNextPage() {
     //   this.loadPage(this.nextPageLink);
     // },
+    // prende tutti gli utenti
+    getAllUsers: function getAllUsers(url) {
+      var _this2 = this;
 
+      window.axios.get(url).then(function (results) {
+        //   console.log(results);
+        if (results.status === 200 && results.data.success) {
+          _this2.users = results.data.results; // this.currentPage = results.data.results.current_page;
+          // this.previousPageLink = results.data.results.prev_page_url;
+          // this.nextPageLink = results.data.results.next_page_url;
+        } //   console.log(this.users);
+
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    }
   }
 });
 
@@ -43914,18 +43941,34 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("h3", [
-      _vm._v(" Seleziona una categoria e vedi i ristoranti a disposizione"),
+      _vm._v("Seleziona una categoria e vedi i ristoranti a disposizione"),
     ]),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row" },
       [
-        _c("BoxCategoriesFilter", {
-          attrs: { categoriesArr: _vm.categoriesArr, category: _vm.category },
+        _c("h3", [_vm._v("Categorie")]),
+        _vm._v(" "),
+        _vm._l(_vm.categoriesArr, function (categori, index) {
+          return _c("div", { key: index, staticClass: "form-check" }, [
+            _c("input", {
+              staticClass: "form-check-input",
+              attrs: { type: "checkbox", id: "categori" + index },
+              domProps: { value: categori.id },
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "form-check-label",
+                attrs: { for: "categori" + index },
+              },
+              [_vm._v("\n        " + _vm._s(categori.name) + "\n      ")]
+            ),
+          ])
         }),
       ],
-      1
+      2
     ),
     _vm._v(" "),
     _c(
@@ -43937,7 +43980,7 @@ var render = function () {
           {
             key: user.id,
             staticClass:
-              "col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 mb-5 d-flex flex-column align-items-center t4-resturant-label",
+              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-label\n      ",
           },
           [
             _c(
@@ -43960,9 +44003,9 @@ var render = function () {
                     },
                     [
                       _vm._v(
-                        "\n                        " +
+                        "\n            " +
                           _vm._s(user.company) +
-                          "\n                        "
+                          "\n            "
                       ),
                       _c("span", { staticClass: "t4-icon-company ms-2" }, [
                         _c("img", {
@@ -43983,9 +44026,9 @@ var render = function () {
                       _vm._l(user.categories, function (category) {
                         return _c("span", { key: category.slug }, [
                           _vm._v(
-                            "\n                          " +
+                            "\n              " +
                               _vm._s(category.name) +
-                              "\n                        "
+                              "\n            "
                           ),
                         ])
                       }),
@@ -43998,7 +44041,7 @@ var render = function () {
                   "div",
                   {
                     staticClass:
-                      "col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 t4-img-company",
+                      "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12\n            t4-img-company\n          ",
                   },
                   [
                     _c("img", {
@@ -60684,7 +60727,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'category-restaurants-filter',
     component: _pages_CategoryRestaurantsFilter__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
-    path: '/*',
+    path: '/',
     name: 'notFound',
     component: _pages_NotFound__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
@@ -60700,7 +60743,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/PHP_Projects_Boolean/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })

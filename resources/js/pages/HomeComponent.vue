@@ -42,31 +42,14 @@ export default {
     };
   },
   mounted() {
-    this.loadPage(
-      "http://127.0.0.1:8000/api/users",
-      "http://127.0.0.1:8000/api/categories"
-    );
+    this.getAllUsers("http://127.0.0.1:8000/api/users");
+    this.getAllCategories("http://127.0.0.1:8000/api/categories");
   },
 
   methods: {
-    loadPage(url, url2) {
+    getAllCategories(url) {
       window.axios
         .get(url)
-        .then((results) => {
-          //   console.log(results);
-          if (results.status === 200 && results.data.success) {
-            this.users = results.data.results;
-            // this.currentPage = results.data.results.current_page;
-            // this.previousPageLink = results.data.results.prev_page_url;
-            // this.nextPageLink = results.data.results.next_page_url;
-          }
-          //   console.log(this.users);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-      window.axios
-        .get(url2)
         .then((results2) => {
           //   console.log(results2);
           if (results2.status === 200 && results2.data.success) {
@@ -89,6 +72,25 @@ export default {
     // goNextPage() {
     //   this.loadPage(this.nextPageLink);
     // },
+
+    // prende tutti gli utenti
+    getAllUsers(url) {
+      window.axios
+        .get(url)
+        .then((results) => {
+          //   console.log(results);
+          if (results.status === 200 && results.data.success) {
+            this.users = results.data.results;
+            // this.currentPage = results.data.results.current_page;
+            // this.previousPageLink = results.data.results.prev_page_url;
+            // this.nextPageLink = results.data.results.next_page_url;
+          }
+          //   console.log(this.users);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
   },
 };
 </script>

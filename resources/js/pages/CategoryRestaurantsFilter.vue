@@ -1,95 +1,115 @@
 <template>
   <div>
-      <h3> Seleziona una categoria e vedi i ristoranti a disposizione</h3>
+    <h3>Seleziona una categoria e vedi i ristoranti a disposizione</h3>
 
-
-
-      <div class="row">
+    <!-- <div class="row">
           <BoxCategoriesFilter :categoriesArr="categoriesArr" :category="category"/>
+      </div> -->
+
+    <div>
+      <h3>Categorie</h3>
+      <div
+        class="form-check"
+        v-for="(categori, index) in categoriesArr"
+        :key="index"
+      >
+        <input
+          class="form-check-input"
+          type="checkbox"
+          :value="categori.id"
+          :id="'categori' + index"
+        />
+
+        <label class="form-check-label" :for="'categori' + index">
+          {{ categori.name }}
+        </label>
       </div>
-
-
-
-
-      <div class="row pt-5">
-          <!-- inizio card -->
-          <div
-              class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 mb-5 d-flex flex-column align-items-center t4-resturant-label"
-              v-for="user in users"
-              :key="user.id"
-          >
-              <!-- Attraverso il router link verremo riportati in un'altra pagine dove vedremo i dettagli del ristorante -->
-              <router-link :to="{ name: 'single-restaurant', params: { slug: user.slug } }">
-
-                  <div>
-                      <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
-                          {{ user.company }}
-                          <span class="t4-icon-company ms-2">
-                              <img src="/images/posate.png" alt="" />
-                          </span>
-                      </h6>
-
-                      <h6 class="mb-3 t4-fw-6">
-
-                          <span class="t4-orange-text">Categorie:</span>
-                          <span v-for="category in user.categories" :key="category.slug">
-                            {{ category.name }}
-                          </span>
-
-                      </h6>
-                  </div>
-
-                  <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 t4-img-company">
-                      <img :src="imagePut(user.image)" alt="" class="img-fluid"/>
-                  </div>
-
-              </router-link>
-          </div>
-          <!-- fine card -->
-      </div>
-  
-
     </div>
+
+    <div class="row pt-5">
+      <!-- inizio card -->
+      <div
+        class="
+          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8
+          mb-5
+          d-flex
+          flex-column
+          align-items-center
+          t4-resturant-label
+        "
+        v-for="user in users"
+        :key="user.id"
+      >
+        <!-- Attraverso il router link verremo riportati in un'altra pagine dove vedremo i dettagli del ristorante -->
+        <router-link
+          :to="{ name: 'single-restaurant', params: { slug: user.slug } }"
+        >
+          <div>
+            <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
+              {{ user.company }}
+              <span class="t4-icon-company ms-2">
+                <img src="/images/posate.png" alt="" />
+              </span>
+            </h6>
+
+            <h6 class="mb-3 t4-fw-6">
+              <span class="t4-orange-text">Categorie:</span>
+              <span v-for="category in user.categories" :key="category.slug">
+                {{ category.name }}
+              </span>
+            </h6>
+          </div>
+
+          <div
+            class="
+              col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12
+              t4-img-company
+            "
+          >
+            <img :src="imagePut(user.image)" alt="" class="img-fluid" />
+          </div>
+        </router-link>
+      </div>
+      <!-- fine card -->
+    </div>
+  </div>
 </template>
 
 <script>
-
 // import box category filter
 import BoxCategoriesFilter from "../components/BoxCategoriesFIlter.vue";
-
 
 export default {
   name: "CategoryRestaurantsFilter",
   components: {
-      BoxCategoriesFilter,
+    BoxCategoriesFilter,
   },
- 
-  data() {
-        return {
-            users: [],
-            category: undefined,
-            categoriesArr: [],
-        };
-    },
-  mounted() {
-        const slug = this.$route.params.slug;
-        console.log(slug);
 
-        window.axios
-            .get("http://127.0.0.1:8000/api/category/" + slug)
-            .then((results) => {
-              console.log(results);
-              if (results.status === 200 && results.data.success) {
-                  this.category = results.data.results;
-                  this.users = this.category.users;
-                  this.categoriesArr = results.data.categories;
-                  console.log(this.users);
-              }
-            })
-            .catch((e) => {
-              console.log(e);
-            });
-    },
+  data() {
+    return {
+      users: [],
+      category: undefined,
+      categoriesArr: [this.$route.params.slug],
+    };
+  },
+  mounted() {
+    console.log("Prova");
+    window.axios
+      .get("http://127.0.0.1:8000/api/category/", {
+        params: {
+          value: this.categoriesArr,
+        },
+      })
+      .then((results) => {
+        console.log(results);
+        if (results.status === 200 && results.data.success) {
+          console.log(results);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  },
   methods: {
     // Funzione per l'immagine profilo ristoratorante!
     imagePut(string) {
@@ -135,13 +155,10 @@ export default {
       }
     },
 
-    // 
-
-
+    //
   },
-}
+};
 </script>
 
 <style>
-
 </style>

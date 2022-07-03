@@ -22,7 +22,6 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-
         $result2 = ['results2' => $categories, 'success' => true];
         return response()->json($result2);
     }
@@ -54,15 +53,24 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(Request $request, User $user)
     {
-        
         $categories = Category::all();
-        $category = Category::where('slug', $slug)->with('users')->first();
-        $result = ['results' => $category, 'categories' => $categories, 'success' => true];
-        return response()->json($result);
+        $selectedCategories = $request->value;
+
+        $query = $user->newQuery();
+        if (!empty($selectedCategories)) {
+            $query->whereHas("categories", function ($q) use (
+                $selectedCategories
+            ) {
+                $q->whereIn("slug", $selectedCategories);
+            });
+        }
+        $users = $query->get();
 
 
+
+        return response()->json($users, $categories);
     }
 
     /**
