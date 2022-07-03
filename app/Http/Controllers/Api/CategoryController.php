@@ -55,7 +55,7 @@ class CategoryController extends Controller
      */
     public function show(Request $request, User $user)
     {
-        $categories = Category::all();
+
         $selectedCategories = $request->value;
 
         $query = $user->newQuery();
@@ -70,7 +70,7 @@ class CategoryController extends Controller
 
 
 
-        return response()->json($users, $categories);
+        return response()->json($users);
     }
 
     /**

@@ -8,25 +8,33 @@
 
     <div>
       <h3>Categorie</h3>
+
       <div
         class="form-check"
-        v-for="(categori, index) in categoriesArr"
-        :key="index"
+        v-for="category in categories"
+        :key="category.slug"
       >
         <input
           class="form-check-input"
           type="checkbox"
-          :value="categori.id"
-          :id="'categori' + index"
+          :value="category.slug"
+          :id="'category' + category.id"
+          :checked="categoriesArr.includes(category.slug)"
+          @click="
+            () => {
+              toggleCheckbox(category.slug);
+              getUsersPerCategories('http://127.0.0.1:8000/api/category/');
+            }
+          "
         />
 
-        <label class="form-check-label" :for="'categori' + index">
-          {{ categori.name }}
+        <label class="form-check-label" :for="'category' + category.id">
+          {{ category.name }}
         </label>
       </div>
     </div>
 
-    <div class="row pt-5">
+    <div class="row pt-5" v-if="categoriesArr.length > 0">
       <!-- inizio card -->
       <div
         class="
@@ -72,6 +80,7 @@
       </div>
       <!-- fine card -->
     </div>
+    <div v-else>Piattela in culo</div>
   </div>
 </template>
 
@@ -88,29 +97,53 @@ export default {
   data() {
     return {
       users: [],
-      category: undefined,
+      categories: [],
+      selected: [],
       categoriesArr: [this.$route.params.slug],
     };
   },
   mounted() {
-    console.log("Prova");
-    window.axios
-      .get("http://127.0.0.1:8000/api/category/", {
-        params: {
-          value: this.categoriesArr,
-        },
-      })
-      .then((results) => {
-        console.log(results);
-        if (results.status === 200 && results.data.success) {
-          console.log(results);
-        }
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    this.getUsersPerCategories("http://127.0.0.1:8000/api/category/");
+    this.getAllCategories("http://127.0.0.1:8000/api/categories");
   },
   methods: {
+    getUsersPerCategories(url) {
+      console.log("this selected", this.categoriesArr);
+      window.axios
+        .get(url, {
+          params: {
+            value: this.categoriesArr,
+          },
+        })
+        .then((results) => {
+          console.log(results);
+          if (results.status === 200) {
+            this.users = results.data;
+            console.log(this.users);
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+
+    getAllCategories(url) {
+      window.axios
+        .get(url)
+        .then((results2) => {
+          if (results2.status === 200 && results2.data.success) {
+            this.categories = results2.data.results2;
+            // this.currentPage = results.data.results.current_page;
+            // this.previousPageCategoriesLink = results.data.results.prev_page_url;
+            // this.nextPageCategoriesLink = results.data.results.next_page_url;
+          }
+          //   console.log(this.categories);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+
     // Funzione per l'immagine profilo ristoratorante!
     imagePut(string) {
       let newString;
@@ -152,6 +185,15 @@ export default {
           return (string = "/images/category_img/wheat.png");
         case "Vegetariano":
           return (string = "/images/category_img/vegetarian-food.png");
+      }
+    },
+
+    toggleCheckbox(el) {
+      if (this.categoriesArr.includes(el)) {
+        const index = this.categoriesArr.indexOf(el);
+        this.categoriesArr.splice(index, 1);
+      } else {
+        this.categoriesArr.push(el);
       }
     },
 

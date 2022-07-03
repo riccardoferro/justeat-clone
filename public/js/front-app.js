@@ -5877,6 +5877,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5887,27 +5896,49 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       users: [],
-      category: undefined,
+      categories: [],
+      selected: [],
       categoriesArr: [this.$route.params.slug]
     };
   },
   mounted: function mounted() {
-    console.log("Prova");
-    window.axios.get("http://127.0.0.1:8000/api/category/", {
-      params: {
-        value: this.categoriesArr
-      }
-    }).then(function (results) {
-      console.log(results);
-
-      if (results.status === 200 && results.data.success) {
-        console.log(results);
-      }
-    })["catch"](function (e) {
-      console.log(e);
-    });
+    this.getUsersPerCategories("http://127.0.0.1:8000/api/category/");
+    this.getAllCategories("http://127.0.0.1:8000/api/categories");
   },
   methods: {
+    getUsersPerCategories: function getUsersPerCategories(url) {
+      var _this = this;
+
+      console.log("this selected", this.categoriesArr);
+      window.axios.get(url, {
+        params: {
+          value: this.categoriesArr
+        }
+      }).then(function (results) {
+        console.log(results);
+
+        if (results.status === 200) {
+          _this.users = results.data;
+          console.log(_this.users);
+        }
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    },
+    getAllCategories: function getAllCategories(url) {
+      var _this2 = this;
+
+      window.axios.get(url).then(function (results2) {
+        if (results2.status === 200 && results2.data.success) {
+          _this2.categories = results2.data.results2; // this.currentPage = results.data.results.current_page;
+          // this.previousPageCategoriesLink = results.data.results.prev_page_url;
+          // this.nextPageCategoriesLink = results.data.results.next_page_url;
+        } //   console.log(this.categories);
+
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    },
     // Funzione per l'immagine profilo ristoratorante!
     imagePut: function imagePut(string) {
       var newString;
@@ -5962,6 +5993,14 @@ __webpack_require__.r(__webpack_exports__);
 
         case "Vegetariano":
           return string = "/images/category_img/vegetarian-food.png";
+      }
+    },
+    toggleCheckbox: function toggleCheckbox(el) {
+      if (this.categoriesArr.includes(el)) {
+        var index = this.categoriesArr.indexOf(el);
+        this.categoriesArr.splice(index, 1);
+      } else {
+        this.categoriesArr.push(el);
       }
     } //
 
@@ -43949,21 +43988,32 @@ var render = function () {
       [
         _c("h3", [_vm._v("Categorie")]),
         _vm._v(" "),
-        _vm._l(_vm.categoriesArr, function (categori, index) {
-          return _c("div", { key: index, staticClass: "form-check" }, [
+        _vm._l(_vm.categories, function (category) {
+          return _c("div", { key: category.slug, staticClass: "form-check" }, [
             _c("input", {
               staticClass: "form-check-input",
-              attrs: { type: "checkbox", id: "categori" + index },
-              domProps: { value: categori.id },
+              attrs: { type: "checkbox", id: "category" + category.id },
+              domProps: {
+                value: category.slug,
+                checked: _vm.categoriesArr.includes(category.slug),
+              },
+              on: {
+                click: function () {
+                  _vm.toggleCheckbox(category.slug)
+                  _vm.getUsersPerCategories(
+                    "http://127.0.0.1:8000/api/category/"
+                  )
+                },
+              },
             }),
             _vm._v(" "),
             _c(
               "label",
               {
                 staticClass: "form-check-label",
-                attrs: { for: "categori" + index },
+                attrs: { for: "category" + category.id },
               },
-              [_vm._v("\n        " + _vm._s(categori.name) + "\n      ")]
+              [_vm._v("\n        " + _vm._s(category.name) + "\n      ")]
             ),
           ])
         }),
@@ -43971,93 +44021,95 @@ var render = function () {
       2
     ),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row pt-5" },
-      _vm._l(_vm.users, function (user) {
-        return _c(
+    _vm.categoriesArr.length > 0
+      ? _c(
           "div",
-          {
-            key: user.id,
-            staticClass:
-              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-label\n      ",
-          },
-          [
-            _c(
-              "router-link",
+          { staticClass: "row pt-5" },
+          _vm._l(_vm.users, function (user) {
+            return _c(
+              "div",
               {
-                attrs: {
-                  to: {
-                    name: "single-restaurant",
-                    params: { slug: user.slug },
-                  },
-                },
+                key: user.id,
+                staticClass:
+                  "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-label\n      ",
               },
               [
-                _c("div", [
-                  _c(
-                    "h6",
-                    {
-                      staticClass:
-                        "t4-orange-text t4-fw-6 d-flex align-items-center",
-                    },
-                    [
-                      _vm._v(
-                        "\n            " +
-                          _vm._s(user.company) +
-                          "\n            "
-                      ),
-                      _c("span", { staticClass: "t4-icon-company ms-2" }, [
-                        _c("img", {
-                          attrs: { src: "/images/posate.png", alt: "" },
-                        }),
-                      ]),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "h6",
-                    { staticClass: "mb-3 t4-fw-6" },
-                    [
-                      _c("span", { staticClass: "t4-orange-text" }, [
-                        _vm._v("Categorie:"),
-                      ]),
-                      _vm._v(" "),
-                      _vm._l(user.categories, function (category) {
-                        return _c("span", { key: category.slug }, [
-                          _vm._v(
-                            "\n              " +
-                              _vm._s(category.name) +
-                              "\n            "
-                          ),
-                        ])
-                      }),
-                    ],
-                    2
-                  ),
-                ]),
-                _vm._v(" "),
                 _c(
-                  "div",
+                  "router-link",
                   {
-                    staticClass:
-                      "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12\n            t4-img-company\n          ",
+                    attrs: {
+                      to: {
+                        name: "single-restaurant",
+                        params: { slug: user.slug },
+                      },
+                    },
                   },
                   [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: _vm.imagePut(user.image), alt: "" },
-                    }),
+                    _c("div", [
+                      _c(
+                        "h6",
+                        {
+                          staticClass:
+                            "t4-orange-text t4-fw-6 d-flex align-items-center",
+                        },
+                        [
+                          _vm._v(
+                            "\n            " +
+                              _vm._s(user.company) +
+                              "\n            "
+                          ),
+                          _c("span", { staticClass: "t4-icon-company ms-2" }, [
+                            _c("img", {
+                              attrs: { src: "/images/posate.png", alt: "" },
+                            }),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "h6",
+                        { staticClass: "mb-3 t4-fw-6" },
+                        [
+                          _c("span", { staticClass: "t4-orange-text" }, [
+                            _vm._v("Categorie:"),
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(user.categories, function (category) {
+                            return _c("span", { key: category.slug }, [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(category.name) +
+                                  "\n            "
+                              ),
+                            ])
+                          }),
+                        ],
+                        2
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12\n            t4-img-company\n          ",
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "img-fluid",
+                          attrs: { src: _vm.imagePut(user.image), alt: "" },
+                        }),
+                      ]
+                    ),
                   ]
                 ),
-              ]
-            ),
-          ],
-          1
+              ],
+              1
+            )
+          }),
+          0
         )
-      }),
-      0
-    ),
+      : _c("div", [_vm._v("Piattela in culo")]),
   ])
 }
 var staticRenderFns = []
