@@ -23,4 +23,4 @@ Route::get('/users/{slug}','Api\UserController@show')->name('users.show');
 
 Route::get('/categories', 'Api\CategoryController@index')->name('index');
 
-Route::get('/categories/{slug}','Api\CategoryController@show')->name('categories.show');
+Route::get('/category/{slug}','Api\CategoryController@show')->name('show');

@@ -30,7 +30,7 @@ const router = new VueRouter({
             component: NotFound
         },
         {
-            path: '/:slug',
+            path: '/category/:slug',
             name: 'category-restaurants-filter',
             component: CategoryRestaurantsFilter
         }

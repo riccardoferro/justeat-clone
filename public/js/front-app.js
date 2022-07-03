@@ -5780,11 +5780,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoryRestaurantsFilter",
   data: function data() {
     return {
-      restaurants: [],
+      users: [],
       category: undefined
     };
   },
@@ -5793,17 +5830,75 @@ __webpack_require__.r(__webpack_exports__);
 
     var slug = this.$route.params.slug;
     console.log(slug);
-    window.axios.get("http://127.0.0.1:8000/api/categories/" + slug).then(function (results) {
+    window.axios.get("http://127.0.0.1:8000/api/category/" + slug).then(function (results) {
       console.log(results);
 
       if (results.status === 200 && results.data.success) {
         _this.category = results.data.results;
-        _this.restaurants = _this.category.users;
-        console.log(_this.restaurants);
+        _this.users = _this.category.users;
+        console.log(_this.users);
       }
     })["catch"](function (e) {
       console.log(e);
     });
+  },
+  methods: {
+    // Funzione per l'immagine profilo ristoratorante!
+    imagePut: function imagePut(string) {
+      var newString;
+      console.log("stringa presa");
+
+      if (string.includes("uploads")) {
+        newString = "/storage/".concat(string);
+      } else {
+        newString = "/images/default-restaurant.jpeg";
+      }
+
+      return newString;
+    },
+    // Funzione immagine categoria
+    categoryIcon: function categoryIcon(string) {
+      switch (string) {
+        case "Fast Food":
+          return string = "/images/category_img/burger.png";
+
+        case "Pizza":
+          return string = "/images/category_img/pizza.png";
+
+        case "Cinese":
+          return string = "/images/category_img/noodles.png";
+
+        case "Giapponese":
+          return string = "/images/category_img/sushi.png";
+
+        case "Poke":
+          return string = "/images/category_img/rice.png";
+
+        case "Dessert":
+          return string = "/images/category_img/dessert.png";
+
+        case "Tailandese":
+          return string = "/images/category_img/pad-thai.png";
+
+        case "Italiano":
+          return string = "/images/category_img/pasta.png";
+
+        case "Smoothie":
+          return string = "/images/category_img/boba.png";
+
+        case "Gelato":
+          return string = "/images/category_img/ice-cream.png";
+
+        case "Vegano":
+          return string = "/images/category_img/vegan.png";
+
+        case "Gluten Free":
+          return string = "/images/category_img/wheat.png";
+
+        case "Vegetariano":
+          return string = "/images/category_img/vegetarian-food.png";
+      }
+    }
   }
 });
 
@@ -43704,17 +43799,92 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("h3", [
-      _vm._v(" I ristoranti appartenenti a questa categoria cliccata"),
+      _vm._v(" Seleziona una categoria e vedi i ristoranti a disposizione"),
     ]),
     _vm._v(" "),
     _c(
       "div",
-      _vm._l(_vm.restaurants, function (restaurant) {
-        return _c("p", { key: restaurant.slug }, [
-          _vm._v(
-            "\n         " + _vm._s(restaurant.company) + "\n       \n     "
-          ),
-        ])
+      { staticClass: "row pt-5" },
+      _vm._l(_vm.users, function (user) {
+        return _c(
+          "div",
+          {
+            key: user.id,
+            staticClass:
+              "col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10 mb-5 d-flex flex-column align-items-center t4-resturant-label",
+          },
+          [
+            _c(
+              "router-link",
+              {
+                attrs: {
+                  to: {
+                    name: "single-restaurant",
+                    params: { slug: user.slug },
+                  },
+                },
+              },
+              [
+                _c("div", [
+                  _c(
+                    "h6",
+                    {
+                      staticClass:
+                        "t4-orange-text t4-fw-6 d-flex align-items-center",
+                    },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(user.company) +
+                          "\n                        "
+                      ),
+                      _c("span", { staticClass: "t4-icon-company ms-2" }, [
+                        _c("img", {
+                          attrs: { src: "/images/posate.png", alt: "" },
+                        }),
+                      ]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "h6",
+                    { staticClass: "mb-3 t4-fw-6" },
+                    [
+                      _c("span", { staticClass: "t4-orange-text" }, [
+                        _vm._v("Categorie:"),
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(user.categories, function (category) {
+                        return _c("span", { key: category.slug }, [
+                          _vm._v(
+                            "\n                          " +
+                              _vm._s(category.name) +
+                              "\n                        "
+                          ),
+                        ])
+                      }),
+                    ],
+                    2
+                  ),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12 t4-img-company",
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: _vm.imagePut(user.image), alt: "" },
+                    }),
+                  ]
+                ),
+              ]
+            ),
+          ],
+          1
+        )
       }),
       0
     ),
@@ -60221,10 +60391,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_HomeComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/HomeComponent */ "./resources/js/pages/HomeComponent.vue");
 /* harmony import */ var _pages_SingleRestaurant__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/SingleRestaurant */ "./resources/js/pages/SingleRestaurant.vue");
 /* harmony import */ var _pages_NotFound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/NotFound */ "./resources/js/pages/NotFound.vue");
-/* harmony import */ var _pages_CategoryRestaurantsFilter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/CategoryRestaurantsFilter */ "./resources/js/pages/CategoryRestaurantsFilter.vue");
+/* harmony import */ var _pages_CategoryRestaurantsFilter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/CategoryRestaurantsFilter */ "./resources/js/pages/CategoryRestaurantsFilter.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); // Qui andranno tutte le rotte import delle pages
+
 
 
 
@@ -60232,26 +60403,22 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
-  routes: [
-  {
+  routes: [{
     path: '/',
     name: 'home-booleat',
     component: _pages_HomeComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }, 
-  {
+  }, {
     path: '/:slug',
     name: 'single-restaurant',
     component: _pages_SingleRestaurant__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }, 
-  {
+  }, {
     path: '/*',
     name: 'notFound',
     component: _pages_NotFound__WEBPACK_IMPORTED_MODULE_4__["default"]
-  },
-  {
-    path: '/:slug',
+  }, {
+    path: '/category/:slug',
     name: 'category-restaurants-filter',
-    component: _pages_CategoryRestaurantsFilter__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _pages_CategoryRestaurantsFilter__WEBPACK_IMPORTED_MODULE_5__["default"]
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
@@ -60265,7 +60432,6 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 module.exports = __webpack_require__(/*! /var/www/PHP_Projects_Boolean/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
