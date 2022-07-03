@@ -1,11 +1,20 @@
 <template>
   <div>
       <h3> Seleziona una categoria e vedi i ristoranti a disposizione</h3>
-        
+
+
+
+      <div class="row">
+          <BoxCategoriesFilter :categoriesArr="categoriesArr" :category="category"/>
+      </div>
+
+
+
+
       <div class="row pt-5">
           <!-- inizio card -->
           <div
-              class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10 mb-5 d-flex flex-column align-items-center t4-resturant-label"
+              class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 mb-5 d-flex flex-column align-items-center t4-resturant-label"
               v-for="user in users"
               :key="user.id"
           >
@@ -30,35 +39,39 @@
                       </h6>
                   </div>
 
-                  <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12 t4-img-company">
-                      <img :src="imagePut(user.image)" alt="" />
+                  <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 t4-img-company">
+                      <img :src="imagePut(user.image)" alt="" class="img-fluid"/>
                   </div>
 
               </router-link>
           </div>
           <!-- fine card -->
       </div>
-    
-        <!-- <div>
-          <p v-for="restaurant in restaurants" :key="restaurant.slug">
-              {{ restaurant.company }}
-            
-          </p>
-        </div> -->
+  
 
     </div>
 </template>
 
 <script>
+
+// import box category filter
+import BoxCategoriesFilter from "../components/BoxCategoriesFIlter.vue";
+
+
 export default {
   name: "CategoryRestaurantsFilter",
-    data() {
+  components: {
+      BoxCategoriesFilter,
+  },
+ 
+  data() {
         return {
             users: [],
             category: undefined,
+            categoriesArr: [],
         };
     },
-    mounted() {
+  mounted() {
         const slug = this.$route.params.slug;
         console.log(slug);
 
@@ -69,6 +82,7 @@ export default {
               if (results.status === 200 && results.data.success) {
                   this.category = results.data.results;
                   this.users = this.category.users;
+                  this.categoriesArr = results.data.categories;
                   console.log(this.users);
               }
             })
@@ -76,7 +90,7 @@ export default {
               console.log(e);
             });
     },
-    methods: {
+  methods: {
     // Funzione per l'immagine profilo ristoratorante!
     imagePut(string) {
       let newString;
@@ -120,6 +134,10 @@ export default {
           return (string = "/images/category_img/vegetarian-food.png");
       }
     },
+
+    // 
+
+
   },
 }
 </script>

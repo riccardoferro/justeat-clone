@@ -57,9 +57,9 @@ class CategoryController extends Controller
     public function show($slug)
     {
         
-
+        $categories = Category::all();
         $category = Category::where('slug', $slug)->with('users')->first();
-        $result = ['results' => $category, 'success' => true];
+        $result = ['results' => $category, 'categories' => $categories, 'success' => true];
         return response()->json($result);
 
 
