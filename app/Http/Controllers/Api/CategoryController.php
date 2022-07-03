@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use illuminate\Support\Str;
 use App\Category;
+use App\User;
+
+
 
 class CategoryController extends Controller
 {
@@ -51,9 +54,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        
+
+        $category = Category::where('slug', $slug)->with('users')->first();
+        $result = ['results' => $category, 'success' => true];
+        return response()->json($result);
+
+
     }
 
     /**
