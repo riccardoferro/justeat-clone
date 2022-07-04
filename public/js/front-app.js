@@ -5304,6 +5304,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoriesCardComponent",
   props: {
@@ -5672,6 +5685,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -43370,7 +43387,7 @@ var render = function () {
           {
             key: category.id,
             staticClass:
-              "col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-5 d-flex flex-column align-items-center t4-category-label",
+              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-category-label\n      ",
           },
           [
             _c(
@@ -43384,13 +43401,17 @@ var render = function () {
                 },
               },
               [
-                _c("div", [_c("h2", [_vm._v(_vm._s(category.name))])]),
+                _c("div", [
+                  _c("h2", { staticClass: "t4-orange-text" }, [
+                    _vm._v(_vm._s(category.name)),
+                  ]),
+                ]),
                 _vm._v(" "),
                 _c(
                   "div",
                   {
                     staticClass:
-                      " col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12 t4-img-company",
+                      "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n            t4-img-company\n          ",
                   },
                   [
                     _c("img", {
@@ -43908,94 +43929,101 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "text-center pt-5" }, [_vm._v("In evidenza")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row pt-5" },
-      _vm._l(_vm.users, function (user) {
-        return _c(
-          "div",
-          {
-            key: user.id,
-            staticClass:
-              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-label\n      ",
-          },
-          [
-            _c(
-              "router-link",
-              {
-                attrs: {
-                  to: {
-                    name: "single-restaurant",
-                    params: { slug: user.slug },
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("h2", { staticClass: "text-center pt-5" }, [_vm._v("In evidenza")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "\n        row\n        justify-content-lg-start\n        justify-content-sm-center\n        justify-content-center\n        pt-5\n      ",
+        },
+        _vm._l(_vm.users, function (user) {
+          return _c(
+            "div",
+            {
+              key: user.id,
+              staticClass:
+                "col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-10 col-10 mb-5",
+            },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "d-flex flex-column justify-content-center align-items-center",
+                  attrs: {
+                    to: {
+                      name: "single-restaurant",
+                      params: { slug: user.slug },
+                    },
                   },
                 },
-              },
-              [
-                _c("div", [
-                  _c(
-                    "h6",
-                    {
-                      staticClass:
-                        "t4-orange-text t4-fw-6 d-flex align-items-center",
-                    },
-                    [
-                      _vm._v(
-                        "\n            " +
-                          _vm._s(user.company) +
-                          "\n            "
-                      ),
-                      _c("span", { staticClass: "t4-icon-company ms-2" }, [
-                        _c("img", {
-                          attrs: { src: "/images/posate.png", alt: "" },
+                [
+                  _c("div", [
+                    _c(
+                      "h6",
+                      {
+                        staticClass:
+                          "t4-orange-text t4-fw-6 d-flex align-items-center",
+                      },
+                      [
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(user.company) +
+                            "\n              "
+                        ),
+                        _c("span", { staticClass: "t4-icon-company ms-2" }, [
+                          _c("img", {
+                            attrs: { src: "/images/posate.png", alt: "" },
+                          }),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "h6",
+                      { staticClass: "mb-3 t4-fw-6" },
+                      [
+                        _c("span", { staticClass: "t4-orange-text" }, [
+                          _vm._v("Categorie:"),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(user.categories, function (category) {
+                          return _c("span", { key: category.slug }, [
+                            _vm._v(
+                              "\n                " +
+                                _vm._s(category.name) +
+                                "\n              "
+                            ),
+                          ])
                         }),
-                      ]),
-                    ]
-                  ),
+                      ],
+                      2
+                    ),
+                  ]),
                   _vm._v(" "),
                   _c(
-                    "h6",
-                    { staticClass: "mb-3 t4-fw-6" },
+                    "div",
+                    {
+                      staticClass:
+                        "\n              col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n              t4-img-company\n            ",
+                    },
                     [
-                      _c("span", { staticClass: "t4-orange-text" }, [
-                        _vm._v("Categorie:"),
-                      ]),
-                      _vm._v(" "),
-                      _vm._l(user.categories, function (category) {
-                        return _c("span", { key: category.slug }, [
-                          _vm._v(
-                            "\n              " +
-                              _vm._s(category.name) +
-                              "\n            "
-                          ),
-                        ])
+                      _c("img", {
+                        attrs: { src: _vm.imagePut(user.image), alt: "" },
                       }),
-                    ],
-                    2
+                    ]
                   ),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n            t4-img-company\n          ",
-                  },
-                  [
-                    _c("img", {
-                      attrs: { src: _vm.imagePut(user.image), alt: "" },
-                    }),
-                  ]
-                ),
-              ]
-            ),
-          ],
-          1
-        )
-      }),
-      0
-    ),
+                ]
+              ),
+            ],
+            1
+          )
+        }),
+        0
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []
@@ -60868,7 +60896,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
