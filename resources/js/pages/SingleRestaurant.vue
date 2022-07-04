@@ -73,7 +73,19 @@
               <span class="me-2">Aggiungi al carrello</span>
               <img src="/images/shopping-bag.png" alt="shopping-bag" />
             </a>
+
             <p v-else>pijatela nder culo taccogno</p>
+          </div>
+          <!-- v-else -->
+          <div
+            v-if="plate.visible == 0"
+            class="t4-card-buttons d-flex justify-content-center"
+          >
+            <!-- PULSANTE CARRELLO -->
+            <div class="btn t4-add-btn d-flex align-items-center">
+              <span class="me-2">Piatto non disponibile</span>
+              <img src="/images/shopping-bag.png" alt="shopping-bag" />
+            </div>
           </div>
         </div>
       </div>
