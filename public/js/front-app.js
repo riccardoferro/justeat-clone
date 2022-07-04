@@ -5263,11 +5263,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FooterComponent",
   data: function data() {
     return {
-      menu: [//menu is an array of objects
+      linkGithub: [//menu is an array of objects
       {
         urlGithub: 'https://github.com/DanieleGelsomino',
         urlImage: '/images/github.png',
@@ -5288,7 +5322,10 @@ __webpack_require__.r(__webpack_exports__);
         urlGithub: 'https://github.com/Santoni92',
         urlImage: '/images/github.png',
         name: 'Silvio Antonioli'
-      }]
+      }],
+      seguiBooleat: ["Investitori", "Chi siamo", "Ristoranti", "Altro", "Il nostro Blog", "Programmazione", "Design", "Lavora con noi", "Diventa nostro partner"],
+      noteLegali: ["Termini e condizioni", "Informativa sulla privacy", "Cookies"],
+      aiuto: ["Contatti", "FAQ"]
     };
   }
 });
@@ -10753,7 +10790,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-abfbddf2] {\n  list-style-type: none;\n}\nul li[data-v-abfbddf2] {\n  padding: 5px;\n}\nul li[data-v-abfbddf2]:hover {\n  transform: scale(1.2);\n}\nul li i[data-v-abfbddf2] {\n  margin: 10px;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 8px;\n}\np[data-v-abfbddf2] {\n  font-size: 10px;\n}", ""]);
+exports.push([module.i, "ul[data-v-abfbddf2] {\n  list-style-type: none;\n}\nul li[data-v-abfbddf2] {\n  padding: 5px;\n}\nul li[data-v-abfbddf2]:hover {\n  transform: scale(1.2);\n}\nul li i[data-v-abfbddf2] {\n  margin: 10px;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 8px;\n}\np[data-v-abfbddf2] {\n  font-size: 10px;\n}\nimg[data-v-abfbddf2] {\n  width: 70px;\n}\n#cerchio[data-v-abfbddf2] {\n  width: 20px;\n  height: 20px;\n  border-radius: 50px;\n  background: orange;\n  text-align: center;\n}\n#cerchio[data-v-abfbddf2]:hover {\n  transform: scaleY(1.5);\n}", ""]);
 
 // exports
 
@@ -42849,10 +42886,50 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "t4-footer" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row pt-5" }, [
+      _c("div", { staticClass: "d-none d-md-block col-md-6 col-xl-3" }, [
+        _c("h2", [_vm._v("Segui BoolEat")]),
+        _vm._v(" "),
+        _c(
+          "ul",
+          _vm._l(_vm.seguiBooleat, function (item, index) {
+            return _c("li", { key: index }, [_vm._v(_vm._s(item))])
+          }),
+          0
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 col-md-6 col-xl-3" }, [
+        _c("h2", [_vm._v("Note legali")]),
+        _vm._v(" "),
+        _c(
+          "ul",
+          _vm._l(_vm.noteLegali, function (item, index) {
+            return _c("li", { key: index }, [_vm._v(" " + _vm._s(item))])
+          }),
+          0
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-3 mt-md-3 mt-lg-0" }, [
+        _c("h2", [_vm._v("Aiuto")]),
+        _vm._v(" "),
+        _c(
+          "ul",
+          _vm._l(_vm.aiuto, function (item, index) {
+            return _c("li", { key: index }, [_vm._v(_vm._s(item))])
+          }),
+          0
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
     _c(
       "ul",
       { staticClass: "row align-items-center pt-5" },
-      _vm._l(_vm.menu, function (item, index) {
+      _vm._l(_vm.linkGithub, function (item, index) {
         return _c(
           "li",
           { key: index, staticClass: " col-sm-12 col-md-6 col-xl-1" },
@@ -42878,7 +42955,9 @@ var render = function () {
       0
     ),
     _vm._v(" "),
-    _vm._m(0),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2),
   ])
 }
 var staticRenderFns = [
@@ -42886,9 +42965,41 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("p", { staticClass: "white-text" }, [
-        _vm._v("All rights reserved © Team4 2022"),
+    return _c("div", { staticClass: "row d-none d-md-block pt-5" }, [
+      _c("img", { attrs: { src: "/images/logo.png", alt: "Logo BoolEat" } }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row  mt-5" }, [
+      _c("div", { staticClass: "col-6 " }, [
+        _c("i", { staticClass: "fa-brands fa-facebook" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fa-brands fa-twitter" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fa-brands fa-instagram" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "fa-brands fa-linkedin" }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-6 d-flex justify-content-end" }, [
+        _c("p", { staticClass: "white-text " }, [
+          _vm._v("All rights reserved © Team4 2022"),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-flex justify-content-end pb-5" }, [
+      _c("div", { attrs: { id: "cerchio" } }, [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fa-solid fa-arrow-up" }),
+        ]),
       ]),
     ])
   },

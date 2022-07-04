@@ -6,6 +6,10 @@
 @import '~bootstrap/scss/bootstrap';
 
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: $t4_bg_black;
     font-family: 'Montserrat', sans-serif;
