@@ -12028,7 +12028,8 @@ fieldset:disabled .btn {
 }
 
 #t4-delete-form button,
-#t4-delete-form span {
+#t4-delete-form #t4-cancel-delete {
+  display: inline-block;
   width: 40%;
   height: 100%;
   background-color: black;
@@ -12037,7 +12038,7 @@ fieldset:disabled .btn {
 }
 
 #t4-delete-form button img,
-#t4-delete-form span img {
+#t4-delete-form #t4-cancel-delete img {
   width: 30%;
   aspect-ratio: 1;
 }
