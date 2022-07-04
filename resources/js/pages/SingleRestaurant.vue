@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row text-center mt-5">
       <h2>Benvenuto da {{ restaurant.company }}!</h2>
       <h4>
@@ -24,6 +24,7 @@
     <div class="row flex-column justify-content-center mt-5">
       <div
         class="
+          row
           d-flex
           col-xxl-10 col-xl-10 col-md-11 col-sm-12
           m-auto
@@ -34,7 +35,7 @@
         <div
           v-for="plate in plates"
           :key="plate.name + plate.id"
-          class="col-sm-10 col-md-5 col-xl-3 d-flex flex-column t4-card"
+          class="row col-sm-10 col-md-5 col-xl-3 d-flex flex-column t4-card"
         >
           <div class="t4-card-img">
             <img :src="'storage/' + plate.image" alt="" />
