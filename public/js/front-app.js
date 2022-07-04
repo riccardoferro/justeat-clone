@@ -5317,6 +5317,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoriesCardComponent",
   props: {
@@ -5408,31 +5409,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FooterComponent",
   data: function data() {
     return {
       menu: [//menu is an array of objects
       {
-        urlGithub: 'https://github.com/DanieleGelsomino',
-        urlImage: '/images/github.png',
-        name: 'Daniele Gelsomino'
+        urlGithub: "https://github.com/DanieleGelsomino",
+        urlImage: "/images/github.png",
+        name: "Daniele Gelsomino"
       }, {
-        urlGithub: 'https://github.com/riccardoferro',
-        urlImage: '/images/github.png',
-        name: 'Riccardo Ferro'
+        urlGithub: "https://github.com/riccardoferro",
+        urlImage: "/images/github.png",
+        name: "Riccardo Ferro"
       }, {
-        urlGithub: 'https://github.com/LucioMelis',
-        urlImage: '/images/github.png',
-        name: 'Lucio Melis'
+        urlGithub: "https://github.com/LucioMelis",
+        urlImage: "/images/github.png",
+        name: "Lucio Melis"
       }, {
-        urlGithub: 'https://github.com/Cristian6918',
-        urlImage: '/images/github.png',
-        name: 'Cristian Tulbu'
+        urlGithub: "https://github.com/Cristian6918",
+        urlImage: "/images/github.png",
+        name: "Cristian Tulbu"
       }, {
-        urlGithub: 'https://github.com/Santoni92',
-        urlImage: '/images/github.png',
-        name: 'Silvio Antonioli'
+        urlGithub: "https://github.com/Santoni92",
+        urlImage: "/images/github.png",
+        name: "Silvio Antonioli"
       }]
     };
   }
@@ -43393,6 +43399,8 @@ var render = function () {
             _c(
               "router-link",
               {
+                staticClass:
+                  "d-flex flex-column align-items-center justify-content-center",
                 attrs: {
                   to: {
                     name: "category-restaurants-filter",
@@ -43472,7 +43480,7 @@ var render = function () {
       _vm._l(_vm.menu, function (item, index) {
         return _c(
           "li",
-          { key: index, staticClass: " col-sm-12 col-md-6 col-xl-1" },
+          { key: index, staticClass: "col-sm-12 col-md-6 col-xl-1" },
           [
             _c(
               "a",
@@ -43484,6 +43492,7 @@ var render = function () {
                 _c("i", {
                   staticClass: "fa-brands fa-github fa-xl t4-orange-text",
                 }),
+                _vm._v(" "),
                 _c("div", { staticClass: "name t4-orange-text" }, [
                   _vm._v(_vm._s(item.name)),
                 ]),
@@ -43505,7 +43514,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("p", { staticClass: "white-text" }, [
-        _vm._v("All rights reserved © Team4 2022"),
+        _vm._v("© Team4 2022, all rights reserved"),
       ]),
     ])
   },
