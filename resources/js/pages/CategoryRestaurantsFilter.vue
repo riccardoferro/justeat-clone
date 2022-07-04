@@ -128,6 +128,8 @@ export default {
       prevPage: "",
       nextPage: "",
       url_getUsers: "http://127.0.0.1:8000/api/category/",
+      current_page: "",
+      last_page: "",
     };
   },
   mounted() {
@@ -150,6 +152,8 @@ export default {
             this.users = results.data.data;
             this.nextPage = results.data.next_page_url;
             this.prevPage = results.data.prev_page_url;
+            this.last_page = results.data.last_page;
+            this.current_page = results.data.current_page;
             console.log(this.users);
           }
         })

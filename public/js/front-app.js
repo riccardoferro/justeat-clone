@@ -5949,7 +5949,9 @@ __webpack_require__.r(__webpack_exports__);
       currentPage: "",
       prevPage: "",
       nextPage: "",
-      url_getUsers: "http://127.0.0.1:8000/api/category/"
+      url_getUsers: "http://127.0.0.1:8000/api/category/",
+      current_page: "",
+      last_page: ""
     };
   },
   mounted: function mounted() {
@@ -5973,6 +5975,8 @@ __webpack_require__.r(__webpack_exports__);
           _this.users = results.data.data;
           _this.nextPage = results.data.next_page_url;
           _this.prevPage = results.data.prev_page_url;
+          _this.last_page = results.data.last_page;
+          _this.current_page = results.data.current_page;
           console.log(_this.users);
         }
       })["catch"](function (e) {
