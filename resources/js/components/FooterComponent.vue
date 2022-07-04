@@ -61,9 +61,6 @@ ul {
   list-style-type: none;
   li {
     padding: 5px;
-    &:hover {
-      transform: scale(1.2);
-    }
 
     i {
       margin: 10px;
