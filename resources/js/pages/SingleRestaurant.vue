@@ -47,6 +47,7 @@
             <span class="t4-card-label">Descrizione </span>
             <p>{{ plate.description }}</p>
           </div>
+
           <div class="t4-card-info d-flex justify-content-between">
             <p><span>Prezzo: </span>{{ plate.price }} &euro;</p>
             <div v-if="plate.visible == 1">
@@ -56,18 +57,26 @@
               <p style="color: rgb(165, 4, 4)">Non disponibile</p>
             </div>
           </div>
+
           <div
             v-if="plate.visible == 1"
             class="t4-card-buttons d-flex justify-content-center"
           >
-            <a href="#" class="btn t4-add-btn d-flex align-items-center">
+
+          <!-- PULSANTE CARRELLO -->
+            <a v-if="cart[0].user_id == plate.user_id" @click.prevent="addItem(plate)" href="#" class="btn t4-add-btn d-flex align-items-center">
               <span class="me-2">Aggiungi al carrello</span>
               <img src="/images/shopping-bag.png" alt="shopping-bag" />
             </a>
+            <p v-else>
+              pijatela nder culo taccogno
+            </p>
+
           </div>
         </div>
       </div>
     </div>
+
     <div class="t4-card-buttons d-flex justify-content-end mt-5 mb-2">
       <a
         href="http://127.0.0.1:8000/"
@@ -90,6 +99,11 @@ export default {
       categories: [],
     };
   },
+
+  props: {
+      cart: Array,
+  },
+
   mounted() {
     const slug = this.$route.params.slug;
     console.log(slug);
@@ -108,8 +122,23 @@ export default {
         console.log(e);
       });
   },
+
+  methods: {
+
+    addItem(plate) {
+
+      this.$emit('takeItem',plate)
+
+      console.log("carrello",this.cart);
+
+    }
+
+  }
+
+
+
 };
 </script>
 
 <style lang="scss" scoped>
-</style>>
+</style>

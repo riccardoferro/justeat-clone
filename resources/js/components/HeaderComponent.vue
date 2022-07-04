@@ -44,7 +44,22 @@
 
             <!-- body della drop del carrello -->
             <div class="offcanvas-body">
+
+
+              <div v-for="(plate,index) in cart" :key="plate.id + index">
+                
+                <span> {{plate.name}} </span>
+
+              </div>
+
+
                 Il tuo carrello è vuoto!
+
+
+
+
+
+
             </div>
 
           </div>
@@ -100,6 +115,12 @@
 <script>
 export default {
   name: "HeaderComponent",
+  props: {
+    cart: Array,
+  },
+
+
+
 };
 </script>
 
