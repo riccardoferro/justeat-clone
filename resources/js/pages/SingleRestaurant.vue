@@ -56,7 +56,10 @@
               <p style="color: rgb(165, 4, 4)">Non disponibile</p>
             </div>
           </div>
-          <div class="t4-card-buttons d-flex justify-content-center">
+          <div
+            v-if="plate.visible == 1"
+            class="t4-card-buttons d-flex justify-content-center"
+          >
             <a href="#" class="btn t4-add-btn d-flex align-items-center">
               <span class="me-2">Aggiungi al carrello</span>
               <img src="/images/shopping-bag.png" alt="shopping-bag" />

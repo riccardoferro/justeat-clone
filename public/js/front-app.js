@@ -6315,6 +6315,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
@@ -44528,7 +44531,16 @@ var render = function () {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(0, true),
+              plate.visible == 1
+                ? _c(
+                    "div",
+                    {
+                      staticClass:
+                        "t4-card-buttons d-flex justify-content-center",
+                    },
+                    [_vm._m(0, true)]
+                  )
+                : _vm._e(),
             ]
           )
         }),
@@ -44545,25 +44557,17 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
-      { staticClass: "t4-card-buttons d-flex justify-content-center" },
+      "a",
+      {
+        staticClass: "btn t4-add-btn d-flex align-items-center",
+        attrs: { href: "#" },
+      },
       [
-        _c(
-          "a",
-          {
-            staticClass: "btn t4-add-btn d-flex align-items-center",
-            attrs: { href: "#" },
-          },
-          [
-            _c("span", { staticClass: "me-2" }, [
-              _vm._v("Aggiungi al carrello"),
-            ]),
-            _vm._v(" "),
-            _c("img", {
-              attrs: { src: "/images/shopping-bag.png", alt: "shopping-bag" },
-            }),
-          ]
-        ),
+        _c("span", { staticClass: "me-2" }, [_vm._v("Aggiungi al carrello")]),
+        _vm._v(" "),
+        _c("img", {
+          attrs: { src: "/images/shopping-bag.png", alt: "shopping-bag" },
+        }),
       ]
     )
   },
@@ -61037,7 +61041,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
