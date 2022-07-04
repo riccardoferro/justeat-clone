@@ -3,9 +3,11 @@
   <div class="sticky-top t4-bg-black">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
+        <!-- Logo -->
         <a class="navbar-brand t4-logo-nav" href="/">
           <img src="/images/logo.png" alt="logo-booleat" />
         </a>
+
         <div class="d-flex justify-content-end align-items-center">
           <!-- Carrello -->
           <button
@@ -20,14 +22,18 @@
             </div>
           </button>
 
+          <!-- Drop inf -->
           <div
             class="offcanvas offcanvas-end"
             tabindex="-1"
             id="offcanvasRight"
             aria-labelledby="offcanvasRightLabel"
           >
+            <!-- Header carrello -->
             <div class="offcanvas-header">
               <h3 class="t4-orange-text" id="offcanvasRightLabel">Carrello</h3>
+
+              <!-- Bottone chiusura drop  -->
               <button
                 type="button"
                 class="t4-close"
@@ -37,8 +43,17 @@
                 <img src="/images/cross.png" alt="" />
               </button>
             </div>
-            <div class="offcanvas-body">Il tuo carrello è vuoto!</div>
+
+            <!-- body della drop del carrello -->
+            <div v-if="cart.length > 0" class="offcanvas-body">
+              <div v-for="(plate, index) in cart" :key="plate.id + index">
+                <span> {{ plate.name }} </span>
+              </div>
+            </div>
+            <p v-else>Il tuo carrello è vuoto!</p>
           </div>
+
+          <!-- fine carrello -->
 
           <!-- Hamburger menu -->
           <button
@@ -55,6 +70,7 @@
             </span>
           </button>
         </div>
+
         <!-- Login e Register -->
         <div
           class="
@@ -86,6 +102,9 @@
 <script>
 export default {
   name: "HeaderComponent",
+  props: {
+    cart: Array,
+  },
 };
 </script>
 

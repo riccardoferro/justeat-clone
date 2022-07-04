@@ -46,6 +46,8 @@
               <img :src="imagePut(user.image)" alt="" />
             </div>
           </router-link>
+
+          
         </div>
         <!-- fine card -->
       </div>
