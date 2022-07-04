@@ -37,6 +37,7 @@
             name: 'category-restaurants-filter',
             params: { slug: category.slug },
           }"
+          class="d-flex flex-column align-items-center justify-content-center"
         >
           <!-- FINE SEZIONE SINGOLO RISTORANTE  -->
           <div>
