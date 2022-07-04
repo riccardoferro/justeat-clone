@@ -3,21 +3,25 @@
   <div class="sticky-top t4-bg-black">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-
         <!-- Logo -->
         <a class="navbar-brand t4-logo-nav" href="/">
           <img src="/images/logo.png" alt="logo-booleat" />
         </a>
 
         <div class="d-flex justify-content-end align-items-center">
-
           <!-- Carrello -->
-          <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+          <button
+            class="btn"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          >
             <div class="t4-nav-item">
               <img src="/images/shopping.png" alt="shorp-cart" />
             </div>
           </button>
-          
+
           <!-- Drop inf -->
           <div
             class="offcanvas offcanvas-end"
@@ -27,7 +31,6 @@
           >
             <!-- Header carrello -->
             <div class="offcanvas-header">
-              
               <h3 class="t4-orange-text" id="offcanvasRightLabel">Carrello</h3>
 
               <!-- Bottone chiusura drop  -->
@@ -39,33 +42,18 @@
               >
                 <img src="/images/cross.png" alt="" />
               </button>
-
             </div>
 
             <!-- body della drop del carrello -->
-            <div class="offcanvas-body">
-
-
-              <div v-for="(plate,index) in cart" :key="plate.id + index">
-                
-                <span> {{plate.name}} </span>
-
+            <div v-if="cart.length > 0" class="offcanvas-body">
+              <div v-for="(plate, index) in cart" :key="plate.id + index">
+                <span> {{ plate.name }} </span>
               </div>
-
-
-                Il tuo carrello è vuoto!
-
-
-
-
-
-
             </div>
-
+            <p v-else>Il tuo carrello è vuoto!</p>
           </div>
 
           <!-- fine carrello -->
-
 
           <!-- Hamburger menu -->
           <button
@@ -106,7 +94,6 @@
             </a>
           </div>
         </div>
-
       </div>
     </nav>
   </div>
@@ -118,9 +105,6 @@ export default {
   props: {
     cart: Array,
   },
-
-
-
 };
 </script>
 

@@ -62,16 +62,17 @@
             v-if="plate.visible == 1"
             class="t4-card-buttons d-flex justify-content-center"
           >
-
-          <!-- PULSANTE CARRELLO -->
-            <a v-if="cart[0].user_id == plate.user_id" @click.prevent="addItem(plate)" href="#" class="btn t4-add-btn d-flex align-items-center">
+            <!-- PULSANTE CARRELLO -->
+            <a
+              v-if="cart.length == 0 || cart[0].user_id == plate.user_id"
+              @click.prevent="addItem(plate)"
+              href="#"
+              class="btn t4-add-btn d-flex align-items-center"
+            >
               <span class="me-2">Aggiungi al carrello</span>
               <img src="/images/shopping-bag.png" alt="shopping-bag" />
             </a>
-            <p v-else>
-              pijatela nder culo taccogno
-            </p>
-
+            <p v-else>pijatela nder culo taccogno</p>
           </div>
         </div>
       </div>
@@ -101,7 +102,7 @@ export default {
   },
 
   props: {
-      cart: Array,
+    cart: Array,
   },
 
   mounted() {
@@ -111,6 +112,7 @@ export default {
     window.axios
       .get("http://127.0.0.1:8000/api/users/" + slug)
       .then((results) => {
+        console.log("results Single Restaurant->", results);
         if (results.status === 200 && results.data.success) {
           this.restaurant = results.data.results;
           this.plates = this.restaurant.plates;
@@ -124,19 +126,12 @@ export default {
   },
 
   methods: {
-
     addItem(plate) {
+      this.$emit("takeItem", plate);
 
-      this.$emit('takeItem',plate)
-
-      console.log("carrello",this.cart);
-
-    }
-
-  }
-
-
-
+      console.log("carrello", this.cart);
+    },
+  },
 };
 </script>
 
