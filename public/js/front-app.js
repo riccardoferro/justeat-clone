@@ -11517,7 +11517,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-cart-item[data-v-153bfd55] {\n  border-bottom: 1px solid #e68b3f;\n}\n.t4-cart-item img[data-v-153bfd55] {\n  width: 100%;\n}\nspan img[data-v-153bfd55] {\n  width: 50px;\n}\n.t4-btn-pay img[data-v-153bfd55],\n.t4-logo-pay img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-delete-item img[data-v-153bfd55] {\n  width: 20px;\n}", ""]);
+exports.push([module.i, ".t4-cart-item[data-v-153bfd55] {\n  border-bottom: 1px solid #e68b3f;\n}\n.t4-cart-item img[data-v-153bfd55] {\n  width: 100%;\n}\nspan img[data-v-153bfd55] {\n  width: 50px;\n}\n.t4-btn-pay img[data-v-153bfd55],\n.t4-logo-pay img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-delete-item img[data-v-153bfd55] {\n  width: 20px;\n}\n.t4-sidecart[data-v-153bfd55] {\n  box-shadow: -15px 0px 12px -5px #000000;\n}", ""]);
 
 // exports
 
@@ -43878,7 +43878,7 @@ var render = function () {
             _c(
               "div",
               {
-                staticClass: "offcanvas offcanvas-end",
+                staticClass: "offcanvas offcanvas-end t4-sidecart",
                 attrs: {
                   tabindex: "-1",
                   id: "offcanvasRight",

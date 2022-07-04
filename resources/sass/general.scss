@@ -477,10 +477,10 @@ margin-bottom: 20px;
     }
 }
 
-.t4-footer{
-    -webkit-box-shadow: 0px -6px 11px -7px #6E6E6E;
-box-shadow: 0px -6px 11px -7px #6E6E6E;
-}
+// .t4-footer{
+//     -webkit-box-shadow: 0px -6px 11px -7px #6E6E6E;
+// box-shadow: 0px -6px 11px -7px #6E6E6E;
+// }
 
 .t4-logo-nav{
     img{
@@ -490,8 +490,10 @@ box-shadow: 0px -6px 11px -7px #6E6E6E;
 
 .t4-bg-black{
     background-color: $t4_bg_black;
-    -webkit-box-shadow: 0px 1px 5px 1px #6E6E6E;
-    box-shadow: 0px 1px 5px 1px #6E6E6E;
+    // -webkit-box-shadow: 0px 1px 5px 1px #6E6E6E;
+    // box-shadow: 0px 1px 5px 1px #6E6E6E;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, -15px 0px 12px -5px rgba(0,0,0,0);
+box-shadow: 0px 10px 13px -7px #000000, -15px 0px 12px -5px rgba(0,0,0,0);
 
 }
 

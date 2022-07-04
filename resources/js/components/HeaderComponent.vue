@@ -24,7 +24,7 @@
 
           <!-- Drop inf -->
           <div
-            class="offcanvas offcanvas-end"
+            class="offcanvas offcanvas-end t4-sidecart"
             tabindex="-1"
             id="offcanvasRight"
             aria-labelledby="offcanvasRightLabel"
@@ -184,5 +184,10 @@ span {
   img {
     width: 20px;
   }
+}
+
+.t4-sidecart {
+  -webkit-box-shadow: -15px 0px 12px -5px #000000;
+  box-shadow: -15px 0px 12px -5px #000000;
 }
 </style>
