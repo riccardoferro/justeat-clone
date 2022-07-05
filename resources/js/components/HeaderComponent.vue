@@ -2,7 +2,7 @@
   <!-- DANI qui andrà il nostro Header con login e register -->
   <div class="sticky-top t4-bg-black">
     <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
+      <div class="container-md">
         <!-- Logo -->
         <a class="navbar-brand t4-logo-nav" href="/">
           <img src="/images/logo.png" alt="logo-booleat" />
