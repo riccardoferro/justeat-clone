@@ -25,7 +25,7 @@ const router = new VueRouter({
             component: SingleRestaurant
         },
         {
-            path: '/category/:slug',
+            path: '/category/',
             name: 'category-restaurants-filter',
             component: CategoryRestaurantsFilter
         },

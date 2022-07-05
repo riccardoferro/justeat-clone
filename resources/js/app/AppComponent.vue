@@ -1,8 +1,10 @@
 <template>
   <div>
     <div>
-      <HeaderComponent />
-      <router-view></router-view>
+      <HeaderComponent :cart="cart"/>
+
+      <router-view @takeItem="addItem" :cart="cart" ></router-view>
+
     </div>
   </div>
 </template>
@@ -15,6 +17,55 @@ export default {
   components: {
     HeaderComponent,
   },
+  data(){
+    return{
+      cart:[],
+      newPlate: null,
+    }
+  },
+
+  methods: {
+
+    addItem(plate){
+      let value = plate;
+
+      if (this.cart.length == 0 && value ) {
+          this.cart.push(value);
+          this.saveCart(this.cart);
+      }
+      else {
+          if (value.user_id == this.cart[0].user_id ){
+
+              this.cart.push(value);
+              this.saveCart(this.cart);
+
+          }
+      }
+
+      console.log("valore ",value);
+      console.log("id-user",value.user_id);
+      // console.log("carrello",this.cart);
+    },
+
+    saveCart(){
+      const parsed = JSON.stringify(this.cart);
+      localStorage.setItem('cart',parsed);
+    }
+
+  },
+
+
+    mounted() {
+      if (localStorage.getItem('cart')) {
+          try{
+            this.cart = JSON.parse(localStorage.getItem('cart'));
+          }catch(error){
+            console.log(error);
+            localStorage.removeItem('cart');
+          }
+      }
+  }
+
 };
 </script>
 
