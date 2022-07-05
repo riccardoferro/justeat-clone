@@ -24,14 +24,19 @@
 
           <!-- Drop inf -->
           <div
-            class="offcanvas offcanvas-end"
+            class="offcanvas offcanvas-end t4-sidecart"
             tabindex="-1"
             id="offcanvasRight"
             aria-labelledby="offcanvasRightLabel"
           >
             <!-- Header carrello -->
             <div class="offcanvas-header">
-              <h3 class="t4-orange-text" id="offcanvasRightLabel">Carrello</h3>
+              <h3 class="t4-orange-text" id="offcanvasRightLabel">
+                Il Tuo Carrello
+                <span class="t4-cart-side">
+                  <img src="/images/shopping.png" alt="" />
+                </span>
+              </h3>
 
               <!-- Bottone chiusura drop  -->
               <button
@@ -47,9 +52,56 @@
             <!-- body della drop del carrello -->
             <div v-if="cart.length > 0" class="offcanvas-body">
               <div v-for="(plate, index) in cart" :key="plate.id + index">
-                <span> {{ plate.name }} </span>
+                <!-- <div class="col-3">
+                  <span> {{ plate.name }} </span>
+                </div>
+                <div class="col-2">
+                  <img :src="'storage/' + plate.image" :alt="plate.name" />
+                </div>
+
+                <div class="col-3">{{ plate.price }} &euro;</div> -->
+
+                <div
+                  class="
+                    row
+                    t4-cart-item
+                    mt-3
+                    mb-3
+                    align-items-center
+                    justify-content-between
+                  "
+                >
+                  <div class="col-3">
+                    <img :src="'storage/' + plate.image" :alt="plate.name" />
+                  </div>
+                  <div class="col-3">
+                    <h6>{{ plate.name }}</h6>
+                    <h6 class="t4-orange-text t4-fw-6">
+                      {{ plate.price }} &euro;
+                    </h6>
+                  </div>
+                  <div class="col-3">
+                    <button class="btn t4-delete-item">
+                      <img src="/images/delete.png" alt="" />
+                    </button>
+                  </div>
+                </div>
               </div>
+              <div class="row justify-content-end">
+                <div class="col-6">
+                  <h6 class="t4-orange-text t4-fw-6 text-end me-3">Totale:</h6>
+                </div>
+              </div>
+              <button
+                class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
+              >
+                Paga
+                <span class="t4-btn-pay ms-2">
+                  <img src="/images/pay-per-click.png" alt="" />
+                </span>
+              </button>
             </div>
+
             <p v-else>Il tuo carrello è vuoto!</p>
           </div>
 
@@ -109,4 +161,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.t4-cart-item {
+  border-bottom: 1px solid #fd7d2b;
+  img {
+    width: 100%;
+  }
+}
+.t4-cart-side {
+  img {
+    width: 50px;
+  }
+}
+
+.t4-btn-pay,
+.t4-logo-pay {
+  img {
+    width: 100%;
+  }
+}
+
+.t4-delete-item {
+  img {
+    width: 20px;
+  }
+}
+
+.t4-sidecart {
+  -webkit-box-shadow: -15px 0px 12px -5px #000000;
+  box-shadow: -15px 0px 12px -5px #000000;
+}
 </style>
