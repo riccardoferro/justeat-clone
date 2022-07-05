@@ -33,7 +33,7 @@
             <div class="offcanvas-header">
               <h3 class="t4-orange-text" id="offcanvasRightLabel">
                 Il Tuo Carrello
-                <span>
+                <span class="t4-cart-side">
                   <img src="/images/shopping.png" alt="" />
                 </span>
               </h3>
@@ -162,12 +162,12 @@ export default {
 
 <style lang="scss" scoped>
 .t4-cart-item {
-  border-bottom: 1px solid #e68b3f;
+  border-bottom: 1px solid #fd7d2b;
   img {
     width: 100%;
   }
 }
-span {
+.t4-cart-side {
   img {
     width: 50px;
   }

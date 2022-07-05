@@ -5884,8 +5884,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -6454,6 +6452,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
@@ -6489,6 +6491,18 @@ __webpack_require__.r(__webpack_exports__);
     addItem: function addItem(plate) {
       this.$emit("takeItem", plate);
       console.log("carrello", this.cart);
+    },
+    imagePut: function imagePut(string) {
+      var newString;
+      console.log("stringa presa");
+
+      if (string.includes("uploads")) {
+        newString = "/storage/".concat(string);
+      } else {
+        newString = "/images/default-restaurant.jpeg";
+      }
+
+      return newString;
     }
   }
 });
@@ -11517,7 +11531,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-cart-item[data-v-153bfd55] {\n  border-bottom: 1px solid #e68b3f;\n}\n.t4-cart-item img[data-v-153bfd55] {\n  width: 100%;\n}\nspan img[data-v-153bfd55] {\n  width: 50px;\n}\n.t4-btn-pay img[data-v-153bfd55],\n.t4-logo-pay img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-delete-item img[data-v-153bfd55] {\n  width: 20px;\n}\n.t4-sidecart[data-v-153bfd55] {\n  box-shadow: -15px 0px 12px -5px #000000;\n}", ""]);
+exports.push([module.i, ".t4-cart-item[data-v-153bfd55] {\n  border-bottom: 1px solid #fd7d2b;\n}\n.t4-cart-item img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-cart-side img[data-v-153bfd55] {\n  width: 50px;\n}\n.t4-btn-pay img[data-v-153bfd55],\n.t4-logo-pay img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-delete-item img[data-v-153bfd55] {\n  width: 20px;\n}\n.t4-sidecart[data-v-153bfd55] {\n  box-shadow: -15px 0px 12px -5px #000000;\n}", ""]);
 
 // exports
 
@@ -43997,7 +44011,7 @@ var staticRenderFns = [
         { staticClass: "t4-orange-text", attrs: { id: "offcanvasRightLabel" } },
         [
           _vm._v("\n              Il Tuo Carrello\n              "),
-          _c("span", [
+          _c("span", { staticClass: "t4-cart-side" }, [
             _c("img", { attrs: { src: "/images/shopping.png", alt: "" } }),
           ]),
         ]
@@ -44746,16 +44760,24 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row text-center mt-5" }, [
-      _c("h2", [
-        _vm._v("Benvenuto da " + _vm._s(_vm.restaurant.company) + "!"),
-      ]),
+      _c(
+        "div",
+        { staticClass: "col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6" },
+        [
+          _c("img", {
+            attrs: { src: _vm.imagePut(_vm.restaurant.image), alt: "" },
+          }),
+        ]
+      ),
       _vm._v(" "),
-      _c("h4", [
-        _vm._v(
-          "\n      Ordina i tuoi piatti oppure prenota un ritiro in\n      " +
-            _vm._s(_vm.restaurant.address) +
-            "\n    "
-        ),
+      _c("div", { staticClass: "col-xxl-6 col-xl-6" }, [
+        _c("h2", [
+          _vm._v("Benvenuto da " + _vm._s(_vm.restaurant.company) + "!"),
+        ]),
+        _vm._v(" "),
+        _c("h4", [
+          _vm._v("\n        " + _vm._s(_vm.restaurant.address) + "\n      "),
+        ]),
       ]),
     ]),
     _vm._v(" "),
