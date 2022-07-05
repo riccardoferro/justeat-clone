@@ -35,6 +35,7 @@ export default {
           const product = this.cart.find((o) => o.id === plate.id);
           if (product) {
             product.quantity += 1;
+            plate.quantity = product.quantity;
             this.saveCart();
             this.loadPage();
 
