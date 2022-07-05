@@ -82,7 +82,7 @@
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
             >
-              Launch static backdrop modal
+              Aggiungi al carrello
             </button>
 
             <div
