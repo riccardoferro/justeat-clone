@@ -104,16 +104,26 @@
                   <h6 class="t4-orange-text t4-fw-6 text-end me-3">Totale:</h6>
                 </div>
               </div>
-              <button
-                class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-              >
-                Paga
-                <span class="t4-btn-pay ms-2">
-                  <img src="/images/pay-per-click.png" alt="" />
-                </span>
-              </button>
-            </div>
 
+
+              <!-- Bottone che ti porta alla pagina del checkout e del pagamento -->
+            <router-link
+                :to="{ name: 'payments-page'}"
+            >
+
+                  <button
+                      class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
+                  >
+                      Paga
+                      <span class="t4-btn-pay ms-2">
+                        <img src="/images/pay-per-click.png" alt="" />
+                      </span>
+
+                  </button>
+
+            </router-link>
+
+            </div>
             <p v-else>Il tuo carrello è vuoto!</p>
           </div>
 
