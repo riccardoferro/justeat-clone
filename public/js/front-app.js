@@ -5113,6 +5113,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppComponent",
@@ -5129,6 +5133,9 @@ __webpack_require__.r(__webpack_exports__);
     addItem: function addItem(plate) {
       if (this.cart.length === 0) {
         plate.quantity = 1;
+        var total = plate.quantity * plate.price;
+        total = parseFloat(total);
+        plate.total = total.toFixed(2);
         this.cart.push(plate);
         this.saveCart();
         this.loadPage();
@@ -5140,17 +5147,45 @@ __webpack_require__.r(__webpack_exports__);
 
           if (product) {
             product.quantity += 1;
-            plate.quantity = product.quantity;
+
+            var _total = plate.quantity * plate.price;
+
+            _total = parseFloat(_total);
+            product.total = _total.toFixed(2);
             this.saveCart();
             this.loadPage();
-            console.log(this.cart);
           } else {
             plate.quantity = 1;
+
+            var _total2 = plate.quantity * plate.price;
+
+            _total2 = parseFloat(_total2);
+            plate.total = _total2.toFixed(2);
             this.cart.push(plate);
             this.saveCart();
             this.loadPage();
           }
         }
+      }
+    },
+    removeItem: function removeItem(plate) {
+      var product = this.cart.find(function (o) {
+        return o.id === plate.id;
+      });
+      var index = this.cart.indexOf(product);
+      console.log("index", index);
+
+      if (product.quantity > 1) {
+        product.quantity -= 1;
+        var total = plate.quantity * plate.price;
+        total = parseFloat(total);
+        product.total = total.toFixed(2);
+        this.saveCart();
+        this.loadPage();
+      } else {
+        this.cart.splice(index, 1);
+        this.saveCart();
+        this.loadPage();
       }
     },
     saveCart: function saveCart() {
@@ -5319,6 +5354,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5718,10 +5759,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent",
   props: {
     cart: Array
+  },
+  methods: {
+    addItem: function addItem(plate) {
+      this.$emit("takeItem", plate);
+    },
+    removeItem: function removeItem(plate) {
+      this.$emit("removeItem", plate);
+    }
   }
 });
 
@@ -6545,7 +6605,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     imagePut: function imagePut(string) {
       var newString;
-      console.log("stringa presa");
 
       if (string.includes("uploads")) {
         newString = "/storage/".concat(string);
@@ -43547,7 +43606,10 @@ var render = function () {
     _c(
       "div",
       [
-        _c("HeaderComponent", { attrs: { cart: _vm.cart } }),
+        _c("HeaderComponent", {
+          attrs: { cart: _vm.cart },
+          on: { removeItem: _vm.removeItem, takeItem: _vm.addItem },
+        }),
         _vm._v(" "),
         _c("router-view", {
           attrs: { cart: _vm.cart },
@@ -43824,14 +43886,17 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row t4-bg-orange" },
+      {
+        staticClass:
+          "\n      row\n      t4-bg-orange\n      justify-content-center justify-content-lg-start justify-content-md-start\n    ",
+      },
       _vm._l(_vm.categories, function (category) {
         return _c(
           "div",
           {
             key: category.id,
             staticClass:
-              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-category-label\n      ",
+              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-10 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-category-label\n      ",
           },
           [
             _c(
@@ -44113,7 +44178,70 @@ var render = function () {
                                     ]
                                   ),
                                   _vm._v(" "),
-                                  _c("span", [_vm._v(_vm._s(plate.quantity))]),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "t4-w100 d-flex justify-content-between",
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "t4-w30",
+                                          on: {
+                                            click: function ($event) {
+                                              return _vm.removeItem(plate)
+                                            },
+                                          },
+                                        },
+                                        [
+                                          _c("img", {
+                                            staticClass: "t4-w80",
+                                            attrs: {
+                                              src: "/images/minus1.png",
+                                              alt: "",
+                                            },
+                                          }),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "t4-w30 text-center" },
+                                        [
+                                          _c("p", [
+                                            _vm._v(_vm._s(plate.quantity)),
+                                          ]),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "t4-w30",
+                                          on: {
+                                            click: function ($event) {
+                                              return _vm.addItem(plate)
+                                            },
+                                          },
+                                        },
+                                        [
+                                          _c("img", {
+                                            staticClass: "t4-w80",
+                                            attrs: {
+                                              src: "/images/plus1.png",
+                                              alt: "",
+                                            },
+                                          }),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _vm._v("total " + _vm._s(plate.total)),
+                                  ]),
                                 ]),
                                 _vm._v(" "),
                                 _vm._m(3, true),
