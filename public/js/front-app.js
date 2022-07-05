@@ -5127,19 +5127,24 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addItem: function addItem(plate) {
-      if (this.cart.length == 0 && plate) {
+      if (this.cart.length === 0) {
         plate.quantity = 1;
         this.cart.push(plate);
-        this.saveCart(this.cart);
+        this.saveCart();
       } else {
         if (plate.user_id == this.cart[0].user_id) {
-          if (this.cart.includes(plate)) {
-            plate.quantity++;
-            this.saveCart(this.cart);
+          var product = this.cart.find(function (o) {
+            return o.id === plate.id;
+          });
+
+          if (product) {
+            product.quantity += 1;
+            this.saveCart();
+            console.log(this.cart);
           } else {
             plate.quantity = 1;
             this.cart.push(plate);
-            this.saveCart(this.cart);
+            this.saveCart();
           }
         }
       }
@@ -5155,13 +5160,10 @@ __webpack_require__.r(__webpack_exports__);
   //     },
   //   },
   mounted: function mounted() {
-    if (localStorage.getItem("cart")) {
-      try {
-        this.cart = JSON.parse(localStorage.getItem("cart"));
-      } catch (error) {
-        console.log(error);
-        localStorage.removeItem("cart");
-      }
+    if (localStorage.cart) {
+      this.cart = JSON.parse(localStorage.cart);
+    } else {
+      this.cart = [];
     }
   }
 });

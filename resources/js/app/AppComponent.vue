@@ -25,19 +25,21 @@ export default {
 
   methods: {
     addItem(plate) {
-      if (this.cart.length == 0 && plate) {
+      if (this.cart.length === 0) {
         plate.quantity = 1;
         this.cart.push(plate);
-        this.saveCart(this.cart);
+        this.saveCart();
       } else {
         if (plate.user_id == this.cart[0].user_id) {
-          if (this.cart.includes(plate)) {
-            plate.quantity++;
-            this.saveCart(this.cart);
+          const product = this.cart.find((o) => o.id === plate.id);
+          if (product) {
+            product.quantity += 1;
+            this.saveCart();
+            console.log(this.cart);
           } else {
             plate.quantity = 1;
             this.cart.push(plate);
-            this.saveCart(this.cart);
+            this.saveCart();
           }
         }
       }
@@ -56,13 +58,10 @@ export default {
   //   },
 
   mounted() {
-    if (localStorage.getItem("cart")) {
-      try {
-        this.cart = JSON.parse(localStorage.getItem("cart"));
-      } catch (error) {
-        console.log(error);
-        localStorage.removeItem("cart");
-      }
+    if (localStorage.cart) {
+      this.cart = JSON.parse(localStorage.cart);
+    } else {
+      this.cart = [];
     }
   },
 };
