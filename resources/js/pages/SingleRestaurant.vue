@@ -106,12 +106,23 @@
                     </h5>
                     <button
                       type="button"
-                      class="btn-close"
+                      class="btn t4-btn-add"
                       data-bs-dismiss="modal"
                       aria-label="Close"
-                    ></button>
+                    >
+                      <span class="t4-close"
+                        ><img src="/images/cross.png" alt=""
+                      /></span>
+                    </button>
                   </div>
-                  <div class="modal-body d-flex justify-content-center">
+                  <div
+                    class="
+                      modal-body
+                      d-flex
+                      justify-content-center
+                      align-items-center
+                    "
+                  >
                     <div
                       @click="
                         () => {
@@ -123,7 +134,9 @@
                       <img class="t4-w80" src="/images/minus1.png" alt="" />
                     </div>
                     <div class="t4-w40 text-center">
-                      <span class="t4-orange-text">{{ orederQuantity }}</span>
+                      <span class="t4-orange-text t4-fs-1">{{
+                        orederQuantity
+                      }}</span>
                     </div>
                     <div
                       @click="
@@ -290,6 +303,12 @@ export default {
 .t4-menu-food {
   img {
     width: 50px;
+  }
+}
+
+.t4-close {
+  img {
+    width: 35px;
   }
 }
 </style>

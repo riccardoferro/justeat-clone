@@ -5117,6 +5117,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppComponent",
@@ -5146,9 +5150,11 @@ __webpack_require__.r(__webpack_exports__);
           });
 
           if (product) {
+            console.log("piatto in arrivo", plate);
+            console.log("piatto modificato", product);
             product.quantity += 1;
 
-            var _total = plate.quantity * plate.price;
+            var _total = product.quantity * product.price;
 
             _total = parseFloat(_total);
             product.total = _total.toFixed(2);
@@ -6570,13 +6576,122 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
     return {
       restaurant: [],
       plates: [],
-      categories: []
+      categories: [],
+      orederQuantity: 0,
+      currentPlate: {}
     };
   },
   props: {
@@ -6603,6 +6718,9 @@ __webpack_require__.r(__webpack_exports__);
     addItem: function addItem(plate) {
       this.$emit("takeItem", plate); //   console.log("carrello", this.cart);
     },
+    removeItem: function removeItem(plate) {
+      this.$emit("removeItem", plate);
+    },
     imagePut: function imagePut(string) {
       var newString;
 
@@ -6613,6 +6731,20 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return newString;
+    },
+    incr: function incr() {
+      this.orederQuantity++;
+    },
+    decr: function decr() {
+      this.orederQuantity--;
+    },
+    pushToCart: function pushToCart(number, elem) {
+      for (var index = 0; index < number; index++) {
+        elem.quantity = 0;
+        this.addItem(elem);
+      }
+
+      this.orederQuantity = 0;
     }
   }
 });
@@ -11660,7 +11792,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-img-restaurant img[data-v-2ff820ae] {\n  width: 100%;\n  border-radius: 20px;\n}\n.t4-menu-food img[data-v-2ff820ae] {\n  width: 50px;\n}", ""]);
+exports.push([module.i, ".t4-img-restaurant img[data-v-2ff820ae] {\n  width: 100%;\n  border-radius: 20px;\n}\n.t4-menu-food img[data-v-2ff820ae] {\n  width: 50px;\n}\n.t4-close img[data-v-2ff820ae] {\n  width: 35px;\n}", ""]);
 
 // exports
 
@@ -43613,7 +43745,7 @@ var render = function () {
         _vm._v(" "),
         _c("router-view", {
           attrs: { cart: _vm.cart },
-          on: { takeItem: _vm.addItem },
+          on: { removeItem: _vm.removeItem, takeItem: _vm.addItem },
         }),
       ],
       1
@@ -45180,39 +45312,168 @@ var render = function () {
                         "t4-card-buttons d-flex justify-content-center",
                     },
                     [
-                      _vm.cart.length == 0 ||
-                      _vm.cart[0].user_id == plate.user_id
-                        ? _c(
-                            "a",
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn t4-add-btn",
+                          attrs: {
+                            type: "button",
+                            "data-bs-toggle": "modal",
+                            "data-bs-target": "#staticBackdrop",
+                          },
+                          on: {
+                            click: function () {
+                              _vm.currentPlate = plate
+                            },
+                          },
+                        },
+                        [
+                          _c("span", { staticClass: "me-2" }, [
+                            _vm._v("Aggiungi al carrello"),
+                          ]),
+                          _vm._v(" "),
+                          _c("img", {
+                            attrs: {
+                              src: "/images/shopping-bag.png",
+                              alt: "shopping-bag",
+                            },
+                          }),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "modal fade",
+                          attrs: {
+                            id: "staticBackdrop",
+                            "data-bs-backdrop": "static",
+                            "data-bs-keyboard": "false",
+                            tabindex: "-1",
+                            "aria-labelledby": "staticBackdropLabel",
+                            "aria-hidden": "true",
+                          },
+                        },
+                        [
+                          _c(
+                            "div",
                             {
-                              staticClass:
-                                "btn t4-add-btn d-flex align-items-center",
-                              attrs: { href: "#" },
-                              on: {
-                                click: function ($event) {
-                                  $event.preventDefault()
-                                  return _vm.addItem(plate)
-                                },
-                              },
+                              staticClass: "modal-dialog modal-dialog-centered",
                             },
                             [
-                              _c("span", { staticClass: "me-2" }, [
-                                _vm._v("Aggiungi al carrello"),
-                              ]),
-                              _vm._v(" "),
-                              _c("img", {
-                                attrs: {
-                                  src: "/images/shopping-bag.png",
-                                  alt: "shopping-bag",
-                                },
-                              }),
+                              _c(
+                                "div",
+                                { staticClass: "modal-content t4-bg-black" },
+                                [
+                                  _vm._m(1, true),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "\n                    modal-body\n                    d-flex\n                    justify-content-center\n                    align-items-center\n                  ",
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "t4-w10",
+                                          on: {
+                                            click: function () {
+                                              _vm.decr()
+                                            },
+                                          },
+                                        },
+                                        [
+                                          _c("img", {
+                                            staticClass: "t4-w80",
+                                            attrs: {
+                                              src: "/images/minus1.png",
+                                              alt: "",
+                                            },
+                                          }),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "t4-w40 text-center" },
+                                        [
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass:
+                                                "t4-orange-text t4-fs-1",
+                                            },
+                                            [_vm._v(_vm._s(_vm.orederQuantity))]
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "t4-w10",
+                                          on: {
+                                            click: function () {
+                                              _vm.incr()
+                                            },
+                                          },
+                                        },
+                                        [
+                                          _c("img", {
+                                            staticClass: "t4-w80",
+                                            attrs: {
+                                              src: "/images/plus1.png",
+                                              alt: "",
+                                            },
+                                          }),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "modal-footer d-flex justify-content-center",
+                                      attrs: { "data-bs-dismiss": "modal" },
+                                    },
+                                    [
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass: "btn t4-add-btn",
+                                          attrs: { type: "button" },
+                                          on: {
+                                            click: function () {
+                                              _vm.pushToCart(
+                                                _vm.orederQuantity,
+                                                _vm.currentPlate
+                                              )
+                                            },
+                                          },
+                                        },
+                                        [
+                                          _c("span", {}, [_vm._v("Conferma")]),
+                                          _vm._v(" "),
+                                          _c("img", {
+                                            attrs: {
+                                              src: "/images/check.png",
+                                              alt: "check",
+                                            },
+                                          }),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                ]
+                              ),
                             ]
-                          )
-                        : _c("p", [
-                            _vm._v(
-                              "\n            Non puoi ordinare da più ristoranti, effettua il pagamento\n          "
-                            ),
-                          ]),
+                          ),
+                        ]
+                      ),
                     ]
                   )
                 : _vm._e(),
@@ -45224,7 +45485,7 @@ var render = function () {
                       staticClass:
                         "t4-card-buttons d-flex justify-content-center",
                     },
-                    [_vm._m(1, true)]
+                    [_vm._m(2, true)]
                   )
                 : _vm._e(),
             ]
@@ -45234,7 +45495,7 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _vm._m(2),
+    _vm._m(3),
   ])
 }
 var staticRenderFns = [
@@ -45247,6 +45508,38 @@ var staticRenderFns = [
       _c("span", { staticClass: "t4-menu-food" }, [
         _c("img", { attrs: { src: "/images/menu-food.png", alt: "" } }),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        {
+          staticClass: "modal-title t4-orange-text",
+          attrs: { id: "staticBackdropLabel" },
+        },
+        [_vm._v("\n                    Scegli la quantità\n                  ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn t4-btn-add",
+          attrs: {
+            type: "button",
+            "data-bs-dismiss": "modal",
+            "aria-label": "Close",
+          },
+        },
+        [
+          _c("span", { staticClass: "t4-close" }, [
+            _c("img", { attrs: { src: "/images/cross.png", alt: "" } }),
+          ]),
+        ]
+      ),
     ])
   },
   function () {

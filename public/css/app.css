@@ -53,6 +53,10 @@
   width: 100%;
 }
 
+.t4-w80 {
+  width: 80%;
+}
+
 .t4-w50 {
   width: 50%;
 }
@@ -63,6 +67,14 @@
 
 .t4-w30 {
   width: 30%;
+}
+
+.t4-w20 {
+  width: 20%;
+}
+
+.t4-w10 {
+  width: 10%;
 }
 
 .t4-fw-2 {
@@ -83,6 +95,10 @@
 
 .t4-fw-6 {
   font-weight: 600;
+}
+
+.t4-fs-1 {
+  font-size: 1rem;
 }
 
 /*!
@@ -11851,6 +11867,10 @@ fieldset:disabled .btn {
   width: 100%;
 }
 
+.t4-w80 {
+  width: 80%;
+}
+
 .t4-w50 {
   width: 50%;
 }
@@ -11861,6 +11881,14 @@ fieldset:disabled .btn {
 
 .t4-w30 {
   width: 30%;
+}
+
+.t4-w20 {
+  width: 20%;
+}
+
+.t4-w10 {
+  width: 10%;
 }
 
 .t4-fw-2 {
@@ -11881,6 +11909,10 @@ fieldset:disabled .btn {
 
 .t4-fw-6 {
   font-weight: 600;
+}
+
+.t4-fs-1 {
+  font-size: 1rem;
 }
 
 .t4-bg-black {
@@ -11935,6 +11967,10 @@ fieldset:disabled .btn {
   width: 100%;
 }
 
+.t4-w80 {
+  width: 80%;
+}
+
 .t4-w50 {
   width: 50%;
 }
@@ -11945,6 +11981,14 @@ fieldset:disabled .btn {
 
 .t4-w30 {
   width: 30%;
+}
+
+.t4-w20 {
+  width: 20%;
+}
+
+.t4-w10 {
+  width: 10%;
 }
 
 .t4-fw-2 {
@@ -11965,6 +12009,10 @@ fieldset:disabled .btn {
 
 .t4-fw-6 {
   font-weight: 600;
+}
+
+.t4-fs-1 {
+  font-size: 1rem;
 }
 
 #decrement,
@@ -24328,14 +24376,12 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 400;
 }
 
-<<<<<<< HEAD
 .modal-content {
   border-radius: 20px !important;
 }
 
-.modal-header {
+.modal-header,
+.modal-footer {
   border: none !important;
 }
 
-=======
->>>>>>> 20e47ea09a25f49efdca5e0b4815c079c5ad237b
