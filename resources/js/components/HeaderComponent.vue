@@ -106,7 +106,9 @@
               </div>
 
 
-              <!-- Bottone che ti porta alla pagina del checkout e del pagamento -->
+              <!-- Bottone che ti porta alla pagina del checkout e del pagamento e passeremo come 
+                    parametro il carrello con il totale
+              -->
             <router-link
                 :to="{ name: 'payments-page'}"
             >
