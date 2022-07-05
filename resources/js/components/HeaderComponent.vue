@@ -90,28 +90,38 @@
                         <img class="t4-w80" src="/images/plus1.png" alt="" />
                       </div>
                     </div>
-                    <p>total {{ plate.total }}</p>
                   </div>
                   <div class="col-3">
-                    <button class="btn t4-delete-item">
-                      <img src="/images/delete.png" alt="" />
-                    </button>
+                    <p>total: {{ plate.total }} &euro;</p>
                   </div>
                 </div>
               </div>
               <div class="row justify-content-end">
                 <div class="col-6">
-                  <h6 class="t4-orange-text t4-fw-6 text-end me-3">Totale:</h6>
+                  <h6 class="t4-orange-text t4-fw-6 text-end me-3">
+                    Totale:{{ totaleComplessivo(cart) }} &euro;
+                  </h6>
                 </div>
               </div>
-              <button
-                class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-              >
-                Paga
-                <span class="t4-btn-pay ms-2">
-                  <img src="/images/pay-per-click.png" alt="" />
-                </span>
-              </button>
+              <div class="d-flex t4-w100 justify-content-around">
+                <button
+                  class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
+                >
+                  Paga
+                  <span class="t4-btn-pay ms-2">
+                    <img src="/images/pay-per-click.png" alt="" />
+                  </span>
+                </button>
+
+                <button
+                  class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
+                >
+                  Svuota
+                  <span class="t4-btn-pay ms-2">
+                    <img src="/images/delete.png" alt="" />
+                  </span>
+                </button>
+              </div>
             </div>
 
             <p v-else>Il tuo carrello è vuoto!</p>
@@ -175,6 +185,13 @@ export default {
     },
     removeItem(plate) {
       this.$emit("removeItem", plate);
+    },
+    totaleComplessivo(arr) {
+      let total = 0;
+      arr.forEach((element) => {
+        total += parseFloat(element.total);
+      });
+      return total.toFixed(2);
     },
   },
 };
