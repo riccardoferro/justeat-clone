@@ -27,6 +27,7 @@ export default {
     addItem(plate) {
       if (this.cart.length === 0) {
         plate.quantity = 1;
+        plate.total = plate.quantity * plate.price;
         this.cart.push(plate);
         this.saveCart();
         this.loadPage();
@@ -36,12 +37,14 @@ export default {
           if (product) {
             product.quantity += 1;
             plate.quantity = product.quantity;
+            product.total = product.quantity * plate.price;
             this.saveCart();
             this.loadPage();
 
             console.log(this.cart);
           } else {
             plate.quantity = 1;
+            plate.total = plate.quantity * plate.price;
             this.cart.push(plate);
             this.saveCart();
             this.loadPage();

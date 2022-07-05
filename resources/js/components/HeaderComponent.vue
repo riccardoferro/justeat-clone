@@ -80,6 +80,7 @@
                       {{ plate.price }} &euro;
                     </h6>
                     <span>{{ plate.quantity }}</span>
+                    <p>total {{ plate.total }}</p>
                   </div>
                   <div class="col-3">
                     <button class="btn t4-delete-item">
