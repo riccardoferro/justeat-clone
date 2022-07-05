@@ -5,6 +5,9 @@ Vue.use(VueRouter);
 // Qui andranno tutte le rotte import delle pages
 import HomeComponent from './pages/HomeComponent'
 import SingleRestaurant from './pages/SingleRestaurant'
+import NotFound from './pages/NotFound'
+import CategoryRestaurantsFilter from './pages/CategoryRestaurantsFilter'
+
 
 
 // Inseriamo le rotte disponibili
@@ -20,7 +23,17 @@ const router = new VueRouter({
             path: '/:slug',
             name: 'single-restaurant',
             component: SingleRestaurant
-        }
+        },
+        {
+            path: '/category/:slug',
+            name: 'category-restaurants-filter',
+            component: CategoryRestaurantsFilter
+        },
+         {
+            path: '/',
+            name: 'notFound',
+            component: NotFound
+        },
     ]
 })
 

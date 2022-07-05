@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container-fluid">
+    <div>
       <HeaderComponent />
       <router-view></router-view>
     </div>

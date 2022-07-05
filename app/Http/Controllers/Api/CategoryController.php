@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use illuminate\Support\Str;
 use App\Category;
+use App\User;
+
+
 
 class CategoryController extends Controller
 {
@@ -19,7 +22,6 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-
         $result2 = ['results2' => $categories, 'success' => true];
         return response()->json($result2);
     }
@@ -51,9 +53,24 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, User $user)
     {
-        //
+
+        $selectedCategories = $request->value;
+
+        $query = $user->newQuery();
+        if (!empty($selectedCategories)) {
+            $query->whereHas("categories", function ($q) use (
+                $selectedCategories
+            ) {
+                $q->whereIn("slug", $selectedCategories);
+            });
+        }
+        $users = $query->paginate(10);
+
+
+
+        return response()->json($users);
     }
 
     /**

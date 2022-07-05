@@ -12028,7 +12028,8 @@ fieldset:disabled .btn {
 }
 
 #t4-delete-form button,
-#t4-delete-form span {
+#t4-delete-form #t4-cancel-delete {
+  display: inline-block;
   width: 40%;
   height: 100%;
   background-color: black;
@@ -12037,7 +12038,7 @@ fieldset:disabled .btn {
 }
 
 #t4-delete-form button img,
-#t4-delete-form span img {
+#t4-delete-form #t4-cancel-delete img {
   width: 30%;
   aspect-ratio: 1;
 }
@@ -23753,7 +23754,9 @@ body {
 
 .t4-bg-nav {
   background-color: #0B100C;
-  z-index: 1000;
+  z-index: 1;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .t4-nav-items {
@@ -24176,9 +24179,14 @@ input[type=number]::-webkit-outer-spin-button {
   width: 50px;
 }
 
+.t4-bg-black {
+  background-color: #0B100C;
+  box-shadow: 0px 1px 5px 1px #6E6E6E;
+}
+
 .t4-nav-toggle img,
 .t4-icon-company img {
-  width: 35px;
+  width: 25px;
 }
 
 .t4-nav-item:hover {
@@ -24191,6 +24199,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .t4-img-company img {
   width: 100%;
+  border-radius: 20px;
 }
 
 .t4-icon-company img {
@@ -24207,12 +24216,76 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .t4-restaurant-label {
-  margin: 10px 10px 10px 0;
-  width: 10%;
+  margin: 10px;
 }
 
 .t4-restaurant-label img {
   width: 100%;
   aspect-ratio: 1;
+}
+
+.t4-badge-category {
+  border-radius: 25px;
+  color: #0B100C;
+  background-color: #FF9741;
+  outline: 2px solid #E68B3F;
+  outline-offset: 2px;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 0px 10px;
+}
+
+.dropdown-menu {
+  background-color: #0B100C !important;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #E68B3F;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #FF9741 !important;
+  color: #0B100C !important;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.offcanvas {
+  background-color: #0B100C !important;
+}
+
+.t4-close {
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.t4-close img {
+  width: 35px;
+}
+
+.t4-grad-orange {
+  background: -webkit-linear-gradient(315deg, #f9484a 0%, #fbd72b 74%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.t4-jumbo-logo img {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+}
+
+.t4-fw {
+  font-weight: 400;
 }
 

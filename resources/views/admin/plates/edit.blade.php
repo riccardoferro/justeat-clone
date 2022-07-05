@@ -89,79 +89,85 @@
                             <img src="/images/edit-document.png" alt="">
                         </button>
 
-                        <a id='t4-delete-span' class="btn t4-add-btn d-flex align-items-center"> <span
+                        <div id='t4-delete-span' class="btn t4-add-btn d-flex align-items-center"> <span
                                 class="me-2">Elimina</span>
                             <img src="/images/cross.png" alt="">
-                        </a>
+                        </div>
 
-                        <button href="{{ route('admin.plates.index') }}" class="btn t4-add-btn d-flex align-items-center">
+                        <a href="{{ route('admin.plates.index') }}" class="btn t4-add-btn d-flex align-items-center">
                             <span class="me-2">Indietro </span>
                             <img src="/images/replay.png" alt="">
-                        </button>
-
-
-                        {{-- delete --}}
-                        <div id='t4-delete-form'>
-                            <div class="container-fluid">
-                                <div class="row flex-column align-items-center justify-content-center text-center">
-                                    <div class="col-6">
-                                        <h1>Sei sicuro?</h1>
-                                    </div>
-
-
-                                    <div class="col-8 d-flex justify-content-around align-items-center mt-4">
-
-
-                                        <form action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
-                                            class="d-inline-block" method="POST">
-
-                                            @csrf
-                                            @method('DELETE')
+                        </a>
 
 
 
-                                            <button type='submit'>
-                                                <img src="/images/delete.png" alt="">
-                                            </button>
-                                        </form>
 
-                                        <span id='t4-cancel-delete'>
-                                            <img src="/images/cross.png" alt="">
-                                        </span>
-
-
-
-                                    </div>
-                                </div>
                 </form>
+                {{-- delete --}}
+                <div id='t4-delete-form'>
+                    <div class="container-fluid">
+                        <div class="row flex-column align-items-center justify-content-center text-center">
+                            <div class="col-6">
+                                <h1>Sei sicuro?</h1>
+                            </div>
+
+
+                            <div class="col-8 d-flex justify-content-around align-items-center mt-4">
+
+
+                                <form action="{{ route('admin.plates.destroy', ['plate' => $plate->id]) }}"
+                                    class="d-inline-block" method="POST">
+
+                                    @csrf
+                                    @method('DELETE')
+
+
+
+                                    <button type='submit'>
+                                        <img src="/images/delete.png" alt="">
+                                    </button>
+                                    <div id='t4-cancel-delete'>
+
+                                        <img src="/images/cross.png" alt="">
+
+                                    </div>
+                                </form>
+
+
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
+
+            {{-- fine delete --}}
+
+
         </div>
+        {{-- jumbo-edit --}}
 
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-    {{-- fine delete --}}
-
-
-    </div>
-    {{-- jumbo-edit --}}
-
-    <div class="col-xxl-4 col-xl-4 col-md-6 mt-5 order-xxl-2 order-xl-2 order-md-2 order-sm-1 order-1">
-        <label for="cover" style="cursor: pointer">
-            <img class="t4-jumbo-create" src="{{ asset('storage/' . $plate->image) }}" alt="{{ $plate->name }}">
-        </label>
-    </div>
+        <div class="col-xxl-4 col-xl-4 col-md-6 mt-5 order-xxl-2 order-xl-2 order-md-2 order-sm-1 order-1">
+            <label for="cover" style="cursor: pointer">
+                <img class="t4-jumbo-create" src="{{ asset('storage/' . $plate->image) }}"
+                    alt="{{ $plate->name }}">
+            </label>
+        </div>
 
     </div>
     </div>

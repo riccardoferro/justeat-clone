@@ -1,26 +1,68 @@
 <template>
-  <header>
-    <!-- DANI qui andrà il nostro Header con login e register -->
-    <nav class="navbar navbar-expand-lg t4-navbar sticky-top">
+  <!-- DANI qui andrà il nostro Header con login e register -->
+  <div class="sticky-top t4-bg-black">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand t4-logo-nav" href="#">
+        <a class="navbar-brand t4-logo-nav" href="/">
           <img src="/images/logo.png" alt="logo-booleat" />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="t4-nav-toggle">
-            <img src="/images/menu.png" alt="" />
-          </span>
-        </button>
+        <div class="d-flex justify-content-end align-items-center">
+          <!-- Carrello -->
+          <button
+            class="btn"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          >
+            <div class="t4-nav-item">
+              <img src="/images/shopping.png" alt="shorp-cart" />
+            </div>
+          </button>
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="offcanvas-header">
+              <h3 class="t4-orange-text" id="offcanvasRightLabel">Carrello</h3>
+              <button
+                type="button"
+                class="t4-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                <img src="/images/cross.png" alt="" />
+              </button>
+            </div>
+            <div class="offcanvas-body">Il tuo carrello è vuoto!</div>
+          </div>
+
+          <!-- Hamburger menu -->
+          <button
+            class="navbar-toggler t4-toggle-btn"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="t4-nav-toggle">
+              <img src="/images/menu.png" alt="" />
+            </span>
+          </button>
+        </div>
+        <!-- Login e Register -->
         <div
-          class="collapse navbar-collapse ms-5 justify-content-end"
+          class="
+            collapse
+            navbar-collapse
+            ms-0 ms-md-0 ms-lg-0
+            justify-content-end
+          "
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
@@ -34,21 +76,11 @@
               ><img src="/images/register.png" alt="Register Booleat" />
               Registrati
             </a>
-
-            <a
-              class="
-                t4-nav-item t4-orange-text
-                ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0
-                mt-lg-0 mt-md-2 mt-sm-2 mt-2
-              "
-              href=""
-              ><img src="/images/shopping.png" alt="shorp-cart" />
-            </a>
           </div>
         </div>
       </div>
     </nav>
-  </header>
+  </div>
 </template>
 
 <script>

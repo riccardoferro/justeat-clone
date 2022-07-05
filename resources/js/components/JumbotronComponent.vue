@@ -33,13 +33,26 @@
               <div
                 class="
                   d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none
+                  t4-grad-orange
                 "
               >
-                <p>#1 Miglior sito di food delivery</p>
-                <h2>Mangia con un click</h2>
-                <h5 class="mb-5">
+                <div
+                  class="
+                    d-flex
+                    t4-jumbo-logo
+                    align-items-end
+                    justify-content-center
+                  "
+                >
+                  <h1 class="t4-grad-orange t4-fw">Booleat</h1>
+                  <img src="/images/delivery-bike.png" alt="" />
+                </div>
+
+                <!-- <p>#1 Miglior sito di food delivery</p> -->
+                <h1 class="t4-fw">Mangia con un click</h1>
+                <h4 class="mb-5">
                   Ordina online dai tuoi ristoranti preferiti
-                </h5>
+                </h4>
               </div>
               <div
                 class="
@@ -58,6 +71,7 @@
                       d-md-none
                       d-sm-block
                       d-block
+                      t4-grad-orange
                     "
                   >
                     Ordina online dai tuoi ristoranti preferiti

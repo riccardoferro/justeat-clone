@@ -1,18 +1,81 @@
 <template>
-  <div>
-    <div>Benvenuto nel ristorante X</div>
-    <p>{{ restaurant.company }}</p>
-    <p>{{ restaurant.address }}</p>
-
-    <div>
-      <p v-for="category in categories" :key="category.slug">
-        {{ category.name }}
-      </p>
+  <div class="container">
+    <div class="row text-center mt-5">
+      <h2>Benvenuto da {{ restaurant.company }}!</h2>
+      <h4>
+        Ordina i tuoi piatti oppure prenota un ritiro in
+        {{ restaurant.address }}
+      </h4>
     </div>
-    <div>
-      <p v-for="plate in plates" :key="plate.name + plate.id">
-        {{ plate.name }}
-      </p>
+
+    <div class="row text-center mt-3">
+      <div class="col-12">
+        <span class="t4-orange-text">Categorie:</span>
+        <span
+          v-for="category in categories"
+          :key="category.slug"
+          class="t4-badge-category"
+        >
+          {{ category.name }}
+        </span>
+      </div>
+    </div>
+
+    <div class="row flex-column justify-content-center mt-5">
+      <div
+        class="
+          d-flex
+          col-xxl-10 col-xl-10 col-md-11 col-sm-12
+          m-auto
+          mt-3
+          justify-content-center
+        "
+      >
+        <div
+          v-for="plate in plates"
+          :key="plate.name + plate.id"
+          class="col-sm-10 col-md-5 col-xl-3 d-flex flex-column t4-card"
+        >
+          <div class="t4-card-img">
+            <img :src="'storage/' + plate.image" alt="" />
+          </div>
+          <div class="t4-card-title">
+            <span class="t4-card-label">Nome Piatto</span>
+            <p>{{ plate.name }}</p>
+          </div>
+          <div class="t4-card-description">
+            <span class="t4-card-label">Descrizione </span>
+            <p>{{ plate.description }}</p>
+          </div>
+          <div class="t4-card-info d-flex justify-content-between">
+            <p><span>Prezzo: </span>{{ plate.price }} &euro;</p>
+            <div v-if="plate.visible == 1">
+              <p style="color: rgb(4, 165, 4)">Disponibile</p>
+            </div>
+            <div v-else>
+              <p style="color: rgb(165, 4, 4)">Non disponibile</p>
+            </div>
+          </div>
+          <div
+            v-if="plate.visible == 1"
+            class="t4-card-buttons d-flex justify-content-center"
+          >
+            <a href="#" class="btn t4-add-btn d-flex align-items-center">
+              <span class="me-2">Aggiungi al carrello</span>
+              <img src="/images/shopping-bag.png" alt="shopping-bag" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="t4-card-buttons d-flex justify-content-end mt-5 mb-2">
+      <a
+        href="http://127.0.0.1:8000/"
+        class="btn t4-add-btn d-flex align-items-center"
+      >
+        <span class="me-2">Torna alla Home</span>
+        <img src="/images/home.png" alt="home" />
+      </a>
     </div>
   </div>
 </template>
