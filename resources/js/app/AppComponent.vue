@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <HeaderComponent :cart="cart" />
+      <HeaderComponent @takeItem="addItem" :cart="cart" />
 
       <router-view @takeItem="addItem" :cart="cart"></router-view>
     </div>
@@ -27,7 +27,9 @@ export default {
     addItem(plate) {
       if (this.cart.length === 0) {
         plate.quantity = 1;
-        plate.total = plate.quantity * plate.price;
+        let total = plate.quantity * plate.price;
+        total = parseFloat(total);
+        plate.total = total.toFixed(2);
         this.cart.push(plate);
         this.saveCart();
         this.loadPage();
@@ -36,15 +38,18 @@ export default {
           const product = this.cart.find((o) => o.id === plate.id);
           if (product) {
             product.quantity += 1;
-            plate.quantity = product.quantity;
-            product.total = product.quantity * plate.price;
+            let total = plate.quantity * plate.price;
+            total = parseFloat(total);
+            product.total = total.toFixed(2);
             this.saveCart();
             this.loadPage();
 
             console.log(this.cart);
           } else {
             plate.quantity = 1;
-            plate.total = plate.quantity * plate.price;
+            let total = plate.quantity * plate.price;
+            total = parseFloat(total);
+            plate.total = total.toFixed(2);
             this.cart.push(plate);
             this.saveCart();
             this.loadPage();

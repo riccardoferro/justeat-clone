@@ -79,7 +79,17 @@
                     <h6 class="t4-orange-text t4-fw-6">
                       {{ plate.price }} &euro;
                     </h6>
-                    <span>{{ plate.quantity }}</span>
+                    <div class="t4-w100 d-flex justify-content-between">
+                      <div class="t4-w30">
+                        <img class="t4-w80" src="/images/minus1.png" alt="" />
+                      </div>
+                      <div class="t4-w30 text-center">
+                        <p>{{ plate.quantity }}</p>
+                      </div>
+                      <div @click="addItem(plate)" class="t4-w30">
+                        <img class="t4-w80" src="/images/plus1.png" alt="" />
+                      </div>
+                    </div>
                     <p>total {{ plate.total }}</p>
                   </div>
                   <div class="col-3">
@@ -158,6 +168,11 @@ export default {
   name: "HeaderComponent",
   props: {
     cart: Array,
+  },
+  methods: {
+    addItem(plate) {
+      this.$emit("takeItem", plate);
+    },
   },
 };
 </script>

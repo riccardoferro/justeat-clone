@@ -155,7 +155,6 @@ export default {
     },
     imagePut(string) {
       let newString;
-      console.log("stringa presa");
       if (string.includes("uploads")) {
         newString = `/storage/${string}`;
       } else {
