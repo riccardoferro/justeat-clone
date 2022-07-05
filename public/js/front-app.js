@@ -5884,6 +5884,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -6452,10 +6457,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
@@ -6491,18 +6492,6 @@ __webpack_require__.r(__webpack_exports__);
     addItem: function addItem(plate) {
       this.$emit("takeItem", plate);
       console.log("carrello", this.cart);
-    },
-    imagePut: function imagePut(string) {
-      var newString;
-      console.log("stringa presa");
-
-      if (string.includes("uploads")) {
-        newString = "/storage/".concat(string);
-      } else {
-        newString = "/images/default-restaurant.jpeg";
-      }
-
-      return newString;
     }
   }
 });
@@ -44408,7 +44397,20 @@ var render = function () {
                   },
                 },
                 [
-                  _c("div", [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "\n              col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n              t4-img-company\n            ",
+                    },
+                    [
+                      _c("img", {
+                        attrs: { src: _vm.imagePut(user.image), alt: "" },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mt-3" }, [
                     _c(
                       "h6",
                       {
@@ -44438,31 +44440,22 @@ var render = function () {
                         ]),
                         _vm._v(" "),
                         _vm._l(user.categories, function (category) {
-                          return _c("span", { key: category.slug }, [
-                            _vm._v(
-                              "\n                " +
-                                _vm._s(category.name) +
-                                "\n              "
-                            ),
-                          ])
+                          return _c(
+                            "span",
+                            { key: category.slug, staticClass: "t4-fw-4" },
+                            [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(category.name) +
+                                  "\n              "
+                              ),
+                            ]
+                          )
                         }),
                       ],
                       2
                     ),
                   ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "\n              col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n              t4-img-company\n            ",
-                    },
-                    [
-                      _c("img", {
-                        attrs: { src: _vm.imagePut(user.image), alt: "" },
-                      }),
-                    ]
-                  ),
                 ]
               ),
             ],
@@ -44760,24 +44753,16 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row text-center mt-5" }, [
-      _c(
-        "div",
-        { staticClass: "col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6" },
-        [
-          _c("img", {
-            attrs: { src: _vm.imagePut(_vm.restaurant.image), alt: "" },
-          }),
-        ]
-      ),
+      _c("h2", [
+        _vm._v("Benvenuto da " + _vm._s(_vm.restaurant.company) + "!"),
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-xxl-6 col-xl-6" }, [
-        _c("h2", [
-          _vm._v("Benvenuto da " + _vm._s(_vm.restaurant.company) + "!"),
-        ]),
-        _vm._v(" "),
-        _c("h4", [
-          _vm._v("\n        " + _vm._s(_vm.restaurant.address) + "\n      "),
-        ]),
+      _c("h4", [
+        _vm._v(
+          "\n      Ordina i tuoi piatti oppure prenota un ritiro in\n      " +
+            _vm._s(_vm.restaurant.address) +
+            "\n    "
+        ),
       ]),
     ]),
     _vm._v(" "),

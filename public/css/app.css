@@ -61,6 +61,18 @@
   width: 40%;
 }
 
+.t4-fw-2 {
+  font-weight: 200;
+}
+
+.t4-fw-3 {
+  font-weight: 300;
+}
+
+.t4-fw-4 {
+  font-weight: 400;
+}
+
 .t4-fw-5 {
   font-weight: 500;
 }
@@ -11843,6 +11855,18 @@ fieldset:disabled .btn {
   width: 40%;
 }
 
+.t4-fw-2 {
+  font-weight: 200;
+}
+
+.t4-fw-3 {
+  font-weight: 300;
+}
+
+.t4-fw-4 {
+  font-weight: 400;
+}
+
 .t4-fw-5 {
   font-weight: 500;
 }
@@ -11909,6 +11933,18 @@ fieldset:disabled .btn {
 
 .t4-w40 {
   width: 40%;
+}
+
+.t4-fw-2 {
+  font-weight: 200;
+}
+
+.t4-fw-3 {
+  font-weight: 300;
+}
+
+.t4-fw-4 {
+  font-weight: 400;
 }
 
 .t4-fw-5 {
