@@ -80,7 +80,7 @@
                       {{ plate.price }} &euro;
                     </h6>
                     <div class="t4-w100 d-flex justify-content-between">
-                      <div class="t4-w30">
+                      <div @click="removeItem(plate)" class="t4-w30">
                         <img class="t4-w80" src="/images/minus1.png" alt="" />
                       </div>
                       <div class="t4-w30 text-center">
@@ -172,6 +172,9 @@ export default {
   methods: {
     addItem(plate) {
       this.$emit("takeItem", plate);
+    },
+    removeItem(plate) {
+      this.$emit("removeItem", plate);
     },
   },
 };

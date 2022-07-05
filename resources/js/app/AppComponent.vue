@@ -1,7 +1,11 @@
 <template>
   <div>
     <div>
-      <HeaderComponent @takeItem="addItem" :cart="cart" />
+      <HeaderComponent
+        @removeItem="removeItem"
+        @takeItem="addItem"
+        :cart="cart"
+      />
 
       <router-view @takeItem="addItem" :cart="cart"></router-view>
     </div>
@@ -43,8 +47,6 @@ export default {
             product.total = total.toFixed(2);
             this.saveCart();
             this.loadPage();
-
-            console.log(this.cart);
           } else {
             plate.quantity = 1;
             let total = plate.quantity * plate.price;
@@ -55,6 +57,23 @@ export default {
             this.loadPage();
           }
         }
+      }
+    },
+    removeItem(plate) {
+      const product = this.cart.find((o) => o.id === plate.id);
+      const index = this.cart.indexOf(product);
+      console.log("index", index);
+      if (product.quantity > 1) {
+        product.quantity -= 1;
+        let total = plate.quantity * plate.price;
+        total = parseFloat(total);
+        product.total = total.toFixed(2);
+        this.saveCart();
+        this.loadPage();
+      } else {
+        this.cart.splice(index, 1);
+        this.saveCart();
+        this.loadPage();
       }
     },
 
