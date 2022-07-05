@@ -17,7 +17,21 @@
             data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight"
           >
-            <div class="t4-nav-item">
+            <div class="t4-nav-item position-relative">
+              <span
+                v-if="cart.length > 0"
+                class="
+                  position-absolute
+                  top-0
+                  start-100
+                  translate-middle
+                  badge
+                  rounded-pill
+                  bg-danger
+                "
+              >
+                {{ totalPlatesBadge(cart) }}
+              </span>
               <img src="/images/shopping.png" alt="shorp-cart" />
             </div>
           </button>
@@ -192,6 +206,13 @@ export default {
         total += parseFloat(element.total);
       });
       return total.toFixed(2);
+    },
+    totalPlatesBadge(arr) {
+      let total = 0;
+      arr.forEach((element) => {
+        total += element.quantity;
+      });
+      return total;
     },
   },
 };
