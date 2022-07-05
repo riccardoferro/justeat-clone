@@ -78,11 +78,12 @@
                 }
               "
               type="button"
-              class="btn btn-primary"
+              class="btn t4-add-btn"
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
             >
-              Aggiungi al carrello
+              <span class="me-2">Aggiungi al carrello</span>
+              <img src="/images/shopping-bag.png" alt="shopping-bag" />
             </button>
 
             <div
@@ -95,10 +96,13 @@
               aria-hidden="true"
             >
               <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+                <div class="modal-content t4-bg-black">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">
-                      Modal title
+                    <h5
+                      class="modal-title t4-orange-text"
+                      id="staticBackdropLabel"
+                    >
+                      Scegli la quantità
                     </h5>
                     <button
                       type="button"
@@ -119,7 +123,7 @@
                       <img class="t4-w80" src="/images/minus1.png" alt="" />
                     </div>
                     <div class="t4-w40 text-center">
-                      <p style="color: black">{{ orederQuantity }}</p>
+                      <span class="t4-orange-text">{{ orederQuantity }}</span>
                     </div>
                     <div
                       @click="
@@ -143,9 +147,10 @@
                         }
                       "
                       type="button"
-                      class="btn btn-primary"
+                      class="btn t4-add-btn"
                     >
-                      Understood
+                      <span class="">Conferma</span>
+                      <img src="/images/check.png" alt="check" />
                     </button>
                   </div>
                 </div>
