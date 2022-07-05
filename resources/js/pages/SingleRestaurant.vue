@@ -74,7 +74,9 @@
               <img src="/images/shopping-bag.png" alt="shopping-bag" />
             </a>
 
-            <p v-else>pijatela nder culo taccogno</p>
+            <p v-else>
+              Non puoi ordinare da più ristoranti, effettua il pagamento
+            </p>
           </div>
           <!-- v-else -->
           <div
@@ -120,18 +122,18 @@ export default {
 
   mounted() {
     const slug = this.$route.params.slug;
-    console.log(slug);
+    // console.log(slug);
 
     window.axios
       .get("http://127.0.0.1:8000/api/users/" + slug)
       .then((results) => {
-        console.log("results Single Restaurant->", results);
+        // console.log("results Single Restaurant->", results);
         if (results.status === 200 && results.data.success) {
           this.restaurant = results.data.results;
           this.plates = this.restaurant.plates;
           this.categories = this.restaurant.categories; //   console.log('category'.)
         }
-        console.log(this.restaurant);
+        // console.log(this.restaurant);
       })
       .catch((e) => {
         console.log(e);
@@ -141,8 +143,7 @@ export default {
   methods: {
     addItem(plate) {
       this.$emit("takeItem", plate);
-
-      console.log("carrello", this.cart);
+      //   console.log("carrello", this.cart);
     },
   },
 };

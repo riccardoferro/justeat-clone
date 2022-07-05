@@ -51,7 +51,7 @@
 
             <!-- body della drop del carrello -->
             <div v-if="cart.length > 0" class="offcanvas-body">
-              <div v-for="(plate, index) in cart" :key="plate.id + index">
+              <div v-for="(plate, index) in cart" :key="plate.id + `${index}`">
                 <!-- <div class="col-3">
                   <span> {{ plate.name }} </span>
                 </div>
@@ -79,6 +79,7 @@
                     <h6 class="t4-orange-text t4-fw-6">
                       {{ plate.price }} &euro;
                     </h6>
+                    <span>{{ plate.quantity }}</span>
                   </div>
                   <div class="col-3">
                     <button class="btn t4-delete-item">
