@@ -5139,8 +5139,8 @@ __webpack_require__.r(__webpack_exports__);
 
           if (product) {
             product.quantity += 1;
-            this.saveCart();
-            console.log(this.cart);
+            plate.quantity = product.quantity;
+            this.saveCart(); // console.log(this.cart);
           } else {
             plate.quantity = 1;
             this.cart.push(plate);

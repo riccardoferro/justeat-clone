@@ -34,8 +34,9 @@ export default {
           const product = this.cart.find((o) => o.id === plate.id);
           if (product) {
             product.quantity += 1;
+            plate.quantity = product.quantity;
             this.saveCart();
-            console.log(this.cart);
+            // console.log(this.cart);
           } else {
             plate.quantity = 1;
             this.cart.push(plate);
