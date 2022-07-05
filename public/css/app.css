@@ -24364,9 +24364,11 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 400;
 }
 
+.modal-content {
+  border-radius: 20px !important;
+}
+
 .modal-header {
-  border-bottom: 2px solid #b25000 !important;
-  border-top-left-radius: 20px !important;
-  border-top-right-radius: 20px !important;
+  border: none !important;
 }
 
