@@ -5489,7 +5489,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
 //
 //
 //
@@ -5519,31 +5518,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-=======
->>>>>>> 3d69029aa05c497aef7f42ae3aabb11f5381eb6e
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FooterComponent",
   data: function data() {
     return {
       linkGithub: [//menu is an array of objects
       {
-        urlGithub: "https://github.com/DanieleGelsomino",
-        urlImage: "/images/github.png",
-        name: "Daniele Gelsomino"
+        urlGithub: 'https://github.com/DanieleGelsomino',
+        urlImage: '/images/github.png',
+        name: 'Daniele Gelsomino'
       }, {
-        urlGithub: "https://github.com/riccardoferro",
-        urlImage: "/images/github.png",
-        name: "Riccardo Ferro"
+        urlGithub: 'https://github.com/riccardoferro',
+        urlImage: '/images/github.png',
+        name: 'Riccardo Ferro'
       }, {
-        urlGithub: "https://github.com/LucioMelis",
-        urlImage: "/images/github.png",
-        name: "Lucio Melis"
+        urlGithub: 'https://github.com/LucioMelis',
+        urlImage: '/images/github.png',
+        name: 'Lucio Melis'
       }, {
-        urlGithub: "https://github.com/Cristian6918",
-        urlImage: "/images/github.png",
-        name: "Cristian Tulbu"
+        urlGithub: 'https://github.com/Cristian6918',
+        urlImage: '/images/github.png',
+        name: 'Cristian Tulbu'
       }, {
-<<<<<<< HEAD
         urlGithub: 'https://github.com/Santoni92',
         urlImage: '/images/github.png',
         name: 'Silvio Antonioli'
@@ -5551,12 +5547,6 @@ __webpack_require__.r(__webpack_exports__);
       seguiBooleat: ["Investitori", "Chi siamo", "Ristoranti", "Altro", "Il nostro Blog", "Programmazione", "Design", "Lavora con noi", "Diventa nostro partner"],
       noteLegali: ["Termini e condizioni", "Informativa sulla privacy", "Cookies"],
       aiuto: ["Contatti", "FAQ"]
-=======
-        urlGithub: "https://github.com/Santoni92",
-        urlImage: "/images/github.png",
-        name: "Silvio Antonioli"
-      }]
->>>>>>> 3d69029aa05c497aef7f42ae3aabb11f5381eb6e
     };
   }
 });
@@ -11551,11 +11541,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, "ul[data-v-abfbddf2] {\n  list-style-type: none;\n}\nul li[data-v-abfbddf2] {\n  padding: 5px;\n}\nul li[data-v-abfbddf2]:hover {\n  transform: scale(1.2);\n}\nul li i[data-v-abfbddf2] {\n  margin: 10px;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 8px;\n}\np[data-v-abfbddf2] {\n  font-size: 10px;\n}\nimg[data-v-abfbddf2] {\n  width: 70px;\n}\n#cerchio[data-v-abfbddf2] {\n  width: 20px;\n  height: 20px;\n  border-radius: 50px;\n  background: orange;\n  text-align: center;\n}\n#cerchio[data-v-abfbddf2]:hover {\n  transform: scaleY(1.5);\n}", ""]);
-=======
-exports.push([module.i, "ul[data-v-abfbddf2] {\n  list-style-type: none;\n}\nul li[data-v-abfbddf2] {\n  padding: 5px;\n}\nul li i[data-v-abfbddf2] {\n  margin: 10px;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 8px;\n}\np[data-v-abfbddf2] {\n  font-size: 10px;\n}", ""]);
->>>>>>> 3d69029aa05c497aef7f42ae3aabb11f5381eb6e
+exports.push([module.i, "ul[data-v-abfbddf2] {\n  list-style-type: none;\n}\nul li[data-v-abfbddf2] {\n  padding: 5px;\n}\nul li i[data-v-abfbddf2] {\n  margin: 10px;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 8px;\n}\np[data-v-abfbddf2] {\n  font-size: 10px;\n}\nimg[data-v-abfbddf2] {\n  width: 70px;\n}\n#cerchio[data-v-abfbddf2] {\n  width: 20px;\n  height: 20px;\n  border-radius: 50px;\n  background: orange;\n  text-align: center;\n}\n#cerchio[data-v-abfbddf2]:hover {\n  transform: scaleY(1.5);\n}", ""]);
 
 // exports
 
@@ -43901,7 +43887,7 @@ var render = function () {
       _vm._l(_vm.linkGithub, function (item, index) {
         return _c(
           "li",
-          { key: index, staticClass: "col-sm-12 col-md-6 col-xl-1" },
+          { key: index, staticClass: " col-sm-12 col-md-6 col-xl-1" },
           [
             _c(
               "a",
@@ -43913,7 +43899,6 @@ var render = function () {
                 _c("i", {
                   staticClass: "fa-brands fa-github fa-xl t4-orange-text",
                 }),
-                _vm._v(" "),
                 _c("div", { staticClass: "name t4-orange-text" }, [
                   _vm._v(_vm._s(item.name)),
                 ]),
@@ -43935,7 +43920,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-<<<<<<< HEAD
     return _c("div", { staticClass: "row d-none d-md-block pt-5" }, [
       _c("img", { attrs: { src: "/images/logo.png", alt: "Logo BoolEat" } }),
     ])
@@ -43971,11 +43955,6 @@ var staticRenderFns = [
         _c("a", { attrs: { href: "#" } }, [
           _c("i", { staticClass: "fa-solid fa-arrow-up" }),
         ]),
-=======
-    return _c("div", { staticClass: "row" }, [
-      _c("p", { staticClass: "white-text" }, [
-        _vm._v("© Team4 2022, all rights reserved"),
->>>>>>> 3d69029aa05c497aef7f42ae3aabb11f5381eb6e
       ]),
     ])
   },
