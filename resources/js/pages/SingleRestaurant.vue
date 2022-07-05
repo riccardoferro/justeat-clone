@@ -108,13 +108,27 @@
                     ></button>
                   </div>
                   <div class="modal-body d-flex justify-content-center">
-                    <div @click="decr" class="t4-w10">
+                    <div
+                      @click="
+                        () => {
+                          decr();
+                        }
+                      "
+                      class="t4-w10"
+                    >
                       <img class="t4-w80" src="/images/minus1.png" alt="" />
                     </div>
                     <div class="t4-w40 text-center">
                       <p style="color: black">{{ orederQuantity }}</p>
                     </div>
-                    <div @click="incr" class="t4-w10">
+                    <div
+                      @click="
+                        () => {
+                          incr();
+                        }
+                      "
+                      class="t4-w10"
+                    >
                       <img class="t4-w80" src="/images/plus1.png" alt="" />
                     </div>
                   </div>
@@ -123,7 +137,11 @@
                     data-bs-dismiss="modal"
                   >
                     <button
-                      @click="pushToCart(orederQuantity, currentPlate)"
+                      @click="
+                        () => {
+                          pushToCart(orederQuantity, currentPlate);
+                        }
+                      "
                       type="button"
                       class="btn btn-primary"
                     >
@@ -247,8 +265,8 @@ export default {
 
     pushToCart(number, elem) {
       for (let index = 0; index < number; index++) {
+        elem.quantity = 0;
         this.addItem(elem);
-        console.log(elem);
       }
       this.orederQuantity = 0;
     },
