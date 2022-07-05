@@ -71,8 +71,79 @@
             v-if="plate.visible == 1"
             class="t4-card-buttons d-flex justify-content-center"
           >
+            <button
+              @click="
+                () => {
+                  currentPlate = plate;
+                }
+              "
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Launch static backdrop modal
+            </button>
+
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                      Modal title
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body d-flex justify-content-center">
+                    <div @click="decr" class="t4-w10">
+                      <img class="t4-w80" src="/images/minus1.png" alt="" />
+                    </div>
+                    <div class="t4-w40 text-center">
+                      <p style="color: black">{{ orederQuantity }}</p>
+                    </div>
+                    <div @click="incr" class="t4-w10">
+                      <img class="t4-w80" src="/images/plus1.png" alt="" />
+                    </div>
+                  </div>
+                  <div
+                    class="modal-footer d-flex justify-content-center"
+                    data-bs-dismiss="modal"
+                  >
+                    <button
+                      @click="pushToCart(orederQuantity, currentPlate)"
+                      type="button"
+                      class="btn btn-primary"
+                    >
+                      Understood
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div @click="decr" class="t4-w10">
+              <img class="t4-w80" src="/images/minus1.png" alt="" />
+            </div>
+            <div class="t4-w40 text-center">
+              <p>{{ orederQuantity }}</p>
+            </div>
+            <div @click="incr" class="t4-w10">
+              <img class="t4-w80" src="/images/plus1.png" alt="" />
+            </div> -->
             <!-- PULSANTE CARRELLO -->
-            <a
+            <!-- <a
               v-if="cart.length == 0 || cart[0].user_id == plate.user_id"
               @click.prevent="addItem(plate)"
               href="#"
@@ -84,7 +155,7 @@
 
             <p v-else>
               Non puoi ordinare da più ristoranti, effettua il pagamento
-            </p>
+            </p> -->
           </div>
           <!-- v-else -->
           <div
@@ -121,6 +192,8 @@ export default {
       restaurant: [],
       plates: [],
       categories: [],
+      orederQuantity: 0,
+      currentPlate: {},
     };
   },
 
@@ -153,6 +226,9 @@ export default {
       this.$emit("takeItem", plate);
       //   console.log("carrello", this.cart);
     },
+    removeItem(plate) {
+      this.$emit("removeItem", plate);
+    },
     imagePut(string) {
       let newString;
       if (string.includes("uploads")) {
@@ -161,6 +237,20 @@ export default {
         newString = `/images/default-restaurant.jpeg`;
       }
       return newString;
+    },
+    incr() {
+      this.orederQuantity++;
+    },
+    decr() {
+      this.orederQuantity--;
+    },
+
+    pushToCart(number, elem) {
+      for (let index = 0; index < number; index++) {
+        this.addItem(elem);
+        console.log(elem);
+      }
+      this.orederQuantity = 0;
     },
   },
 };

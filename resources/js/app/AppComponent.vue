@@ -7,7 +7,11 @@
         :cart="cart"
       />
 
-      <router-view @takeItem="addItem" :cart="cart"></router-view>
+      <router-view
+        @removeItem="removeItem"
+        @takeItem="addItem"
+        :cart="cart"
+      ></router-view>
     </div>
   </div>
 </template>
