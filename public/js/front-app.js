@@ -6510,19 +6510,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
@@ -11614,7 +11601,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-img-restaurant img[data-v-2ff820ae] {\n  width: 100%;\n  border-radius: 20px;\n}", ""]);
+exports.push([module.i, ".t4-img-restaurant img[data-v-2ff820ae] {\n  width: 100%;\n  border-radius: 20px;\n}\n.t4-menu-food img[data-v-2ff820ae] {\n  width: 50px;\n}", ""]);
 
 // exports
 
@@ -44951,7 +44938,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
-    _c("div", { staticClass: "row pt-5 justify-content-center" }, [
+    _c("div", { staticClass: "row pt-5 justify-content-center pb-5" }, [
       _c("div", { staticClass: "col-4 t4-img-restaurant" }, [
         _c("img", {
           attrs: { src: _vm.imagePut(_vm.restaurant.image), alt: "" },
@@ -44995,6 +44982,8 @@ var render = function () {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row flex-column justify-content-center mt-5" }, [
+      _vm._m(0),
+      _vm._v(" "),
       _c(
         "div",
         {
@@ -45107,7 +45096,7 @@ var render = function () {
                       staticClass:
                         "t4-card-buttons d-flex justify-content-center",
                     },
-                    [_vm._m(0, true)]
+                    [_vm._m(1, true)]
                   )
                 : _vm._e(),
             ]
@@ -45117,10 +45106,21 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _vm._m(1),
+    _vm._m(2),
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", { staticClass: "text-center" }, [
+      _vm._v("\n      Menù\n      "),
+      _c("span", { staticClass: "t4-menu-food" }, [
+        _c("img", { attrs: { src: "/images/menu-food.png", alt: "" } }),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

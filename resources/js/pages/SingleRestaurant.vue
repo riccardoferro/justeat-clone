@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid">
-    <div class="row pt-5 justify-content-center">
+    <!-- Intro Ristorante -->
+    <div class="row pt-5 justify-content-center pb-5">
       <div class="col-4 t4-img-restaurant">
         <img :src="imagePut(restaurant.image)" alt="" />
       </div>
@@ -21,28 +22,14 @@
         <p>Ordina i tuoi piatti oppure prenota subito un ritiro</p>
       </div>
     </div>
-    <!-- <div class="row text-center mt-5">
-      <h2>Benvenuto da {{ restaurant.company }}!</h2>
-      <h4>
-        Ordina i tuoi piatti oppure prenota un ritiro in
-        {{ restaurant.address }}
-      </h4>
-    </div>
-
-    <div class="row text-center mt-3">
-      <div class="col-12">
-        <span class="t4-orange-text">Categorie:</span>
-        <span
-          v-for="category in categories"
-          :key="category.slug"
-          class="t4-badge-category"
-        >
-          {{ category.name }}
-        </span>
-      </div>
-    </div> -->
-
+    <!-- Menu Piatti -->
     <div class="row flex-column justify-content-center mt-5">
+      <h2 class="text-center">
+        Menù
+        <span class="t4-menu-food">
+          <img src="/images/menu-food.png" alt="" />
+        </span>
+      </h2>
       <div
         class="
           row
@@ -185,6 +172,12 @@ export default {
   img {
     width: 100%;
     border-radius: 20px;
+  }
+}
+
+.t4-menu-food {
+  img {
+    width: 50px;
   }
 }
 </style>
