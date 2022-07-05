@@ -5,7 +5,13 @@
       <h4>Scegli tra tutte le categorie disponibili</h4>
     </div>
 
-    <div class="row t4-bg-orange">
+    <div
+      class="
+        row
+        t4-bg-orange
+        justify-content-center justify-content-lg-start justify-content-md-start
+      "
+    >
       <!-- <div
               class="
                 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12
@@ -21,7 +27,7 @@
       <!-- inizio card -->
       <div
         class="
-          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12
+          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-10 col-10
           mb-5
           d-flex
           flex-column

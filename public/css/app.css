@@ -61,6 +61,10 @@
   width: 40%;
 }
 
+.t4-w30 {
+  width: 30%;
+}
+
 .t4-fw-2 {
   font-weight: 200;
 }
@@ -11855,6 +11859,10 @@ fieldset:disabled .btn {
   width: 40%;
 }
 
+.t4-w30 {
+  width: 30%;
+}
+
 .t4-fw-2 {
   font-weight: 200;
 }
@@ -11933,6 +11941,10 @@ fieldset:disabled .btn {
 
 .t4-w40 {
   width: 40%;
+}
+
+.t4-w30 {
+  width: 30%;
 }
 
 .t4-fw-2 {
