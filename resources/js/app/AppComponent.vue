@@ -29,17 +29,21 @@ export default {
         plate.quantity = 1;
         this.cart.push(plate);
         this.saveCart();
+        this.loadPage();
       } else {
         if (plate.user_id == this.cart[0].user_id) {
           const product = this.cart.find((o) => o.id === plate.id);
           if (product) {
             product.quantity += 1;
             this.saveCart();
+            this.loadPage();
+
             console.log(this.cart);
           } else {
             plate.quantity = 1;
             this.cart.push(plate);
             this.saveCart();
+            this.loadPage();
           }
         }
       }
@@ -49,20 +53,17 @@ export default {
       const parsed = JSON.stringify(this.cart);
       localStorage.setItem("cart", parsed);
     },
+    loadPage() {
+      if (localStorage.cart) {
+        this.cart = JSON.parse(localStorage.cart);
+      } else {
+        this.cart = [];
+      }
+    },
   },
 
-  //   watch: {
-  //     addNewCart() {
-  //       return (this.newCart = localStorage.cart);
-  //     },
-  //   },
-
   mounted() {
-    if (localStorage.cart) {
-      this.cart = JSON.parse(localStorage.cart);
-    } else {
-      this.cart = [];
-    }
+    this.loadPage();
   },
 };
 </script>
