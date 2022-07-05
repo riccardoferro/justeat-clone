@@ -5112,11 +5112,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppComponent",
   components: {
     HeaderComponent: _components_HeaderComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      cart: [],
+      newPlate: null
+    };
+  },
+  methods: {
+    addItem: function addItem(plate) {
+      var value = plate;
+
+      if (this.cart.length == 0 && value) {
+        this.cart.push(value);
+        this.saveCart(this.cart);
+      } else {
+        if (value.user_id == this.cart[0].user_id) {
+          this.cart.push(value);
+          this.saveCart(this.cart);
+        }
+      }
+
+      console.log("valore ", value);
+      console.log("id-user", value.user_id); // console.log("carrello",this.cart);
+    },
+    saveCart: function saveCart() {
+      var parsed = JSON.stringify(this.cart);
+      localStorage.setItem('cart', parsed);
+    }
+  },
+  mounted: function mounted() {
+    if (localStorage.getItem('cart')) {
+      try {
+        this.cart = JSON.parse(localStorage.getItem('cart'));
+      } catch (error) {
+        console.log(error);
+        localStorage.removeItem('cart');
+      }
+    }
   }
 });
 
@@ -5567,8 +5607,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "HeaderComponent"
+  name: "HeaderComponent",
+  props: {
+    cart: Array
+  }
 });
 
 /***/ }),
@@ -5718,6 +5777,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -6318,6 +6379,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
@@ -6327,12 +6398,17 @@ __webpack_require__.r(__webpack_exports__);
       categories: []
     };
   },
+  props: {
+    cart: Array
+  },
   mounted: function mounted() {
     var _this = this;
 
     var slug = this.$route.params.slug;
     console.log(slug);
     window.axios.get("http://127.0.0.1:8000/api/users/" + slug).then(function (results) {
+      console.log("results Single Restaurant->", results);
+
       if (results.status === 200 && results.data.success) {
         _this.restaurant = results.data.results;
         _this.plates = _this.restaurant.plates;
@@ -6343,6 +6419,12 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (e) {
       console.log(e);
     });
+  },
+  methods: {
+    addItem: function addItem(plate) {
+      this.$emit("takeItem", plate);
+      console.log("carrello", this.cart);
+    }
   }
 });
 
@@ -43234,7 +43316,18 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", [_c("HeaderComponent"), _vm._v(" "), _c("router-view")], 1),
+    _c(
+      "div",
+      [
+        _c("HeaderComponent", { attrs: { cart: _vm.cart } }),
+        _vm._v(" "),
+        _c("router-view", {
+          attrs: { cart: _vm.cart },
+          on: { takeItem: _vm.addItem },
+        }),
+      ],
+      1
+    ),
   ])
 }
 var staticRenderFns = []
@@ -43657,163 +43750,182 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "sticky-top t4-bg-black" }, [
+    _c("nav", { staticClass: "navbar navbar-expand-lg" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "d-flex justify-content-end align-items-center" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "offcanvas offcanvas-end",
+                attrs: {
+                  tabindex: "-1",
+                  id: "offcanvasRight",
+                  "aria-labelledby": "offcanvasRightLabel",
+                },
+              },
+              [
+                _vm._m(2),
+                _vm._v(" "),
+                _vm.cart.length > 0
+                  ? _c(
+                      "div",
+                      { staticClass: "offcanvas-body" },
+                      _vm._l(_vm.cart, function (plate, index) {
+                        return _c("div", { key: plate.id + index }, [
+                          _c("span", [_vm._v(" " + _vm._s(plate.name) + " ")]),
+                        ])
+                      }),
+                      0
+                    )
+                  : _c("p", [_vm._v("Il tuo carrello è vuoto!")]),
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(3),
+          ]
+        ),
+        _vm._v(" "),
+        _vm._m(4),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sticky-top t4-bg-black" }, [
-      _c("nav", { staticClass: "navbar navbar-expand-lg" }, [
-        _c("div", { staticClass: "container-fluid" }, [
+    return _c(
+      "a",
+      { staticClass: "navbar-brand t4-logo-nav", attrs: { href: "/" } },
+      [_c("img", { attrs: { src: "/images/logo.png", alt: "logo-booleat" } })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn",
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "offcanvas",
+          "data-bs-target": "#offcanvasRight",
+          "aria-controls": "offcanvasRight",
+        },
+      },
+      [
+        _c("div", { staticClass: "t4-nav-item" }, [
+          _c("img", {
+            attrs: { src: "/images/shopping.png", alt: "shorp-cart" },
+          }),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "offcanvas-header" }, [
+      _c(
+        "h3",
+        { staticClass: "t4-orange-text", attrs: { id: "offcanvasRightLabel" } },
+        [_vm._v("Carrello")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "t4-close",
+          attrs: {
+            type: "button",
+            "data-bs-dismiss": "offcanvas",
+            "aria-label": "Close",
+          },
+        },
+        [_c("img", { attrs: { src: "/images/cross.png", alt: "" } })]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler t4-toggle-btn",
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "collapse",
+          "data-bs-target": "#navbarNavAltMarkup",
+          "aria-controls": "navbarNavAltMarkup",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation",
+        },
+      },
+      [
+        _c("span", { staticClass: "t4-nav-toggle" }, [
+          _c("img", { attrs: { src: "/images/menu.png", alt: "" } }),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "\n          collapse\n          navbar-collapse\n          ms-0 ms-md-0 ms-lg-0\n          justify-content-end\n        ",
+        attrs: { id: "navbarNavAltMarkup" },
+      },
+      [
+        _c("div", { staticClass: "navbar-nav" }, [
           _c(
             "a",
-            { staticClass: "navbar-brand t4-logo-nav", attrs: { href: "/" } },
-            [
-              _c("img", {
-                attrs: { src: "/images/logo.png", alt: "logo-booleat" },
-              }),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "d-flex justify-content-end align-items-center" },
-            [
-              _c(
-                "button",
-                {
-                  staticClass: "btn",
-                  attrs: {
-                    type: "button",
-                    "data-bs-toggle": "offcanvas",
-                    "data-bs-target": "#offcanvasRight",
-                    "aria-controls": "offcanvasRight",
-                  },
-                },
-                [
-                  _c("div", { staticClass: "t4-nav-item" }, [
-                    _c("img", {
-                      attrs: { src: "/images/shopping.png", alt: "shorp-cart" },
-                    }),
-                  ]),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "offcanvas offcanvas-end",
-                  attrs: {
-                    tabindex: "-1",
-                    id: "offcanvasRight",
-                    "aria-labelledby": "offcanvasRightLabel",
-                  },
-                },
-                [
-                  _c("div", { staticClass: "offcanvas-header" }, [
-                    _c(
-                      "h3",
-                      {
-                        staticClass: "t4-orange-text",
-                        attrs: { id: "offcanvasRightLabel" },
-                      },
-                      [_vm._v("Carrello")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "t4-close",
-                        attrs: {
-                          type: "button",
-                          "data-bs-dismiss": "offcanvas",
-                          "aria-label": "Close",
-                        },
-                      },
-                      [
-                        _c("img", {
-                          attrs: { src: "/images/cross.png", alt: "" },
-                        }),
-                      ]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "offcanvas-body" }, [
-                    _vm._v("Il tuo carrello è vuoto!"),
-                  ]),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "navbar-toggler t4-toggle-btn",
-                  attrs: {
-                    type: "button",
-                    "data-bs-toggle": "collapse",
-                    "data-bs-target": "#navbarNavAltMarkup",
-                    "aria-controls": "navbarNavAltMarkup",
-                    "aria-expanded": "false",
-                    "aria-label": "Toggle navigation",
-                  },
-                },
-                [
-                  _c("span", { staticClass: "t4-nav-toggle" }, [
-                    _c("img", { attrs: { src: "/images/menu.png", alt: "" } }),
-                  ]),
-                ]
-              ),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
             {
-              staticClass:
-                "\n          collapse\n          navbar-collapse\n          ms-0 ms-md-0 ms-lg-0\n          justify-content-end\n        ",
-              attrs: { id: "navbarNavAltMarkup" },
+              staticClass: "t4-nav-item t4-orange-text me-3",
+              attrs: { href: "/login" },
             },
             [
-              _c("div", { staticClass: "navbar-nav" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "t4-nav-item t4-orange-text me-3",
-                    attrs: { href: "/login" },
-                  },
-                  [
-                    _c("img", {
-                      attrs: { src: "/images/user.png", alt: "Login Booleat" },
-                    }),
-                    _vm._v("\n            Login\n          "),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "t4-nav-item t4-orange-text mt-lg-0 mt-md-2 mt-sm-2 mt-2",
-                    attrs: { href: "/register" },
-                  },
-                  [
-                    _c("img", {
-                      attrs: {
-                        src: "/images/register.png",
-                        alt: "Register Booleat",
-                      },
-                    }),
-                    _vm._v("\n            Registrati\n          "),
-                  ]
-                ),
-              ]),
+              _c("img", {
+                attrs: { src: "/images/user.png", alt: "Login Booleat" },
+              }),
+              _vm._v("\n            Login\n          "),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "t4-nav-item t4-orange-text mt-lg-0 mt-md-2 mt-sm-2 mt-2",
+              attrs: { href: "/register" },
+            },
+            [
+              _c("img", {
+                attrs: { src: "/images/register.png", alt: "Register Booleat" },
+              }),
+              _vm._v("\n            Registrati\n          "),
             ]
           ),
         ]),
-      ]),
-    ])
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -44538,7 +44650,37 @@ var render = function () {
                       staticClass:
                         "t4-card-buttons d-flex justify-content-center",
                     },
-                    [_vm._m(0, true)]
+                    [
+                      _vm.cart.length == 0 ||
+                      _vm.cart[0].user_id == plate.user_id
+                        ? _c(
+                            "a",
+                            {
+                              staticClass:
+                                "btn t4-add-btn d-flex align-items-center",
+                              attrs: { href: "#" },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.addItem(plate)
+                                },
+                              },
+                            },
+                            [
+                              _c("span", { staticClass: "me-2" }, [
+                                _vm._v("Aggiungi al carrello"),
+                              ]),
+                              _vm._v(" "),
+                              _c("img", {
+                                attrs: {
+                                  src: "/images/shopping-bag.png",
+                                  alt: "shopping-bag",
+                                },
+                              }),
+                            ]
+                          )
+                        : _c("p", [_vm._v("pijatela nder culo taccogno")]),
+                    ]
                   )
                 : _vm._e(),
             ]
@@ -44548,29 +44690,10 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _vm._m(1),
+    _vm._m(0),
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "btn t4-add-btn d-flex align-items-center",
-        attrs: { href: "#" },
-      },
-      [
-        _c("span", { staticClass: "me-2" }, [_vm._v("Aggiungi al carrello")]),
-        _vm._v(" "),
-        _c("img", {
-          attrs: { src: "/images/shopping-bag.png", alt: "shopping-bag" },
-        }),
-      ]
-    )
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -61021,7 +61144,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'single-restaurant',
     component: _pages_SingleRestaurant__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/category/:slug',
+    path: '/category/',
     name: 'category-restaurants-filter',
     component: _pages_CategoryRestaurantsFilter__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
