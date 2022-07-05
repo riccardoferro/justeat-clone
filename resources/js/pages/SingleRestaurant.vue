@@ -1,6 +1,27 @@
 <template>
   <div class="container-fluid">
-    <div class="row text-center mt-5">
+    <div class="row pt-5 justify-content-center">
+      <div class="col-4 t4-img-restaurant">
+        <img :src="imagePut(restaurant.image)" alt="" />
+      </div>
+      <div class="col-5">
+        <h2>Benvenuto da {{ restaurant.company }}!</h2>
+        <h4 class="mt-3 mb-3">{{ restaurant.address }}</h4>
+        <span class="t4-orange-text">Categorie:</span>
+        <span
+          v-for="category in categories"
+          :key="category.slug"
+          class="t4-badge-category"
+        >
+          {{ category.name }}
+        </span>
+        <p class="mt-3">
+          Chiude alle ore 23:00 - Consegna gratuita - Minimo d'ordine: 10&euro;
+        </p>
+        <p>Ordina i tuoi piatti oppure prenota subito un ritiro</p>
+      </div>
+    </div>
+    <!-- <div class="row text-center mt-5">
       <h2>Benvenuto da {{ restaurant.company }}!</h2>
       <h4>
         Ordina i tuoi piatti oppure prenota un ritiro in
@@ -19,7 +40,7 @@
           {{ category.name }}
         </span>
       </div>
-    </div>
+    </div> -->
 
     <div class="row flex-column justify-content-center mt-5">
       <div
@@ -145,9 +166,25 @@ export default {
       this.$emit("takeItem", plate);
       //   console.log("carrello", this.cart);
     },
+    imagePut(string) {
+      let newString;
+      console.log("stringa presa");
+      if (string.includes("uploads")) {
+        newString = `/storage/${string}`;
+      } else {
+        newString = `/images/default-restaurant.jpeg`;
+      }
+      return newString;
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.t4-img-restaurant {
+  img {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
 </style>
