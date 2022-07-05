@@ -5624,7 +5624,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
 //
 //
 //
@@ -5677,6 +5680,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
+=======
 >>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent",
@@ -5890,6 +5896,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//
+//
+//
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
 =======
 //
 //
@@ -6451,6 +6463,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
 =======
 //
 //
@@ -43891,7 +43919,11 @@ var render = function () {
               "div",
               {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 staticClass: "offcanvas offcanvas-end",
+=======
+                staticClass: "offcanvas offcanvas-end t4-sidecart",
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
 =======
                 staticClass: "offcanvas offcanvas-end t4-sidecart",
 >>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
@@ -43909,6 +43941,7 @@ var render = function () {
                       "div",
                       { staticClass: "offcanvas-body" },
 <<<<<<< HEAD
+<<<<<<< HEAD
                       _vm._l(_vm.cart, function (plate, index) {
                         return _c("div", { key: plate.id + index }, [
                           _c("span", [_vm._v(" " + _vm._s(plate.name) + " ")]),
@@ -43916,6 +43949,8 @@ var render = function () {
                       }),
                       0
 =======
+=======
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
                       [
                         _vm._l(_vm.cart, function (plate, index) {
                           return _c("div", { key: plate.id + index }, [
@@ -43962,6 +43997,9 @@ var render = function () {
                         _vm._m(5),
                       ],
                       2
+<<<<<<< HEAD
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
+=======
 >>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
                     )
                   : _c("p", [_vm._v("Il tuo carrello è vuoto!")]),
@@ -43969,17 +44007,23 @@ var render = function () {
             ),
             _vm._v(" "),
 <<<<<<< HEAD
+<<<<<<< HEAD
             _vm._m(3),
           ]
         ),
         _vm._v(" "),
         _vm._m(4),
 =======
+=======
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
             _vm._m(6),
           ]
         ),
         _vm._v(" "),
         _vm._m(7),
+<<<<<<< HEAD
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
+=======
 >>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
       ]),
     ]),
@@ -44029,14 +44073,20 @@ var staticRenderFns = [
         "h3",
         { staticClass: "t4-orange-text", attrs: { id: "offcanvasRightLabel" } },
 <<<<<<< HEAD
+<<<<<<< HEAD
         [_vm._v("Carrello")]
 =======
+=======
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
         [
           _vm._v("\n              Il Tuo Carrello\n              "),
           _c("span", { staticClass: "t4-cart-side" }, [
             _c("img", { attrs: { src: "/images/shopping.png", alt: "" } }),
           ]),
         ]
+<<<<<<< HEAD
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
+=======
 >>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
       ),
       _vm._v(" "),
@@ -44059,6 +44109,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
 <<<<<<< HEAD
+<<<<<<< HEAD
     return _c(
       "button",
       {
@@ -44079,17 +44130,23 @@ var staticRenderFns = [
       ]
     )
 =======
+=======
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
     return _c("div", { staticClass: "col-3" }, [
       _c("button", { staticClass: "btn t4-delete-item" }, [
         _c("img", { attrs: { src: "/images/delete.png", alt: "" } }),
       ]),
     ])
+<<<<<<< HEAD
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
+=======
 >>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+<<<<<<< HEAD
 <<<<<<< HEAD
     return _c(
       "div",
@@ -44129,10 +44186,99 @@ var staticRenderFns = [
             ]
           ),
 =======
+=======
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
     return _c("div", { staticClass: "row justify-content-end" }, [
       _c("div", { staticClass: "col-6" }, [
         _c("h6", { staticClass: "t4-orange-text t4-fw-6 text-end me-3" }, [
           _vm._v("Totale:"),
+<<<<<<< HEAD
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn t4-add-btn col-3 d-flex align-items-center mt-3" },
+      [
+        _vm._v("\n              Paga\n              "),
+        _c("span", { staticClass: "t4-btn-pay ms-2" }, [
+          _c("img", { attrs: { src: "/images/pay-per-click.png", alt: "" } }),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler t4-toggle-btn",
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "collapse",
+          "data-bs-target": "#navbarNavAltMarkup",
+          "aria-controls": "navbarNavAltMarkup",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation",
+        },
+      },
+      [
+        _c("span", { staticClass: "t4-nav-toggle" }, [
+          _c("img", { attrs: { src: "/images/menu.png", alt: "" } }),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "\n          collapse\n          navbar-collapse\n          ms-0 ms-md-0 ms-lg-0\n          justify-content-end\n        ",
+        attrs: { id: "navbarNavAltMarkup" },
+      },
+      [
+        _c("div", { staticClass: "navbar-nav" }, [
+          _c(
+            "a",
+            {
+              staticClass: "t4-nav-item t4-orange-text me-3",
+              attrs: { href: "/login" },
+            },
+            [
+              _c("img", {
+                attrs: { src: "/images/user.png", alt: "Login Booleat" },
+              }),
+              _vm._v("\n            Login\n          "),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "t4-nav-item t4-orange-text mt-lg-0 mt-md-2 mt-sm-2 mt-2",
+              attrs: { href: "/register" },
+            },
+            [
+              _c("img", {
+                attrs: { src: "/images/register.png", alt: "Register Booleat" },
+              }),
+              _vm._v("\n            Registrati\n          "),
+            ]
+          ),
+=======
 >>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
         ]),
       ]
@@ -44981,7 +45127,10 @@ var render = function () {
                         : _c("p", [_vm._v("pijatela nder culo taccogno")]),
                     ]
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
                   )
                 : _vm._e(),
               _vm._v(" "),
@@ -45013,7 +45162,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ec5c0c5c31eea069161e49511c8499628c0b005f
       "div",
       { staticClass: "btn t4-add-btn d-flex align-items-center" },
       [
