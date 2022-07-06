@@ -5121,6 +5121,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppComponent",
@@ -5204,6 +5205,11 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.cart = [];
       }
+    },
+    clearCart: function clearCart(cart) {
+      cart.length = 0;
+      this.saveCart();
+      this.loadPage();
     }
   },
   mounted: function mounted() {
@@ -5776,6 +5782,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent",
   props: {
@@ -5787,6 +5818,23 @@ __webpack_require__.r(__webpack_exports__);
     },
     removeItem: function removeItem(plate) {
       this.$emit("removeItem", plate);
+    },
+    totaleComplessivo: function totaleComplessivo(arr) {
+      var total = 0;
+      arr.forEach(function (element) {
+        total += parseFloat(element.total);
+      });
+      return total.toFixed(2);
+    },
+    totalPlatesBadge: function totalPlatesBadge(arr) {
+      var total = 0;
+      arr.forEach(function (element) {
+        total += element.quantity;
+      });
+      return total;
+    },
+    clearCart: function clearCart(arr) {
+      this.$emit("clearCart", arr);
     }
   }
 });
@@ -43740,7 +43788,11 @@ var render = function () {
       [
         _c("HeaderComponent", {
           attrs: { cart: _vm.cart },
-          on: { removeItem: _vm.removeItem, takeItem: _vm.addItem },
+          on: {
+            clearCart: _vm.clearCart,
+            removeItem: _vm.removeItem,
+            takeItem: _vm.addItem,
+          },
         }),
         _vm._v(" "),
         _c("router-view", {
@@ -44257,7 +44309,42 @@ var render = function () {
           "div",
           { staticClass: "d-flex justify-content-end align-items-center" },
           [
-            _vm._m(1),
+            _c(
+              "button",
+              {
+                staticClass: "btn",
+                attrs: {
+                  type: "button",
+                  "data-bs-toggle": "offcanvas",
+                  "data-bs-target": "#offcanvasRight",
+                  "aria-controls": "offcanvasRight",
+                },
+              },
+              [
+                _c("div", { staticClass: "t4-nav-item position-relative" }, [
+                  _vm.cart.length > 0
+                    ? _c(
+                        "span",
+                        {
+                          staticClass:
+                            "\n                position-absolute\n                top-0\n                start-100\n                translate-middle\n                badge\n                rounded-pill\n                bg-danger\n              ",
+                        },
+                        [
+                          _vm._v(
+                            "\n              " +
+                              _vm._s(_vm.totalPlatesBadge(_vm.cart)) +
+                              "\n            "
+                          ),
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: "/images/shopping.png", alt: "shorp-cart" },
+                  }),
+                ]),
+              ]
+            ),
             _vm._v(" "),
             _c(
               "div",
@@ -44270,7 +44357,7 @@ var render = function () {
                 },
               },
               [
-                _vm._m(2),
+                _vm._m(1),
                 _vm._v(" "),
                 _vm.cart.length > 0
                   ? _c(
@@ -44370,21 +44457,69 @@ var render = function () {
                                       ),
                                     ]
                                   ),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v("total " + _vm._s(plate.total)),
-                                  ]),
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(3, true),
+                                _c("div", { staticClass: "col-3" }, [
+                                  _c("p", [
+                                    _vm._v(
+                                      "total: " + _vm._s(plate.total) + " €"
+                                    ),
+                                  ]),
+                                ]),
                               ]
                             ),
                           ])
                         }),
                         _vm._v(" "),
-                        _vm._m(4),
+                        _c("div", { staticClass: "row justify-content-end" }, [
+                          _c("div", { staticClass: "col-6" }, [
+                            _c(
+                              "h6",
+                              {
+                                staticClass:
+                                  "t4-orange-text t4-fw-6 text-end me-3",
+                              },
+                              [
+                                _vm._v(
+                                  "\n                  Totale:" +
+                                    _vm._s(_vm.totaleComplessivo(_vm.cart)) +
+                                    " €\n                "
+                                ),
+                              ]
+                            ),
+                          ]),
+                        ]),
                         _vm._v(" "),
-                        _vm._m(5),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "d-flex t4-w100 justify-content-around",
+                          },
+                          [
+                            _vm._m(2),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "btn t4-add-btn col-3 d-flex align-items-center mt-3",
+                                on: {
+                                  click: function ($event) {
+                                    $event.preventDefault()
+                                    return _vm.clearCart(_vm.cart)
+                                  },
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                Svuota\n                "
+                                ),
+                                _vm._m(3),
+                              ]
+                            ),
+                          ]
+                        ),
                       ],
                       2
                     )
@@ -44392,11 +44527,11 @@ var render = function () {
               ]
             ),
             _vm._v(" "),
-            _vm._m(6),
+            _vm._m(4),
           ]
         ),
         _vm._v(" "),
-        _vm._m(7),
+        _vm._m(5),
       ]),
     ]),
   ])
@@ -44410,30 +44545,6 @@ var staticRenderFns = [
       "a",
       { staticClass: "navbar-brand t4-logo-nav", attrs: { href: "/" } },
       [_c("img", { attrs: { src: "/images/logo.png", alt: "logo-booleat" } })]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn",
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "offcanvas",
-          "data-bs-target": "#offcanvasRight",
-          "aria-controls": "offcanvasRight",
-        },
-      },
-      [
-        _c("div", { staticClass: "t4-nav-item" }, [
-          _c("img", {
-            attrs: { src: "/images/shopping.png", alt: "shorp-cart" },
-          }),
-        ]),
-      ]
     )
   },
   function () {
@@ -44470,38 +44581,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-3" }, [
-      _c("button", { staticClass: "btn t4-delete-item" }, [
-        _c("img", { attrs: { src: "/images/delete.png", alt: "" } }),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-end" }, [
-      _c("div", { staticClass: "col-6" }, [
-        _c("h6", { staticClass: "t4-orange-text t4-fw-6 text-end me-3" }, [
-          _vm._v("Totale:"),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "button",
       { staticClass: "btn t4-add-btn col-3 d-flex align-items-center mt-3" },
       [
-        _vm._v("\n              Paga\n              "),
+        _vm._v("\n                Paga\n                "),
         _c("span", { staticClass: "t4-btn-pay ms-2" }, [
           _c("img", { attrs: { src: "/images/pay-per-click.png", alt: "" } }),
         ]),
       ]
     )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "t4-btn-pay ms-2" }, [
+      _c("img", { attrs: { src: "/images/delete.png", alt: "" } }),
+    ])
   },
   function () {
     var _vm = this
@@ -62064,7 +62161,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
