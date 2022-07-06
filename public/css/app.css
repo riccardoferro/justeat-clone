@@ -23848,6 +23848,11 @@ body {
   color: #FFFFFF;
 }
 
+button:hover,
+img:hover {
+  cursor: pointer;
+}
+
 .t4-bg-nav {
   background-color: #0B100C;
   z-index: 1;
@@ -24031,6 +24036,7 @@ form label.required:after {
   border: 2px solid #FD7D2B;
   border-radius: 25px;
   color: #FD7D2B !important;
+  transition: all 0.2s ease-in-out;
 }
 
 .t4-add-btn:hover {

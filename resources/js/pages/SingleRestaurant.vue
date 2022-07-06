@@ -42,7 +42,7 @@
         class="
           row
           d-flex
-          col-xxl-8 col-xl-10 col-lg-7 col-md-9 col-sm-7 col-9
+          col-xxl-9 col-xl-10 col-lg-7 col-md-9 col-sm-7 col-9
           m-auto
           mt-3
           justify-content-center

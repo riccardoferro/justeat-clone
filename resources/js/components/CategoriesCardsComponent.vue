@@ -43,7 +43,13 @@
             name: 'category-restaurants-filter',
             params: { slug: category.slug },
           }"
-          class="d-flex flex-column align-items-center justify-content-center"
+          class="
+            d-flex
+            flex-column
+            align-items-center
+            justify-content-center
+            t4-card-hover
+          "
         >
           <!-- FINE SEZIONE SINGOLO RISTORANTE  -->
           <div>
@@ -153,5 +159,13 @@ export default {
   font-weight: 600;
   color: #fd7d2b;
   text-align: center;
+}
+
+.t4-card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.t4-card-hover:hover {
+  transform: scale(0.9);
 }
 </style>
