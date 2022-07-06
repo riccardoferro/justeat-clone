@@ -27,7 +27,7 @@
       <!-- inizio card -->
       <div
         class="
-          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-10 col-10
+          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6
           mb-5
           d-flex
           flex-column
@@ -47,8 +47,6 @@
         >
           <!-- FINE SEZIONE SINGOLO RISTORANTE  -->
           <div>
-            <h2 class="t4-orange-text">{{ category.name }}</h2>
-
             <!-- <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
                   {{ user.company }}
                   <span class="t4-icon-company ms-2">
@@ -65,12 +63,16 @@
           <div
             class="
               col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12
-              t4-img-company
+              t4-img-company t4-img-category
             "
           >
+            <h4 class="t4-orange-text t4-title-category">
+              {{ category.name }}
+            </h4>
             <img
               :src="'/images/category_img/' + category.image"
               alt="immagine categoria"
+              class=""
             />
           </div>
         </router-link>
@@ -134,5 +136,19 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.t4-img-category {
+  position: relative;
+}
+.t4-title-category {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 20px;
+}
 </style>
