@@ -28,17 +28,14 @@ class AppServiceProvider extends ServiceProvider
         //inietteremo un service di modo da far funzionare BrainTree
         $this->app->singleton(Gateway::class, function($app){
 
-            
-
-
             // come parametro passeremo la configurazione di BrainTree che abbiamo sul file ENV
             return new Gateway(
                 [
                     
-                'environment' => getenv('BT_ENVIRONMENT'),
-                'merchantId' => getenv('BT_MERCHANT_ID'),
-                'publicKey' => getenv('BT_PUBLIC_KEY'),
-                'privateKey' => getenv('BT_PRIVATE_KEY')
+                'environment' => 'sandbox',
+                'merchantId' => 'y99kh8q843d6mswp',
+                'publicKey' => 'nmm7hgzn88kkgbq7',
+                'privateKey' => '23b12246c7b7a34f67a2779b66ffd3c0'
                 
                 ]
             );
