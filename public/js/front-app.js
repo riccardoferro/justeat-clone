@@ -11829,7 +11829,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-img-category[data-v-11838afe] {\n  position: relative;\n}\n.t4-title-category[data-v-11838afe] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  -webkit-backdrop-filter: blur(10px);\n  backdrop-filter: blur(10px);\n  background-color: rgba(255, 255, 255, 0.5);\n  padding: 10px;\n  border-radius: 20px;\n}", ""]);
+exports.push([module.i, ".t4-img-category[data-v-11838afe] {\n  position: relative;\n}\n.t4-title-category[data-v-11838afe] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 12px 15px;\n  -webkit-backdrop-filter: blur(6px);\n  backdrop-filter: blur(6px);\n  background-color: rgba(253, 253, 253, 0.518);\n  border-radius: 30px;\n  font-weight: 600;\n  color: #111;\n  font-size: 1.5rem;\n}", ""]);
 
 // exports
 
@@ -44181,17 +44181,13 @@ var render = function () {
                       "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n            t4-img-company t4-img-category\n          ",
                   },
                   [
-                    _c(
-                      "h4",
-                      { staticClass: "t4-orange-text t4-title-category" },
-                      [
-                        _vm._v(
-                          "\n            " +
-                            _vm._s(category.name) +
-                            "\n          "
-                        ),
-                      ]
-                    ),
+                    _c("h4", { staticClass: "t4-title-category" }, [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(category.name) +
+                          "\n          "
+                      ),
+                    ]),
                     _vm._v(" "),
                     _c("img", {
                       attrs: {

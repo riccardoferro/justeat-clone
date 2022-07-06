@@ -66,7 +66,7 @@
               t4-img-company t4-img-category
             "
           >
-            <h4 class="t4-orange-text t4-title-category">
+            <h4 class="t4-title-category">
               {{ category.name }}
             </h4>
             <img
@@ -145,10 +145,13 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 10px;
-  border-radius: 20px;
+  padding: 12px 15px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background-color: rgba(253, 253, 253, 0.518);
+  border-radius: 30px;
+  font-weight: 600;
+  color: #111;
+  font-size: 1.5rem;
 }
 </style>
