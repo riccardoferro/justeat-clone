@@ -37,7 +37,8 @@
                             <div class="col-xl-10 col-md-9 col-sm-10">
                                 <input id="email" type="email"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    value="{{ old('email') }}" autocomplete="email" autofocus
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">

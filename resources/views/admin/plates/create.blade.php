@@ -28,31 +28,31 @@
                     @csrf
                     <div class="mb-3">
 
-                        <label for="name" class="form-label">Nome Piatto</label>
+                        <label for="name" class="form-label">Nome Piatto*</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                            placeholder="Nome piatto" name='name' value='{{ old('name') }}'>
+                            placeholder="Nome piatto" name='name' value="{{ old('name') }}" required>
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
 
-                        <label for="description" class="form-label">Descrizione</label>
+                        <label for="description" class="form-label">Descrizione*</label>
                         <input type="text" class="form-control @error('description') is-invalid @enderror" id="name"
-                            placeholder="Descrizione" name='description' value='{{ old('description') }}'>
+                            placeholder="Descrizione" name='description' value="{{ old('description') }}" required>
                         @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
 
-                        <label for="price" class="form-label">Prezzo</label>
+                        <label for="price" class="form-label">Prezzo*</label>
                         <div class="d-flex justify-content-start align-items-center">
 
                             <div id="decrement"><img src="/images/minus.png" alt=""></div>
                             <input type="number" step="any" min='0'
                                 class="form-control mb-0 @error('price') is-invalid @enderror" id="price-input"
-                                placeholder="Prezzo" name='price' value='{{ old('price') }}'>
+                                placeholder="Prezzo" name='price' value="{{ old('price') }}" required>
                             <div id="increment"><img src="/images/plus.png" alt=""></div>
                             @error('price')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -70,7 +70,7 @@
                     <div class="mb-3">
                         <label for="cover" class="form-label t4-photo-label">
                             Seleziona Foto <img src="/images/upload.png" alt="">
-                            <input class="t4-input-img" type="file" name='cover' id="cover" />
+                            <input class="t4-input-img" type="file" name='cover' id="cover" required />
                         </label>
                         @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
