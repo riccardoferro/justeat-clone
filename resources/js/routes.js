@@ -26,16 +26,16 @@ const router = new VueRouter({
             component: SingleRestaurant
         },
         {
-            path: '/category/',
+            path: '/category/:slug',
             name: 'category-restaurants-filter',
             component: CategoryRestaurantsFilter
         },
         {
-            path: '/payments/',
+            path: '/payments',
             name: 'payments-page',
             component: paymentsPage
         },
-         {
+        {
             path: '/',
             name: 'notFound',
             component: NotFound
