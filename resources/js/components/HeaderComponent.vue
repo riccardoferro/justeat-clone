@@ -128,6 +128,7 @@
                 </button>
 
                 <button
+                  @click.prevent="clearCart(cart)"
                   class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
                 >
                   Svuota
@@ -213,6 +214,9 @@ export default {
         total += element.quantity;
       });
       return total;
+    },
+    clearCart(arr) {
+      this.$emit("clearCart", arr);
     },
   },
 };

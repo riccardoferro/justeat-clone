@@ -2,6 +2,7 @@
   <div>
     <div>
       <HeaderComponent
+        @clearCart="clearCart"
         @removeItem="removeItem"
         @takeItem="addItem"
         :cart="cart"
@@ -93,6 +94,11 @@ export default {
       } else {
         this.cart = [];
       }
+    },
+    clearCart(cart) {
+      cart.length = 0;
+      this.saveCart();
+      this.loadPage();
     },
   },
 
