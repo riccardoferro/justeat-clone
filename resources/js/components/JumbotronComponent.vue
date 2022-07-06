@@ -47,9 +47,7 @@
                   <h1 class="t4-grad-orange t4-fw">Booleat</h1>
                   <img src="/images/delivery-bike.png" alt="" />
                 </div>
-
-                <!-- <p>#1 Miglior sito di food delivery</p> -->
-                <h1 class="t4-fw">Mangia con un click</h1>
+                <h1 class="t4-fw">Mangia con un click!</h1>
                 <h4 class="mb-5">
                   Ordina online dai tuoi ristoranti preferiti
                 </h4>
@@ -62,20 +60,16 @@
                   mt-sm-5
                 "
               >
-                <div class="d-flex flex-column">
-                  <p
-                    class="
-                      d-xxl-none
-                      d-xl-none
-                      d-lg-none
-                      d-md-none
-                      d-sm-block
-                      d-block
-                      t4-grad-orange
-                    "
-                  >
-                    Ordina online dai tuoi ristoranti preferiti
-                  </p>
+                <div
+                  class="
+                    d-flex
+                    flex-column
+                    d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block
+                    t4-grad-orange
+                  "
+                >
+                  <h3 class="t4-fw">Mangia con un click!</h3>
+                  <p>Ordina online dai tuoi ristoranti preferiti</p>
                 </div>
               </div>
             </div>

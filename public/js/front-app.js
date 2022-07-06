@@ -5995,12 +5995,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "JumbotronComponent"
 });
@@ -11934,7 +11928,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-cart-item[data-v-153bfd55] {\n  border-bottom: 1px solid #fd7d2b;\n}\n.t4-cart-item img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-cart-side img[data-v-153bfd55] {\n  width: 50px;\n}\n.t4-btn-pay img[data-v-153bfd55],\n.t4-logo-pay img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-delete-item img[data-v-153bfd55] {\n  width: 20px;\n}\n.t4-sidecart[data-v-153bfd55] {\n  box-shadow: -15px 0px 12px -5px #000000;\n}\n.t4-nav-toggle[data-v-153bfd55],\n.t4-cart[data-v-153bfd55],\n.t4-close[data-v-153bfd55],\n.t4-nav-item[data-v-153bfd55] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-nav-toggle[data-v-153bfd55]:hover,\n.t4-cart[data-v-153bfd55]:hover,\n.t4-close[data-v-153bfd55]:hover,\n.t4-nav-item[data-v-153bfd55]:hover {\n  transform: scale(1.1);\n}", ""]);
+exports.push([module.i, ".t4-cart-item[data-v-153bfd55] {\n  border-bottom: 1px solid #fd7d2b;\n}\n.t4-cart-item img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-cart-side img[data-v-153bfd55] {\n  width: 50px;\n}\n.t4-btn-pay img[data-v-153bfd55],\n.t4-logo-pay img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-delete-item img[data-v-153bfd55] {\n  width: 20px;\n}\n.t4-sidecart[data-v-153bfd55] {\n  box-shadow: -15px 0px 12px -5px #000000;\n}\n.t4-nav-toggle[data-v-153bfd55],\n.t4-cart[data-v-153bfd55],\n.t4-close[data-v-153bfd55] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-nav-toggle[data-v-153bfd55]:hover,\n.t4-cart[data-v-153bfd55]:hover,\n.t4-close[data-v-153bfd55]:hover {\n  transform: scale(1.1);\n}", ""]);
 
 // exports
 
@@ -45106,7 +45100,7 @@ var staticRenderFns = [
                       ),
                       _vm._v(" "),
                       _c("h1", { staticClass: "t4-fw" }, [
-                        _vm._v("Mangia con un click"),
+                        _vm._v("Mangia con un click!"),
                       ]),
                       _vm._v(" "),
                       _c("h4", { staticClass: "mb-5" }, [
@@ -45124,20 +45118,24 @@ var staticRenderFns = [
                         "\n                d-flex\n                justify-content-center\n                align-items-baseline\n                mt-sm-5\n              ",
                     },
                     [
-                      _c("div", { staticClass: "d-flex flex-column" }, [
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "\n                    d-xxl-none\n                    d-xl-none\n                    d-lg-none\n                    d-md-none\n                    d-sm-block\n                    d-block\n                    t4-grad-orange\n                  ",
-                          },
-                          [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "\n                  d-flex\n                  flex-column\n                  d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block\n                  t4-grad-orange\n                ",
+                        },
+                        [
+                          _c("h3", { staticClass: "t4-fw" }, [
+                            _vm._v("Mangia con un click!"),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
                             _vm._v(
-                              "\n                  Ordina online dai tuoi ristoranti preferiti\n                "
+                              "Ordina online dai tuoi ristoranti preferiti"
                             ),
-                          ]
-                        ),
-                      ]),
+                          ]),
+                        ]
+                      ),
                     ]
                   ),
                 ]),

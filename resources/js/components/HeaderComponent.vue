@@ -262,8 +262,7 @@ export default {
 
 .t4-nav-toggle,
 .t4-cart,
-.t4-close,
-.t4-nav-item {
+.t4-close {
   transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.1);
