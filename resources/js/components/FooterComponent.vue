@@ -11,28 +11,34 @@
       <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
         <h4>Segui BoolEat</h4>
         <ul>
-          <li v-for="(item, index) in seguiBooleat" :key="index">{{ item }}</li>
+          <li v-for="(link, index) in seguiBooleat" :key="index">
+            <a href="#">{{ link }}</a>
+          </li>
         </ul>
       </div>
       <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
         <h4>Note legali</h4>
         <ul>
-          <li v-for="(item, index) in noteLegali" :key="index">{{ item }}</li>
+          <li v-for="(link, index) in noteLegali" :key="index">
+            <a href="#">{{ link }}</a>
+          </li>
         </ul>
       </div>
       <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
         <h4>Aiuto</h4>
         <ul>
-          <li v-for="(item, index) in aiuto" :key="index">{{ item }}</li>
+          <li v-for="(link, index) in aiuto" :key="index">
+            <a href="#">{{ link }}</a>
+          </li>
         </ul>
       </div>
       <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
         <h4>Profili Social</h4>
         <ul>
-          <li v-for="(item, index) in linkGithub" :key="index">
-            <a class="d-flex align-items-center" :href="item.urlGithub"
+          <li v-for="(link, index) in linkGithub" :key="index">
+            <a class="d-flex align-items-center" :href="link.urlGithub"
               ><i class="fa-brands fa-github fa-xl t4-orange-text me-2"></i>
-              <div class="name t4-orange-text">{{ item.name }}</div>
+              <div class="name t4-orange-text">{{ link.name }}</div>
             </a>
           </li>
         </ul>
@@ -114,8 +120,17 @@ ul {
   padding-left: 0px;
   li {
     line-height: 28px;
+    a {
+      color: #fff;
+      &:hover {
+        color: #fd7d2b;
+      }
+    }
     .name {
       font-size: 0.9rem;
+      &:hover {
+        color: #b54702;
+      }
     }
   }
 }

@@ -5583,6 +5583,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FooterComponent",
   data: function data() {
@@ -11821,7 +11827,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-abfbddf2] {\n  list-style-type: none;\n  padding-left: 0px;\n}\nul li[data-v-abfbddf2] {\n  line-height: 28px;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 0.9rem;\n}\nimg[data-v-abfbddf2] {\n  width: 70px;\n}\n.t4-circle-btn img[data-v-abfbddf2] {\n  width: 30px;\n}\n.t4-circle-btn img[data-v-abfbddf2]:hover {\n  transform: scale(1.1);\n}\ni[data-v-abfbddf2] {\n  margin-right: 5px;\n}\nspan[data-v-abfbddf2] {\n  font-size: 0.8rem;\n}\n.t4-border-bottom[data-v-abfbddf2] {\n  border-bottom: 1px solid #fd7d2b;\n}", ""]);
+exports.push([module.i, "ul[data-v-abfbddf2] {\n  list-style-type: none;\n  padding-left: 0px;\n}\nul li[data-v-abfbddf2] {\n  line-height: 28px;\n}\nul li a[data-v-abfbddf2] {\n  color: #fff;\n}\nul li a[data-v-abfbddf2]:hover {\n  color: #fd7d2b;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 0.9rem;\n}\nul li .name[data-v-abfbddf2]:hover {\n  color: #b54702;\n}\nimg[data-v-abfbddf2] {\n  width: 70px;\n}\n.t4-circle-btn img[data-v-abfbddf2] {\n  width: 30px;\n}\n.t4-circle-btn img[data-v-abfbddf2]:hover {\n  transform: scale(1.1);\n}\ni[data-v-abfbddf2] {\n  margin-right: 5px;\n}\nspan[data-v-abfbddf2] {\n  font-size: 0.8rem;\n}\n.t4-border-bottom[data-v-abfbddf2] {\n  border-bottom: 1px solid #fd7d2b;\n}", ""]);
 
 // exports
 
@@ -44197,8 +44203,10 @@ var render = function () {
             _vm._v(" "),
             _c(
               "ul",
-              _vm._l(_vm.seguiBooleat, function (item, index) {
-                return _c("li", { key: index }, [_vm._v(_vm._s(item))])
+              _vm._l(_vm.seguiBooleat, function (link, index) {
+                return _c("li", { key: index }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(link))]),
+                ])
               }),
               0
             ),
@@ -44215,8 +44223,10 @@ var render = function () {
             _vm._v(" "),
             _c(
               "ul",
-              _vm._l(_vm.noteLegali, function (item, index) {
-                return _c("li", { key: index }, [_vm._v(_vm._s(item))])
+              _vm._l(_vm.noteLegali, function (link, index) {
+                return _c("li", { key: index }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(link))]),
+                ])
               }),
               0
             ),
@@ -44233,8 +44243,10 @@ var render = function () {
             _vm._v(" "),
             _c(
               "ul",
-              _vm._l(_vm.aiuto, function (item, index) {
-                return _c("li", { key: index }, [_vm._v(_vm._s(item))])
+              _vm._l(_vm.aiuto, function (link, index) {
+                return _c("li", { key: index }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(link))]),
+                ])
               }),
               0
             ),
@@ -44251,13 +44263,13 @@ var render = function () {
             _vm._v(" "),
             _c(
               "ul",
-              _vm._l(_vm.linkGithub, function (item, index) {
+              _vm._l(_vm.linkGithub, function (link, index) {
                 return _c("li", { key: index }, [
                   _c(
                     "a",
                     {
                       staticClass: "d-flex align-items-center",
-                      attrs: { href: item.urlGithub },
+                      attrs: { href: link.urlGithub },
                     },
                     [
                       _c("i", {
@@ -44266,7 +44278,7 @@ var render = function () {
                       }),
                       _vm._v(" "),
                       _c("div", { staticClass: "name t4-orange-text" }, [
-                        _vm._v(_vm._s(item.name)),
+                        _vm._v(_vm._s(link.name)),
                       ]),
                     ]
                   ),
