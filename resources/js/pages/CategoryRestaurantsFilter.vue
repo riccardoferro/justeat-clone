@@ -34,7 +34,10 @@
       </div>
     </div>
 
-    <div class="row pt-5" v-if="categoriesArr.length > 0">
+    <div
+      class="row pt-5 justify-content-center"
+      v-if="categoriesArr.length > 0"
+    >
       <!-- inizio card -->
       <div
         class="
@@ -81,16 +84,19 @@
       <!-- fine card -->
     </div>
     <div v-else>Nessun ristorante da mostrare</div>
-    <div v-if="users.length > 0" class="row justify-content-center">
-      <div class="col d-flex justify-content-center">
+    <div v-if="users.length > 0" class="row">
+      <div class="d-flex justify-content-center">
         <button
-          class="btn t4-add-btn"
+          class="btn t4-add-btn me-3"
           @click="
             () => {
               prevPageFunction();
             }
           "
         >
+          <span class="t4-icon-btn me-2">
+            <img src="/images/left-arrow.png" alt="prev" />
+          </span>
           Precedente
         </button>
         <button
@@ -102,6 +108,9 @@
           "
         >
           Successivo
+          <span class="t4-icon-btn ms-2">
+            <img src="/images/right-arrow.png" alt="next" />
+          </span>
         </button>
       </div>
     </div>
@@ -242,5 +251,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.t4-icon-btn {
+  img {
+    width: 20px;
+  }
+}
 </style>

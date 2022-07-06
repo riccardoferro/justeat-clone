@@ -152,7 +152,6 @@ export default {
   border-radius: 20px;
   font-weight: 600;
   color: #fd7d2b;
-  font-size: 1.5rem;
   text-align: center;
 }
 </style>
