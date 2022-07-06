@@ -118,38 +118,40 @@
                       </h6>
                     </div>
                   </div>
-
-                  <div class="d-flex t4-w100 justify-content-around">
-
-                            <!-- Bottone che ti porta alla pagina del checkout e del pagamento e passeremo come 
-                          parametro il carrello con il totale
-                            -->
-                        <router-link class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-                            :to="{ name: 'payments-page'}"
-                        >
-                            Paga
-                            <span class="t4-btn-pay ms-2">
-                              <img src="/images/pay-per-click.png" alt="" />
-                            </span>
-
-                        </router-link>
-
-
-                        <button
-                          @click.prevent="clearCart(cart)"
-                          class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-                        >
-                            Svuota
-                            <span class="t4-btn-pay ms-2">
-                                <img src="/images/delete.png" alt="" />
-                            </span>
-                        </button>
-
+                  <div class="col-3 d-flex flex-column">
+                    <p class="t4-w100">Parziale:</p>
+                    <p class="t4-w100 t4-orange-text">
+                      {{ plate.total }} &euro;
+                    </p>
                   </div>
               </div>
-
-              <p v-else>Il tuo carrello è vuoto!</p>
-              
+              <div class="row justify-content-end">
+                <div class="col-6">
+                  <h6 class="t4-orange-text t4-fw-6 text-end me-3">
+                    Totale:{{ totaleComplessivo(cart) }} &euro;
+                  </h6>
+                </div>
+              </div>
+              <div class="row t4-w100 justify-content-around mt-3">
+                <div class="col-4">
+                  <button class="btn t4-add-btn d-flex align-items-center">
+                    Paga
+                    <div class="t4-btn-pay ms-2 t4-w30">
+                      <img src="/images/pay-per-click.png" alt="" />
+                    </div>
+                  </button>
+                </div>
+                <div class="col-4">
+                  <button
+                    @click.prevent="clearCart(cart)"
+                    class="btn t4-add-btn d-flex align-items-center"
+                  >
+                    Svuota
+                    <div class="t4-btn-pay ms-2 t4-w30">
+                      <img src="/images/delete.png" alt="" />
+                    </div>
+                  </button>
+                </div>
               </div>
           </div>
           <!-- fine carrello -->

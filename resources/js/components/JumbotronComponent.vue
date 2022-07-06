@@ -76,17 +76,6 @@
                   >
                     Ordina online dai tuoi ristoranti preferiti
                   </p>
-                  <div class="d-flex align-items-baseline">
-                    <input
-                      id="password"
-                      type="search"
-                      placeholder="Cerca per ristorante"
-                      class="form-control col-12"
-                    />
-                    <span class="t4-search ms-2"
-                      ><img src="/images/search.png" alt="" />
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>

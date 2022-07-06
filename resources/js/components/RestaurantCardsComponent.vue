@@ -13,7 +13,7 @@
       >
         <!-- inizio card -->
         <div
-          class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-10 col-10 mb-5"
+          class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 mb-5"
           v-for="user in users"
           :key="user.id"
         >
