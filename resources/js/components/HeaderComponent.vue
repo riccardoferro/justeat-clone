@@ -122,12 +122,15 @@
               </div>
               <div class="row t4-w100 justify-content-around mt-3">
                 <div class="col-4">
-                  <button class="btn t4-add-btn d-flex align-items-center">
+                  <router-link
+                    :to="{ name: 'payments-page' }"
+                    class="btn t4-add-btn d-flex align-items-center"
+                  >
                     Paga
                     <div class="t4-btn-pay ms-2 t4-w30">
                       <img src="/images/pay-per-click.png" alt="" />
                     </div>
-                  </button>
+                  </router-link>
                 </div>
                 <div class="col-4">
                   <button
