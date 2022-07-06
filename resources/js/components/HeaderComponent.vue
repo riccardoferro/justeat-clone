@@ -105,8 +105,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-3">
-                    <p>total: {{ plate.total }} &euro;</p>
+                  <div class="col-3 d-flex flex-column">
+                    <p class="t4-w100">Parziale:</p>
+                    <p class="t4-w100 t4-orange-text">
+                      {{ plate.total }} &euro;
+                    </p>
                   </div>
                 </div>
               </div>
@@ -117,25 +120,26 @@
                   </h6>
                 </div>
               </div>
-              <div class="d-flex t4-w100 justify-content-around">
-                <button
-                  class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-                >
-                  Paga
-                  <span class="t4-btn-pay ms-2">
-                    <img src="/images/pay-per-click.png" alt="" />
-                  </span>
-                </button>
-
-                <button
-                  @click.prevent="clearCart(cart)"
-                  class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-                >
-                  Svuota
-                  <span class="t4-btn-pay ms-2">
-                    <img src="/images/delete.png" alt="" />
-                  </span>
-                </button>
+              <div class="row t4-w100 justify-content-around mt-3">
+                <div class="col-4">
+                  <button class="btn t4-add-btn d-flex align-items-center">
+                    Paga
+                    <div class="t4-btn-pay ms-2 t4-w30">
+                      <img src="/images/pay-per-click.png" alt="" />
+                    </div>
+                  </button>
+                </div>
+                <div class="col-4">
+                  <button
+                    @click.prevent="clearCart(cart)"
+                    class="btn t4-add-btn d-flex align-items-center"
+                  >
+                    Svuota
+                    <div class="t4-btn-pay ms-2 t4-w30">
+                      <img src="/images/delete.png" alt="" />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
 
