@@ -7,6 +7,7 @@ import HomeComponent from './pages/HomeComponent'
 import SingleRestaurant from './pages/SingleRestaurant'
 import NotFound from './pages/NotFound'
 import CategoryRestaurantsFilter from './pages/CategoryRestaurantsFilter'
+import paymentsPage from './pages/paymentsPage'
 
 
 
@@ -25,11 +26,16 @@ const router = new VueRouter({
             component: SingleRestaurant
         },
         {
-            path: '/category/',
+            path: '/category/:slug',
             name: 'category-restaurants-filter',
             component: CategoryRestaurantsFilter
         },
-         {
+        {
+            path: '/payments',
+            name: 'payments-page',
+            component: paymentsPage
+        },
+        {
             path: '/',
             name: 'notFound',
             component: NotFound
