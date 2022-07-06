@@ -1,11 +1,19 @@
 <template>
   <div class="container-fluid">
     <!-- Intro Ristorante -->
-    <div class="row pt-5 justify-content-center pb-5">
-      <div class="col-4 t4-img-restaurant">
+    <div class="row pt-5 justify-content-center text-sm-center pb-5">
+      <div
+        class="
+          col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-6
+          t4-img-restaurant
+          d-md-block d-sm-block d-none
+        "
+      >
         <img :src="imagePut(restaurant.image)" alt="" />
       </div>
-      <div class="col-5">
+      <div
+        class="col-xxl-4 col-md-6 col-sm-6 col-12 text-sm-center text-center"
+      >
         <h2>Benvenuto da {{ restaurant.company }}!</h2>
         <h4 class="mt-3 mb-3">{{ restaurant.address }}</h4>
         <span class="t4-orange-text">Categorie:</span>
@@ -34,7 +42,7 @@
         class="
           row
           d-flex
-          col-xxl-10 col-xl-10 col-md-11 col-sm-12
+          col-xxl-8 col-xl-10 col-lg-7 col-md-9 col-sm-7 col-9
           m-auto
           mt-3
           justify-content-center
@@ -97,9 +105,9 @@
             >
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content t4-bg-black">
-                  <div class="modal-header">
+                  <div class="d-flex align-items-center justify-content-center">
                     <h5
-                      class="modal-title t4-orange-text"
+                      class="modal-title t4-orange-text text-center"
                       id="staticBackdropLabel"
                     >
                       Scegli la quantità
@@ -115,6 +123,7 @@
                       /></span>
                     </button>
                   </div>
+
                   <div
                     class="
                       modal-body
