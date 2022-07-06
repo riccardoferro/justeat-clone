@@ -66,93 +66,86 @@
 
               <!-- body della drop del carrello -->
               <div v-if="cart.length > 0" class="offcanvas-body">
-                <div v-for="(plate, index) in cart" :key="plate.id + `${index}`">
-                  <!-- <div class="col-3">
-                    <span> {{ plate.name }} </span>
-                  </div>
-                  <div class="col-2">
-                    <img :src="'storage/' + plate.image" :alt="plate.name" />
-                  </div>
+                  <div v-for="(plate, index) in cart" :key="plate.id + `${index}`">
+                      <!-- <div class="col-3">
+                        <span> {{ plate.name }} </span>
+                      </div>
+                      <div class="col-2">
+                        <img :src="'storage/' + plate.image" :alt="plate.name" />
+                      </div>
 
-                  <div class="col-3">{{ plate.price }} &euro;</div> -->
+                      <div class="col-3">{{ plate.price }} &euro;</div> -->
 
-                  <div
-                    class="
-                      row
-                      t4-cart-item
-                      mt-3
-                      mb-3
-                      align-items-center
-                      justify-content-between
-                    "
-                  >
-                    <div class="col-3">
-                      <img :src="'storage/' + plate.image" :alt="plate.name" />
-                    </div>
-                    <div class="col-3">
-                      <h6>{{ plate.name }}</h6>
-                      <h6 class="t4-orange-text t4-fw-6">
-                        {{ plate.price }} &euro;
-                      </h6>
-                      <div class="t4-w100 d-flex justify-content-between">
-                        <div @click="removeItem(plate)" class="t4-w30">
-                          <img class="t4-w80" src="/images/minus1.png" alt="" />
+                      <div
+                        class="
+                          row
+                          t4-cart-item
+                          mt-3
+                          mb-3
+                          align-items-center
+                          justify-content-between
+                        "
+                      >
+                        <div class="col-3">
+                          <img :src="'storage/' + plate.image" :alt="plate.name" />
                         </div>
-                        <div class="t4-w30 text-center">
-                          <p>{{ plate.quantity }}</p>
+                        <div class="col-3">
+                          <h6>{{ plate.name }}</h6>
+                          <h6 class="t4-orange-text t4-fw-6">
+                            {{ plate.price }} &euro;
+                          </h6>
+                          <div class="t4-w100 d-flex justify-content-between">
+                            <div @click="removeItem(plate)" class="t4-w30">
+                              <img class="t4-w80" src="/images/minus1.png" alt="" />
+                            </div>
+                            <div class="t4-w30 text-center">
+                              <p>{{ plate.quantity }}</p>
+                            </div>
+                            <div @click="addItem(plate)" class="t4-w30">
+                              <img class="t4-w80" src="/images/plus1.png" alt="" />
+                            </div>
+                          </div>
                         </div>
-                        <div @click="addItem(plate)" class="t4-w30">
-                          <img class="t4-w80" src="/images/plus1.png" alt="" />
+                        <div class="col-3">
+                          <p>total: {{ plate.total }} &euro;</p>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-3">
-                      <p>total: {{ plate.total }} &euro;</p>
+                  </div>
+                  <div class="row justify-content-end">
+                    <div class="col-6">
+                      <h6 class="t4-orange-text t4-fw-6 text-end me-3">
+                        Totale:{{ totaleComplessivo(cart) }} &euro;
+                      </h6>
                     </div>
                   </div>
-                </div>
-                <div class="row justify-content-end">
-                  <div class="col-6">
-                    <h6 class="t4-orange-text t4-fw-6 text-end me-3">
-                      Totale:{{ totaleComplessivo(cart) }} &euro;
-                    </h6>
+
+                  <div class="d-flex t4-w100 justify-content-around">
+
+                            <!-- Bottone che ti porta alla pagina del checkout e del pagamento e passeremo come 
+                          parametro il carrello con il totale
+                            -->
+                        <router-link class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
+                            :to="{ name: 'payments-page'}"
+                        >
+                            Paga
+                            <span class="t4-btn-pay ms-2">
+                              <img src="/images/pay-per-click.png" alt="" />
+                            </span>
+
+                        </router-link>
+
+
+                        <button
+                          @click.prevent="clearCart(cart)"
+                          class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
+                        >
+                            Svuota
+                            <span class="t4-btn-pay ms-2">
+                                <img src="/images/delete.png" alt="" />
+                            </span>
+                        </button>
+
                   </div>
-                </div>
-
-                <div class="d-flex t4-w100 justify-content-around">
-
-                        <!-- Bottone che ti porta alla pagina del checkout e del pagamento e passeremo come 
-                      parametro il carrello con il totale
-                        -->
-                    <router-link
-                        :to="{ name: 'payments-page'}"
-                    >
-
-                          <button
-                              class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-                          >
-                              Paga
-                              <span class="t4-btn-pay ms-2">
-                                <img src="/images/pay-per-click.png" alt="" />
-                              </span>
-
-                          </button>
-
-                    </router-link>
-
-
-                    <button
-                      @click.prevent="clearCart(cart)"
-                      class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-                    >
-                        Svuota
-                        <span class="t4-btn-pay ms-2">
-                            <img src="/images/delete.png" alt="" />
-                        </span>
-                    </button>
-
-                </div>
-
               </div>
 
               <p v-else>Il tuo carrello è vuoto!</p>
