@@ -17,12 +17,22 @@
             Scarica l'app e otterai il 25% sul tuo primo ordine!
           </p>
           <div class="row t4-download">
-            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+            <div
+              class="
+                col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6
+                t4-appstore
+              "
+            >
               <a href="https://www.apple.com/it/app-store/">
                 <img src="/images/appstore.svg.png" alt="logo-appstore" />
               </a>
             </div>
-            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+            <div
+              class="
+                col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6
+                t4-appstore
+              "
+            >
               <a href="https://play.google.com/store/games?hl=it&gl=US">
                 <img src="/images/googleplay.png" alt="logo-googleplay" />
               </a>
@@ -49,4 +59,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.t4-appstore {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
 </style>

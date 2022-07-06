@@ -16,6 +16,12 @@ body {
     color: $t4_white_text;
 }
 
+button:hover,
+img:hover{
+    cursor: pointer;
+}
+
+
 .t4-bg-nav {
     background-color: $t4_bg_black;
     z-index: 1 ;
@@ -212,6 +218,8 @@ form label.required:after {
     border: 2px solid $t4_orange_text;
     border-radius: 25px;
     color: $t4_orange_text  !important;
+    transition: all 0.2s ease-in-out;
+
 
     &:hover {
 
@@ -424,13 +432,6 @@ margin-bottom: 20px;
 
 // Home
 
-// .t4-carousel {
-//     img{
-//         // width: 100%;
-//         // aspect-ratio:1.7;
-//     }
-// }
-
 
 .t4-carousel-p{
     position: relative;
@@ -438,9 +439,9 @@ margin-bottom: 20px;
 
 .t4-carousel-text {
     position: absolute;
-    top: 20%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -20%);
+    transform: translate(-50%, -40%);
 }
 
 .t4-search{

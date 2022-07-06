@@ -20,7 +20,13 @@
           <!-- SEZIONE CHE TI PORTA AL SINGOLO RISTORANTE  -->
           <router-link
             :to="{ name: 'single-restaurant', params: { slug: user.slug } }"
-            class="d-flex flex-column justify-content-center align-items-center"
+            class="
+              d-flex
+              flex-column
+              justify-content-center
+              align-items-center
+              t4-card-hover
+            "
           >
             <!-- FINE SEZIONE SINGOLO RISTORANTE  -->
 
@@ -39,7 +45,7 @@
                   <img src="/images/posate.png" alt="" />
                 </span>
               </h6>
-              <h6 class="mb-3 t4-fw-6">
+              <!-- <h6 class="mb-3 t4-fw-6">
                 <span class="t4-orange-text">Categorie:</span>
                 <span
                   v-for="category in user.categories"
@@ -48,7 +54,7 @@
                 >
                   {{ category.name }}
                 </span>
-              </h6>
+              </h6> -->
             </div>
           </router-link>
         </div>
@@ -112,5 +118,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.t4-card-hover {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(0.9);
+  }
+}
 </style>

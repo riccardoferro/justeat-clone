@@ -17,7 +17,7 @@
             data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight"
           >
-            <div class="t4-nav-item position-relative">
+            <div class="t4-nav-item position-relative t4-cart">
               <span
                 v-if="cart.length > 0"
                 class="
@@ -258,5 +258,14 @@ export default {
 .t4-sidecart {
   -webkit-box-shadow: -15px 0px 12px -5px #000000;
   box-shadow: -15px 0px 12px -5px #000000;
+}
+
+.t4-nav-toggle,
+.t4-cart,
+.t4-close {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 </style>
