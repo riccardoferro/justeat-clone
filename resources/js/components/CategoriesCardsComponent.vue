@@ -148,10 +148,10 @@ export default {
   padding: 12px 15px;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  background-color: rgba(253, 253, 253, 0.518);
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 30px;
   font-weight: 600;
-  color: #111;
+  color: #fd7d2b;
   font-size: 1.5rem;
 }
 </style>
