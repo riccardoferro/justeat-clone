@@ -105,8 +105,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-3">
-                    <p>total: {{ plate.total }} &euro;</p>
+                  <div class="col-3 d-flex flex-column">
+                    <p class="t4-w100">Parziale:</p>
+                    <p class="t4-w100 t4-orange-text">
+                      {{ plate.total }} &euro;
+                    </p>
                   </div>
                 </div>
               </div>
