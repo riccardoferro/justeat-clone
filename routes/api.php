@@ -24,3 +24,7 @@ Route::get('/users/{slug}', 'Api\UserController@show')->name('users.show');
 Route::get('/categories', 'Api\CategoryController@index')->name('index');
 
 Route::get('/category/', 'Api\CategoryController@show')->name('show');
+
+// Inserite rotte per generare token e fare il pagamento
+Route::get( "/orders/generate" , "Api\OrderController@generate" );
+Route::post( "/orders/make/payment" , "Api\OrderController@makepayment" );
