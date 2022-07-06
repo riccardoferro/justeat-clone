@@ -117,29 +117,46 @@
                   </h6>
                 </div>
               </div>
+
               <div class="d-flex t4-w100 justify-content-around">
-                <button
-                  class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-                >
-                  Paga
-                  <span class="t4-btn-pay ms-2">
-                    <img src="/images/pay-per-click.png" alt="" />
-                  </span>
-                </button>
 
-                <button
-                  @click.prevent="clearCart(cart)"
-                  class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
-                >
-                  Svuota
-                  <span class="t4-btn-pay ms-2">
-                    <img src="/images/delete.png" alt="" />
-                  </span>
-                </button>
+                      <!-- Bottone che ti porta alla pagina del checkout e del pagamento e passeremo come 
+                    parametro il carrello con il totale
+                      -->
+                  <router-link
+                      :to="{ name: 'payments-page'}"
+                  >
+
+                        <button
+                            class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
+                        >
+                            Paga
+                            <span class="t4-btn-pay ms-2">
+                              <img src="/images/pay-per-click.png" alt="" />
+                            </span>
+
+                        </button>
+
+                  </router-link>
+
+
+                  <button
+                    @click.prevent="clearCart(cart)"
+                    class="btn t4-add-btn col-3 d-flex align-items-center mt-3"
+                  >
+                      Svuota
+                      <span class="t4-btn-pay ms-2">
+                          <img src="/images/delete.png" alt="" />
+                      </span>
+                  </button>
+
               </div>
-            </div>
 
+            </div>
+            
             <p v-else>Il tuo carrello è vuoto!</p>
+            
+            </div>
           </div>
 
           <!-- fine carrello -->
