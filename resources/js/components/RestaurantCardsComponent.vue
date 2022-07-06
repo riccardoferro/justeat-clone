@@ -45,7 +45,7 @@
                   <img src="/images/posate.png" alt="" />
                 </span>
               </h6>
-              <h6 class="mb-3 t4-fw-6">
+              <!-- <h6 class="mb-3 t4-fw-6">
                 <span class="t4-orange-text">Categorie:</span>
                 <span
                   v-for="category in user.categories"
@@ -54,7 +54,7 @@
                 >
                   {{ category.name }}
                 </span>
-              </h6>
+              </h6> -->
             </div>
           </router-link>
         </div>

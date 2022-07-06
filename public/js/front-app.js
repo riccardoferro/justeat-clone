@@ -45288,31 +45288,6 @@ var render = function () {
                         ]),
                       ]
                     ),
-                    _vm._v(" "),
-                    _c(
-                      "h6",
-                      { staticClass: "mb-3 t4-fw-6" },
-                      [
-                        _c("span", { staticClass: "t4-orange-text" }, [
-                          _vm._v("Categorie:"),
-                        ]),
-                        _vm._v(" "),
-                        _vm._l(user.categories, function (category) {
-                          return _c(
-                            "span",
-                            { key: category.slug, staticClass: "t4-fw-4" },
-                            [
-                              _vm._v(
-                                "\n                " +
-                                  _vm._s(category.name) +
-                                  "\n              "
-                              ),
-                            ]
-                          )
-                        }),
-                      ],
-                      2
-                    ),
                   ]),
                 ]
               ),
