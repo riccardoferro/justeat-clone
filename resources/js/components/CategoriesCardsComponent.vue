@@ -149,9 +149,10 @@ export default {
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 30px;
+  border-radius: 20px;
   font-weight: 600;
   color: #fd7d2b;
   font-size: 1.5rem;
+  text-align: center;
 }
 </style>

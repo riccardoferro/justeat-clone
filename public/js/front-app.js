@@ -11829,7 +11829,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-img-category[data-v-11838afe] {\n  position: relative;\n}\n.t4-title-category[data-v-11838afe] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 12px 15px;\n  -webkit-backdrop-filter: blur(6px);\n  backdrop-filter: blur(6px);\n  background-color: rgba(0, 0, 0, 0.4);\n  border-radius: 30px;\n  font-weight: 600;\n  color: #fd7d2b;\n  font-size: 1.5rem;\n}", ""]);
+exports.push([module.i, ".t4-img-category[data-v-11838afe] {\n  position: relative;\n}\n.t4-title-category[data-v-11838afe] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 12px 15px;\n  -webkit-backdrop-filter: blur(6px);\n  backdrop-filter: blur(6px);\n  background-color: rgba(0, 0, 0, 0.4);\n  border-radius: 20px;\n  font-weight: 600;\n  color: #fd7d2b;\n  font-size: 1.5rem;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -45031,7 +45031,7 @@ var render = function () {
             {
               key: user.id,
               staticClass:
-                "col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-10 col-10 mb-5",
+                "col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 mb-5",
             },
             [
               _c(
