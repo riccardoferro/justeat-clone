@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     // Prende Elemento Div conferma Eliminazione
-    if (document.getElementById('confirm-password')); {
+    if (document.getElementById('password-confirm')); {
         var password = document.getElementById("password");
-        var confirm_password = document.getElementById("confirm-password");
+        var confirm_password = document.getElementById("password-confirm");
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
