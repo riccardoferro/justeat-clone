@@ -50,13 +50,18 @@ document.addEventListener("DOMContentLoaded", function () {
             if (password.value != confirm_password.value) {
                 confirm_password.setCustomValidity("Le due Password non coincidono");
             }
-        }
 
+            else {
+                confirm_password.setCustomValidity('');
+            }
+
+
+        };
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
+
+
     };
-
-
 });
 
 
