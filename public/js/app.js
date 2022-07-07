@@ -41176,7 +41176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
   // Prende Elemento Div conferma Eliminazione
-  if (document.getElementById('confirm-password')) ;
+  if (document.getElementById('password-confirm')) ;
   {
     var validatePassword = function validatePassword() {
       if (password.value != confirm_password.value) {
@@ -41187,7 +41187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     var password = document.getElementById("password");
-    var confirm_password = document.getElementById("confirm-password");
+    var confirm_password = document.getElementById("password-confirm");
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
   }
@@ -41214,8 +41214,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

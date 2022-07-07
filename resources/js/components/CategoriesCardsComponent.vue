@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="text-center py-5">
-      <h2>Cerchi qualcos'altro?</h2>
+      <h2>
+        Cerchi qualcos'altro?
+        <span class="t4-q-mark">
+          <img src="/images/search-circle.png" alt="question-mark" />
+        </span>
+      </h2>
       <h4>Scegli tra tutte le categorie disponibili</h4>
     </div>
 
@@ -12,18 +17,6 @@
         justify-content-center justify-content-lg-start justify-content-md-start
       "
     >
-      <!-- <div
-              class="
-                col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12
-                t4-category-label
-              "
-              v-for="category in categories"
-              :key="category.id"
-          >
-              <h2>{{ category.name }}</h2>
-              <img :src="'/images/category_img/' + category.image" alt="" />
-          </div> -->
-
       <!-- inizio card -->
       <div
         class="
@@ -167,5 +160,11 @@ export default {
 
 .t4-card-hover:hover {
   transform: scale(0.9);
+}
+
+.t4-q-mark {
+  img {
+    width: 35px;
+  }
 }
 </style>

@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="container-fluid">
-      <h2 class="text-center pt-5">In evidenza</h2>
+      <h2 class="text-center pt-5">
+        In evidenza
+        <span class="t4-star">
+          <img src="/images/star.png" alt="star" />
+        </span>
+      </h2>
       <div
         class="
           row
@@ -123,6 +128,12 @@ export default {
   transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(0.9);
+  }
+}
+
+.t4-star {
+  img {
+    width: 35px;
   }
 }
 </style>

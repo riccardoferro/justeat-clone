@@ -16,6 +16,19 @@ body {
     color: $t4_white_text;
 }
 
+
+body::-webkit-scrollbar{
+    width:10px;
+}
+body::-webkit-scrollbar-track{
+   background-color: rgba( 0, 0, 0, 0.55 );
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: rgba( 255, 255, 255, 0.18 ) ;
+    border-radius: 20px;
+}
+
 button:hover,
 img:hover{
     cursor: pointer;

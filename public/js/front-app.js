@@ -5459,13 +5459,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoriesCardComponent",
   props: {
@@ -6076,6 +6069,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -6548,28 +6546,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -11890,7 +11866,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-img-category[data-v-11838afe] {\n  position: relative;\n}\n.t4-title-category[data-v-11838afe] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 12px 15px;\n  -webkit-backdrop-filter: blur(6px);\n  backdrop-filter: blur(6px);\n  background-color: rgba(0, 0, 0, 0.4);\n  border-radius: 20px;\n  font-weight: 600;\n  color: #fd7d2b;\n  text-align: center;\n}\n.t4-card-hover[data-v-11838afe] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-card-hover[data-v-11838afe]:hover {\n  transform: scale(0.9);\n}", ""]);
+exports.push([module.i, ".t4-img-category[data-v-11838afe] {\n  position: relative;\n}\n.t4-title-category[data-v-11838afe] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 12px 15px;\n  -webkit-backdrop-filter: blur(6px);\n  backdrop-filter: blur(6px);\n  background-color: rgba(0, 0, 0, 0.4);\n  border-radius: 20px;\n  font-weight: 600;\n  color: #fd7d2b;\n  text-align: center;\n}\n.t4-card-hover[data-v-11838afe] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-card-hover[data-v-11838afe]:hover {\n  transform: scale(0.9);\n}\n.t4-q-mark img[data-v-11838afe] {\n  width: 35px;\n}", ""]);
 
 // exports
 
@@ -11947,7 +11923,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-card-hover[data-v-18709962] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-card-hover[data-v-18709962]:hover {\n  transform: scale(0.9);\n}", ""]);
+exports.push([module.i, ".t4-card-hover[data-v-18709962] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-card-hover[data-v-18709962]:hover {\n  transform: scale(0.9);\n}\n.t4-star img[data-v-18709962] {\n  width: 35px;\n}", ""]);
 
 // exports
 
@@ -44402,7 +44378,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center py-5" }, [
-      _c("h2", [_vm._v("Cerchi qualcos'altro?")]),
+      _c("h2", [
+        _vm._v("\n      Cerchi qualcos'altro?\n      "),
+        _c("span", { staticClass: "t4-q-mark" }, [
+          _c("img", {
+            attrs: { src: "/images/search-circle.png", alt: "question-mark" },
+          }),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h4", [_vm._v("Scegli tra tutte le categorie disponibili")]),
     ])
@@ -45225,7 +45208,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container-fluid" }, [
-      _c("h2", { staticClass: "text-center pt-5" }, [_vm._v("In evidenza")]),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "div",
@@ -45300,7 +45283,19 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", { staticClass: "text-center pt-5" }, [
+      _vm._v("\n      In evidenza\n      "),
+      _c("span", { staticClass: "t4-star" }, [
+        _c("img", { attrs: { src: "/images/star.png", alt: "star" } }),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -45610,7 +45605,7 @@ var render = function () {
           "div",
           {
             staticClass:
-              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-6\n        t4-img-restaurant\n        d-md-block d-sm-block d-none\n      ",
+              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-6\n        t4-img-restaurant\n        d-md-block d-sm-block d-none\n        mb-5\n      ",
           },
           [
             _c("img", {
@@ -45623,7 +45618,7 @@ var render = function () {
           "div",
           {
             staticClass:
-              "col-xxl-4 col-md-6 col-sm-6 col-12 text-sm-center text-center",
+              "col-xxl-4 col-md-7 col-sm-10 col-12 text-sm-center text-center",
           },
           [
             _c("h2", [
@@ -45992,7 +45987,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "t4-card-buttons d-flex justify-content-end mt-5 mb-2" },
+      {
+        staticClass: "t4-card-buttons d-flex justify-content-center mt-5 mb-2",
+      },
       [
         _c(
           "a",
@@ -46001,7 +45998,7 @@ var staticRenderFns = [
             attrs: { href: "http://127.0.0.1:8000/" },
           },
           [
-            _c("span", { staticClass: "me-2" }, [_vm._v("Torna alla Home")]),
+            _c("span", { staticClass: "me-2" }, [_vm._v("Home")]),
             _vm._v(" "),
             _c("img", { attrs: { src: "/images/home.png", alt: "home" } }),
           ]
@@ -62672,7 +62669,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
