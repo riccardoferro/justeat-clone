@@ -81,6 +81,7 @@
             class="t4-card-buttons d-flex justify-content-center"
           >
             <button
+              v-if="addButtonControl(cart, plate)"
               @click="
                 () => {
                   currentPlate = plate;
@@ -274,6 +275,15 @@ export default {
         this.addItem(elem);
       }
       this.orederQuantity = 0;
+    },
+    addButtonControl(arr, elem) {
+      if (arr.length > 0 && arr[0].user_id == elem.user_id) {
+        return true;
+      } else if (arr.length == 0) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };
