@@ -131,7 +131,7 @@
 
 
 
-            <div class="d-flex t4-w100 justify-content-center mt-5 mb-5">
+            <div class="d-flex t4-w100 justify-content-center mt-5 pb-5">
 
                 <button class="btn t4-add-btn d-flex align-items-center me-3 t4-link-hover">
                     <a class="t4-orange-text" href="{{ route('admin.categories.edit', $user->id) }}">Modificale tue

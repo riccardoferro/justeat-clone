@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid pb-5">
     <!-- Intro Ristorante -->
     <div class="row pt-5 justify-content-center text-sm-center pb-5">
       <div
@@ -7,12 +7,13 @@
           col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-6
           t4-img-restaurant
           d-md-block d-sm-block d-none
+          mb-5
         "
       >
         <img :src="imagePut(restaurant.image)" alt="" />
       </div>
       <div
-        class="col-xxl-4 col-md-6 col-sm-6 col-12 text-sm-center text-center"
+        class="col-xxl-4 col-md-7 col-sm-10 col-12 text-sm-center text-center"
       >
         <h2>Benvenuto da {{ restaurant.company }}!</h2>
         <h4 class="mt-3 mb-3">{{ restaurant.address }}</h4>
@@ -178,29 +179,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div @click="decr" class="t4-w10">
-              <img class="t4-w80" src="/images/minus1.png" alt="" />
-            </div>
-            <div class="t4-w40 text-center">
-              <p>{{ orederQuantity }}</p>
-            </div>
-            <div @click="incr" class="t4-w10">
-              <img class="t4-w80" src="/images/plus1.png" alt="" />
-            </div> -->
-            <!-- PULSANTE CARRELLO -->
-            <!-- <a
-              v-if="cart.length == 0 || cart[0].user_id == plate.user_id"
-              @click.prevent="addItem(plate)"
-              href="#"
-              class="btn t4-add-btn d-flex align-items-center"
-            >
-              <span class="me-2">Aggiungi al carrello</span>
-              <img src="/images/shopping-bag.png" alt="shopping-bag" />
-            </a>
-
-            <p v-else>
-              Non puoi ordinare da più ristoranti, effettua il pagamento
-            </p> -->
           </div>
           <!-- v-else -->
           <div
@@ -217,12 +195,12 @@
       </div>
     </div>
 
-    <div class="t4-card-buttons d-flex justify-content-end mt-5 mb-2">
+    <div class="t4-card-buttons d-flex justify-content-center mt-5 mb-2">
       <a
         href="http://127.0.0.1:8000/"
         class="btn t4-add-btn d-flex align-items-center"
       >
-        <span class="me-2">Torna alla Home</span>
+        <span class="me-2">Home</span>
         <img src="/images/home.png" alt="home" />
       </a>
     </div>
