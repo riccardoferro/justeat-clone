@@ -41176,8 +41176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
   // Prende Elemento Div conferma Eliminazione
-  if (document.getElementById('password-confirm')) ;
-  {
+  if (document.getElementById('password-confirm')) {
     var validatePassword = function validatePassword() {
       if (password.value != confirm_password.value) {
         confirm_password.setCustomValidity("Le due Password non coincidono");
@@ -41192,6 +41191,7 @@ document.addEventListener("DOMContentLoaded", function () {
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
   }
+
   ;
 });
 
