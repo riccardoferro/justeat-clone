@@ -42,25 +42,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     // Prende Elemento Div conferma Eliminazione
-    if (document.getElementById('password-confirm')); {
+    if (document.getElementById('password-confirm')) {
         var password = document.getElementById("password");
         var confirm_password = document.getElementById("password-confirm");
 
         function validatePassword() {
             if (password.value != confirm_password.value) {
                 confirm_password.setCustomValidity("Le due Password non coincidono");
-            }
-
-            else {
+            }else {
                 confirm_password.setCustomValidity('');
             }
-
-
         };
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
-
-
     };
 });
 
