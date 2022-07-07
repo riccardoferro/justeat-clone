@@ -640,4 +640,33 @@ border-radius: 20px !important;
 }
 
 
+// pagination Laravel admin/plates
 
+.pagination {
+    margin-top:50px;
+    justify-content: center;
+}
+
+.pagination {
+    .page-link{
+        background-color: #0b100c !important;
+        border-color: #0b100c!important;
+
+        color: $t4_orange_text !important;
+    }
+    li {
+        color: #0b100c !important;
+        
+    }
+    .page-item.active{
+            .page-link{
+                    background-color: $t4_bg_orange !important;
+                    border-color: $t4_bg_orange !important;
+                    color: #0b100c !important;
+                    border-radius: 50%;
+
+
+            }
+    }
+}
+   
