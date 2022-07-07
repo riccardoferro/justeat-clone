@@ -30,26 +30,25 @@
               flex-column
               justify-content-center
               align-items-center
-              t4-card-hover
+              t4-card-hover t4-img-company
             "
           >
             <!-- FINE SEZIONE SINGOLO RISTORANTE  -->
 
-            <div
-              class="
-                col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12
-                t4-img-company
-              "
-            >
+            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12">
               <img :src="imagePut(user.image)" alt="" />
             </div>
             <div class="mt-3">
-              <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
+              <h5
+                class="
+                  t4-orange-text t4-fw-6
+                  d-flex
+                  align-items-center
+                  t4-name-company
+                "
+              >
                 {{ user.company }}
-                <span class="t4-icon-company ms-2">
-                  <img src="/images/posate.png" alt="" />
-                </span>
-              </h6>
+              </h5>
               <!-- <h6 class="mb-3 t4-fw-6">
                 <span class="t4-orange-text">Categorie:</span>
                 <span
@@ -79,7 +78,7 @@ export default {
     // Funzione per l'immagine profilo ristoratorante!
     imagePut(string) {
       let newString;
-      console.log("stringa presa");
+
       if (string.includes("uploads")) {
         newString = `/storage/${string}`;
       } else {
@@ -135,5 +134,24 @@ export default {
   img {
     width: 35px;
   }
+}
+
+.t4-img-company {
+  position: relative;
+}
+
+.t4-name-company {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 15px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  font-weight: 600;
+  color: #fd7d2b;
+  text-align: center;
 }
 </style>

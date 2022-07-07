@@ -15,7 +15,12 @@
       <div
         class="col-xxl-4 col-md-7 col-sm-10 col-12 text-sm-center text-center"
       >
-        <h2>Benvenuto da {{ restaurant.company }}!</h2>
+        <h2>
+          Benvenuto da {{ restaurant.company }}!
+          <span class="t4-icon-company ms-2">
+            <img src="/images/posate.png" alt="" />
+          </span>
+        </h2>
         <h4 class="mt-3 mb-3">{{ restaurant.address }}</h4>
         <span class="t4-orange-text">Categorie:</span>
         <span
@@ -76,11 +81,9 @@
             </div>
           </div>
 
-          <div
-            v-if="plate.visible == 1"
-            class="t4-card-buttons d-flex justify-content-center"
-          >
+          <div class="t4-card-buttons d-flex justify-content-center">
             <button
+              v-if="addButtonControl(cart, plate) && plate.visible == 1"
               @click="
                 () => {
                   currentPlate = plate;
@@ -94,6 +97,13 @@
               <span class="me-2">Aggiungi al carrello</span>
               <img src="/images/shopping-bag.png" alt="shopping-bag" />
             </button>
+            <div
+              v-else-if="plate.visible == 0"
+              class="btn t4-add-btn d-flex align-items-center"
+            >
+              <span class="me-2">Piatto non disponibile</span>
+              <img src="/images/sad.png" alt="shopping-bag" />
+            </div>
 
             <div
               class="modal fade"
@@ -181,16 +191,6 @@
             </div>
           </div>
           <!-- v-else -->
-          <div
-            v-if="plate.visible == 0"
-            class="t4-card-buttons d-flex justify-content-center"
-          >
-            <!-- PULSANTE CARRELLO -->
-            <div class="btn t4-add-btn d-flex align-items-center">
-              <span class="me-2">Piatto non disponibile</span>
-              <img src="/images/shopping-bag.png" alt="shopping-bag" />
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -274,6 +274,15 @@ export default {
         this.addItem(elem);
       }
       this.orederQuantity = 0;
+    },
+    addButtonControl(arr, elem) {
+      if (arr.length > 0 && arr[0].user_id == elem.user_id) {
+        return true;
+      } else if (arr.length == 0) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };

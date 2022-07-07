@@ -30,7 +30,7 @@
                   bg-danger
                 "
               >
-                {{ totalPlatesBadge(cart) }}
+                {{ cart.length }}
               </span>
               <img src="/images/shopping.png" alt="shorp-cart" />
             </div>
