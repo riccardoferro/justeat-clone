@@ -47,19 +47,22 @@ document.addEventListener("DOMContentLoaded", function () {
         var password = document.getElementById("password");
         var confirm_password = document.getElementById("password-confirm");
 
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Le due Password non coincidono");
-  } else {
-    confirm_password.setCustomValidity('Inserisci Password');
-  }
-}
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Le due Password non coincidono");
+            }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+            else {
+                confirm_password.setCustomValidity('');
+            }
+
+
+        };
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+
+
     };
-
-
 });
 
 
