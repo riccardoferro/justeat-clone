@@ -46,8 +46,6 @@ export default {
         if (plate.user_id == this.cart[0].user_id) {
           const product = this.cart.find((o) => o.id === plate.id);
           if (product) {
-            console.log("piatto in arrivo", plate);
-            console.log("piatto modificato", product);
             product.quantity += 1;
             let total = product.quantity * product.price;
             total = parseFloat(total);
