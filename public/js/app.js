@@ -41182,12 +41182,16 @@ document.addEventListener("DOMContentLoaded", function () {
       if (password.value != confirm_password.value) {
         confirm_password.setCustomValidity("Le due Password non coincidono");
       } else {
-        confirm_password.setCustomValidity('Inserisci Password');
+        confirm_password.setCustomValidity('');
       }
     };
 
     var password = document.getElementById("password");
     var confirm_password = document.getElementById("password-confirm");
+<<<<<<< HEAD
+=======
+    ;
+>>>>>>> 41bc93086a338df690bd44deccea376864443bd9
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
   }
