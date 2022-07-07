@@ -82,10 +82,12 @@
             <img :src="imagePut(user.image)" alt="" class="img-fluid" />
           </div>
         </router-link>
+        
       </div>
       <!-- fine card -->
     </div>
     <div v-else>Nessun ristorante da mostrare</div>
+
     <div v-if="users.length > 0" class="row">
       <div class="d-flex justify-content-center">
         <button
@@ -116,6 +118,8 @@
         </button>
       </div>
     </div>
+
+
   </div>
 </template>
 
@@ -238,10 +242,12 @@ export default {
         this.categoriesArr.push(el);
       }
     },
+
     nextPageFunction() {
       this.url_getUsers = this.nextPage;
       this.getUsersPerCategories(this.url_getUsers);
     },
+
     prevPageFunction() {
       this.url_getUsers = this.prevPage;
       this.getUsersPerCategories(this.url_getUsers);
