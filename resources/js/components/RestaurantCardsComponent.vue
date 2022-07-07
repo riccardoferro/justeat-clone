@@ -78,7 +78,7 @@ export default {
     // Funzione per l'immagine profilo ristoratorante!
     imagePut(string) {
       let newString;
-      console.log("stringa presa");
+
       if (string.includes("uploads")) {
         newString = `/storage/${string}`;
       } else {
