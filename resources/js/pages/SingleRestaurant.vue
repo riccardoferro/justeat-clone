@@ -15,7 +15,12 @@
       <div
         class="col-xxl-4 col-md-7 col-sm-10 col-12 text-sm-center text-center"
       >
-        <h2>Benvenuto da {{ restaurant.company }}!</h2>
+        <h2>
+          Benvenuto da {{ restaurant.company }}!
+          <span class="t4-icon-company ms-2">
+            <img src="/images/posate.png" alt="" />
+          </span>
+        </h2>
         <h4 class="mt-3 mb-3">{{ restaurant.address }}</h4>
         <span class="t4-orange-text">Categorie:</span>
         <span
