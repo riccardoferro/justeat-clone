@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid pb-5">
     <!-- Intro Ristorante -->
     <div class="row pt-5 justify-content-center text-sm-center pb-5">
       <div

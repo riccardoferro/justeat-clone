@@ -1,6 +1,8 @@
 <template>
-  <div class="container-fluid">
-    <h3>Seleziona una categoria e vedi i ristoranti a disposizione</h3>
+  <div class="container-fluid pb-5">
+    <h3 class="mt-5">
+      Seleziona una categoria e vedi i ristoranti a disposizione
+    </h3>
 
     <!-- <div class="row">
           <BoxCategoriesFilter :categoriesArr="categoriesArr" :category="category"/>

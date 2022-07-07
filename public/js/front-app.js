@@ -6270,6 +6270,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -45317,9 +45319,11 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _c("h3", [
-      _vm._v("Seleziona una categoria e vedi i ristoranti a disposizione"),
+  return _c("div", { staticClass: "container-fluid pb-5" }, [
+    _c("h3", { staticClass: "mt-5" }, [
+      _vm._v(
+        "\n    Seleziona una categoria e vedi i ristoranti a disposizione\n  "
+      ),
     ]),
     _vm._v(" "),
     _c(
@@ -45596,7 +45600,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "container-fluid pb-5" }, [
     _c(
       "div",
       { staticClass: "row pt-5 justify-content-center text-sm-center pb-5" },
