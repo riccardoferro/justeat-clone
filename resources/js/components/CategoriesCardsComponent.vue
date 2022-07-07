@@ -65,9 +65,9 @@
               t4-img-company t4-img-category
             "
           >
-            <h4 class="t4-title-category">
+            <h5 class="t4-title-category">
               {{ category.name }}
-            </h4>
+            </h5>
             <img
               :src="'/images/category_img/' + category.image"
               alt="immagine categoria"

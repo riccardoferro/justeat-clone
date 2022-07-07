@@ -1,16 +1,18 @@
 @extends('layouts.app')
 
 @section('navcategory')
-    <a class="me-3" href="{{ url('admin/user') }}" style="color: orange"> PROFILO</a>
-    @if (count($user->categories))
-        <a class="me-3" href="{{ route('admin.categories.edit', $user->id) }}" style="color: orange"> CATEGORIE </a>
-        <a class="me-3" href="{{ url('admin/plates') }}" style="color: orange">PIATTI</a>
-    @else
-        <a class="me-3" href="{{ route('admin.categories.create', $user->id) }}" style="color: orange"> CATEGORIE </a>
-        <a class="me-3" href="#" style="color: orange">PIATTI</a>
-    @endif
-    <a class="me-3" href="{{ url('#') }}" style="color: orange"> ORDINI </a>
-    <a class="me-3" href="{{ url('#') }}" style="color: orange"> STATISTICHE </a>
+    <div class="t4-nav-links">
+        <a class="me-3 t4-orange-text" href="{{ url('admin/user') }}" "> PROFILO</a>
+                   @if (count($user->categories))
+            <a class="me-3 t4-orange-text" href="{{ route('admin.categories.edit', $user->id) }}"> CATEGORIE </a>
+            <a class="me-3 t4-orange-text" href="{{ url('admin/plates') }}">PIATTI</a>
+        @else
+            <a class="me-3 t4-orange-text" href="{{ route('admin.categories.create', $user->id) }}" "> CATEGORIE </a>
+                    <a class="me-3 t4-orange-text" href="#" ">PIATTI</a>
+            @endif
+            <a class="me-3 t4-orange-text" href="{{ url('#') }}"> ORDINI </a>
+            {{-- <a class="me-3" href="{{ url('#') }}"> STATISTICHE </a> --}}
+    </div>
 @endsection
 
 @section('content')
@@ -67,7 +69,7 @@
 
                         <div class="text-center">
                             <h5 class="t4-orange-text">Clicca sull'immagine per modificare la foto</h5>
-                            <p>e clicca sul bottone cambia per visualizzarla</p>
+                            <p>clicca su cambia per visualizzare l'immagine</p>
                         </div>
 
 

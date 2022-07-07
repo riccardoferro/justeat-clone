@@ -23,7 +23,7 @@
           ></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active t4-carousel-p">
+          <div class="carousel-item active t4-carousel-p t4-carousel-img">
             <img
               src="/images/jumbo-home.jpeg"
               class="d-block w-100"
@@ -74,7 +74,7 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item t4-carousel-img">
             <img src="/images/team4.png" class="d-block w-100" alt="team4" />
             <div class="carousel-caption d-none d-md-block"></div>
           </div>
