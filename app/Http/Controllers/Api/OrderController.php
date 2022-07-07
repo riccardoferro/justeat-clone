@@ -16,7 +16,6 @@ class OrderController extends Controller
         // generiamo il nostro token
 
         $token = $gateway->clientToken()->generate();
-
         $data = [
             'success' => true,
             'token' => $token
@@ -28,8 +27,8 @@ class OrderController extends Controller
     //la makepayment per effettuare il pagamento
     public function makePayment(OrderRequest $request,Gateway $gateway){
 
-        // nella funzione sale andranno i dati dell'ordine 
-        // per ora stiamo inserendo a mano 
+        // nella funzione sale andranno i dati dell'ordine
+        // per ora stiamo inserendo a mano
         $result = $gateway->transaction()->sale([
 
                 'amount' => $request->amount,
@@ -56,8 +55,8 @@ class OrderController extends Controller
 
             return response()->json($data,401);
         }
-        
-        
+
+
         // return 'make payment';
     }
 
