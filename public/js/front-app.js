@@ -5459,6 +5459,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoriesCardComponent",
   props: {
@@ -6073,7 +6076,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -6548,6 +6550,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -11925,7 +11932,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-card-hover[data-v-18709962] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-card-hover[data-v-18709962]:hover {\n  transform: scale(0.9);\n}\n.t4-star img[data-v-18709962] {\n  width: 35px;\n}", ""]);
+exports.push([module.i, ".t4-card-hover[data-v-18709962] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-card-hover[data-v-18709962]:hover {\n  transform: scale(0.9);\n}\n.t4-star img[data-v-18709962] {\n  width: 35px;\n}\n.t4-img-company[data-v-18709962] {\n  position: relative;\n}\n.t4-name-company[data-v-18709962] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 12px 15px;\n  -webkit-backdrop-filter: blur(6px);\n  backdrop-filter: blur(6px);\n  background-color: rgba(0, 0, 0, 0.4);\n  border-radius: 20px;\n  font-weight: 600;\n  color: #fd7d2b;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -44315,7 +44322,7 @@ var render = function () {
       "div",
       {
         staticClass:
-          "\n      row\n      t4-bg-orange\n      justify-content-center justify-content-lg-start justify-content-md-start\n    ",
+          "\n      row\n      t4-bg-orange\n      justify-content-center\n      justify-content-lg-start\n      justify-content-md-start\n      justify-content-sm-start\n    ",
       },
       _vm._l(_vm.categories, function (category) {
         return _c(
@@ -44323,7 +44330,7 @@ var render = function () {
           {
             key: category.id,
             staticClass:
-              "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-category-label\n      ",
+              "\n        col-xxl-4 col-xl-4 col-lg-3 col-md-6 col-sm-6 col-6\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-category-label\n      ",
           },
           [
             _c(
@@ -44348,7 +44355,7 @@ var render = function () {
                       "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n            t4-img-company t4-img-category\n          ",
                   },
                   [
-                    _c("h4", { staticClass: "t4-title-category" }, [
+                    _c("h5", { staticClass: "t4-title-category" }, [
                       _vm._v(
                         "\n            " +
                           _vm._s(category.name) +
@@ -45050,83 +45057,93 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "carousel-inner" }, [
-              _c("div", { staticClass: "carousel-item active t4-carousel-p" }, [
-                _c("img", {
-                  staticClass: "d-block w-100",
-                  attrs: { src: "/images/jumbo-home.jpeg", alt: "jumbo-home" },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "text-center t4-carousel-text" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "\n                d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none\n                t4-grad-orange\n              ",
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "carousel-item active t4-carousel-p t4-carousel-img",
+                },
+                [
+                  _c("img", {
+                    staticClass: "d-block w-100",
+                    attrs: {
+                      src: "/images/jumbo-home.jpeg",
+                      alt: "jumbo-home",
                     },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "\n                  d-flex\n                  t4-jumbo-logo\n                  align-items-end\n                  justify-content-center\n                ",
-                        },
-                        [
-                          _c("h1", { staticClass: "t4-grad-orange t4-fw" }, [
-                            _vm._v("Booleat"),
-                          ]),
-                          _vm._v(" "),
-                          _c("img", {
-                            attrs: {
-                              src: "/images/delivery-bike.png",
-                              alt: "",
-                            },
-                          }),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("h1", { staticClass: "t4-fw" }, [
-                        _vm._v("Mangia con un click!"),
-                      ]),
-                      _vm._v(" "),
-                      _c("h4", { staticClass: "mb-5" }, [
-                        _vm._v(
-                          "\n                Ordina online dai tuoi ristoranti preferiti\n              "
-                        ),
-                      ]),
-                    ]
-                  ),
+                  }),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "\n                d-flex\n                justify-content-center\n                align-items-baseline\n                mt-sm-5\n              ",
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "\n                  d-flex\n                  flex-column\n                  d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block\n                  t4-grad-orange\n                ",
-                        },
-                        [
-                          _c("h3", { staticClass: "t4-fw" }, [
-                            _vm._v("Mangia con un click!"),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Ordina online dai tuoi ristoranti preferiti"
-                            ),
-                          ]),
-                        ]
-                      ),
-                    ]
-                  ),
-                ]),
-              ]),
+                  _c("div", { staticClass: "text-center t4-carousel-text" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "\n                d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none\n                t4-grad-orange\n              ",
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "\n                  d-flex\n                  t4-jumbo-logo\n                  align-items-end\n                  justify-content-center\n                ",
+                          },
+                          [
+                            _c("h1", { staticClass: "t4-grad-orange t4-fw" }, [
+                              _vm._v("Booleat"),
+                            ]),
+                            _vm._v(" "),
+                            _c("img", {
+                              attrs: {
+                                src: "/images/delivery-bike.png",
+                                alt: "",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("h1", { staticClass: "t4-fw" }, [
+                          _vm._v("Mangia con un click!"),
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", { staticClass: "mb-5" }, [
+                          _vm._v(
+                            "\n                Ordina online dai tuoi ristoranti preferiti\n              "
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "\n                d-flex\n                justify-content-center\n                align-items-baseline\n                mt-sm-5\n              ",
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "\n                  d-flex\n                  flex-column\n                  d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block\n                  t4-grad-orange\n                ",
+                          },
+                          [
+                            _c("h3", { staticClass: "t4-fw" }, [
+                              _vm._v("Mangia con un click!"),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Ordina online dai tuoi ristoranti preferiti"
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "carousel-item" }, [
+              _c("div", { staticClass: "carousel-item t4-carousel-img" }, [
                 _c("img", {
                   staticClass: "d-block w-100",
                   attrs: { src: "/images/team4.png", alt: "team4" },
@@ -45231,7 +45248,7 @@ var render = function () {
                 "router-link",
                 {
                   staticClass:
-                    "\n            d-flex\n            flex-column\n            justify-content-center\n            align-items-center\n            t4-card-hover\n          ",
+                    "\n            d-flex\n            flex-column\n            justify-content-center\n            align-items-center\n            t4-card-hover t4-img-company\n          ",
                   attrs: {
                     to: {
                       name: "single-restaurant",
@@ -45244,7 +45261,7 @@ var render = function () {
                     "div",
                     {
                       staticClass:
-                        "\n              col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n              t4-img-company\n            ",
+                        "col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12",
                     },
                     [
                       _c("img", {
@@ -45255,22 +45272,17 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "mt-3" }, [
                     _c(
-                      "h6",
+                      "h5",
                       {
                         staticClass:
-                          "t4-orange-text t4-fw-6 d-flex align-items-center",
+                          "\n                t4-orange-text t4-fw-6\n                d-flex\n                align-items-center\n                t4-name-company\n              ",
                       },
                       [
                         _vm._v(
                           "\n              " +
                             _vm._s(user.company) +
-                            "\n              "
+                            "\n            "
                         ),
-                        _c("span", { staticClass: "t4-icon-company ms-2" }, [
-                          _c("img", {
-                            attrs: { src: "/images/posate.png", alt: "" },
-                          }),
-                        ]),
                       ]
                     ),
                   ]),
@@ -45626,7 +45638,12 @@ var render = function () {
           },
           [
             _c("h2", [
-              _vm._v("Benvenuto da " + _vm._s(_vm.restaurant.company) + "!"),
+              _vm._v(
+                "\n        Benvenuto da " +
+                  _vm._s(_vm.restaurant.company) +
+                  "!\n        "
+              ),
+              _vm._m(0),
             ]),
             _vm._v(" "),
             _c("h4", { staticClass: "mt-3 mb-3" }, [
@@ -45661,7 +45678,7 @@ var render = function () {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "row flex-column justify-content-center mt-5" }, [
-      _vm._m(0),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "div",
@@ -45784,7 +45801,7 @@ var render = function () {
                                 "div",
                                 { staticClass: "modal-content t4-bg-black" },
                                 [
-                                  _vm._m(1, true),
+                                  _vm._m(2, true),
                                   _vm._v(" "),
                                   _c(
                                     "div",
@@ -45904,7 +45921,7 @@ var render = function () {
                       staticClass:
                         "t4-card-buttons d-flex justify-content-center",
                     },
-                    [_vm._m(2, true)]
+                    [_vm._m(3, true)]
                   )
                 : _vm._e(),
             ]
@@ -45914,10 +45931,18 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _vm._m(3),
+    _vm._m(4),
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "t4-icon-company ms-2" }, [
+      _c("img", { attrs: { src: "/images/posate.png", alt: "" } }),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

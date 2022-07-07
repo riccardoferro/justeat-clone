@@ -78,7 +78,7 @@
                         </div>
                     @endforeach
                 @else
-                    <div class="col-4 text-center mt-5 ">
+                    <div class="col-8 text-center mt-5 ">
                         <img src="/images/sad.png" alt="" class="t4-empty-plates mb-4">
                         <h1>Non hai nessuno Prodotto</h1>
                     </div>
