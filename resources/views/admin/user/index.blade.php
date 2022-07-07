@@ -47,12 +47,10 @@
                     <div class="mb-3 d-flex flex-column align-items-center justify-content-around">
 
                         <label class='t4-label-coverUser' for="coverUser" style="cursor: pointer">
-                            @if ($user->image ==
-                                '/
-                                                    avatar-2.png')
-                                <img src="{{ asset('storage/images/' . $user->image) }}" alt="{{ $user->name }}">
+                            @if ($user->image == '/avatar-2.png')
+                                <img src="{{ asset('/images/' . $user->image) }}" alt="{{ $user->name }}">
                             @else
-                                <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}">
+                                <img src="{{ asset('/storage/' . $user->image) }}" alt="{{ $user->name }}">
                             @endif
 
                         </label>
@@ -66,6 +64,11 @@
                         @error('coverUser')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
+
+                        <div class="text-center">
+                            <h5 class="t4-orange-text">Clicca sull'immagine per modificare la foto</h5>
+                            <p>e clicca sul bottone cambia per visualizzarla</p>
+                        </div>
 
 
                         <div class="form-group">
