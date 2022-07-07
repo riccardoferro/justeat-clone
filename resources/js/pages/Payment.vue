@@ -63,7 +63,6 @@ export default {
               "Totale complessivo",
               this.totaleComplessivo(this.cart)
             );
-            // Qui faccio partire una funzione che popolerà la tabella ordini
             this.sendOrder();
           }
         })
