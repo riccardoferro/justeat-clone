@@ -76,12 +76,9 @@
             </div>
           </div>
 
-          <div
-            v-if="plate.visible == 1"
-            class="t4-card-buttons d-flex justify-content-center"
-          >
+          <div class="t4-card-buttons d-flex justify-content-center">
             <button
-              v-if="addButtonControl(cart, plate)"
+              v-if="addButtonControl(cart, plate) && plate.visible == 1"
               @click="
                 () => {
                   currentPlate = plate;
@@ -95,6 +92,13 @@
               <span class="me-2">Aggiungi al carrello</span>
               <img src="/images/shopping-bag.png" alt="shopping-bag" />
             </button>
+            <div
+              v-else-if="plate.visible == 0"
+              class="btn t4-add-btn d-flex align-items-center"
+            >
+              <span class="me-2">Piatto non disponibile</span>
+              <img src="/images/sad.png" alt="shopping-bag" />
+            </div>
 
             <div
               class="modal fade"
@@ -182,16 +186,6 @@
             </div>
           </div>
           <!-- v-else -->
-          <div
-            v-if="plate.visible == 0"
-            class="t4-card-buttons d-flex justify-content-center"
-          >
-            <!-- PULSANTE CARRELLO -->
-            <div class="btn t4-add-btn d-flex align-items-center">
-              <span class="me-2">Piatto non disponibile</span>
-              <img src="/images/shopping-bag.png" alt="shopping-bag" />
-            </div>
-          </div>
         </div>
       </div>
     </div>
