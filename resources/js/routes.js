@@ -7,7 +7,8 @@ import HomeComponent from './pages/HomeComponent'
 import SingleRestaurant from './pages/SingleRestaurant'
 import NotFound from './pages/NotFound'
 import CategoryRestaurantsFilter from './pages/CategoryRestaurantsFilter'
-import paymentsPage from './pages/paymentsPage'
+import PaymentsPage from './pages/PaymentsPage'
+import SuccessPages from './pages/SuccessPages'
 
 
 
@@ -33,13 +34,19 @@ const router = new VueRouter({
         {
             path: '/payments',
             name: 'payments-page',
-            component: paymentsPage
+            component: PaymentsPage
         },
         {
-            path: '/',
+            path: '/payments/success',
+            name: 'success',
+            component: SuccessPages
+        },
+        {
+            path: '/*',
             name: 'notFound',
             component: NotFound
         },
+
     ]
 })
 
