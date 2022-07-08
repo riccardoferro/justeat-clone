@@ -71697,7 +71697,7 @@ var render = function () {
         0
       ),
       _vm._v(" "),
-      _vm.plates.length >= 1 && _vm.plates.length <= 3 && _vm.totalPages !== 1
+      _vm.last_page !== 1
         ? _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "d-flex justify-content-center pt-5" }, [
               _c(
@@ -88686,7 +88686,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })

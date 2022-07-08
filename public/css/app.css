@@ -24121,8 +24121,9 @@ input[type=radio]:checked:after {
   border: 2px solid #393838;
 }
 
-input[type=file] {
-  display: none;
+input[type=file]::-webkit-file-upload-button {
+  border-radius: 25px;
+  background-color: #FD7D2B;
 }
 
 .t4-photo-label {
@@ -24140,6 +24141,12 @@ input[type=file] {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+
+input:required {
+  background-color: #393838;
+  color: red;
+  border: white;
 }
 
 .t4-card {
