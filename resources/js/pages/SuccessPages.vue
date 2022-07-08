@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Pagamento avvenuto con succeso</h1>
+    <h1>Pagamento avvenuto con succeso!!</h1>
   </div>
 </template>
 
