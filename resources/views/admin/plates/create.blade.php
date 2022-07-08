@@ -39,7 +39,8 @@
 
                         <label for="description" class="form-label">Descrizione*</label>
                         <input type="text" class="form-control @error('description') is-invalid @enderror" id="name"
-                            placeholder="Descrizione" name='description' value="{{ old('description') }}" required>
+                            placeholder="Descrizione" name='description' value="{{ old('description') }}" required
+                            minlength="10">
                         @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -69,16 +70,17 @@
                     </div>
                     <div class="mb-3">
                         <label for="cover" class="form-label t4-photo-label">
-                            Seleziona Foto <img src="/images/upload.png" alt="">
-                            <input class="t4-input-img" type="file" name='cover' id="cover" required />
+                            <img src="/images/upload.png" alt="">
                         </label>
-                        @error('image')
+                        <input class="t4-input-img  @error('cover') is-invalid @enderror" type="file" name='cover'
+                            id="cover" required />
+                        @error('cover')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="d-flex">
                         <button type="submit" class="btn t4-add-btn d-flex align-items-center me-3">
-                            <span class="me-2">Modifica </span>
+                            <span class="me-2">Aggiungi</span>
                             <img src="/images/edit-document.png" alt="">
                         </button>
                         <a href="{{ route('admin.plates.index') }}" class="btn t4-add-btn d-flex align-items-center">

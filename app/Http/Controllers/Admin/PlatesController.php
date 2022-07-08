@@ -45,7 +45,7 @@ class PlatesController extends Controller
             'description' => 'required|min:10|max:200',
             'price' => 'required',
             'visible' => 'required',
-            'image' => 'nullable|image'
+            'cover' => 'required|image'
         ], [
             'required' => 'Questo campo è obbligatorio',
             'max' => 'Massimo :max caratteri',
