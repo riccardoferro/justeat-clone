@@ -44484,7 +44484,7 @@ var render = function () {
                       "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n            t4-img-company t4-img-category\n          ",
                   },
                   [
-                    _c("h5", { staticClass: "t4-title-category" }, [
+                    _c("h6", { staticClass: "t4-title-category" }, [
                       _vm._v(
                         "\n            " +
                           _vm._s(category.name) +
@@ -45398,7 +45398,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "mt-3" }, [
                     _c(
-                      "h5",
+                      "h6",
                       {
                         staticClass:
                           "\n                t4-orange-text t4-fw-6\n                d-flex\n                align-items-center\n                t4-name-company\n              ",
