@@ -299,9 +299,18 @@ input[type='radio']:checked:after {
     border: 2px solid $t4_bg_input;
 }
 
-input[type="file"] {
-    display: none;
+
+
+input[type="file"]::-webkit-file-upload-button {
+    border-radius:25px;
+    background-color:$t4_bg_orange;
+
+
+
 }
+
+
+
 
 .t4-photo-label {
     border: 2px solid $t4_bg_input;
@@ -322,6 +331,12 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 
+}
+
+input:required{
+    background-color: $t4_bg_input;
+    color:red;
+    border:white;
 }
 
 // card -index

@@ -75,7 +75,7 @@
 
                         <label for="cover" class="form-label t4-photo-label">
                             Seleziona Foto <img src="/images/upload.png" alt="">
-                            <input class="t4-input-img" type="file" name='cover' id="cover" />
+                            <input style='display:none' class="t4-input-img" type="file" name='cover' id="cover" />
                         </label>
 
 
