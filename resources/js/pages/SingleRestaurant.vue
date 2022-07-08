@@ -212,7 +212,7 @@
         <!-- Fine Piatti -->
       </div>
 
-      <div v-if="plates.length > 1 && plates.length <= 3" class="row">
+      <div v-if="plates.length >= 1 && plates.length <= 3" class="row">
         <div class="d-flex justify-content-center pt-5">
           <button
             :disabled="current_page != 1 ? false : true"

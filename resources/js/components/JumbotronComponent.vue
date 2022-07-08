@@ -25,7 +25,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active t4-carousel-p t4-carousel-img">
             <img
-              src="/images/jumbo.png"
+              src="/images/Jumbo.png"
               class="d-block w-100"
               alt="jumbo-home"
             />
