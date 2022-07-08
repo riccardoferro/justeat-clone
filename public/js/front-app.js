@@ -5151,8 +5151,6 @@ __webpack_require__.r(__webpack_exports__);
           });
 
           if (product) {
-            console.log("piatto in arrivo", plate);
-            console.log("piatto modificato", product);
             product.quantity += 1;
 
             var _total = product.quantity * product.price;
@@ -6085,7 +6083,6 @@ __webpack_require__.r(__webpack_exports__);
     // Funzione per l'immagine profilo ristoratorante!
     imagePut: function imagePut(string) {
       var newString;
-      console.log("stringa presa");
 
       if (string.includes("uploads")) {
         newString = "/storage/".concat(string);
@@ -6274,6 +6271,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6304,21 +6309,20 @@ __webpack_require__.r(__webpack_exports__);
     getUsersPerCategories: function getUsersPerCategories(url) {
       var _this = this;
 
-      console.log("this selected", this.categoriesArr);
+      // console.log("this selected", this.categoriesArr);
       window.axios.get(url, {
         params: {
           value: this.categoriesArr
         }
       }).then(function (results) {
-        console.log(results);
-
+        // console.log('dioooooo',results);
         if (results.status === 200) {
           _this.users = results.data.data;
           _this.nextPage = results.data.next_page_url;
           _this.prevPage = results.data.prev_page_url;
-          _this.last_page = results.data.last_page;
-          _this.current_page = results.data.current_page;
-          console.log(_this.users);
+          _this.last_page = results.data.last_page; // console.log('oooooooooooooooooo',this.last_page);
+
+          _this.current_page = results.data.current_page; // console.log(this.users);
         }
       })["catch"](function (e) {
         console.log(e);
@@ -6340,7 +6344,6 @@ __webpack_require__.r(__webpack_exports__);
     // Funzione per l'immagine profilo ristoratorante!
     imagePut: function imagePut(string) {
       var newString;
-      console.log("stringa presa");
 
       if (string.includes("uploads")) {
         newString = "/storage/".concat(string);
@@ -6764,6 +6767,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
@@ -6772,30 +6841,52 @@ __webpack_require__.r(__webpack_exports__);
       plates: [],
       categories: [],
       orederQuantity: 0,
-      currentPlate: {}
+      currentPlate: {},
+      currentPage: "",
+      prevPage: "",
+      nextPage: "",
+      current_page: "",
+      last_page: "",
+      url_getUser: "http://127.0.0.1:8000/api/users/",
+      slug: this.$route.params.slug
     };
   },
   props: {
     cart: Array
   },
   mounted: function mounted() {
-    var _this = this;
-
-    var slug = this.$route.params.slug; // console.log(slug);
-
-    window.axios.get("http://127.0.0.1:8000/api/users/" + slug).then(function (results) {
-      // console.log("results Single Restaurant->", results);
-      if (results.status === 200 && results.data.success) {
-        _this.restaurant = results.data.results;
-        _this.plates = _this.restaurant.plates;
-        _this.categories = _this.restaurant.categories; //   console.log('category'.)
-      } // console.log(this.restaurant);
-
-    })["catch"](function (e) {
-      console.log(e);
-    });
+    this.loadPage(this.url_getUser + this.slug);
   },
   methods: {
+    loadPage: function loadPage(url) {
+      var _this = this;
+
+      // console.log(slug);
+      window.axios.get(url).then(function (results) {
+        // console.log("results", results);
+        if (results.status === 200 && results.data.success) {
+          _this.restaurant = results.data.results;
+          _this.plates = results.data.plates.data;
+          _this.nextPage = results.data.plates.next_page_url;
+          _this.prevPage = results.data.plates.prev_page_url;
+          _this.last_page = results.data.plates.last_page;
+          _this.current_page = results.data.plates.current_page; // console.log("piattiii",this.plates)
+
+          _this.categories = _this.restaurant.categories; //   console.log('category'.)
+        } // console.log(this.restaurant);
+
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    },
+    nextPageFunction: function nextPageFunction() {
+      this.url_getUser = this.nextPage;
+      this.loadPage(this.url_getUser);
+    },
+    prevPageFunction: function prevPageFunction() {
+      this.url_getUser = this.prevPage;
+      this.loadPage(this.url_getUser);
+    },
     addItem: function addItem(plate) {
       this.$emit("takeItem", plate); //   console.log("carrello", this.cart);
     },
@@ -6826,6 +6917,15 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.orederQuantity = 0;
+    },
+    addButtonControl: function addButtonControl(arr, elem) {
+      if (arr.length > 0 && arr[0].user_id == elem.user_id) {
+        return true;
+      } else if (arr.length == 0) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 });
@@ -44623,7 +44723,7 @@ var render = function () {
                           [
                             _vm._v(
                               "\n              " +
-                                _vm._s(_vm.totalPlatesBadge(_vm.cart)) +
+                                _vm._s(_vm.cart.length) +
                                 "\n            "
                             ),
                           ]
@@ -45464,13 +45564,14 @@ var render = function () {
         )
       : _c("div", [_vm._v("Nessun ristorante da mostrare")]),
     _vm._v(" "),
-    _vm.users.length > 0
+    _vm.users.length > 0 && _vm.categoriesArr.length > 0
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "d-flex justify-content-center" }, [
             _c(
               "button",
               {
-                staticClass: "btn t4-add-btn me-3",
+                staticClass: "btn t4-add-btn me-3 current_pag",
+                attrs: { disabled: _vm.current_page != 1 ? false : true },
                 on: {
                   click: function () {
                     _vm.prevPageFunction()
@@ -45484,6 +45585,9 @@ var render = function () {
               "button",
               {
                 staticClass: "btn t4-add-btn",
+                attrs: {
+                  disabled: _vm.current_page != _vm.last_page ? false : true,
+                },
                 on: {
                   click: function () {
                     _vm.nextPageFunction()
@@ -45740,15 +45844,14 @@ var render = function () {
                 ]
               ),
               _vm._v(" "),
-              plate.visible == 1
-                ? _c(
-                    "div",
-                    {
-                      staticClass:
-                        "t4-card-buttons d-flex justify-content-center",
-                    },
-                    [
-                      _c(
+              _c(
+                "div",
+                {
+                  staticClass: "t4-card-buttons d-flex justify-content-center",
+                },
+                [
+                  _vm.addButtonControl(_vm.cart, plate) && plate.visible == 1
+                    ? _c(
                         "button",
                         {
                           staticClass: "btn t4-add-btn",
@@ -45775,96 +45878,91 @@ var render = function () {
                             },
                           }),
                         ]
-                      ),
-                      _vm._v(" "),
-                      _c(
+                      )
+                    : plate.visible == 0
+                    ? _c(
                         "div",
                         {
-                          staticClass: "modal fade",
-                          attrs: {
-                            id: "staticBackdrop",
-                            "data-bs-backdrop": "static",
-                            "data-bs-keyboard": "false",
-                            tabindex: "-1",
-                            "aria-labelledby": "staticBackdropLabel",
-                            "aria-hidden": "true",
-                          },
+                          staticClass:
+                            "btn t4-add-btn d-flex align-items-center",
                         },
+                        [
+                          _c("span", { staticClass: "me-2" }, [
+                            _vm._v("Piatto non disponibile"),
+                          ]),
+                          _vm._v(" "),
+                          _c("img", {
+                            attrs: {
+                              src: "/images/sad.png",
+                              alt: "shopping-bag",
+                            },
+                          }),
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "modal fade",
+                      attrs: {
+                        id: "staticBackdrop",
+                        "data-bs-backdrop": "static",
+                        "data-bs-keyboard": "false",
+                        tabindex: "-1",
+                        "aria-labelledby": "staticBackdropLabel",
+                        "aria-hidden": "true",
+                      },
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "modal-dialog modal-dialog-centered" },
                         [
                           _c(
                             "div",
-                            {
-                              staticClass: "modal-dialog modal-dialog-centered",
-                            },
+                            { staticClass: "modal-content t4-bg-black" },
                             [
+                              _vm._m(2, true),
+                              _vm._v(" "),
                               _c(
                                 "div",
-                                { staticClass: "modal-content t4-bg-black" },
+                                {
+                                  staticClass:
+                                    "\n                    modal-body\n                    d-flex\n                    justify-content-center\n                    align-items-center\n                  ",
+                                },
                                 [
-                                  _vm._m(2, true),
-                                  _vm._v(" "),
                                   _c(
                                     "div",
                                     {
-                                      staticClass:
-                                        "\n                    modal-body\n                    d-flex\n                    justify-content-center\n                    align-items-center\n                  ",
+                                      staticClass: "t4-w10",
+                                      on: {
+                                        click: function () {
+                                          _vm.decr()
+                                        },
+                                      },
                                     },
                                     [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass: "t4-w10",
-                                          on: {
-                                            click: function () {
-                                              _vm.decr()
-                                            },
-                                          },
+                                      _c("img", {
+                                        staticClass: "t4-w80",
+                                        attrs: {
+                                          src: "/images/minus1.png",
+                                          alt: "",
                                         },
-                                        [
-                                          _c("img", {
-                                            staticClass: "t4-w80",
-                                            attrs: {
-                                              src: "/images/minus1.png",
-                                              alt: "",
-                                            },
-                                          }),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
+                                      }),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "t4-w40 text-center" },
+                                    [
                                       _c(
-                                        "div",
-                                        { staticClass: "t4-w40 text-center" },
-                                        [
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass:
-                                                "t4-orange-text t4-fs-1",
-                                            },
-                                            [_vm._v(_vm._s(_vm.orederQuantity))]
-                                          ),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
+                                        "span",
                                         {
-                                          staticClass: "t4-w10",
-                                          on: {
-                                            click: function () {
-                                              _vm.incr()
-                                            },
-                                          },
+                                          staticClass: "t4-orange-text t4-fs-1",
                                         },
-                                        [
-                                          _c("img", {
-                                            staticClass: "t4-w80",
-                                            attrs: {
-                                              src: "/images/plus1.png",
-                                              alt: "",
-                                            },
-                                          }),
-                                        ]
+                                        [_vm._v(_vm._s(_vm.orederQuantity))]
                                       ),
                                     ]
                                   ),
@@ -45872,36 +45970,57 @@ var render = function () {
                                   _c(
                                     "div",
                                     {
-                                      staticClass:
-                                        "modal-footer d-flex justify-content-center",
-                                      attrs: { "data-bs-dismiss": "modal" },
+                                      staticClass: "t4-w10",
+                                      on: {
+                                        click: function () {
+                                          _vm.incr()
+                                        },
+                                      },
                                     },
                                     [
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "btn t4-add-btn",
-                                          attrs: { type: "button" },
-                                          on: {
-                                            click: function () {
-                                              _vm.pushToCart(
-                                                _vm.orederQuantity,
-                                                _vm.currentPlate
-                                              )
-                                            },
-                                          },
+                                      _c("img", {
+                                        staticClass: "t4-w80",
+                                        attrs: {
+                                          src: "/images/plus1.png",
+                                          alt: "",
                                         },
-                                        [
-                                          _c("span", {}, [_vm._v("Conferma")]),
-                                          _vm._v(" "),
-                                          _c("img", {
-                                            attrs: {
-                                              src: "/images/check.png",
-                                              alt: "check",
-                                            },
-                                          }),
-                                        ]
-                                      ),
+                                      }),
+                                    ]
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "modal-footer d-flex justify-content-center",
+                                  attrs: { "data-bs-dismiss": "modal" },
+                                },
+                                [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn t4-add-btn",
+                                      attrs: { type: "button" },
+                                      on: {
+                                        click: function () {
+                                          _vm.pushToCart(
+                                            _vm.orederQuantity,
+                                            _vm.currentPlate
+                                          )
+                                        },
+                                      },
+                                    },
+                                    [
+                                      _c("span", {}, [_vm._v("Conferma")]),
+                                      _vm._v(" "),
+                                      _c("img", {
+                                        attrs: {
+                                          src: "/images/check.png",
+                                          alt: "check",
+                                        },
+                                      }),
                                     ]
                                   ),
                                 ]
@@ -45911,27 +46030,53 @@ var render = function () {
                         ]
                       ),
                     ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              plate.visible == 0
-                ? _c(
-                    "div",
-                    {
-                      staticClass:
-                        "t4-card-buttons d-flex justify-content-center",
-                    },
-                    [_vm._m(3, true)]
-                  )
-                : _vm._e(),
+                  ),
+                ]
+              ),
             ]
           )
         }),
         0
       ),
+      _vm._v(" "),
+      _vm.plates.length > 1 && _vm.plates.length <= 3
+        ? _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "d-flex justify-content-center" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn t4-add-btn me-3",
+                  attrs: { disabled: _vm.current_page != 1 ? false : true },
+                  on: {
+                    click: function () {
+                      _vm.prevPageFunction()
+                    },
+                  },
+                },
+                [_vm._m(3), _vm._v("\n            Precedente\n          ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn t4-add-btn",
+                  attrs: {
+                    disabled: _vm.current_page != _vm.last_page ? false : true,
+                  },
+                  on: {
+                    click: function () {
+                      _vm.nextPageFunction()
+                    },
+                  },
+                },
+                [_vm._v("\n            Successivo\n            "), _vm._m(4)]
+              ),
+            ]),
+          ])
+        : _vm._e(),
     ]),
     _vm._v(" "),
-    _vm._m(4),
+    _vm._m(5),
   ])
 }
 var staticRenderFns = [
@@ -45998,17 +46143,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "btn t4-add-btn d-flex align-items-center" },
-      [
-        _c("span", { staticClass: "me-2" }, [_vm._v("Piatto non disponibile")]),
-        _vm._v(" "),
-        _c("img", {
-          attrs: { src: "/images/shopping-bag.png", alt: "shopping-bag" },
-        }),
-      ]
-    )
+    return _c("span", { staticClass: "t4-icon-btn me-2" }, [
+      _c("img", { attrs: { src: "/images/left-arrow.png", alt: "prev" } }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "t4-icon-btn ms-2" }, [
+      _c("img", { attrs: { src: "/images/right-arrow.png", alt: "next" } }),
+    ])
   },
   function () {
     var _vm = this
@@ -62698,7 +62843,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /var/www/PHP_Projects_Boolean/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
