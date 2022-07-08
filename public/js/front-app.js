@@ -6569,7 +6569,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: {
-    cart: Array
+    cartData: Array,
+    formData: Object
   },
   created: function created() {
     var _this = this;
@@ -6584,10 +6585,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     // Metodo per il totale
-    totaleComplessivo: function totaleComplessivo(arr) {
+    prezzoTotale: function prezzoTotale() {
       var total = 0;
-      arr.forEach(function (element) {
-        total += parseFloat(element.total);
+      this.cartData.forEach(function (dish) {
+        total += dish.price * dish.quantity;
       });
       return total.toFixed(2);
     },
@@ -6598,7 +6599,7 @@ __webpack_require__.r(__webpack_exports__);
       window.axios.post("http://127.0.0.1:8000/api/orders/make/payment", {}, {
         params: {
           token: nonce,
-          amount: this.totaleComplessivo(this.cart)
+          amount: this.prezzoTotale()
         }
       }).then(function (response) {
         // console.log('nonce', nonce)
@@ -6606,7 +6607,7 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.success) {
           console.log(response, "Pagamento ok");
-          console.log("Totale complessivo", _this2.totaleComplessivo(_this2.cart));
+          console.log("Totale complessivo", _this2.prezzoTotale());
 
           _this2.sendOrder();
         }
@@ -6619,9 +6620,33 @@ __webpack_require__.r(__webpack_exports__);
       console.log(message);
     },
     sendOrder: function sendOrder() {
+      var _this3 = this;
+
       // Qui ci sarà la chiamata axios post per popolare il database
-      this.$router.push({
-        name: "success"
+      window.axios.post("http://127.0.0.1:8000/api/payment", {
+        total: this.formData.total,
+        customer_address: this.formData.address,
+        customer_name: this.formData.name,
+        customer_surname: this.formData.surname,
+        customer_phone: this.formData.phone,
+        payment_approval: this.formData.status,
+        restaurant_id: this.formData.restaurant_id,
+        customer_email: this.formData.email,
+        plates: this.formData.plates
+      }).then(function (response) {
+        // handle success
+        console.log("chiamata axios post per payment");
+        console.log(response, "response axios"); // alert(response)
+
+        if (response.status === 200) {
+          localStorage.clear();
+
+          _this3.$router.push({
+            name: "success"
+          });
+        }
+      })["catch"](function (e) {
+        return console.log("error payment", e);
       });
     }
   }
@@ -6763,7 +6788,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      //   cart: [],
+      cartData: [],
       restaurantSelected: "",
       restaurantId: "",
       //   userEmail: "",
@@ -6782,7 +6807,7 @@ __webpack_require__.r(__webpack_exports__);
         status: null,
         total: null,
         // special_request: null,
-        // plates: null,
+        plates: null,
         restaurant_id: null // restaurant_email: null,
 
       },
@@ -6895,20 +6920,22 @@ __webpack_require__.r(__webpack_exports__);
       this.formData.phone = this.phone;
       this.formData.address = this.address;
       this.formData.status = 0;
-      this.formData.total = this.totaleComplessivo(this.cart); // this.formData.plates = this.cart;
-      // this.formData.special_request = this.special_request;
+      this.formData.total = this.prezzoTotale();
+      this.formData.plates = this.cart; // this.formData.special_request = this.special_request;
 
       this.formData.restaurant_id = this.restaurantId; // this.formData.restaurant_email = this.userEmail;
 
+      this.cartData = this.cart;
+      console.log(this.cartData);
       this.formComplete = true;
     },
-    totaleComplessivo: function totaleComplessivo(arr) {
+    prezzoTotale: function prezzoTotale() {
       var _this = this;
 
       var total = 0;
-      arr.forEach(function (element) {
-        total += parseFloat(element.total);
-        _this.restaurantId = element.user_id;
+      this.cart.forEach(function (dish) {
+        total += dish.price * dish.quantity;
+        _this.restaurantId = dish.user_id;
       });
       return total.toFixed(2);
     }
@@ -70996,7 +71023,7 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("Payment", {
-              attrs: { formData: _vm.formData, cart: _vm.cart },
+              attrs: { formData: _vm.formData, cartData: _vm.cartData },
             }),
           ],
           1

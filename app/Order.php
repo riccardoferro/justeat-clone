@@ -10,6 +10,19 @@ class Order extends Model
 
     protected $table='orders';
 
+    protected $fillable = [
+        'name',
+        'surname',
+        'email',
+        'address',
+        'phone',
+        'status',
+        'payment',
+        'total',
+        'user_id',
+
+    ];
+
     public function user(){
 
         return $this->belongsTo('App\User');

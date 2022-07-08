@@ -106,7 +106,7 @@
         <p>+39 {{ formData.phone }}</p>
         <p>{{ formData.email }}</p>
       </div>
-      <Payment :formData="formData" :cart="cart" />
+      <Payment :formData="formData" :cartData="cartData" />
     </div>
   </div>
 </template>
@@ -124,7 +124,7 @@ export default {
   },
   data() {
     return {
-      //   cart: [],
+      cartData: [],
       restaurantSelected: "",
       restaurantId: "",
       //   userEmail: "",
@@ -144,7 +144,7 @@ export default {
         status: null,
         total: null,
         // special_request: null,
-        // plates: null,
+        plates: null,
         restaurant_id: null,
         // restaurant_email: null,
       },
@@ -258,19 +258,21 @@ export default {
       this.formData.phone = this.phone;
       this.formData.address = this.address;
       this.formData.status = 0;
-      this.formData.total = this.totaleComplessivo(this.cart);
-      // this.formData.plates = this.cart;
+      this.formData.total = this.prezzoTotale();
+      this.formData.plates = this.cart;
       // this.formData.special_request = this.special_request;
 
       this.formData.restaurant_id = this.restaurantId;
       // this.formData.restaurant_email = this.userEmail;
+      this.cartData = this.cart;
+      console.log(this.cartData);
       this.formComplete = true;
     },
-    totaleComplessivo(arr) {
+    prezzoTotale() {
       let total = 0;
-      arr.forEach((element) => {
-        total += parseFloat(element.total);
-        this.restaurantId = element.user_id;
+      this.cart.forEach((dish) => {
+        total += dish.price * dish.quantity;
+        this.restaurantId = dish.user_id;
       });
       return total.toFixed(2);
     },

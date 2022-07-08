@@ -20,7 +20,8 @@ export default {
     };
   },
   props: {
-    cart: Array,
+    cartData: Array,
+    formData: Object,
   },
   created() {
     axios
@@ -34,10 +35,10 @@ export default {
   },
   methods: {
     // Metodo per il totale
-    totaleComplessivo(arr) {
+    prezzoTotale() {
       let total = 0;
-      arr.forEach((element) => {
-        total += parseFloat(element.total);
+      this.cartData.forEach((dish) => {
+        total += dish.price * dish.quantity;
       });
       return total.toFixed(2);
     },
@@ -50,7 +51,7 @@ export default {
           {
             params: {
               token: nonce,
-              amount: this.totaleComplessivo(this.cart),
+              amount: this.prezzoTotale(),
             },
           }
         )
@@ -59,10 +60,7 @@ export default {
           console.log(response, "response dopo pagamento");
           if (response.data.success) {
             console.log(response, "Pagamento ok");
-            console.log(
-              "Totale complessivo",
-              this.totaleComplessivo(this.cart)
-            );
+            console.log("Totale complessivo", this.prezzoTotale());
             this.sendOrder();
           }
         })
@@ -74,9 +72,31 @@ export default {
     },
     sendOrder() {
       // Qui ci sarà la chiamata axios post per popolare il database
-      this.$router.push({
-        name: "success",
-      });
+      window.axios
+        .post("http://127.0.0.1:8000/api/payment", {
+          total: this.formData.total,
+          customer_address: this.formData.address,
+          customer_name: this.formData.name,
+          customer_surname: this.formData.surname,
+          customer_phone: this.formData.phone,
+          payment_approval: this.formData.status,
+          restaurant_id: this.formData.restaurant_id,
+          customer_email: this.formData.email,
+          plates: this.formData.plates,
+        })
+        .then((response) => {
+          // handle success
+          console.log("chiamata axios post per payment");
+          console.log(response, "response axios");
+          // alert(response)
+          if (response.status === 200) {
+            localStorage.clear();
+            this.$router.push({
+              name: "success",
+            });
+          }
+        })
+        .catch((e) => console.log("error payment", e));
     },
   },
 };
