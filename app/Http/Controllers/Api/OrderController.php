@@ -4,8 +4,14 @@ namespace App\Http\Controllers\Api;
 
 use Braintree\Gateway;
 use Illuminate\Http\Request;
-use App\Http\Requests\OrderRequest;
 use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\OrderRequest;
+
+use App\Order;
+use App\Plate;
 
 class OrderController extends Controller
 {
@@ -22,7 +28,6 @@ class OrderController extends Controller
             'payment_approval' => 'required',
             'restaurant_id' => 'required',
             'customer_email' => 'required|max:255',
-            'restaurant_email' => 'required|max:255',
             'plates' => 'required',
         ],[
             'customer_name.required'=>'inserisci il nome',
