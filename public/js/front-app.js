@@ -6625,13 +6625,13 @@ __webpack_require__.r(__webpack_exports__);
       // Qui ci sarà la chiamata axios post per popolare il database
       window.axios.post("http://127.0.0.1:8000/api/payment", {
         total: this.formData.total,
-        customer_address: this.formData.address,
-        customer_name: this.formData.name,
-        customer_surname: this.formData.surname,
-        customer_phone: this.formData.phone,
-        payment_approval: this.formData.status,
-        restaurant_id: this.formData.restaurant_id,
-        customer_email: this.formData.email,
+        address: this.formData.address,
+        name: this.formData.name,
+        surname: this.formData.surname,
+        phone: this.formData.phone,
+        status: this.formData.status,
+        user_id: this.formData.restaurant_id,
+        email: this.formData.email,
         plates: this.formData.plates
       }).then(function (response) {
         // handle success
