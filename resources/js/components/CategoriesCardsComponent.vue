@@ -14,13 +14,16 @@
       class="
         row
         t4-bg-orange
-        justify-content-center justify-content-lg-start justify-content-md-start
+        justify-content-center
+        justify-content-lg-start
+        justify-content-md-start
+        justify-content-sm-start
       "
     >
       <!-- inizio card -->
       <div
         class="
-          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6
+          col-xxl-4 col-xl-4 col-lg-3 col-md-6 col-sm-6 col-6
           mb-5
           d-flex
           flex-column
@@ -61,13 +64,13 @@
           </div>
           <div
             class="
-              col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12
+              col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-sm-12 col-12
               t4-img-company t4-img-category
             "
           >
-            <h4 class="t4-title-category">
+            <h6 class="t4-title-category">
               {{ category.name }}
-            </h4>
+            </h6>
             <img
               :src="'/images/category_img/' + category.image"
               alt="immagine categoria"

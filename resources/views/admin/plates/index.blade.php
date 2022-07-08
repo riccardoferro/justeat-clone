@@ -30,6 +30,7 @@
             <div class="row col-xxl-10 col-xl-10 col-md-11 col-sm-12 m-auto mt-3 justify-content-center">
 
                 @if (count($plates))
+
                     @foreach ($plates as $plate)
                         <div class="col-sm-10 col-md-5 col-xl-3  d-flex flex-column t4-card ">
 
@@ -77,8 +78,13 @@
 
                         </div>
                     @endforeach
+
+                    <div>
+                            {{ $plates->links() }}
+
+                    </div>
                 @else
-                    <div class="col-4 text-center mt-5 ">
+                    <div class="col-8 text-center mt-5 ">
                         <img src="/images/sad.png" alt="" class="t4-empty-plates mb-4">
                         <h1>Non hai nessuno Prodotto</h1>
                     </div>

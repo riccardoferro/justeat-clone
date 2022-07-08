@@ -1,38 +1,38 @@
 <template>
   <div class="container-fluid pb-5">
-    <h3 class="mt-5">
-      Seleziona una categoria e vedi i ristoranti a disposizione
-    </h3>
+    <h2 class="mt-5 text-center">
+      Seleziona una categoria e visualizza i ristoranti disponibili
+    </h2>
 
     <!-- <div class="row">
           <BoxCategoriesFilter :categoriesArr="categoriesArr" :category="category"/>
       </div> -->
 
-    <div>
-      <h3>Categorie</h3>
+    <div class="mt-5">
+      <div class="d-flex justify-content-center flex-wrap">
+        <div
+          class="form-check form-check-inline mb-3"
+          v-for="category in categories"
+          :key="category.slug"
+        >
+          <input
+            class="btn-check"
+            type="checkbox"
+            :value="category.slug"
+            :id="'category' + category.id"
+            :checked="categoriesArr.includes(category.slug)"
+            @click="
+              () => {
+                toggleCheckbox(category.slug);
+                getUsersPerCategories(url_getUsers);
+              }
+            "
+          />
 
-      <div
-        class="form-check"
-        v-for="category in categories"
-        :key="category.slug"
-      >
-        <input
-          class="form-check-input"
-          type="checkbox"
-          :value="category.slug"
-          :id="'category' + category.id"
-          :checked="categoriesArr.includes(category.slug)"
-          @click="
-            () => {
-              toggleCheckbox(category.slug);
-              getUsersPerCategories(url_getUsers);
-            }
-          "
-        />
-
-        <label class="form-check-label" :for="'category' + category.id">
-          {{ category.name }}
-        </label>
+          <label class="btn t4-add-btn" :for="'category' + category.id">
+            {{ category.name }}
+          </label>
+        </div>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
       <!-- inizio card -->
       <div
         class="
-          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8
+          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-7 col-10
           mb-5
           d-flex
           flex-column
@@ -56,6 +56,7 @@
         <!-- Attraverso il router link verremo riportati in un'altra pagine dove vedremo i dettagli del ristorante -->
         <router-link
           :to="{ name: 'single-restaurant', params: { slug: user.slug } }"
+          class="d-flex flex-column align-items-center mt-5 mb-5"
         >
           <div>
             <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
@@ -85,11 +86,20 @@
       </div>
       <!-- fine card -->
     </div>
-    <div v-else>Nessun ristorante da mostrare</div>
-    <div v-if="users.length > 0" class="row">
+    <div v-else>
+      <div class="d-flex justify-content-center align-items-center mt-5">
+        <span class="t4-warning me-2">
+          <img src="/images/warning.png" alt="warning" />
+        </span>
+        Seleziona una categoria per visualizzare un ristorante
+      </div>
+    </div>
+
+    <div v-if="users.length > 0 && categoriesArr.length > 0" class="row">
       <div class="d-flex justify-content-center">
         <button
-          class="btn t4-add-btn me-3"
+          :disabled="current_page != 1 ? false : true"
+          class="btn t4-add-btn me-3 current_pag"
           @click="
             () => {
               prevPageFunction();
@@ -101,7 +111,9 @@
           </span>
           Precedente
         </button>
+
         <button
+          :disabled="current_page != last_page ? false : true"
           class="btn t4-add-btn"
           @click="
             () => {
@@ -150,7 +162,7 @@ export default {
   methods: {
     // Prende tutti ristoranti in base alle categorie
     getUsersPerCategories(url) {
-      console.log("this selected", this.categoriesArr);
+      // console.log("this selected", this.categoriesArr);
       window.axios
         .get(url, {
           params: {
@@ -158,14 +170,15 @@ export default {
           },
         })
         .then((results) => {
-          console.log(results);
+          // console.log('dioooooo',results);
           if (results.status === 200) {
             this.users = results.data.data;
             this.nextPage = results.data.next_page_url;
             this.prevPage = results.data.prev_page_url;
             this.last_page = results.data.last_page;
+            // console.log('oooooooooooooooooo',this.last_page);
             this.current_page = results.data.current_page;
-            console.log(this.users);
+            // console.log(this.users);
           }
         })
         .catch((e) => {
@@ -190,7 +203,6 @@ export default {
     // Funzione per l'immagine profilo ristoratorante!
     imagePut(string) {
       let newString;
-      console.log("stringa presa");
       if (string.includes("uploads")) {
         newString = `/storage/${string}`;
       } else {
@@ -239,10 +251,12 @@ export default {
         this.categoriesArr.push(el);
       }
     },
+
     nextPageFunction() {
       this.url_getUsers = this.nextPage;
       this.getUsersPerCategories(this.url_getUsers);
     },
+
     prevPageFunction() {
       this.url_getUsers = this.prevPage;
       this.getUsersPerCategories(this.url_getUsers);

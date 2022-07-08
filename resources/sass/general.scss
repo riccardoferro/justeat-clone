@@ -452,9 +452,9 @@ margin-bottom: 20px;
 
 .t4-carousel-text {
     position: absolute;
-    top: 40%;
+    top: 20%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -20%);
 }
 
 .t4-search{
@@ -484,17 +484,13 @@ margin-bottom: 20px;
     color: $t4_bg_black;
 }
 
-.t4-banner-app{
+.t4-banner-app,
+.t4-download{
     img{
         width:100%;
     };
 }
 
-.t4-download{
-    img{
-        width: 100%;
-    }
-}
 
 // .t4-footer{
 //     -webkit-box-shadow: 0px -6px 11px -7px #6E6E6E;
@@ -542,7 +538,7 @@ box-shadow: 0px 10px 13px -7px #000000, -15px 0px 12px -5px rgba(0,0,0,0);
 
 .t4-icon-company {
     img{
-        width: 25px;
+        width: 50px;
     }
 }
 
@@ -644,4 +640,33 @@ border-radius: 20px !important;
 }
 
 
+// pagination Laravel admin/plates
+
+.pagination {
+    margin-top:50px;
+    justify-content: center;
+}
+
+.pagination {
+    .page-link{
+        background-color: #0b100c !important;
+        border-color: #0b100c!important;
+
+        color: $t4_orange_text !important;
+    }
+    li {
+        color: #0b100c !important;
+
+    }
+    .page-item.active{
+            .page-link{
+                    background-color: $t4_bg_orange !important;
+                    border-color: $t4_bg_orange !important;
+                    color: #0b100c !important;
+                    border-radius: 50%;
+
+
+            }
+    }
+}
 

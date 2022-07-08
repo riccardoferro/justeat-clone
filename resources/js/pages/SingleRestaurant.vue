@@ -15,7 +15,12 @@
       <div
         class="col-xxl-4 col-md-7 col-sm-10 col-12 text-sm-center text-center"
       >
-        <h2>Benvenuto da {{ restaurant.company }}!</h2>
+        <h2>
+          Benvenuto da {{ restaurant.company }}!
+          <span class="t4-icon-company ms-2">
+            <img src="/images/posate.png" alt="" />
+          </span>
+        </h2>
         <h4 class="mt-3 mb-3">{{ restaurant.address }}</h4>
         <span class="t4-orange-text">Categorie:</span>
         <span
@@ -43,29 +48,36 @@
         class="
           row
           d-flex
-          col-xxl-9 col-xl-10 col-lg-7 col-md-9 col-sm-7 col-9
+          col-xxl-9 col-xl-10 col-lg-8 col-md-9 col-sm-7 col-9
           m-auto
           mt-3
           justify-content-center
         "
       >
+        <!-- Piatti -->
         <div
           v-for="plate in plates"
           :key="plate.name + plate.id"
           class="row col-sm-10 col-md-5 col-xl-3 d-flex flex-column t4-card"
         >
+          <!-- Immagine -->
           <div class="t4-card-img">
             <img :src="'storage/' + plate.image" alt="" />
           </div>
+
+          <!-- Nome -->
           <div class="t4-card-title">
             <span class="t4-card-label">Nome Piatto</span>
             <p>{{ plate.name }}</p>
           </div>
+
+          <!--Descrizione  -->
           <div class="t4-card-description">
             <span class="t4-card-label">Descrizione </span>
             <p>{{ plate.description }}</p>
           </div>
 
+          <!-- Disponibile e non disponibile -->
           <div class="t4-card-info d-flex justify-content-between">
             <p><span>Prezzo: </span>{{ plate.price }} &euro;</p>
             <div v-if="plate.visible == 1">
@@ -76,11 +88,9 @@
             </div>
           </div>
 
-          <div
-            v-if="plate.visible == 1"
-            class="t4-card-buttons d-flex justify-content-center"
-          >
+          <div class="t4-card-buttons d-flex justify-content-center">
             <button
+              v-if="addButtonControl(cart, plate) && plate.visible == 1"
               @click="
                 () => {
                   currentPlate = plate;
@@ -95,6 +105,15 @@
               <img src="/images/shopping-bag.png" alt="shopping-bag" />
             </button>
 
+            <!-- Piatto non disponibile -->
+            <div
+              v-else-if="plate.visible == 0"
+              class="btn t4-add-btn d-flex align-items-center"
+            >
+              <span class="me-2">Piatto non disponibile</span>
+              <img src="/images/sad.png" alt="shopping-bag" />
+            </div>
+
             <div
               class="modal fade"
               id="staticBackdrop"
@@ -106,6 +125,7 @@
             >
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content t4-bg-black">
+                  <!-- Bottone scegli la quantita' -->
                   <div class="d-flex align-items-center justify-content-center">
                     <h5
                       class="modal-title t4-orange-text text-center"
@@ -113,6 +133,7 @@
                     >
                       Scegli la quantità
                     </h5>
+
                     <button
                       type="button"
                       class="btn t4-btn-add"
@@ -133,6 +154,7 @@
                       align-items-center
                     "
                   >
+                    <!-- Decrement quantiy -->
                     <div
                       @click="
                         () => {
@@ -143,11 +165,14 @@
                     >
                       <img class="t4-w80" src="/images/minus1.png" alt="" />
                     </div>
+
                     <div class="t4-w40 text-center">
                       <span class="t4-orange-text t4-fs-1">{{
                         orederQuantity
                       }}</span>
                     </div>
+
+                    <!-- Increment quantity -->
                     <div
                       @click="
                         () => {
@@ -159,6 +184,8 @@
                       <img class="t4-w80" src="/images/plus1.png" alt="" />
                     </div>
                   </div>
+
+                  <!-- Bottone conferma aggiunta al carrello-->
                   <div
                     class="modal-footer d-flex justify-content-center"
                     data-bs-dismiss="modal"
@@ -180,17 +207,41 @@
               </div>
             </div>
           </div>
-          <!-- v-else -->
-          <div
-            v-if="plate.visible == 0"
-            class="t4-card-buttons d-flex justify-content-center"
+        </div>
+
+        <!-- Fine Piatti -->
+      </div>
+
+      <div v-if="plates.length >= 1 && plates.length <= 3 && totalPages !== 1" class="row">
+        <div class="d-flex justify-content-center pt-5">
+          <button
+            :disabled="current_page != 1 ? false : true"
+            class="btn t4-add-btn me-3"
+            @click="
+              () => {
+                prevPageFunction();
+              }
+            "
           >
-            <!-- PULSANTE CARRELLO -->
-            <div class="btn t4-add-btn d-flex align-items-center">
-              <span class="me-2">Piatto non disponibile</span>
-              <img src="/images/shopping-bag.png" alt="shopping-bag" />
-            </div>
-          </div>
+            <span class="t4-icon-btn me-2">
+              <img src="/images/left-arrow.png" alt="prev" />
+            </span>
+            Precedente
+          </button>
+          <button
+            :disabled="current_page != last_page ? false : true"
+            class="btn t4-add-btn"
+            @click="
+              () => {
+                nextPageFunction();
+              }
+            "
+          >
+            Successivo
+            <span class="t4-icon-btn ms-2">
+              <img src="/images/right-arrow.png" alt="next" />
+            </span>
+          </button>
         </div>
       </div>
     </div>
@@ -217,6 +268,14 @@ export default {
       categories: [],
       orederQuantity: 0,
       currentPlate: {},
+      currentPage: "",
+      prevPage: "",
+      nextPage: "",
+      current_page: "",
+      last_page: "",
+      totalPages: 0,
+      url_getUser: "http://127.0.0.1:8000/api/users/",
+      slug: this.$route.params.slug,
     };
   },
 
@@ -225,26 +284,45 @@ export default {
   },
 
   mounted() {
-    const slug = this.$route.params.slug;
-    // console.log(slug);
-
-    window.axios
-      .get("http://127.0.0.1:8000/api/users/" + slug)
-      .then((results) => {
-        // console.log("results Single Restaurant->", results);
-        if (results.status === 200 && results.data.success) {
-          this.restaurant = results.data.results;
-          this.plates = this.restaurant.plates;
-          this.categories = this.restaurant.categories; //   console.log('category'.)
-        }
-        // console.log(this.restaurant);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    this.loadPage(this.url_getUser + this.slug);
   },
 
   methods: {
+    loadPage(url) {
+      // console.log(slug);
+      window.axios
+        .get(url)
+        .then((results) => {
+          console.log("results", results);
+          if (results.status === 200 && results.data.success) {
+            this.restaurant = results.data.results;
+            this.plates = results.data.plates.data;
+
+            this.nextPage = results.data.plates.next_page_url;
+            this.prevPage = results.data.plates.prev_page_url;
+            this.last_page = results.data.plates.last_page;
+            this.current_page = results.data.plates.current_page;
+            this.totalPages = results.data.plates.total;
+            // console.log("piattiii",this.plates)
+            this.categories = this.restaurant.categories; //   console.log('category'.)
+          }
+          // console.log(this.restaurant);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+
+    nextPageFunction() {
+      this.url_getUser = this.nextPage;
+      this.loadPage(this.url_getUser);
+    },
+
+    prevPageFunction() {
+      this.url_getUser = this.prevPage;
+      this.loadPage(this.url_getUser);
+    },
+
     addItem(plate) {
       this.$emit("takeItem", plate);
       //   console.log("carrello", this.cart);
@@ -274,6 +352,15 @@ export default {
         this.addItem(elem);
       }
       this.orederQuantity = 0;
+    },
+    addButtonControl(arr, elem) {
+      if (arr.length > 0 && arr[0].user_id == elem.user_id) {
+        return true;
+      } else if (arr.length == 0) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };
