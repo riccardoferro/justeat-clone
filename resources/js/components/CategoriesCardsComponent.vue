@@ -64,13 +64,13 @@
           </div>
           <div
             class="
-              col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12
+              col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-sm-12 col-12
               t4-img-company t4-img-category
             "
           >
-            <h5 class="t4-title-category">
+            <h6 class="t4-title-category">
               {{ category.name }}
-            </h5>
+            </h6>
             <img
               :src="'/images/category_img/' + category.image"
               alt="immagine categoria"
