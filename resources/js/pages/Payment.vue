@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" v-if="tokenGenerate">
+  <div class="container-fluid t4-payment-card" v-if="tokenGenerate">
     <v-braintree
       class="brain"
       :authorization="Token"
@@ -102,5 +102,5 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 </style>
