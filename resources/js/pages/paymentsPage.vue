@@ -1,112 +1,129 @@
 <template>
   <div class="container-fluid">
-    <h1 class="text-center">PAGAMENTI</h1>
+    <h2 class="text-center mt-5">Inserisci i dati della consegna</h2>
+    <h6 class="text-center">Compila correttamente tutti i campi</h6>
     <!-- Qui andrà inserito il nome del ristorante dove stiamo ordinando -->
     <!-- FORM UTENTE  -->
-    <div v-if="!formComplete" class="form">
-      <p>Inserisci i dati della consegna</p>
+    <div class="row justify-content-around pt-5">
+      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-4 col-sm-8 col-8">
+        <div v-if="!formComplete" class="form">
+          <div class="action">
+            <div>
+              <label for="name" class="t4-orange-text ms-2">Nome *</label>
+              <br />
+              <input
+                type="text"
+                name="name"
+                placeholder="Nome"
+                v-model="name"
+                value=""
+                class="form-control"
+                required
+              />
+              <div v-if="!validation.name.success" class="alert alert-danger">
+                {{ validation.name.message }}
+              </div>
+            </div>
+            <div>
+              <label for="surname" class="t4-orange-text ms-2">Cognome *</label>
+              <br />
+              <input
+                type="text"
+                name="surname"
+                placeholder="Cognome"
+                v-model="surname"
+                value=""
+                class="form-control"
+                required
+              />
+              <div
+                v-if="!validation.surname.success"
+                class="alert alert-danger"
+              >
+                {{ validation.surname.message }}
+              </div>
+            </div>
+            <div>
+              <label for="address" class="t4-orange-text ms-2"
+                >Indirizzo di consegna *</label
+              >
+              <br />
+              <input
+                type="text"
+                name="address"
+                placeholder="Indirizzo"
+                v-model="address"
+                value=""
+                class="form-control"
+                required
+              />
+              <div
+                v-if="!validation.address.success"
+                class="alert alert-danger"
+              >
+                {{ validation.address.message }}
+              </div>
+            </div>
 
-      <div class="action">
-        <div>
-          <label for="name">Nome *</label>
-          <br />
-          <input
-            type="text"
-            name="name"
-            placeholder="Nome..."
-            v-model="name"
-            value=""
-            class="form-control"
-            required
-          />
-          <div v-if="!validation.name.success" class="alert alert-danger">
-            {{ validation.name.message }}
-          </div>
-        </div>
-        <div>
-          <label for="surname">Cognome *</label>
-          <br />
-          <input
-            type="text"
-            name="surname"
-            placeholder="Cognome..."
-            v-model="surname"
-            value=""
-            class="form-control"
-            required
-          />
-          <div v-if="!validation.surname.success" class="alert alert-danger">
-            {{ validation.surname.message }}
-          </div>
-        </div>
-        <div>
-          <label for="address">Indirizzo di consegna *</label>
-          <br />
-          <input
-            type="text"
-            name="address"
-            placeholder="Indirizzo..."
-            v-model="address"
-            value=""
-            class="form-control"
-            required
-          />
-          <div v-if="!validation.address.success" class="alert alert-danger">
-            {{ validation.address.message }}
-          </div>
-        </div>
+            <div>
+              <label for="phone" class="t4-orange-text ms-2"
+                >Numero di telefono *</label
+              >
+              <br />
+              <input
+                type="number"
+                name="phone"
+                placeholder="+39"
+                v-model="phone"
+                value=""
+                class="form-control"
+                required
+              />
+              <div v-if="!validation.phone.success" class="alert alert-danger">
+                {{ validation.phone.message }}
+              </div>
+            </div>
 
-        <div>
-          <label for="phone">Numero di telefono *</label>
-          <br />
-          <input
-            type="number"
-            name="phone"
-            placeholder="+39...."
-            v-model="phone"
-            value=""
-            class="form-control"
-            required
-          />
-          <div v-if="!validation.phone.success" class="alert alert-danger">
-            {{ validation.phone.message }}
+            <div>
+              <label for="email" class="t4-orange-text ms-2">Email *</label>
+              <br />
+              <input
+                type="email"
+                name="email"
+                placeholder="user@gmail.com"
+                v-model="email"
+                value=""
+                class="form-control"
+                required
+              />
+              <div v-if="!validation.email.success" class="alert alert-danger">
+                {{ validation.email.message }}
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <button @click="validateForm()" class="form-btn btn t4-add-btn">
+                Conferma i Dati
+              </button>
+            </div>
           </div>
         </div>
-
-        <div>
-          <label for="email">Email *</label>
-          <br />
-          <input
-            type="email"
-            name="email"
-            placeholder="user@gmail.com"
-            v-model="email"
-            value=""
-            class="form-control"
-            required
-          />
-          <div v-if="!validation.email.success" class="alert alert-danger">
-            {{ validation.email.message }}
+        <!-- ALTRIMENTI -->
+        <div v-else class="payment-part">
+          <div>
+            <p>{{ formData.surname }} {{ formData.name }}</p>
+            <p>{{ formData.address }}</p>
+            <p>+39 {{ formData.phone }}</p>
+            <p>{{ formData.email }}</p>
           </div>
-        </div>
-
-        <div class="d-flex justify-content-center">
-          <button @click="validateForm()" class="form-btn btn t4-add-btn">
-            Conferma i Dati
-          </button>
+          <Payment :formData="formData" :cartData="cartData" />
         </div>
       </div>
-    </div>
-    <!-- ALTRIMENTI -->
-    <div v-else class="payment-part">
-      <p>Inserisci i dati del pagamento</p>
-      <div>
-        <p>{{ formData.surname }} {{ formData.name }}</p>
-        <p>{{ formData.address }}</p>
-        <p>+39 {{ formData.phone }}</p>
-        <p>{{ formData.email }}</p>
+      <div
+        class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-8 col-8 t4-img-pay"
+      >
+        <img src="/images/cash-on-delivery.png" alt="" />
       </div>
-      <Payment :formData="formData" :cartData="cartData" />
     </div>
   </div>
 </template>
@@ -280,5 +297,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.t4-img-pay {
+  img {
+    width: 100%;
+  }
+}
 </style>
