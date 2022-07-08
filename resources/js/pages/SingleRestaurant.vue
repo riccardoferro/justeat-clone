@@ -48,14 +48,13 @@
         class="
           row
           d-flex
-          col-xxl-9 col-xl-10 col-lg-7 col-md-9 col-sm-7 col-9
+          col-xxl-9 col-xl-10 col-lg-8 col-md-9 col-sm-7 col-9
           m-auto
           mt-3
           justify-content-center
         "
       >
-
-      <!-- Piatti -->
+        <!-- Piatti -->
         <div
           v-for="plate in plates"
           :key="plate.name + plate.id"
@@ -88,7 +87,6 @@
               <p style="color: rgb(165, 4, 4)">Non disponibile</p>
             </div>
           </div>
-
 
           <div class="t4-card-buttons d-flex justify-content-center">
             <button
@@ -127,10 +125,8 @@
             >
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content t4-bg-black">
-
                   <!-- Bottone scegli la quantita' -->
                   <div class="d-flex align-items-center justify-content-center">
-
                     <h5
                       class="modal-title t4-orange-text text-center"
                       id="staticBackdropLabel"
@@ -148,7 +144,6 @@
                         ><img src="/images/cross.png" alt=""
                       /></span>
                     </button>
-
                   </div>
 
                   <div
@@ -159,8 +154,7 @@
                       align-items-center
                     "
                   >
-
-                  <!-- Decrement quantiy -->
+                    <!-- Decrement quantiy -->
                     <div
                       @click="
                         () => {
@@ -189,15 +183,13 @@
                     >
                       <img class="t4-w80" src="/images/plus1.png" alt="" />
                     </div>
-
                   </div>
-                  
+
                   <!-- Bottone conferma aggiunta al carrello-->
                   <div
                     class="modal-footer d-flex justify-content-center"
                     data-bs-dismiss="modal"
                   >
-
                     <button
                       @click="
                         () => {
@@ -207,62 +199,51 @@
                       type="button"
                       class="btn t4-add-btn"
                     >
-
                       <span class="">Conferma</span>
                       <img src="/images/check.png" alt="check" />
                     </button>
-
                   </div>
-
                 </div>
               </div>
-
             </div>
-
           </div>
-
-
         </div>
 
-
-      <!-- Fine Piatti -->
+        <!-- Fine Piatti -->
       </div>
 
-
-      <div v-if="plates.length > 1 && plates.length <=3 " class="row">
-          <div class="d-flex justify-content-center">
-            <button
-              :disabled="current_page != 1 ? false : true"
-              class="btn t4-add-btn me-3"
-              @click="
-                () => {
-                  prevPageFunction();
-                }
-              "
-            >
-              <span class="t4-icon-btn me-2">
-                <img src="/images/left-arrow.png" alt="prev" />
-              </span>
-              Precedente
-            </button>
-            <button
-              :disabled="current_page != last_page ? false : true"
-              class="btn t4-add-btn"
-              @click="
-                () => {
-                  nextPageFunction();
-                }
-              "
-            >
-              Successivo
-              <span class="t4-icon-btn ms-2">
-                <img src="/images/right-arrow.png" alt="next" />
-              </span>
-            </button>
-          </div>
+      <div v-if="plates.length > 1 && plates.length <= 3" class="row">
+        <div class="d-flex justify-content-center pt-5">
+          <button
+            :disabled="current_page != 1 ? false : true"
+            class="btn t4-add-btn me-3"
+            @click="
+              () => {
+                prevPageFunction();
+              }
+            "
+          >
+            <span class="t4-icon-btn me-2">
+              <img src="/images/left-arrow.png" alt="prev" />
+            </span>
+            Precedente
+          </button>
+          <button
+            :disabled="current_page != last_page ? false : true"
+            class="btn t4-add-btn"
+            @click="
+              () => {
+                nextPageFunction();
+              }
+            "
+          >
+            Successivo
+            <span class="t4-icon-btn ms-2">
+              <img src="/images/right-arrow.png" alt="next" />
+            </span>
+          </button>
+        </div>
       </div>
-
-
     </div>
 
     <div class="t4-card-buttons d-flex justify-content-center mt-5 mb-2">
@@ -274,7 +255,6 @@
         <img src="/images/home.png" alt="home" />
       </a>
     </div>
-
   </div>
 </template>
 
@@ -293,9 +273,8 @@ export default {
       nextPage: "",
       current_page: "",
       last_page: "",
-      url_getUser:"http://127.0.0.1:8000/api/users/",
+      url_getUser: "http://127.0.0.1:8000/api/users/",
       slug: this.$route.params.slug,
-
     };
   },
 
@@ -304,22 +283,17 @@ export default {
   },
 
   mounted() {
-
-
-      this.loadPage(this.url_getUser + this.slug);
-
+    this.loadPage(this.url_getUser + this.slug);
   },
 
   methods: {
-
-    loadPage(url){
+    loadPage(url) {
       // console.log(slug);
       window.axios
         .get(url)
         .then((results) => {
           // console.log("results", results);
           if (results.status === 200 && results.data.success) {
-
             this.restaurant = results.data.results;
             this.plates = results.data.plates.data;
 
@@ -338,7 +312,6 @@ export default {
         });
     },
 
-
     nextPageFunction() {
       this.url_getUser = this.nextPage;
       this.loadPage(this.url_getUser);
@@ -348,8 +321,6 @@ export default {
       this.url_getUser = this.prevPage;
       this.loadPage(this.url_getUser);
     },
-
-
 
     addItem(plate) {
       this.$emit("takeItem", plate);

@@ -452,9 +452,9 @@ margin-bottom: 20px;
 
 .t4-carousel-text {
     position: absolute;
-    top: 40%;
+    top: 20%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -20%);
 }
 
 .t4-search{
@@ -656,7 +656,7 @@ border-radius: 20px !important;
     }
     li {
         color: #0b100c !important;
-        
+
     }
     .page-item.active{
             .page-link{
@@ -669,4 +669,4 @@ border-radius: 20px !important;
             }
     }
 }
-   
+

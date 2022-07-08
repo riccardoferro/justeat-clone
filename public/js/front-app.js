@@ -6271,6 +6271,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6301,21 +6309,20 @@ __webpack_require__.r(__webpack_exports__);
     getUsersPerCategories: function getUsersPerCategories(url) {
       var _this = this;
 
-      console.log("this selected", this.categoriesArr);
+      // console.log("this selected", this.categoriesArr);
       window.axios.get(url, {
         params: {
           value: this.categoriesArr
         }
       }).then(function (results) {
-        console.log(results);
-
+        // console.log('dioooooo',results);
         if (results.status === 200) {
           _this.users = results.data.data;
           _this.nextPage = results.data.next_page_url;
           _this.prevPage = results.data.prev_page_url;
-          _this.last_page = results.data.last_page;
-          _this.current_page = results.data.current_page;
-          console.log(_this.users);
+          _this.last_page = results.data.last_page; // console.log('oooooooooooooooooo',this.last_page);
+
+          _this.current_page = results.data.current_page; // console.log(this.users);
         }
       })["catch"](function (e) {
         console.log(e);
@@ -6755,6 +6762,57 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
@@ -6763,30 +6821,52 @@ __webpack_require__.r(__webpack_exports__);
       plates: [],
       categories: [],
       orederQuantity: 0,
-      currentPlate: {}
+      currentPlate: {},
+      currentPage: "",
+      prevPage: "",
+      nextPage: "",
+      current_page: "",
+      last_page: "",
+      url_getUser: "http://127.0.0.1:8000/api/users/",
+      slug: this.$route.params.slug
     };
   },
   props: {
     cart: Array
   },
   mounted: function mounted() {
-    var _this = this;
-
-    var slug = this.$route.params.slug; // console.log(slug);
-
-    window.axios.get("http://127.0.0.1:8000/api/users/" + slug).then(function (results) {
-      // console.log("results Single Restaurant->", results);
-      if (results.status === 200 && results.data.success) {
-        _this.restaurant = results.data.results;
-        _this.plates = _this.restaurant.plates;
-        _this.categories = _this.restaurant.categories; //   console.log('category'.)
-      } // console.log(this.restaurant);
-
-    })["catch"](function (e) {
-      console.log(e);
-    });
+    this.loadPage(this.url_getUser + this.slug);
   },
   methods: {
+    loadPage: function loadPage(url) {
+      var _this = this;
+
+      // console.log(slug);
+      window.axios.get(url).then(function (results) {
+        // console.log("results", results);
+        if (results.status === 200 && results.data.success) {
+          _this.restaurant = results.data.results;
+          _this.plates = results.data.plates.data;
+          _this.nextPage = results.data.plates.next_page_url;
+          _this.prevPage = results.data.plates.prev_page_url;
+          _this.last_page = results.data.plates.last_page;
+          _this.current_page = results.data.plates.current_page; // console.log("piattiii",this.plates)
+
+          _this.categories = _this.restaurant.categories; //   console.log('category'.)
+        } // console.log(this.restaurant);
+
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    },
+    nextPageFunction: function nextPageFunction() {
+      this.url_getUser = this.nextPage;
+      this.loadPage(this.url_getUser);
+    },
+    prevPageFunction: function prevPageFunction() {
+      this.url_getUser = this.prevPage;
+      this.loadPage(this.url_getUser);
+    },
     addItem: function addItem(plate) {
       this.$emit("takeItem", plate); //   console.log("carrello", this.cart);
     },
@@ -45510,13 +45590,14 @@ var render = function () {
         )
       : _c("div", [_vm._v("Nessun ristorante da mostrare")]),
     _vm._v(" "),
-    _vm.users.length > 0
+    _vm.users.length > 0 && _vm.categoriesArr.length > 0
       ? _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "d-flex justify-content-center" }, [
             _c(
               "button",
               {
-                staticClass: "btn t4-add-btn me-3",
+                staticClass: "btn t4-add-btn me-3 current_pag",
+                attrs: { disabled: _vm.current_page != 1 ? false : true },
                 on: {
                   click: function () {
                     _vm.prevPageFunction()
@@ -45530,6 +45611,9 @@ var render = function () {
               "button",
               {
                 staticClass: "btn t4-add-btn",
+                attrs: {
+                  disabled: _vm.current_page != _vm.last_page ? false : true,
+                },
                 on: {
                   click: function () {
                     _vm.nextPageFunction()
@@ -45730,7 +45814,7 @@ var render = function () {
         "div",
         {
           staticClass:
-            "\n        row\n        d-flex\n        col-xxl-9 col-xl-10 col-lg-7 col-md-9 col-sm-7 col-9\n        m-auto\n        mt-3\n        justify-content-center\n      ",
+            "\n        row\n        d-flex\n        col-xxl-9 col-xl-10 col-lg-8 col-md-9 col-sm-7 col-9\n        m-auto\n        mt-3\n        justify-content-center\n      ",
         },
         _vm._l(_vm.plates, function (plate) {
           return _c(
@@ -45980,9 +46064,45 @@ var render = function () {
         }),
         0
       ),
+      _vm._v(" "),
+      _vm.plates.length > 1 && _vm.plates.length <= 3
+        ? _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "d-flex justify-content-center pt-5" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn t4-add-btn me-3",
+                  attrs: { disabled: _vm.current_page != 1 ? false : true },
+                  on: {
+                    click: function () {
+                      _vm.prevPageFunction()
+                    },
+                  },
+                },
+                [_vm._m(3), _vm._v("\n          Precedente\n        ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn t4-add-btn",
+                  attrs: {
+                    disabled: _vm.current_page != _vm.last_page ? false : true,
+                  },
+                  on: {
+                    click: function () {
+                      _vm.nextPageFunction()
+                    },
+                  },
+                },
+                [_vm._v("\n          Successivo\n          "), _vm._m(4)]
+              ),
+            ]),
+          ])
+        : _vm._e(),
     ]),
     _vm._v(" "),
-    _vm._m(3),
+    _vm._m(5),
   ])
 }
 var staticRenderFns = [
@@ -46044,6 +46164,22 @@ var staticRenderFns = [
         ),
       ]
     )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "t4-icon-btn me-2" }, [
+      _c("img", { attrs: { src: "/images/left-arrow.png", alt: "prev" } }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "t4-icon-btn ms-2" }, [
+      _c("img", { attrs: { src: "/images/right-arrow.png", alt: "next" } }),
+    ])
   },
   function () {
     var _vm = this
@@ -62751,7 +62887,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\crist\Desktop\Booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
