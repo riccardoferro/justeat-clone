@@ -35,7 +35,9 @@
           >
             <!-- FINE SEZIONE SINGOLO RISTORANTE  -->
 
-            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12">
+            <div
+              class="col-xxl-10 col-xl-8 col-lg-7 col-md-10 col-sm-12 col-12"
+            >
               <img :src="imagePut(user.image)" alt="" />
             </div>
             <div class="mt-3">

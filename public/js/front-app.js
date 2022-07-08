@@ -6074,6 +6074,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCardsComponent",
   props: {
@@ -44481,7 +44483,7 @@ var render = function () {
                   "div",
                   {
                     staticClass:
-                      "\n            col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12\n            t4-img-company t4-img-category\n          ",
+                      "\n            col-xxl-8 col-xl-8 col-lg-10 col-md-10 col-sm-12 col-12\n            t4-img-company t4-img-category\n          ",
                   },
                   [
                     _c("h6", { staticClass: "t4-title-category" }, [
@@ -45387,7 +45389,7 @@ var render = function () {
                     "div",
                     {
                       staticClass:
-                        "col-xxl-8 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12",
+                        "col-xxl-10 col-xl-8 col-lg-7 col-md-10 col-sm-12 col-12",
                     },
                     [
                       _c("img", {
