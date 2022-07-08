@@ -88,10 +88,12 @@
     </div>
     <div v-else>Nessun ristorante da mostrare</div>
 
-    <div v-if="users.length > 0" class="row">
+    <div v-if="users.length > 0 && categoriesArr.length > 0" class="row">
       <div class="d-flex justify-content-center">
         <button
-          class="btn t4-add-btn me-3"
+
+          :disabled="current_page != 1 ? false : true"
+          class="btn t4-add-btn me-3 current_pag"
           @click="
             () => {
               prevPageFunction();
@@ -103,7 +105,9 @@
           </span>
           Precedente
         </button>
+
         <button
+          :disabled="current_page != last_page ? false : true"
           class="btn t4-add-btn"
           @click="
             () => {
@@ -154,7 +158,7 @@ export default {
   methods: {
     // Prende tutti ristoranti in base alle categorie
     getUsersPerCategories(url) {
-      console.log("this selected", this.categoriesArr);
+      // console.log("this selected", this.categoriesArr);
       window.axios
         .get(url, {
           params: {
@@ -162,14 +166,15 @@ export default {
           },
         })
         .then((results) => {
-          console.log(results);
+          // console.log('dioooooo',results);
           if (results.status === 200) {
             this.users = results.data.data;
             this.nextPage = results.data.next_page_url;
             this.prevPage = results.data.prev_page_url;
             this.last_page = results.data.last_page;
+            // console.log('oooooooooooooooooo',this.last_page);
             this.current_page = results.data.current_page;
-            console.log(this.users);
+            // console.log(this.users);
           }
         })
         .catch((e) => {

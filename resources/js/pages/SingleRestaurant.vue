@@ -229,9 +229,10 @@
       </div>
 
 
-      <div v-if="plates.length > 0" class="row">
+      <div v-if="plates.length > 1 && plates.length <=3 " class="row">
           <div class="d-flex justify-content-center">
             <button
+              :disabled="current_page != 1 ? false : true"
               class="btn t4-add-btn me-3"
               @click="
                 () => {
@@ -245,6 +246,7 @@
               Precedente
             </button>
             <button
+              :disabled="current_page != last_page ? false : true"
               class="btn t4-add-btn"
               @click="
                 () => {
@@ -291,7 +293,9 @@ export default {
       nextPage: "",
       current_page: "",
       last_page: "",
-      url_getUser:"http://127.0.0.1:8000/api/users/"
+      url_getUser:"http://127.0.0.1:8000/api/users/",
+      slug: this.$route.params.slug,
+
     };
   },
 
@@ -300,28 +304,29 @@ export default {
   },
 
   mounted() {
-      this.loadPage(this.url_getUser);
+
+
+      this.loadPage(this.url_getUser + this.slug);
 
   },
 
   methods: {
 
     loadPage(url){
-      const slug = this.$route.params.slug;
       // console.log(slug);
       window.axios
-        .get(url + slug)
+        .get(url)
         .then((results) => {
-          console.log("results", results);
+          // console.log("results", results);
           if (results.status === 200 && results.data.success) {
 
             this.restaurant = results.data.results;
             this.plates = results.data.plates.data;
 
-            this.nextPage = this.plates.next_page_url;
-            this.prevPage = this.plates.prev_page_url;
-            this.last_page = this.plates.last_page;
-            this.current_page = this.plates.current_page;
+            this.nextPage = results.data.plates.next_page_url;
+            this.prevPage = results.data.plates.prev_page_url;
+            this.last_page = results.data.plates.last_page;
+            this.current_page = results.data.plates.current_page;
 
             // console.log("piattiii",this.plates)
             this.categories = this.restaurant.categories; //   console.log('category'.)
