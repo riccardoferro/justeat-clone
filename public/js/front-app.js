@@ -6281,6 +6281,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6829,6 +6833,7 @@ __webpack_require__.r(__webpack_exports__);
       nextPage: "",
       current_page: "",
       last_page: "",
+      totalPages: 0,
       url_getUser: "http://127.0.0.1:8000/api/users/",
       slug: this.$route.params.slug
     };
@@ -6845,14 +6850,16 @@ __webpack_require__.r(__webpack_exports__);
 
       // console.log(slug);
       window.axios.get(url).then(function (results) {
-        // console.log("results", results);
+        console.log("results", results);
+
         if (results.status === 200 && results.data.success) {
           _this.restaurant = results.data.results;
           _this.plates = results.data.plates.data;
           _this.nextPage = results.data.plates.next_page_url;
           _this.prevPage = results.data.plates.prev_page_url;
           _this.last_page = results.data.plates.last_page;
-          _this.current_page = results.data.plates.current_page; // console.log("piattiii",this.plates)
+          _this.current_page = results.data.plates.current_page;
+          _this.totalPages = results.data.plates.total; // console.log("piattiii",this.plates)
 
           _this.categories = _this.restaurant.categories; //   console.log('category'.)
         } // console.log(this.restaurant);
@@ -45197,7 +45204,7 @@ var staticRenderFns = [
                 [
                   _c("img", {
                     staticClass: "d-block w-100",
-                    attrs: { src: "/images/jumbo.png", alt: "jumbo-home" },
+                    attrs: { src: "/images/Jumbo.png", alt: "jumbo-home" },
                   }),
                   _vm._v(" "),
                   _c("div", { staticClass: "text-center t4-carousel-text" }, [
@@ -45460,47 +45467,50 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid pb-5" }, [
-    _c("h3", { staticClass: "mt-5" }, [
+    _c("h2", { staticClass: "mt-5 text-center" }, [
       _vm._v(
-        "\n    Seleziona una categoria e vedi i ristoranti a disposizione\n  "
+        "\n    Seleziona una categoria e visualizza i ristoranti disponibili\n  "
       ),
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      [
-        _c("h3", [_vm._v("Categorie")]),
-        _vm._v(" "),
+    _c("div", { staticClass: "mt-5" }, [
+      _c(
+        "div",
+        { staticClass: "d-flex justify-content-center flex-wrap" },
         _vm._l(_vm.categories, function (category) {
-          return _c("div", { key: category.slug, staticClass: "form-check" }, [
-            _c("input", {
-              staticClass: "form-check-input",
-              attrs: { type: "checkbox", id: "category" + category.id },
-              domProps: {
-                value: category.slug,
-                checked: _vm.categoriesArr.includes(category.slug),
-              },
-              on: {
-                click: function () {
-                  _vm.toggleCheckbox(category.slug)
-                  _vm.getUsersPerCategories(_vm.url_getUsers)
+          return _c(
+            "div",
+            { key: category.slug, staticClass: "form-check form-check-inline" },
+            [
+              _c("input", {
+                staticClass: "form-check-input",
+                attrs: { type: "checkbox", id: "category" + category.id },
+                domProps: {
+                  value: category.slug,
+                  checked: _vm.categoriesArr.includes(category.slug),
                 },
-              },
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass: "form-check-label",
-                attrs: { for: "category" + category.id },
-              },
-              [_vm._v("\n        " + _vm._s(category.name) + "\n      ")]
-            ),
-          ])
+                on: {
+                  click: function () {
+                    _vm.toggleCheckbox(category.slug)
+                    _vm.getUsersPerCategories(_vm.url_getUsers)
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "form-check-label",
+                  attrs: { for: "category" + category.id },
+                },
+                [_vm._v("\n          " + _vm._s(category.name) + "\n        ")]
+              ),
+            ]
+          )
         }),
-      ],
-      2
-    ),
+        0
+      ),
+    ]),
     _vm._v(" "),
     _vm.categoriesArr.length > 0
       ? _c(
@@ -45512,12 +45522,14 @@ var render = function () {
               {
                 key: user.id,
                 staticClass:
-                  "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-label\n      ",
+                  "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-7 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-label\n      ",
               },
               [
                 _c(
                   "router-link",
                   {
+                    staticClass:
+                      "d-flex flex-column align-items-center mt-5 mb-5",
                     attrs: {
                       to: {
                         name: "single-restaurant",
@@ -45590,7 +45602,7 @@ var render = function () {
           }),
           0
         )
-      : _c("div", [_vm._v("Nessun ristorante da mostrare")]),
+      : _c("div", [_vm._m(0)]),
     _vm._v(" "),
     _vm.users.length > 0 && _vm.categoriesArr.length > 0
       ? _c("div", { staticClass: "row" }, [
@@ -45606,7 +45618,7 @@ var render = function () {
                   },
                 },
               },
-              [_vm._m(0), _vm._v("\n        Precedente\n      ")]
+              [_vm._m(1), _vm._v("\n        Precedente\n      ")]
             ),
             _vm._v(" "),
             _c(
@@ -45622,7 +45634,7 @@ var render = function () {
                   },
                 },
               },
-              [_vm._v("\n        Successivo\n        "), _vm._m(1)]
+              [_vm._v("\n        Successivo\n        "), _vm._m(2)]
             ),
           ]),
         ])
@@ -45630,6 +45642,23 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "d-flex justify-content-center align-items-center mt-5" },
+      [
+        _c("span", { staticClass: "t4-warning me-2" }, [
+          _c("img", { attrs: { src: "/images/warning.png", alt: "warning" } }),
+        ]),
+        _vm._v(
+          "\n      Seleziona una categoria per visualizzare un ristorante\n    "
+        ),
+      ]
+    )
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -46067,7 +46096,7 @@ var render = function () {
         0
       ),
       _vm._v(" "),
-      _vm.plates.length > 1 && _vm.plates.length <= 3
+      _vm.plates.length >= 1 && _vm.plates.length <= 3 && _vm.totalPages !== 1
         ? _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "d-flex justify-content-center pt-5" }, [
               _c(
