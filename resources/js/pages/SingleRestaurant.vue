@@ -212,7 +212,7 @@
         <!-- Fine Piatti -->
       </div>
 
-      <div v-if="plates.length >= 1 && plates.length <= 3" class="row">
+      <div v-if="plates.length >= 1 && plates.length <= 3 && totalPages !== 1" class="row">
         <div class="d-flex justify-content-center pt-5">
           <button
             :disabled="current_page != 1 ? false : true"
@@ -273,6 +273,7 @@ export default {
       nextPage: "",
       current_page: "",
       last_page: "",
+      totalPages: 0,
       url_getUser: "http://127.0.0.1:8000/api/users/",
       slug: this.$route.params.slug,
     };
@@ -292,7 +293,7 @@ export default {
       window.axios
         .get(url)
         .then((results) => {
-          // console.log("results", results);
+          console.log("results", results);
           if (results.status === 200 && results.data.success) {
             this.restaurant = results.data.results;
             this.plates = results.data.plates.data;
@@ -301,7 +302,7 @@ export default {
             this.prevPage = results.data.plates.prev_page_url;
             this.last_page = results.data.plates.last_page;
             this.current_page = results.data.plates.current_page;
-
+            this.totalPages = results.data.plates.total;
             // console.log("piattiii",this.plates)
             this.categories = this.restaurant.categories; //   console.log('category'.)
           }
