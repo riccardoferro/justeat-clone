@@ -62,7 +62,7 @@
         >
           <!-- Immagine -->
           <div class="t4-card-img">
-            <img :src="'storage/' + plate.image" alt="" />
+            <img :src="'/storage/' + plate.image" alt="" />
           </div>
 
           <!-- Nome -->

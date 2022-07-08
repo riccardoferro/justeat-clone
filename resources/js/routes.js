@@ -22,7 +22,12 @@ const router = new VueRouter({
             component: HomeComponent
         },
         {
-            path: '/:slug',
+            path: '/payments',
+            name: 'payments-page',
+            component: PaymentsPage
+        },
+        {
+            path: '/restaurant/:slug',
             name: 'single-restaurant',
             component: SingleRestaurant
         },
@@ -30,11 +35,6 @@ const router = new VueRouter({
             path: '/category/:slug',
             name: 'category-restaurants-filter',
             component: CategoryRestaurantsFilter
-        },
-        {
-            path: '/payments',
-            name: 'payments-page',
-            component: PaymentsPage
         },
         {
             path: '/payments/success',
