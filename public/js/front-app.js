@@ -45480,10 +45480,13 @@ var render = function () {
         _vm._l(_vm.categories, function (category) {
           return _c(
             "div",
-            { key: category.slug, staticClass: "form-check form-check-inline" },
+            {
+              key: category.slug,
+              staticClass: "form-check form-check-inline mb-3",
+            },
             [
               _c("input", {
-                staticClass: "form-check-input",
+                staticClass: "btn-check",
                 attrs: { type: "checkbox", id: "category" + category.id },
                 domProps: {
                   value: category.slug,
@@ -45500,7 +45503,7 @@ var render = function () {
               _c(
                 "label",
                 {
-                  staticClass: "form-check-label",
+                  staticClass: "btn t4-add-btn",
                   attrs: { for: "category" + category.id },
                 },
                 [_vm._v("\n          " + _vm._s(category.name) + "\n        ")]

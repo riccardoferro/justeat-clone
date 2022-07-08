@@ -11,12 +11,12 @@
     <div class="mt-5">
       <div class="d-flex justify-content-center flex-wrap">
         <div
-          class="form-check form-check-inline"
+          class="form-check form-check-inline mb-3"
           v-for="category in categories"
           :key="category.slug"
         >
           <input
-            class="form-check-input"
+            class="btn-check"
             type="checkbox"
             :value="category.slug"
             :id="'category' + category.id"
@@ -29,7 +29,7 @@
             "
           />
 
-          <label class="form-check-label" :for="'category' + category.id">
+          <label class="btn t4-add-btn" :for="'category' + category.id">
             {{ category.name }}
           </label>
         </div>
