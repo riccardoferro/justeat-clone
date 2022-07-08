@@ -31,13 +31,17 @@ class AppServiceProvider extends ServiceProvider
             // come parametro passeremo la configurazione di BrainTree che abbiamo sul file ENV
             return new Gateway(
                 [
-                
+
                 // Cancellate Mettere le proprie tramite file env
                 // 'environment' => getenv('BT_ENVIRONMENT'),
                 // 'merchantId' => getenv('BT_MERCHANT_ID'),
                 // 'publicKey' => getenv('BT_PUBLIC_KEY'),
                 // 'privateKey' => getenv('BT_PRIVATE_KEY')
-                
+                    "environment" => "sandbox",
+                    "merchantId" => "r59zhcpbv3j9b4pd",
+                    "publicKey" => "n6zxxssk5cfq8zqy",
+                    "privateKey" => "15865aa9f38028430003d28a6c4e7ba4"
+
                 ]
             );
         });
