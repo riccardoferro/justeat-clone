@@ -36928,7 +36928,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-bg-banner-info[data-v-d8e4eef0] {\n  background-image: url(\"/images/rider.png\");\n  background-size: cover;\n  background-position-y: center;\n  padding-top: 50px;\n  padding-bottom: 200px;\n}\n.t4-card-Info[data-v-d8e4eef0] {\n  background: rgba(0, 0, 0, 0.5);\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(18.5px);\n  -webkit-backdrop-filter: blur(18.5px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  padding: 25px;\n  margin: 20px;\n}", ""]);
+exports.push([module.i, ".t4-bg-banner-info[data-v-d8e4eef0] {\n  background-image: url(\"/images/rider.png\");\n  background-size: cover;\n  background-position-y: center;\n  padding-top: 50px;\n  padding-bottom: 200px;\n}\n.t4-card-Info[data-v-d8e4eef0] {\n  background: rgba(0, 0, 0, 0.5);\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(18.5px);\n  -webkit-backdrop-filter: blur(18.5px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  padding: 25px;\n  margin: 20px;\n}\na[data-v-d8e4eef0]:hover {\n  color: #fd7d2b;\n}", ""]);
 
 // exports
 
@@ -37080,7 +37080,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-img-pay img[data-v-6adc2365] {\n  width: 100%;\n}\nlabel[data-v-6adc2365] {\n  width: 100%;\n}\n.t4-img-sum img[data-v-6adc2365] {\n  width: 100%;\n}\n.t4-summary[data-v-6adc2365] {\n  border: 2px solid #fd7d2b;\n  border-radius: 20px;\n  padding: 20px;\n}", ""]);
+exports.push([module.i, ".t4-img-pay img[data-v-6adc2365] {\n  width: 100%;\n}\nlabel[data-v-6adc2365] {\n  width: 100%;\n}\n.t4-img-sum img[data-v-6adc2365] {\n  width: 50px;\n}\n.t4-summary[data-v-6adc2365] {\n  border: 2px solid #fd7d2b;\n  border-radius: 20px;\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -71311,7 +71311,7 @@ var render = function () {
                 "div",
                 {
                   staticClass:
-                    "col-xxl-5 col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 pb-5",
+                    "col-xxl-5 col-xl-6 col-lg-6 col-md-10 col-sm-8 col-8 pb-5",
                 },
                 [
                   !_vm.formComplete
@@ -71621,7 +71621,7 @@ var render = function () {
                         { staticClass: "payment-part" },
                         [
                           _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col-6" }, [
+                            _c("div", {}, [
                               _c(
                                 "div",
                                 {
@@ -71690,48 +71690,50 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-3" }, [
+        _c("div", { staticClass: "col-5" }, [
           _c(
             "div",
             { staticClass: "t4-summary" },
-            _vm._l(_vm.cart, function (plate, index) {
-              return _c("div", { key: plate.id + "" + index }, [
-                _c("div", { staticClass: "t4-img-sum" }, [
-                  _c("h6", { staticClass: "text-center mb-3" }, [
-                    _vm._v("Riepilogo Ordine"),
-                  ]),
-                  _vm._v(" "),
-                  _c("img", {
-                    attrs: { src: "/storage/" + plate.image, alt: plate.name },
-                  }),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "mt-3" }, [
-                  _c("h6", [_vm._v(_vm._s(plate.name))]),
-                  _vm._v(" "),
-                  _c("span", [
-                    _c("span", { staticClass: "t4-orange-text" }, [
-                      _vm._v("Prezzo:"),
+            [
+              _c("h6", { staticClass: "text-center mb-3" }, [
+                _vm._v("Riepilogo Ordine"),
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.cart, function (plate, index) {
+                return _c(
+                  "div",
+                  {
+                    key: plate.id + "" + index,
+                    staticClass:
+                      "d-flex align-items-center justify-content-between",
+                  },
+                  [
+                    _c("div", { staticClass: "mt-3" }, [
+                      _c("h6", [_vm._v(_vm._s(plate.name))]),
+                      _vm._v(" "),
+                      _c("span", [
+                        _c("span", { staticClass: "t4-orange-text" }),
+                        _vm._v("\n              " + _vm._s(plate.price) + " €"),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "ms-2" }, [
+                        _vm._v("X" + _vm._s(plate.quantity)),
+                      ]),
                     ]),
-                    _vm._v("\n              " + _vm._s(plate.price) + " €"),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("X" + _vm._s(plate.quantity))]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _c("span", { staticClass: "t4-orange-text" }, [
-                      _vm._v("Totale:"),
-                    ]),
-                    _vm._v(
-                      "\n              " +
-                        _vm._s(_vm.prezzoTotale()) +
-                        " €\n            "
-                    ),
-                  ]),
+                  ]
+                )
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-center mt-5" }, [
+                _c("span", { staticClass: "t4-orange-text" }, [
+                  _vm._v("Totale:"),
                 ]),
-              ])
-            }),
-            0
+                _vm._v(
+                  "\n          " + _vm._s(_vm.prezzoTotale()) + " €\n        "
+                ),
+              ]),
+            ],
+            2
           ),
         ]),
       ]
@@ -89160,7 +89162,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
