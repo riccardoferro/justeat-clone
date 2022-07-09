@@ -55,4 +55,8 @@ export default {
   padding: 25px;
   margin: 20px;
 }
+
+a:hover {
+  color: #fd7d2b;
+}
 </style>

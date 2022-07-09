@@ -7,7 +7,7 @@
         <!-- FORM UTENTE  -->
         <div class="row justify-content-around align-items-center pt-5">
           <div
-            class="col-xxl-5 col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 pb-5"
+            class="col-xxl-5 col-xl-6 col-lg-6 col-md-10 col-sm-8 col-8 pb-5"
           >
             <div v-if="!formComplete" class="form">
               <div class="action">
@@ -128,7 +128,7 @@
             <!-- ALTRIMENTI -->
             <div v-else class="payment-part">
               <div class="row">
-                <div class="col-6">
+                <div class="">
                   <div
                     class="d-flex flex-column align-items-sm-center t4-dataUser"
                   >
@@ -152,27 +152,27 @@
         </div>
       </div>
       <!-- Riepilogo Ordine -->
-      <div class="col-3">
+      <div class="col-5">
         <div class="t4-summary">
-          <div v-for="(plate, index) in cart" :key="plate.id + `${index}`">
-            <div class="t4-img-sum">
-              <h6 class="text-center mb-3">Riepilogo Ordine</h6>
-              <img :src="'/storage/' + plate.image" :alt="plate.name" />
-            </div>
+          <h6 class="text-center mb-3">Riepilogo Ordine</h6>
+          <div
+            v-for="(plate, index) in cart"
+            :key="plate.id + `${index}`"
+            class="d-flex align-items-center justify-content-between"
+          >
             <div class="mt-3">
               <h6>{{ plate.name }}</h6>
               <span
-                ><span class="t4-orange-text">Prezzo:</span>
+                ><span class="t4-orange-text"></span>
                 {{ plate.price }} &euro;</span
               >
-              <p>X{{ plate.quantity }}</p>
-
-              <p>
-                <span class="t4-orange-text">Totale:</span>
-                {{ prezzoTotale() }} &euro;
-              </p>
+              <span class="ms-2">X{{ plate.quantity }}</span>
             </div>
           </div>
+          <p class="text-center mt-5">
+            <span class="t4-orange-text">Totale:</span>
+            {{ prezzoTotale() }} &euro;
+          </p>
         </div>
       </div>
     </div>
@@ -367,7 +367,7 @@ label {
 
 .t4-img-sum {
   img {
-    width: 100%;
+    width: 50px;
   }
 }
 
