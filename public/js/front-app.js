@@ -6290,6 +6290,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6539,6 +6548,19 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7376,6 +7398,27 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -36947,7 +36990,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-icon-btn img[data-v-4b9d0d57] {\n  width: 20px;\n}\n.btn-check:focus + .btn[data-v-4b9d0d57],\n.btn[data-v-4b9d0d57]:focus {\n  outline: 2px solid #fd7d2b;\n  outline-offset: 2px;\n}\n.t4-icon-company img[data-v-4b9d0d57] {\n  width: 35px;\n}", ""]);
+exports.push([module.i, ".checkedBox[data-v-4b9d0d57] {\n  background-color: #fd7d2b !important;\n  color: #0b100c !important;\n}\n.t4-icon-btn img[data-v-4b9d0d57] {\n  width: 20px;\n}\n.btn-check:focus + .btn[data-v-4b9d0d57],\n.btn[data-v-4b9d0d57]:focus {\n  outline: 2px solid #fd7d2b;\n  outline-offset: 2px;\n}\n.t4-icon-company img[data-v-4b9d0d57] {\n  width: 35px;\n}", ""]);
 
 // exports
 
@@ -70778,31 +70821,45 @@ var render = function () {
         "div",
         { staticClass: "d-flex justify-content-center flex-wrap" },
         _vm._l(_vm.categories, function (category) {
-          return _c("div", { key: category.slug, staticClass: "mb-3" }, [
-            _c("input", {
-              staticClass: "btn-check",
-              attrs: { type: "checkbox", id: "category" + category.id },
-              domProps: {
-                value: category.slug,
-                checked: _vm.categoriesArr.includes(category.slug),
-              },
-              on: {
-                click: function () {
-                  _vm.toggleCheckbox(category.slug)
-                  _vm.getUsersPerCategories(_vm.url_getUsers)
+          return _c(
+            "div",
+            {
+              key: category.slug,
+              staticClass: "form-check form-check-inline mb-3",
+            },
+            [
+              _c("input", {
+                staticClass: "btn-check",
+                attrs: { type: "checkbox", id: "category" + category.id },
+                domProps: {
+                  value: category.slug,
+                  checked: _vm.categoriesArr.includes(category.slug),
                 },
-              },
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass: "btn t4-add-btn me-3",
-                attrs: { for: "category" + category.id },
-              },
-              [_vm._v("\n          " + _vm._s(category.name) + "\n        ")]
-            ),
-          ])
+                on: {
+                  click: function () {
+                    _vm.toggleCheckbox(category.slug)
+                    _vm.getUsersPerCategories(_vm.url_getUsers)
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "btn t4-add-btn",
+                  class: _vm.categoriesArr.includes(category.slug)
+                    ? "checkedBox"
+                    : "",
+                  attrs: { for: "category" + category.id },
+                },
+                [
+                  _vm._v(
+                    "\n            " + _vm._s(category.name) + "\n        "
+                  ),
+                ]
+              ),
+            ]
+          )
         }),
         0
       ),
@@ -71039,11 +71096,51 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h3", { staticClass: "text-center pt-5 mt-5" }, [
-        _vm._v("\n      NOT FOUND PAGE VUE\n  "),
-      ]),
-    ])
+    return _c(
+      "div",
+      {
+        staticClass:
+          "container t4-h80vh d-flex align-items-center justify-content-center",
+      },
+      [
+        _c("div", { staticClass: "row justify-content-center text-center" }, [
+          _c("h1", { staticClass: "t4-orangeText m-auto" }, [
+            _vm._v("Pagina non trovata"),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-8 col-xl-4 col-md-5 m-auto d-flex justify-content-center",
+            },
+            [
+              _c("img", {
+                staticClass: "t4-w100",
+                attrs: { src: "/images/404.png", alt: "" },
+              }),
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-3 d-flex justify-content-center" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn t4-add-btn d-flex align-items-center",
+                  attrs: { href: "/" },
+                },
+                [
+                  _c("span", { staticClass: "me-2" }, [_vm._v("Home")]),
+                  _vm._v(" "),
+                  _c("img", { attrs: { src: "/images/replay.png", alt: "" } }),
+                ]
+              ),
+            ]),
+          ]),
+        ]),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -72035,18 +72132,57 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c("h1", [
-            _vm._v("\n        Pagamento avvenuto con succeso!\n        "),
-            _c("span", [
-              _c("img", {
-                attrs: { src: "/images/success.png", alt: "success" },
-              }),
+      _c(
+        "div",
+        {
+          staticClass:
+            "\n      container\n      t4-h80vh\n      d-flex\n      align-items-center\n      justify-content-center\n    ",
+        },
+        [
+          _c("div", { staticClass: "row justify-content-center text-center" }, [
+            _c("h1", { staticClass: "t4-orange-text m-auto" }, [
+              _vm._v("Pagamento avvenuto con successo!"),
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "\n          col-4 col-xl-3 col-xxl-3 col-md-4\n          m-auto\n          d-flex\n          justify-content-center\n        ",
+              },
+              [
+                _c("img", {
+                  staticClass: "t4-w100 pt-5 pb-5",
+                  attrs: { src: "/images/success.png", alt: "" },
+                }),
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c(
+                "div",
+                { staticClass: "col-3 d-flex justify-content-center" },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn t4-add-btn d-flex align-items-center",
+                      attrs: { href: "/" },
+                    },
+                    [
+                      _c("span", { staticClass: "me-2" }, [_vm._v("Home")]),
+                      _vm._v(" "),
+                      _c("img", {
+                        attrs: { src: "/images/replay.png", alt: "" },
+                      }),
+                    ]
+                  ),
+                ]
+              ),
             ]),
           ]),
-        ]),
-      ]),
+        ]
+      ),
     ])
   },
 ]
