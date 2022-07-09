@@ -2,16 +2,18 @@
 
 @section('navcategory')
     <div class="t4-nav-links">
-        <a class="me-3 t4-orange-text" href="{{ url('admin/user') }}" "> PROFILO</a>
-                        @if (count($user->categories))
+        <a class="me-3 t4-orange-text" href="{{ url('admin/user') }}"> PROFILO</a>
+        @if (count($user->categories))
             <a class="me-3 t4-orange-text" href="{{ route('admin.categories.edit', $user->id) }}"> CATEGORIE </a>
             <a class="me-3 t4-orange-text" href="{{ url('admin/plates') }}">PIATTI</a>
+            <a class="me-3 t4-orange-text" href="{{ url('admin/order') }}"> ORDINI </a>
         @else
-            <a class="me-3 t4-orange-text" href="{{ route('admin.categories.create', $user->id) }}" "> CATEGORIE </a>
-                        <a class="me-3 t4-orange-text" href="#" ">PIATTI</a>
-            @endif
+            <a class="me-3 t4-orange-text" href="{{ route('admin.categories.create', $user->id) }}"> CATEGORIE </a>
+            <a class="me-3 t4-orange-text" href="#">PIATTI</a>
             <a class="me-3 t4-orange-text" href="{{ url('#') }}"> ORDINI </a>
-            {{-- <a class="me-3" href="{{ url('#') }}"> STATISTICHE </a> --}}
+        @endif
+
+        {{-- <a class="me-3" href="{{ url('#') }}"> STATISTICHE </a> --}}
     </div>
 @endsection
 
