@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid pb-5">
     <h2 class="text-center mt-5">Inserisci i dati della consegna</h2>
     <h6 class="text-center">Compila correttamente tutti i campi</h6>
     <!-- Qui andrà inserito il nome del ristorante dove stiamo ordinando -->
@@ -126,7 +126,7 @@
         </div>
       </div>
       <div
-        class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-8 col-8 t4-img-pay"
+        class="col-xxl-4 col-xl-3 col-lg-4 col-md-4 col-sm-8 col-8 t4-img-pay"
       >
         <img src="/images/cash-on-delivery.png" alt="" />
       </div>

@@ -8,7 +8,6 @@
 
     <CategoriesCardsComponent :categories="categories" />
     <BannerInfoComponent />
-    <FooterComponent />
   </div>
 </template>
 
@@ -17,7 +16,6 @@ import JumbotronComponent from "../components/JumbotronComponent.vue";
 import CategoriesCardsComponent from "../components/CategoriesCardsComponent.vue";
 import BannerAppComponent from "../components/BannerAppComponent.vue";
 import BannerInfoComponent from "../components/BannerInfoComponent.vue";
-import FooterComponent from "../components/FooterComponent.vue";
 import RestaurantCardsComponent from "../components/RestaurantCardsComponent.vue";
 export default {
   name: "HomeComponent",
@@ -26,7 +24,6 @@ export default {
     CategoriesCardsComponent,
     BannerAppComponent,
     BannerInfoComponent,
-    FooterComponent,
     RestaurantCardsComponent,
   },
   data() {
