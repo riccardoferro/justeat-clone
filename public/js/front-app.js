@@ -71459,7 +71459,7 @@ var render = function () {
             [
               _c("div", { staticClass: "t4-card-img" }, [
                 _c("img", {
-                  attrs: { src: "storage/" + plate.image, alt: "" },
+                  attrs: { src: "/storage/" + plate.image, alt: "" },
                 }),
               ]),
               _vm._v(" "),
@@ -88654,17 +88654,17 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'home-booleat',
     component: _pages_HomeComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/:slug',
+    path: '/payments',
+    name: 'payments-page',
+    component: _pages_PaymentsPage__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }, {
+    path: '/restaurant/:slug',
     name: 'single-restaurant',
     component: _pages_SingleRestaurant__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/category/:slug',
     name: 'category-restaurants-filter',
     component: _pages_CategoryRestaurantsFilter__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }, {
-    path: '/payments',
-    name: 'payments-page',
-    component: _pages_PaymentsPage__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     path: '/payments/success',
     name: 'success',
