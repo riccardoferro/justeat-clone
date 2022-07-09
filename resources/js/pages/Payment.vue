@@ -1,11 +1,23 @@
 <template>
   <div class="container-fluid t4-payment-card" v-if="tokenGenerate">
+    <h2>Inserisci i dati della carta</h2>
     <v-braintree
       class="brain"
       :authorization="Token"
       @success="onSuccess"
       @error="onError"
     >
+      <!-- da rivedere -->
+      <template #button="slotProps">
+        <button
+          ref="paymentBtnRef"
+          @click="slotProps.submit"
+          style="display: none"
+        ></button>
+        <button class="btn t4-add-btn mt-2 mb-3" @click="continueToPayment()">
+          Procedi con l'acquisto
+        </button>
+      </template>
     </v-braintree>
   </div>
 </template>
@@ -97,6 +109,10 @@ export default {
           }
         })
         .catch((e) => console.log("error payment", e));
+    },
+
+    continueToPayment() {
+      this.$refs.paymentBtnRef.click();
     },
   },
 };
