@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid t4-payment-card" v-if="tokenGenerate">
-    <h2>Inserisci i dati della carta</h2>
+    <h2 mt-3>Inserisci i dati della carta</h2>
     <v-braintree
       class="brain"
       :authorization="Token"
