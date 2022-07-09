@@ -86,7 +86,7 @@
                   "
                 >
                   <div class="col-3">
-                    <img :src="'storage/' + plate.image" :alt="plate.name" />
+                    <img :src="'/storage/' + plate.image" :alt="plate.name" />
                   </div>
                   <div class="col-3">
                     <h6>{{ plate.name }}</h6>
