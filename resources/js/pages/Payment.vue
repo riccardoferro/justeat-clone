@@ -15,7 +15,7 @@
           style="display: none"
         ></button>
         <button class="btn t4-add-btn mt-2 mb-3" @click="continueToPayment()">
-          Procedi con l'acquisto
+          Acquista
         </button>
       </template>
     </v-braintree>
@@ -120,4 +120,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.t4-payment-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 </style>

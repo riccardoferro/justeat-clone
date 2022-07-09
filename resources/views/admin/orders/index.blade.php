@@ -8,7 +8,27 @@
 @endsection
 
 @section('content')
-    <h1>Benvenuto nella sezione Ordini</h1>
+    <div class="conatainer-fluid">
+        <div class="row justify-content-center">
+            <h1 class="col-10 m-auto text-center">Ordini</h1>
+        </div>
+    </div>
+    <div class="container">
+        @foreach ($orders as $order)
+            <div class="row">
+                <div class="col-2">
+                    <span>Id: {{ $order->id }}</span>
+                </div>
+                <div class="col-4">
+                    <span>Nome: {{ $order->name }} {{ $order->surname }}</span>
+                </div>
+                <div class="col-2">
+                    <span>Data: {{ $order->create }}</span>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    {{-- <h1>Benvenuto nella sezione Ordini</h1>
     <p>{{ $orders }}</p>
     @foreach ($orders as $order)
         <p>{{ $order->name }}</p>
@@ -16,5 +36,5 @@
             <p>{{ $plate->name }}</p>
             <p>{{ $plate->pivot->quantity }}</p>
         @endforeach
-    @endforeach
+    @endforeach --}}
 @endsection
