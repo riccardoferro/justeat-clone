@@ -110,11 +110,17 @@
         </div>
         <!-- ALTRIMENTI -->
         <div v-else class="payment-part">
-          <div>
-            <p>{{ formData.surname }} {{ formData.name }}</p>
-            <p>{{ formData.address }}</p>
-            <p>+39 {{ formData.phone }}</p>
-            <p>{{ formData.email }}</p>
+          <div class="d-flex col-12 flex-column t4-dataUser">
+            <label for="cognome_nome">Nome e Cognome</label>
+            <p name="cognome_nome">
+              {{ formData.surname }} {{ formData.name }}
+            </p>
+            <label for="indirizzo">Indirizzo</label>
+            <p for="indirizzo">{{ formData.address }}</p>
+            <label for="tel">Numero di telefono</label>
+            <p name="tel">+39 {{ formData.phone }}</p>
+            <label for="nome_azienda">E-mail</label>
+            <p name="nome_azienda">{{ formData.email }}</p>
           </div>
           <Payment :formData="formData" :cartData="cartData" />
         </div>
