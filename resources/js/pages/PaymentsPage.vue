@@ -4,8 +4,8 @@
     <h6 class="text-center">Compila correttamente tutti i campi</h6>
     <!-- Qui andrà inserito il nome del ristorante dove stiamo ordinando -->
     <!-- FORM UTENTE  -->
-    <div class="row justify-content-around pt-5">
-      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-4 col-sm-8 col-8">
+    <div class="row justify-content-around align-items-center pt-5">
+      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-4 col-sm-8 col-8 pb-5">
         <div v-if="!formComplete" class="form">
           <div class="action">
             <div>
@@ -110,10 +110,10 @@
         </div>
         <!-- ALTRIMENTI -->
         <div v-else class="payment-part">
-          <div class="d-flex col-12 flex-column t4-dataUser">
+          <div class="d-flex flex-column align-items-sm-center t4-dataUser">
             <label for="cognome_nome">Nome e Cognome</label>
             <p name="cognome_nome">
-              {{ formData.surname }} {{ formData.name }}
+              {{ formData.name }} {{ formData.surname }}
             </p>
             <label for="indirizzo">Indirizzo</label>
             <p for="indirizzo">{{ formData.address }}</p>
@@ -126,7 +126,7 @@
         </div>
       </div>
       <div
-        class="col-xxl-4 col-xl-3 col-lg-4 col-md-4 col-sm-8 col-8 t4-img-pay"
+        class="col-xxl-3 col-xl-4 col-lg-4 col-md-5 col-sm-5 col-5 t4-img-pay"
       >
         <img src="/images/cash-on-delivery.png" alt="" />
       </div>
