@@ -86,7 +86,7 @@
                   "
                 >
                   <div class="col-3">
-                    <img :src="'storage/' + plate.image" :alt="plate.name" />
+                    <img :src="'/storage/' + plate.image" :alt="plate.name" />
                   </div>
                   <div class="col-3">
                     <h6>{{ plate.name }}</h6>
@@ -125,6 +125,8 @@
                   <router-link
                     :to="{ name: 'payments-page' }"
                     class="btn t4-add-btn d-flex align-items-center"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
                   >
                     Paga
                     <div class="t4-btn-pay ms-2 t4-w30">

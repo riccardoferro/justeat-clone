@@ -5330,6 +5330,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "BannerInfoComponent"
 });
@@ -5650,6 +5652,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -6687,6 +6691,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Payment_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Payment.vue */ "./resources/js/pages/Payment.vue");
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -69590,10 +69600,18 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("button", { staticClass: "t4-add-btn btn t4-bg-black" }, [
-              _vm._v("\n      Contattaci\n      "),
-              _c("span", [
-                _c("img", { attrs: { src: "/images/headset.png", alt: "" } }),
-              ]),
+              _c(
+                "a",
+                { staticClass: "t4-orange-text", attrs: { href: "/register" } },
+                [
+                  _vm._v("\n        Diventa Partner\n        "),
+                  _c("span", [
+                    _c("img", {
+                      attrs: { src: "/images/headset.png", alt: "" },
+                    }),
+                  ]),
+                ]
+              ),
             ]),
           ]
         ),
@@ -70024,7 +70042,7 @@ var render = function () {
                                 _c("div", { staticClass: "col-3" }, [
                                   _c("img", {
                                     attrs: {
-                                      src: "storage/" + plate.image,
+                                      src: "/storage/" + plate.image,
                                       alt: plate.name,
                                     },
                                   }),
@@ -70168,7 +70186,11 @@ var render = function () {
                                   {
                                     staticClass:
                                       "btn t4-add-btn d-flex align-items-center",
-                                    attrs: { to: { name: "payments-page" } },
+                                    attrs: {
+                                      to: { name: "payments-page" },
+                                      "data-bs-dismiss": "offcanvas",
+                                      "aria-label": "Close",
+                                    },
                                   },
                                   [
                                     _vm._v(
@@ -71348,21 +71370,49 @@ var render = function () {
                 "div",
                 { staticClass: "payment-part" },
                 [
-                  _c("div", [
-                    _c("p", [
-                      _vm._v(
-                        _vm._s(_vm.formData.surname) +
-                          " " +
-                          _vm._s(_vm.formData.name)
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(_vm.formData.address))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("+39 " + _vm._s(_vm.formData.phone))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(_vm.formData.email))]),
-                  ]),
+                  _c(
+                    "div",
+                    { staticClass: "d-flex col-12 flex-column t4-dataUser" },
+                    [
+                      _c("label", { attrs: { for: "cognome_nome" } }, [
+                        _vm._v("Nome e Cognome"),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { name: "cognome_nome" } }, [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.formData.surname) +
+                            " " +
+                            _vm._s(_vm.formData.name) +
+                            "\n          "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "indirizzo" } }, [
+                        _vm._v("Indirizzo"),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { for: "indirizzo" } }, [
+                        _vm._v(_vm._s(_vm.formData.address)),
+                      ]),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "tel" } }, [
+                        _vm._v("Numero di telefono"),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { name: "tel" } }, [
+                        _vm._v("+39 " + _vm._s(_vm.formData.phone)),
+                      ]),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "nome_azienda" } }, [
+                        _vm._v("E-mail"),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { name: "nome_azienda" } }, [
+                        _vm._v(_vm._s(_vm.formData.email)),
+                      ]),
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("Payment", {
                     attrs: { formData: _vm.formData, cartData: _vm.cartData },
