@@ -106,6 +106,7 @@ export default {
             this.$router.push({
               name: "success",
             });
+            location.reload();
           }
         })
         .catch((e) => console.log("error payment", e));
