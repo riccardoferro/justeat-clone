@@ -6659,6 +6659,8 @@ __webpack_require__.r(__webpack_exports__);
           _this3.$router.push({
             name: "success"
           });
+
+          location.reload();
         }
       })["catch"](function (e) {
         return console.log("error payment", e);
