@@ -22,7 +22,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Order::where('user_id',Auth::user()->id)->with('plates')->get();
+        $orders = Order::where('user_id', Auth::user()->id)->with('plates')->get();
         return view('admin.orders.index', compact('orders'));
     }
 
@@ -55,7 +55,8 @@ class OrdersController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::where('id', $id)->with('plates')->get();
+        return view('admin.orders.show', compact('order'));
     }
 
     /**
