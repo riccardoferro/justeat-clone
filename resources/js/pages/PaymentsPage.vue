@@ -5,7 +5,7 @@
     <!-- Qui andrà inserito il nome del ristorante dove stiamo ordinando -->
     <!-- FORM UTENTE  -->
     <div class="row justify-content-around align-items-center pt-5">
-      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-4 col-sm-8 col-8 pb-5">
+      <div class="col-xxl-5 col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 pb-5">
         <div v-if="!formComplete" class="form">
           <div class="action">
             <div>
@@ -110,21 +110,44 @@
         </div>
         <!-- ALTRIMENTI -->
         <div v-else class="payment-part">
-          <div class="d-flex flex-column align-items-sm-center t4-dataUser">
-            <label for="cognome_nome">Nome e Cognome</label>
-            <p name="cognome_nome">
-              {{ formData.name }} {{ formData.surname }}
-            </p>
-            <label for="indirizzo">Indirizzo</label>
-            <p for="indirizzo">{{ formData.address }}</p>
-            <label for="tel">Numero di telefono</label>
-            <p name="tel">+39 {{ formData.phone }}</p>
-            <label for="nome_azienda">E-mail</label>
-            <p name="nome_azienda">{{ formData.email }}</p>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex flex-column align-items-sm-center t4-dataUser">
+                <label for="cognome_nome">Nome e Cognome</label>
+                <p name="cognome_nome">
+                  {{ formData.name }} {{ formData.surname }}
+                </p>
+                <label for="indirizzo">Indirizzo</label>
+                <p for="indirizzo">{{ formData.address }}</p>
+                <label for="tel">Numero di telefono</label>
+                <p name="tel">+39 {{ formData.phone }}</p>
+                <label for="nome_azienda">E-mail</label>
+                <p name="nome_azienda">{{ formData.email }}</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <h6>Riepilogo Ordine</h6>
+              <div class="t4-summary">
+                <div
+                  v-for="(plate, index) in cartData"
+                  :key="plate.id + `${index}`"
+                >
+                  <img :src="'/storage/' + plate.image" :alt="plate.name" />
+                  <h6>{{ plate.name }}</h6>
+                  <span> {{ plate.price }} &euro; </span>
+                  <p>{{ plate.quantity }}</p>
+                  <span> {{ plate.total }} &euro;</span>
+                  <p>{{ totaleComplessivo(cart) }} &euro;</p>
+                </div>
+              </div>
+            </div>
           </div>
+
           <Payment :formData="formData" :cartData="cartData" />
         </div>
       </div>
+    </div>
+    <div class="row justify-content-center">
       <div
         class="col-xxl-3 col-xl-4 col-lg-4 col-md-5 col-sm-5 col-5 t4-img-pay"
       >
@@ -308,5 +331,8 @@ export default {
   img {
     width: 100%;
   }
+}
+label {
+  width: 100%;
 }
 </style>

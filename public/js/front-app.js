@@ -6851,6 +6851,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PaymentsPage",
@@ -37028,7 +37051,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-img-pay img[data-v-6adc2365] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".t4-img-pay img[data-v-6adc2365] {\n  width: 100%;\n}\nlabel[data-v-6adc2365] {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -71252,7 +71275,7 @@ var render = function () {
           "div",
           {
             staticClass:
-              "col-xxl-4 col-xl-4 col-lg-6 col-md-4 col-sm-8 col-8 pb-5",
+              "col-xxl-5 col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 pb-5",
           },
           [
             !_vm.formComplete
@@ -71541,52 +71564,94 @@ var render = function () {
                   "div",
                   { staticClass: "payment-part" },
                   [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "d-flex flex-column align-items-sm-center t4-dataUser",
-                      },
-                      [
-                        _c("label", { attrs: { for: "cognome_nome" } }, [
-                          _vm._v("Nome e Cognome"),
-                        ]),
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-6" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "d-flex flex-column align-items-sm-center t4-dataUser",
+                          },
+                          [
+                            _c("label", { attrs: { for: "cognome_nome" } }, [
+                              _vm._v("Nome e Cognome"),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { attrs: { name: "cognome_nome" } }, [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.formData.name) +
+                                  " " +
+                                  _vm._s(_vm.formData.surname) +
+                                  "\n              "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("label", { attrs: { for: "indirizzo" } }, [
+                              _vm._v("Indirizzo"),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { attrs: { for: "indirizzo" } }, [
+                              _vm._v(_vm._s(_vm.formData.address)),
+                            ]),
+                            _vm._v(" "),
+                            _c("label", { attrs: { for: "tel" } }, [
+                              _vm._v("Numero di telefono"),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { attrs: { name: "tel" } }, [
+                              _vm._v("+39 " + _vm._s(_vm.formData.phone)),
+                            ]),
+                            _vm._v(" "),
+                            _c("label", { attrs: { for: "nome_azienda" } }, [
+                              _vm._v("E-mail"),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { attrs: { name: "nome_azienda" } }, [
+                              _vm._v(_vm._s(_vm.formData.email)),
+                            ]),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-6" }, [
+                        _c("h6", [_vm._v("Riepilogo Ordine")]),
                         _vm._v(" "),
-                        _c("p", { attrs: { name: "cognome_nome" } }, [
-                          _vm._v(
-                            "\n            " +
-                              _vm._s(_vm.formData.name) +
-                              " " +
-                              _vm._s(_vm.formData.surname) +
-                              "\n          "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("label", { attrs: { for: "indirizzo" } }, [
-                          _vm._v("Indirizzo"),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { attrs: { for: "indirizzo" } }, [
-                          _vm._v(_vm._s(_vm.formData.address)),
-                        ]),
-                        _vm._v(" "),
-                        _c("label", { attrs: { for: "tel" } }, [
-                          _vm._v("Numero di telefono"),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { attrs: { name: "tel" } }, [
-                          _vm._v("+39 " + _vm._s(_vm.formData.phone)),
-                        ]),
-                        _vm._v(" "),
-                        _c("label", { attrs: { for: "nome_azienda" } }, [
-                          _vm._v("E-mail"),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { attrs: { name: "nome_azienda" } }, [
-                          _vm._v(_vm._s(_vm.formData.email)),
-                        ]),
-                      ]
-                    ),
+                        _c(
+                          "div",
+                          { staticClass: "t4-summary" },
+                          _vm._l(_vm.cartData, function (plate, index) {
+                            return _c("div", { key: plate.id + "" + index }, [
+                              _c("img", {
+                                attrs: {
+                                  src: "/storage/" + plate.image,
+                                  alt: plate.name,
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("h6", [_vm._v(_vm._s(plate.name))]),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(" " + _vm._s(plate.price) + " € "),
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [_vm._v(_vm._s(plate.quantity))]),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(" " + _vm._s(plate.total) + " €"),
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  _vm._s(_vm.totaleComplessivo(_vm.cart)) + " €"
+                                ),
+                              ]),
+                            ])
+                          }),
+                          0
+                        ),
+                      ]),
+                    ]),
                     _vm._v(" "),
                     _c("Payment", {
                       attrs: { formData: _vm.formData, cartData: _vm.cartData },
@@ -71596,10 +71661,10 @@ var render = function () {
                 ),
           ]
         ),
-        _vm._v(" "),
-        _vm._m(0),
       ]
     ),
+    _vm._v(" "),
+    _vm._m(0),
   ])
 }
 var staticRenderFns = [
@@ -71607,14 +71672,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "col-xxl-3 col-xl-4 col-lg-4 col-md-5 col-sm-5 col-5 t4-img-pay",
-      },
-      [_c("img", { attrs: { src: "/images/cash-on-delivery.png", alt: "" } })]
-    )
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "col-xxl-3 col-xl-4 col-lg-4 col-md-5 col-sm-5 col-5 t4-img-pay",
+        },
+        [_c("img", { attrs: { src: "/images/cash-on-delivery.png", alt: "" } })]
+      ),
+    ])
   },
 ]
 render._withStripped = true
@@ -72148,7 +72215,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "\n          col-4 col-xl-3 col-xxl-3 col-md-4\n          m-auto\n          d-flex\n          justify-content-center\n        ",
+                  "\n          col-4 col-lg-3 col-xl-3 col-xxl-3 col-md-4\n          m-auto\n          d-flex\n          justify-content-center\n        ",
               },
               [
                 _c("img", {

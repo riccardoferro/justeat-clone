@@ -13,7 +13,7 @@
         <h1 class="t4-orange-text m-auto">Pagamento avvenuto con successo!</h1>
         <div
           class="
-            col-4 col-xl-3 col-xxl-3 col-md-4
+            col-4 col-lg-3 col-xl-3 col-xxl-3 col-md-4
             m-auto
             d-flex
             justify-content-center
