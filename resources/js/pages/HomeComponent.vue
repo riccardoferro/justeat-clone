@@ -2,11 +2,17 @@
   <div class="container-fluid">
     <JumbotronComponent />
 
-    <RestaurantCardsComponent :users="users" />
+    <RestaurantCardsComponent v-if="users.length > 0" :users="users" />
+    <LoaderComponent v-else />
 
     <BannerAppComponent />
 
-    <CategoriesCardsComponent :categories="categories" />
+    <CategoriesCardsComponent
+      v-if="categories.length > 0"
+      :categories="categories"
+    />
+    <LoaderComponent v-else />
+
     <BannerInfoComponent />
   </div>
 </template>
@@ -17,6 +23,7 @@ import CategoriesCardsComponent from "../components/CategoriesCardsComponent.vue
 import BannerAppComponent from "../components/BannerAppComponent.vue";
 import BannerInfoComponent from "../components/BannerInfoComponent.vue";
 import RestaurantCardsComponent from "../components/RestaurantCardsComponent.vue";
+import LoaderComponent from "../components/LoaderComponent.vue";
 export default {
   name: "HomeComponent",
   components: {
@@ -25,6 +32,7 @@ export default {
     BannerAppComponent,
     BannerInfoComponent,
     RestaurantCardsComponent,
+    LoaderComponent,
   },
   data() {
     return {
