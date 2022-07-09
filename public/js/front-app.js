@@ -6874,6 +6874,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PaymentsPage",
@@ -37051,7 +37080,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-img-pay img[data-v-6adc2365] {\n  width: 100%;\n}\nlabel[data-v-6adc2365] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".t4-img-pay img[data-v-6adc2365] {\n  width: 100%;\n}\nlabel[data-v-6adc2365] {\n  width: 100%;\n}\n.t4-img-sum img[data-v-6adc2365] {\n  width: 100%;\n}\n.t4-summary[data-v-6adc2365] {\n  border: 2px solid #fd7d2b;\n  border-radius: 20px;\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -71269,398 +71298,442 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row justify-content-around align-items-center pt-5" },
+      { staticClass: "row justify-content-center align-items-center" },
       [
-        _c(
-          "div",
-          {
-            staticClass:
-              "col-xxl-5 col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 pb-5",
-          },
-          [
-            !_vm.formComplete
-              ? _c("div", { staticClass: "form" }, [
-                  _c("div", { staticClass: "action" }, [
-                    _c("div", [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "t4-orange-text ms-2",
-                          attrs: { for: "name" },
-                        },
-                        [_vm._v("Nome *")]
-                      ),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.name,
-                            expression: "name",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          name: "name",
-                          placeholder: "Nome",
-                          value: "",
-                          required: "",
-                        },
-                        domProps: { value: _vm.name },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.name = $event.target.value
-                          },
-                        },
-                      }),
-                      _vm._v(" "),
-                      !_vm.validation.name.success
-                        ? _c("div", { staticClass: "alert alert-danger" }, [
-                            _vm._v(
-                              "\n              " +
-                                _vm._s(_vm.validation.name.message) +
-                                "\n            "
-                            ),
-                          ])
-                        : _vm._e(),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "t4-orange-text ms-2",
-                          attrs: { for: "surname" },
-                        },
-                        [_vm._v("Cognome *")]
-                      ),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.surname,
-                            expression: "surname",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          name: "surname",
-                          placeholder: "Cognome",
-                          value: "",
-                          required: "",
-                        },
-                        domProps: { value: _vm.surname },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.surname = $event.target.value
-                          },
-                        },
-                      }),
-                      _vm._v(" "),
-                      !_vm.validation.surname.success
-                        ? _c("div", { staticClass: "alert alert-danger" }, [
-                            _vm._v(
-                              "\n              " +
-                                _vm._s(_vm.validation.surname.message) +
-                                "\n            "
-                            ),
-                          ])
-                        : _vm._e(),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "t4-orange-text ms-2",
-                          attrs: { for: "address" },
-                        },
-                        [_vm._v("Indirizzo di consegna *")]
-                      ),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.address,
-                            expression: "address",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          name: "address",
-                          placeholder: "Indirizzo",
-                          value: "",
-                          required: "",
-                        },
-                        domProps: { value: _vm.address },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.address = $event.target.value
-                          },
-                        },
-                      }),
-                      _vm._v(" "),
-                      !_vm.validation.address.success
-                        ? _c("div", { staticClass: "alert alert-danger" }, [
-                            _vm._v(
-                              "\n              " +
-                                _vm._s(_vm.validation.address.message) +
-                                "\n            "
-                            ),
-                          ])
-                        : _vm._e(),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "t4-orange-text ms-2",
-                          attrs: { for: "phone" },
-                        },
-                        [_vm._v("Numero di telefono *")]
-                      ),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.phone,
-                            expression: "phone",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "number",
-                          name: "phone",
-                          placeholder: "+39",
-                          value: "",
-                          required: "",
-                        },
-                        domProps: { value: _vm.phone },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.phone = $event.target.value
-                          },
-                        },
-                      }),
-                      _vm._v(" "),
-                      !_vm.validation.phone.success
-                        ? _c("div", { staticClass: "alert alert-danger" }, [
-                            _vm._v(
-                              "\n              " +
-                                _vm._s(_vm.validation.phone.message) +
-                                "\n            "
-                            ),
-                          ])
-                        : _vm._e(),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "t4-orange-text ms-2",
-                          attrs: { for: "email" },
-                        },
-                        [_vm._v("Email *")]
-                      ),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.email,
-                            expression: "email",
-                          },
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "email",
-                          name: "email",
-                          placeholder: "user@gmail.com",
-                          value: "",
-                          required: "",
-                        },
-                        domProps: { value: _vm.email },
-                        on: {
-                          input: function ($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.email = $event.target.value
-                          },
-                        },
-                      }),
-                      _vm._v(" "),
-                      !_vm.validation.email.success
-                        ? _c("div", { staticClass: "alert alert-danger" }, [
-                            _vm._v(
-                              "\n              " +
-                                _vm._s(_vm.validation.email.message) +
-                                "\n            "
-                            ),
-                          ])
-                        : _vm._e(),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "d-flex justify-content-center" },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "form-btn btn t4-add-btn",
-                            on: {
-                              click: function ($event) {
-                                return _vm.validateForm()
+        _c("div", { staticClass: "col-6" }, [
+          _c(
+            "div",
+            {
+              staticClass: "row justify-content-around align-items-center pt-5",
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "col-xxl-5 col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 pb-5",
+                },
+                [
+                  !_vm.formComplete
+                    ? _c("div", { staticClass: "form" }, [
+                        _c("div", { staticClass: "action" }, [
+                          _c("div", [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "t4-orange-text ms-2",
+                                attrs: { for: "name" },
                               },
-                            },
-                          },
-                          [
-                            _vm._v(
-                              "\n              Conferma i Dati\n            "
+                              [_vm._v("Nome *")]
                             ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ])
-              : _c(
-                  "div",
-                  { staticClass: "payment-part" },
-                  [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-6" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "d-flex flex-column align-items-sm-center t4-dataUser",
-                          },
-                          [
-                            _c("label", { attrs: { for: "cognome_nome" } }, [
-                              _vm._v("Nome e Cognome"),
-                            ]),
                             _vm._v(" "),
-                            _c("p", { attrs: { name: "cognome_nome" } }, [
-                              _vm._v(
-                                "\n                " +
-                                  _vm._s(_vm.formData.name) +
-                                  " " +
-                                  _vm._s(_vm.formData.surname) +
-                                  "\n              "
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.name,
+                                  expression: "name",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                name: "name",
+                                placeholder: "Nome",
+                                value: "",
+                                required: "",
+                              },
+                              domProps: { value: _vm.name },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.name = $event.target.value
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            !_vm.validation.name.success
+                              ? _c(
+                                  "div",
+                                  { staticClass: "alert alert-danger" },
+                                  [
+                                    _vm._v(
+                                      "\n                  " +
+                                        _vm._s(_vm.validation.name.message) +
+                                        "\n                "
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "t4-orange-text ms-2",
+                                attrs: { for: "surname" },
+                              },
+                              [_vm._v("Cognome *")]
+                            ),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.surname,
+                                  expression: "surname",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                name: "surname",
+                                placeholder: "Cognome",
+                                value: "",
+                                required: "",
+                              },
+                              domProps: { value: _vm.surname },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.surname = $event.target.value
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            !_vm.validation.surname.success
+                              ? _c(
+                                  "div",
+                                  { staticClass: "alert alert-danger" },
+                                  [
+                                    _vm._v(
+                                      "\n                  " +
+                                        _vm._s(_vm.validation.surname.message) +
+                                        "\n                "
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "t4-orange-text ms-2",
+                                attrs: { for: "address" },
+                              },
+                              [_vm._v("Indirizzo di consegna *")]
+                            ),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.address,
+                                  expression: "address",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                name: "address",
+                                placeholder: "Indirizzo",
+                                value: "",
+                                required: "",
+                              },
+                              domProps: { value: _vm.address },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.address = $event.target.value
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            !_vm.validation.address.success
+                              ? _c(
+                                  "div",
+                                  { staticClass: "alert alert-danger" },
+                                  [
+                                    _vm._v(
+                                      "\n                  " +
+                                        _vm._s(_vm.validation.address.message) +
+                                        "\n                "
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "t4-orange-text ms-2",
+                                attrs: { for: "phone" },
+                              },
+                              [_vm._v("Numero di telefono *")]
+                            ),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.phone,
+                                  expression: "phone",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "number",
+                                name: "phone",
+                                placeholder: "+39",
+                                value: "",
+                                required: "",
+                              },
+                              domProps: { value: _vm.phone },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.phone = $event.target.value
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            !_vm.validation.phone.success
+                              ? _c(
+                                  "div",
+                                  { staticClass: "alert alert-danger" },
+                                  [
+                                    _vm._v(
+                                      "\n                  " +
+                                        _vm._s(_vm.validation.phone.message) +
+                                        "\n                "
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "t4-orange-text ms-2",
+                                attrs: { for: "email" },
+                              },
+                              [_vm._v("Email *")]
+                            ),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.email,
+                                  expression: "email",
+                                },
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "email",
+                                name: "email",
+                                placeholder: "user@gmail.com",
+                                value: "",
+                                required: "",
+                              },
+                              domProps: { value: _vm.email },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.email = $event.target.value
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            !_vm.validation.email.success
+                              ? _c(
+                                  "div",
+                                  { staticClass: "alert alert-danger" },
+                                  [
+                                    _vm._v(
+                                      "\n                  " +
+                                        _vm._s(_vm.validation.email.message) +
+                                        "\n                "
+                                    ),
+                                  ]
+                                )
+                              : _vm._e(),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "d-flex justify-content-center" },
+                            [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "form-btn btn t4-add-btn",
+                                  on: {
+                                    click: function ($event) {
+                                      return _vm.validateForm()
+                                    },
+                                  },
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                  Conferma i Dati\n                "
+                                  ),
+                                ]
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ])
+                    : _c(
+                        "div",
+                        { staticClass: "payment-part" },
+                        [
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-6" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "d-flex flex-column align-items-sm-center t4-dataUser",
+                                },
+                                [
+                                  _c(
+                                    "label",
+                                    { attrs: { for: "cognome_nome" } },
+                                    [_vm._v("Nome e Cognome")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("p", { attrs: { name: "cognome_nome" } }, [
+                                    _vm._v(
+                                      "\n                    " +
+                                        _vm._s(_vm.formData.name) +
+                                        " " +
+                                        _vm._s(_vm.formData.surname) +
+                                        "\n                  "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("label", { attrs: { for: "indirizzo" } }, [
+                                    _vm._v("Indirizzo"),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", { attrs: { for: "indirizzo" } }, [
+                                    _vm._v(_vm._s(_vm.formData.address)),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("label", { attrs: { for: "tel" } }, [
+                                    _vm._v("Numero di telefono"),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", { attrs: { name: "tel" } }, [
+                                    _vm._v("+39 " + _vm._s(_vm.formData.phone)),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "label",
+                                    { attrs: { for: "nome_azienda" } },
+                                    [_vm._v("E-mail")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("p", { attrs: { name: "nome_azienda" } }, [
+                                    _vm._v(_vm._s(_vm.formData.email)),
+                                  ]),
+                                ]
                               ),
                             ]),
-                            _vm._v(" "),
-                            _c("label", { attrs: { for: "indirizzo" } }, [
-                              _vm._v("Indirizzo"),
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { attrs: { for: "indirizzo" } }, [
-                              _vm._v(_vm._s(_vm.formData.address)),
-                            ]),
-                            _vm._v(" "),
-                            _c("label", { attrs: { for: "tel" } }, [
-                              _vm._v("Numero di telefono"),
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { attrs: { name: "tel" } }, [
-                              _vm._v("+39 " + _vm._s(_vm.formData.phone)),
-                            ]),
-                            _vm._v(" "),
-                            _c("label", { attrs: { for: "nome_azienda" } }, [
-                              _vm._v("E-mail"),
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { attrs: { name: "nome_azienda" } }, [
-                              _vm._v(_vm._s(_vm.formData.email)),
-                            ]),
-                          ]
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-6" }, [
-                        _c("h6", [_vm._v("Riepilogo Ordine")]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "t4-summary" },
-                          _vm._l(_vm.cartData, function (plate, index) {
-                            return _c("div", { key: plate.id + "" + index }, [
-                              _c("img", {
-                                attrs: {
-                                  src: "/storage/" + plate.image,
-                                  alt: plate.name,
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c("h6", [_vm._v(_vm._s(plate.name))]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v(" " + _vm._s(plate.price) + " € "),
-                              ]),
-                              _vm._v(" "),
-                              _c("p", [_vm._v(_vm._s(plate.quantity))]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v(" " + _vm._s(plate.total) + " €"),
-                              ]),
-                              _vm._v(" "),
-                              _c("p", [
-                                _vm._v(
-                                  _vm._s(_vm.totaleComplessivo(_vm.cart)) + " €"
-                                ),
-                              ]),
-                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("Payment", {
+                            attrs: {
+                              formData: _vm.formData,
+                              cartData: _vm.cartData,
+                            },
                           }),
-                          0
-                        ),
-                      ]),
+                        ],
+                        1
+                      ),
+                ]
+              ),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c(
+            "div",
+            { staticClass: "t4-summary" },
+            _vm._l(_vm.cart, function (plate, index) {
+              return _c("div", { key: plate.id + "" + index }, [
+                _c("div", { staticClass: "t4-img-sum" }, [
+                  _c("h6", { staticClass: "text-center mb-3" }, [
+                    _vm._v("Riepilogo Ordine"),
+                  ]),
+                  _vm._v(" "),
+                  _c("img", {
+                    attrs: { src: "/storage/" + plate.image, alt: plate.name },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mt-3" }, [
+                  _c("h6", [_vm._v(_vm._s(plate.name))]),
+                  _vm._v(" "),
+                  _c("span", [
+                    _c("span", { staticClass: "t4-orange-text" }, [
+                      _vm._v("Prezzo:"),
                     ]),
-                    _vm._v(" "),
-                    _c("Payment", {
-                      attrs: { formData: _vm.formData, cartData: _vm.cartData },
-                    }),
-                  ],
-                  1
-                ),
-          ]
-        ),
+                    _vm._v("\n              " + _vm._s(plate.price) + " €"),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("X" + _vm._s(plate.quantity))]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("span", { staticClass: "t4-orange-text" }, [
+                      _vm._v("Totale:"),
+                    ]),
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(_vm.prezzoTotale()) +
+                        " €\n            "
+                    ),
+                  ]),
+                ]),
+              ])
+            }),
+            0
+          ),
+        ]),
       ]
     ),
     _vm._v(" "),

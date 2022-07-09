@@ -2,148 +2,177 @@
   <div class="container-fluid pb-5">
     <h2 class="text-center mt-5">Inserisci i dati della consegna</h2>
     <h6 class="text-center">Compila correttamente tutti i campi</h6>
-    <!-- Qui andrà inserito il nome del ristorante dove stiamo ordinando -->
-    <!-- FORM UTENTE  -->
-    <div class="row justify-content-around align-items-center pt-5">
-      <div class="col-xxl-5 col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 pb-5">
-        <div v-if="!formComplete" class="form">
-          <div class="action">
-            <div>
-              <label for="name" class="t4-orange-text ms-2">Nome *</label>
-              <br />
-              <input
-                type="text"
-                name="name"
-                placeholder="Nome"
-                v-model="name"
-                value=""
-                class="form-control"
-                required
-              />
-              <div v-if="!validation.name.success" class="alert alert-danger">
-                {{ validation.name.message }}
-              </div>
-            </div>
-            <div>
-              <label for="surname" class="t4-orange-text ms-2">Cognome *</label>
-              <br />
-              <input
-                type="text"
-                name="surname"
-                placeholder="Cognome"
-                v-model="surname"
-                value=""
-                class="form-control"
-                required
-              />
-              <div
-                v-if="!validation.surname.success"
-                class="alert alert-danger"
-              >
-                {{ validation.surname.message }}
-              </div>
-            </div>
-            <div>
-              <label for="address" class="t4-orange-text ms-2"
-                >Indirizzo di consegna *</label
-              >
-              <br />
-              <input
-                type="text"
-                name="address"
-                placeholder="Indirizzo"
-                v-model="address"
-                value=""
-                class="form-control"
-                required
-              />
-              <div
-                v-if="!validation.address.success"
-                class="alert alert-danger"
-              >
-                {{ validation.address.message }}
-              </div>
-            </div>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-6">
+        <!-- FORM UTENTE  -->
+        <div class="row justify-content-around align-items-center pt-5">
+          <div
+            class="col-xxl-5 col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 pb-5"
+          >
+            <div v-if="!formComplete" class="form">
+              <div class="action">
+                <div>
+                  <label for="name" class="t4-orange-text ms-2">Nome *</label>
+                  <br />
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Nome"
+                    v-model="name"
+                    value=""
+                    class="form-control"
+                    required
+                  />
+                  <div
+                    v-if="!validation.name.success"
+                    class="alert alert-danger"
+                  >
+                    {{ validation.name.message }}
+                  </div>
+                </div>
+                <div>
+                  <label for="surname" class="t4-orange-text ms-2"
+                    >Cognome *</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    name="surname"
+                    placeholder="Cognome"
+                    v-model="surname"
+                    value=""
+                    class="form-control"
+                    required
+                  />
+                  <div
+                    v-if="!validation.surname.success"
+                    class="alert alert-danger"
+                  >
+                    {{ validation.surname.message }}
+                  </div>
+                </div>
+                <div>
+                  <label for="address" class="t4-orange-text ms-2"
+                    >Indirizzo di consegna *</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    name="address"
+                    placeholder="Indirizzo"
+                    v-model="address"
+                    value=""
+                    class="form-control"
+                    required
+                  />
+                  <div
+                    v-if="!validation.address.success"
+                    class="alert alert-danger"
+                  >
+                    {{ validation.address.message }}
+                  </div>
+                </div>
 
-            <div>
-              <label for="phone" class="t4-orange-text ms-2"
-                >Numero di telefono *</label
-              >
-              <br />
-              <input
-                type="number"
-                name="phone"
-                placeholder="+39"
-                v-model="phone"
-                value=""
-                class="form-control"
-                required
-              />
-              <div v-if="!validation.phone.success" class="alert alert-danger">
-                {{ validation.phone.message }}
-              </div>
-            </div>
+                <div>
+                  <label for="phone" class="t4-orange-text ms-2"
+                    >Numero di telefono *</label
+                  >
+                  <br />
+                  <input
+                    type="number"
+                    name="phone"
+                    placeholder="+39"
+                    v-model="phone"
+                    value=""
+                    class="form-control"
+                    required
+                  />
+                  <div
+                    v-if="!validation.phone.success"
+                    class="alert alert-danger"
+                  >
+                    {{ validation.phone.message }}
+                  </div>
+                </div>
 
-            <div>
-              <label for="email" class="t4-orange-text ms-2">Email *</label>
-              <br />
-              <input
-                type="email"
-                name="email"
-                placeholder="user@gmail.com"
-                v-model="email"
-                value=""
-                class="form-control"
-                required
-              />
-              <div v-if="!validation.email.success" class="alert alert-danger">
-                {{ validation.email.message }}
-              </div>
-            </div>
+                <div>
+                  <label for="email" class="t4-orange-text ms-2">Email *</label>
+                  <br />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="user@gmail.com"
+                    v-model="email"
+                    value=""
+                    class="form-control"
+                    required
+                  />
+                  <div
+                    v-if="!validation.email.success"
+                    class="alert alert-danger"
+                  >
+                    {{ validation.email.message }}
+                  </div>
+                </div>
 
-            <div class="d-flex justify-content-center">
-              <button @click="validateForm()" class="form-btn btn t4-add-btn">
-                Conferma i Dati
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- ALTRIMENTI -->
-        <div v-else class="payment-part">
-          <div class="row">
-            <div class="col-6">
-              <div class="d-flex flex-column align-items-sm-center t4-dataUser">
-                <label for="cognome_nome">Nome e Cognome</label>
-                <p name="cognome_nome">
-                  {{ formData.name }} {{ formData.surname }}
-                </p>
-                <label for="indirizzo">Indirizzo</label>
-                <p for="indirizzo">{{ formData.address }}</p>
-                <label for="tel">Numero di telefono</label>
-                <p name="tel">+39 {{ formData.phone }}</p>
-                <label for="nome_azienda">E-mail</label>
-                <p name="nome_azienda">{{ formData.email }}</p>
-              </div>
-            </div>
-            <div class="col-6">
-              <h6>Riepilogo Ordine</h6>
-              <div class="t4-summary">
-                <div
-                  v-for="(plate, index) in cartData"
-                  :key="plate.id + `${index}`"
-                >
-                  <img :src="'/storage/' + plate.image" :alt="plate.name" />
-                  <h6>{{ plate.name }}</h6>
-                  <span> {{ plate.price }} &euro; </span>
-                  <p>{{ plate.quantity }}</p>
-                  <span> {{ plate.total }} &euro;</span>
-                  <p>{{ totaleComplessivo(cart) }} &euro;</p>
+                <div class="d-flex justify-content-center">
+                  <button
+                    @click="validateForm()"
+                    class="form-btn btn t4-add-btn"
+                  >
+                    Conferma i Dati
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
+            <!-- ALTRIMENTI -->
+            <div v-else class="payment-part">
+              <div class="row">
+                <div class="col-6">
+                  <div
+                    class="d-flex flex-column align-items-sm-center t4-dataUser"
+                  >
+                    <label for="cognome_nome">Nome e Cognome</label>
+                    <p name="cognome_nome">
+                      {{ formData.name }} {{ formData.surname }}
+                    </p>
+                    <label for="indirizzo">Indirizzo</label>
+                    <p for="indirizzo">{{ formData.address }}</p>
+                    <label for="tel">Numero di telefono</label>
+                    <p name="tel">+39 {{ formData.phone }}</p>
+                    <label for="nome_azienda">E-mail</label>
+                    <p name="nome_azienda">{{ formData.email }}</p>
+                  </div>
+                </div>
+              </div>
 
-          <Payment :formData="formData" :cartData="cartData" />
+              <Payment :formData="formData" :cartData="cartData" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Riepilogo Ordine -->
+      <div class="col-3">
+        <div class="t4-summary">
+          <div v-for="(plate, index) in cart" :key="plate.id + `${index}`">
+            <div class="t4-img-sum">
+              <h6 class="text-center mb-3">Riepilogo Ordine</h6>
+              <img :src="'/storage/' + plate.image" :alt="plate.name" />
+            </div>
+            <div class="mt-3">
+              <h6>{{ plate.name }}</h6>
+              <span
+                ><span class="t4-orange-text">Prezzo:</span>
+                {{ plate.price }} &euro;</span
+              >
+              <p>X{{ plate.quantity }}</p>
+
+              <p>
+                <span class="t4-orange-text">Totale:</span>
+                {{ prezzoTotale() }} &euro;
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -334,5 +363,17 @@ export default {
 }
 label {
   width: 100%;
+}
+
+.t4-img-sum {
+  img {
+    width: 100%;
+  }
+}
+
+.t4-summary {
+  border: 2px solid #fd7d2b;
+  border-radius: 20px;
+  padding: 20px;
 }
 </style>
