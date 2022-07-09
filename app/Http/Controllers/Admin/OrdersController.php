@@ -55,7 +55,7 @@ class OrdersController extends Controller
      */
     public function show($id)
     {
-        $order = Order::where('id', $id)->with('plates')->get();
+        $order = Order::find($id);
         return view('admin.orders.show', compact('order'));
     }
 

@@ -29,6 +29,8 @@
                 <div class="col-2">
                     <span><span class='t4-orange-text'>Totale:</span> {{ $order->total }} &euro;</span>
                 </div>
+
+
             </a>
         @endforeach
     </div>
