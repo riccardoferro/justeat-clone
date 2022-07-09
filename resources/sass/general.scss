@@ -685,3 +685,24 @@ border-radius: 20px !important;
     }
 }
 
+// orders idex
+.t4-orders-index{
+    color:white;
+    padding:10px;
+    border:2px solid $t4_bg_input;
+    border-radius:25px;
+    margin-bottom:5px;
+    &:hover{
+        color:white;
+        background-color: $t4_bg_input;
+        border: 2px solid $t4_orange_text;
+
+    }
+}
+.t4-border-right{
+    border-right:2px solid $t4_orange_text;
+}
+.t4-border-bottom {
+    border-bottom: 2px solid $t4_orange_text;
+}
+

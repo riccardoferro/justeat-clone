@@ -15,17 +15,23 @@
     </div>
     <div class="container">
         @foreach ($orders as $order)
-            <div class="row">
+            <a href='{{ route('admin.order.show', $order->id) }}' class="row t4-orders-index justify-content-between">
                 <div class="col-2">
-                    <span>Id: {{ $order->id }}</span>
+                    <span><span class='t4-orange-text'>Id:</span>
+                        {{ $order->id }}</span>
                 </div>
                 <div class="col-4">
-                    <span>Nome: {{ $order->name }} {{ $order->surname }}</span>
+                    <span><span class='t4-orange-text'>Nome:</span> {{ $order->name }} {{ $order->surname }}</span>
                 </div>
                 <div class="col-2">
-                    <span>Data: {{ $order->create }}</span>
+                    <span><span class='t4-orange-text'>Data:</span> {{ $order->created_at }}</span>
                 </div>
-            </div>
+                <div class="col-2">
+                    <span><span class='t4-orange-text'>Totale:</span> {{ $order->total }} &euro;</span>
+                </div>
+
+
+            </a>
         @endforeach
     </div>
     {{-- <h1>Benvenuto nella sezione Ordini</h1>
