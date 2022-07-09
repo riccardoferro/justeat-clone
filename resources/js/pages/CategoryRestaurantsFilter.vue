@@ -10,11 +10,7 @@
 
     <div class="mt-5">
       <div class="d-flex justify-content-center flex-wrap">
-        <div
-          class="form-check form-check-inline mb-3"
-          v-for="category in categories"
-          :key="category.slug"
-        >
+        <div class="mb-3" v-for="category in categories" :key="category.slug">
           <input
             class="btn-check"
             type="checkbox"
@@ -29,7 +25,7 @@
             "
           />
 
-          <label class="btn t4-add-btn" :for="'category' + category.id">
+          <label class="btn t4-add-btn me-3" :for="'category' + category.id">
             {{ category.name }}
           </label>
         </div>
@@ -59,12 +55,12 @@
           class="d-flex flex-column align-items-center mt-5 mb-5"
         >
           <div>
-            <h6 class="t4-orange-text t4-fw-6 d-flex align-items-center">
+            <h4 class="t4-orange-text t4-fw-6 d-flex align-items-center">
               {{ user.company }}
               <span class="t4-icon-company ms-2">
                 <img src="/images/posate.png" alt="" />
               </span>
-            </h6>
+            </h4>
 
             <h6 class="mb-3 t4-fw-6">
               <span class="t4-orange-text">Categorie:</span>
@@ -271,6 +267,18 @@ export default {
 .t4-icon-btn {
   img {
     width: 20px;
+  }
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  outline: 2px solid #fd7d2b;
+  outline-offset: 2px;
+}
+
+.t4-icon-company {
+  img {
+    width: 35px;
   }
 }
 </style>
