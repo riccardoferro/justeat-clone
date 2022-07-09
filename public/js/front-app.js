@@ -5326,6 +5326,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "BannerInfoComponent"
 });
@@ -69576,10 +69578,18 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("button", { staticClass: "t4-add-btn btn t4-bg-black" }, [
-              _vm._v("\n      Contattaci\n      "),
-              _c("span", [
-                _c("img", { attrs: { src: "/images/headset.png", alt: "" } }),
-              ]),
+              _c(
+                "a",
+                { staticClass: "t4-orange-text", attrs: { href: "/register" } },
+                [
+                  _vm._v("\n        Diventa Partner\n        "),
+                  _c("span", [
+                    _c("img", {
+                      attrs: { src: "/images/headset.png", alt: "" },
+                    }),
+                  ]),
+                ]
+              ),
             ]),
           ]
         ),

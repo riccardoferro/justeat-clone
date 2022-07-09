@@ -20,10 +20,12 @@
         anche tu a far parte del nostro Team!
       </p>
       <button class="t4-add-btn btn t4-bg-black">
-        Contattaci
-        <span>
-          <img src="/images/headset.png" alt="" />
-        </span>
+        <a class="t4-orange-text" href="/register">
+          Diventa Partner
+          <span>
+            <img src="/images/headset.png" alt="" />
+          </span>
+        </a>
       </button>
     </div>
   </div>
