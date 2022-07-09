@@ -9,4 +9,12 @@
 
 @section('content')
     <h1>Benvenuto nella sezione Ordini</h1>
+    <p>{{ $orders }}</p>
+    @foreach ($orders as $order)
+        <p>{{ $order->name }}</p>
+        @foreach ($order->plates as $plate)
+            <p>{{ $plate->name }}</p>
+            <p>{{ $plate->pivot->quantity }}</p>
+        @endforeach
+    @endforeach
 @endsection
