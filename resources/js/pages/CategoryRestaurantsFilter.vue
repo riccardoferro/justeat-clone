@@ -15,23 +15,28 @@
           v-for="category in categories"
           :key="category.slug"
         >
-          <input
-            class="btn-check"
-            type="checkbox"
-            :value="category.slug"
-            :id="'category' + category.id"
-            :checked="categoriesArr.includes(category.slug)"
-            @click="
-              () => {
-                toggleCheckbox(category.slug);
-                getUsersPerCategories(url_getUsers);
-              }
-            "
+         <input
+              type="checkbox"
+              :value="category.slug"
+              :id="'category' + category.id"
+              :checked="categoriesArr.includes(category.slug)"
+              class="btn-check"
+
+              @click="
+                () => {
+                  toggleCheckbox(category.slug);
+                  getUsersPerCategories(url_getUsers);
+                }
+              "
           />
 
-          <label class="btn t4-add-btn" :for="'category' + category.id">
-            {{ category.name }}
+          <label 
+              :class=" categoriesArr.includes(category.slug) ? 'checkedBox' : '' "
+              class="btn t4-add-btn" 
+              :for="'category' + category.id">
+              {{ category.name }}
           </label>
+
         </div>
       </div>
     </div>
@@ -268,9 +273,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.checkedBox{
+  background-color: #fd7d2b !important;
+  color: #0b100c !important;
+}
+
+
 .t4-icon-btn {
   img {
     width: 20px;
   }
+
 }
 </style>
