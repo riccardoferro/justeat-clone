@@ -5103,6 +5103,8 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HeaderComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/HeaderComponent.vue */ "./resources/js/components/HeaderComponent.vue");
+/* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
+//
 //
 //
 //
@@ -5123,10 +5125,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppComponent",
   components: {
-    HeaderComponent: _components_HeaderComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    HeaderComponent: _components_HeaderComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    FooterComponent: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -5536,6 +5540,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -6281,10 +6286,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6437,8 +6438,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_CategoriesCardsComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/CategoriesCardsComponent.vue */ "./resources/js/components/CategoriesCardsComponent.vue");
 /* harmony import */ var _components_BannerAppComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/BannerAppComponent.vue */ "./resources/js/components/BannerAppComponent.vue");
 /* harmony import */ var _components_BannerInfoComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/BannerInfoComponent.vue */ "./resources/js/components/BannerInfoComponent.vue");
-/* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
-/* harmony import */ var _components_RestaurantCardsComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/RestaurantCardsComponent.vue */ "./resources/js/components/RestaurantCardsComponent.vue");
+/* harmony import */ var _components_RestaurantCardsComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/RestaurantCardsComponent.vue */ "./resources/js/components/RestaurantCardsComponent.vue");
 //
 //
 //
@@ -6452,8 +6452,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 
 
@@ -6466,8 +6464,7 @@ __webpack_require__.r(__webpack_exports__);
     CategoriesCardsComponent: _components_CategoriesCardsComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     BannerAppComponent: _components_BannerAppComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     BannerInfoComponent: _components_BannerInfoComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    FooterComponent: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    RestaurantCardsComponent: _components_RestaurantCardsComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+    RestaurantCardsComponent: _components_RestaurantCardsComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   data: function data() {
     return {
@@ -6571,6 +6568,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Payment",
   data: function data() {
@@ -6659,6 +6668,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (e) {
         return console.log("error payment", e);
       });
+    },
+    continueToPayment: function continueToPayment() {
+      this.$refs.paymentBtnRef.click();
     }
   }
 });
@@ -36838,7 +36850,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-abfbddf2] {\n  list-style-type: none;\n  padding-left: 0px;\n}\nul li[data-v-abfbddf2] {\n  line-height: 28px;\n}\nul li a[data-v-abfbddf2] {\n  color: #fff;\n}\nul li a[data-v-abfbddf2]:hover {\n  color: #fd7d2b;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 0.9rem;\n}\nul li .name[data-v-abfbddf2]:hover {\n  color: #b54702;\n}\nimg[data-v-abfbddf2] {\n  width: 70px;\n}\n.t4-circle-btn img[data-v-abfbddf2] {\n  width: 30px;\n  transition: all 0.2s ease-in-out;\n}\n.t4-circle-btn img[data-v-abfbddf2]:hover {\n  transform: scale(1.1);\n}\ni[data-v-abfbddf2] {\n  margin-right: 5px;\n}\nspan[data-v-abfbddf2] {\n  font-size: 0.8rem;\n}\n.t4-border-bottom[data-v-abfbddf2] {\n  border-bottom: 1px solid #fd7d2b;\n}", ""]);
+exports.push([module.i, ".t4-border-top[data-v-abfbddf2] {\n  border-top: 1px solid rgba(255, 255, 255, 0.1);\n}\nul[data-v-abfbddf2] {\n  list-style-type: none;\n  padding-left: 0px;\n}\nul li[data-v-abfbddf2] {\n  line-height: 28px;\n}\nul li a[data-v-abfbddf2] {\n  color: #fff;\n}\nul li a[data-v-abfbddf2]:hover {\n  color: #fd7d2b;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 0.9rem;\n}\nul li .name[data-v-abfbddf2]:hover {\n  color: #b54702;\n}\nimg[data-v-abfbddf2] {\n  width: 70px;\n}\n.t4-circle-btn img[data-v-abfbddf2] {\n  width: 30px;\n  transition: all 0.2s ease-in-out;\n}\n.t4-circle-btn img[data-v-abfbddf2]:hover {\n  transform: scale(1.1);\n}\ni[data-v-abfbddf2] {\n  margin-right: 5px;\n}\nspan[data-v-abfbddf2] {\n  font-size: 0.8rem;\n}\n.t4-border-bottom[data-v-abfbddf2] {\n  border-bottom: 1px solid #fd7d2b;\n}", ""]);
 
 // exports
 
@@ -36914,7 +36926,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-icon-btn img[data-v-4b9d0d57] {\n  width: 20px;\n}", ""]);
+exports.push([module.i, ".t4-icon-btn img[data-v-4b9d0d57] {\n  width: 20px;\n}\n.btn-check:focus + .btn[data-v-4b9d0d57],\n.btn[data-v-4b9d0d57]:focus {\n  outline: 2px solid #fd7d2b;\n  outline-offset: 2px;\n}\n.t4-icon-company img[data-v-4b9d0d57] {\n  width: 35px;\n}", ""]);
 
 // exports
 
@@ -69391,6 +69403,8 @@ var render = function () {
           attrs: { cart: _vm.cart },
           on: { removeItem: _vm.removeItem, takeItem: _vm.addItem },
         }),
+        _vm._v(" "),
+        _c("FooterComponent"),
       ],
       1
     ),
@@ -69763,12 +69777,12 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "t4-footer" }, [
+  return _c("div", { staticClass: "container-fluid" }, [
     _c(
       "div",
       {
         staticClass:
-          "\n      row\n      mt-5\n      justify-content-md-evenly justify-content-start\n      t4-border-bottom\n    ",
+          "\n      row\n      mt-5\n      justify-content-md-evenly justify-content-start\n      t4-border-bottom t4-border-top\n      pt-3\n    ",
       },
       [
         _c(
@@ -70682,38 +70696,31 @@ var render = function () {
         "div",
         { staticClass: "d-flex justify-content-center flex-wrap" },
         _vm._l(_vm.categories, function (category) {
-          return _c(
-            "div",
-            {
-              key: category.slug,
-              staticClass: "form-check form-check-inline mb-3",
-            },
-            [
-              _c("input", {
-                staticClass: "btn-check",
-                attrs: { type: "checkbox", id: "category" + category.id },
-                domProps: {
-                  value: category.slug,
-                  checked: _vm.categoriesArr.includes(category.slug),
+          return _c("div", { key: category.slug, staticClass: "mb-3" }, [
+            _c("input", {
+              staticClass: "btn-check",
+              attrs: { type: "checkbox", id: "category" + category.id },
+              domProps: {
+                value: category.slug,
+                checked: _vm.categoriesArr.includes(category.slug),
+              },
+              on: {
+                click: function () {
+                  _vm.toggleCheckbox(category.slug)
+                  _vm.getUsersPerCategories(_vm.url_getUsers)
                 },
-                on: {
-                  click: function () {
-                    _vm.toggleCheckbox(category.slug)
-                    _vm.getUsersPerCategories(_vm.url_getUsers)
-                  },
-                },
-              }),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass: "btn t4-add-btn",
-                  attrs: { for: "category" + category.id },
-                },
-                [_vm._v("\n          " + _vm._s(category.name) + "\n        ")]
-              ),
-            ]
-          )
+              },
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "btn t4-add-btn me-3",
+                attrs: { for: "category" + category.id },
+              },
+              [_vm._v("\n          " + _vm._s(category.name) + "\n        ")]
+            ),
+          ])
         }),
         0
       ),
@@ -70747,7 +70754,7 @@ var render = function () {
                   [
                     _c("div", [
                       _c(
-                        "h6",
+                        "h4",
                         {
                           staticClass:
                             "t4-orange-text t4-fw-6 d-flex align-items-center",
@@ -70917,8 +70924,6 @@ var render = function () {
       _c("CategoriesCardsComponent", { attrs: { categories: _vm.categories } }),
       _vm._v(" "),
       _c("BannerInfoComponent"),
-      _vm._v(" "),
-      _c("FooterComponent"),
     ],
     1
   )
@@ -70985,10 +70990,44 @@ var render = function () {
         "div",
         { staticClass: "container-fluid t4-payment-card" },
         [
+          _c("h2", [_vm._v("Inserisci i dati della carta")]),
+          _vm._v(" "),
           _c("v-braintree", {
             staticClass: "brain",
             attrs: { authorization: _vm.Token },
             on: { success: _vm.onSuccess, error: _vm.onError },
+            scopedSlots: _vm._u(
+              [
+                {
+                  key: "button",
+                  fn: function (slotProps) {
+                    return [
+                      _c("button", {
+                        ref: "paymentBtnRef",
+                        staticStyle: { display: "none" },
+                        on: { click: slotProps.submit },
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn t4-add-btn mt-2 mb-3",
+                          on: {
+                            click: function ($event) {
+                              return _vm.continueToPayment()
+                            },
+                          },
+                        },
+                        [_vm._v("\n        Procedi con l'acquisto\n      ")]
+                      ),
+                    ]
+                  },
+                },
+              ],
+              null,
+              false,
+              1214976422
+            ),
           }),
         ],
         1
@@ -71017,7 +71056,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "container-fluid pb-5" }, [
     _c("h2", { staticClass: "text-center mt-5" }, [
       _vm._v("Inserisci i dati della consegna"),
     ]),
@@ -71347,7 +71386,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-8 col-8 t4-img-pay",
+          "col-xxl-4 col-xl-3 col-lg-4 col-md-4 col-sm-8 col-8 t4-img-pay",
       },
       [_c("img", { attrs: { src: "/images/cash-on-delivery.png", alt: "" } })]
     )
@@ -71459,7 +71498,7 @@ var render = function () {
             [
               _c("div", { staticClass: "t4-card-img" }, [
                 _c("img", {
-                  attrs: { src: "storage/" + plate.image, alt: "" },
+                  attrs: { src: "/storage/" + plate.image, alt: "" },
                 }),
               ]),
               _vm._v(" "),
@@ -88654,17 +88693,17 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'home-booleat',
     component: _pages_HomeComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/:slug',
+    path: '/payments',
+    name: 'payments-page',
+    component: _pages_PaymentsPage__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }, {
+    path: '/restaurant/:slug',
     name: 'single-restaurant',
     component: _pages_SingleRestaurant__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/category/:slug',
     name: 'category-restaurants-filter',
     component: _pages_CategoryRestaurantsFilter__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }, {
-    path: '/payments',
-    name: 'payments-page',
-    component: _pages_PaymentsPage__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     path: '/payments/success',
     name: 'success',
@@ -88686,7 +88725,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })

@@ -1,11 +1,12 @@
 <template>
-  <div class="t4-footer">
+  <div class="container-fluid">
     <div
       class="
         row
         mt-5
         justify-content-md-evenly justify-content-start
-        t4-border-bottom
+        t4-border-bottom t4-border-top
+        pt-3
       "
     >
       <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
@@ -115,6 +116,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.t4-border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 ul {
   list-style-type: none;
   padding-left: 0px;
