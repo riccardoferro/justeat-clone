@@ -12,17 +12,28 @@
 
             {{-- <h1>Modifica le tue categorie</h1> --}}
             {{-- Visualizzazione delle categorie presenti --}}
-            <h3 class="text-center">Le tue categorie</h2>
+            <h3 class="text-center mb-5 pb-3">Le tue categorie</h2>
 
-            <div class="row">
+            <div class="row
+            t4-bg-orange
+            justify-content-center
+            justify-content-lg-start
+            justify-content-md-start
+            justify-content-sm-start">
                 @foreach ($user->categories as $category)
-                    <div class="col-auto text-center ">
+                    <div class=" col-xxl-4 col-lg-3 col-md-6 col-sm-6 col-6
+                    mb-5
+                    d-flex
+                    flex-column
+                    align-items-center
+                    t4-category-label
+                    t4-card-hover">
 
-                        <span class="d-block mb-3">
+                        <span class="t4-title-category">
                             {{ $category->name }}
                         </span>
 
-                        <img src="{{ asset('storage/images/category_img/' . $category->image) }}"
+                        <img class=" rounded  " src="{{ asset('storage/images/category_img/' . $category->image) }}"
                             alt="{{ $category->name }}" style="width:150px">
                     </div>
                 @endforeach
@@ -52,22 +63,25 @@
                 @endif
 
                 {{-- CATEGORIE --}}
-                <div class="form-group col-6 d-flex text-center justify-content-around flex-wrap">
+                <div class="d-flex justify-content-center flex-wrap">
                     @foreach ($categories as $category)
 
-                        <div class="col-auto  justify-content-center pt-5">
+                        <div class="col-auto d-flex flex-column align-items-center m-2">
+
                             <input 
                                 {{-- name is an array --}}
                                 name="categories[]"
-                                class="form-check-input @error('categories') is-invalid @enderror " 
+                                class="form-check-input @error('categories') is-invalid @enderror m-2 " 
                                 type="checkbox"
+                                id= "{{$category->id}}"
                                 value="{{ $category->id }}"
                                 {{ $user->categories->contains($category) ? 'checked' : '' }} 
                             />
 
 
                             {{-- Nome categoria --}}
-                            <div class="form-check-label"> {{ $category->name }} </div>
+                            <label class="btn t4-add-btn" for="categorie[] "> {{ $category->name }} </label>
+
                         </div>
                     @endforeach
 
