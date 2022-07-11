@@ -51,10 +51,16 @@
 
     <div class="row mt-3 justify-content-center align-items-center pb-3">
       <!--d-flex-->
-      <div class="col-2 t4-footer-logo">
+      <div class="col-md-1 col-sm-2 col-2 t4-footer-logo">
         <img src="/images/logo.png" alt="" />
       </div>
-      <div class="col-4 text-center t4-orange-text">
+      <div
+        class="
+          col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-10 col-12
+          text-center
+          t4-orange-text
+        "
+      >
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-twitter"></i>
         <i class="fa-brands fa-instagram"></i>

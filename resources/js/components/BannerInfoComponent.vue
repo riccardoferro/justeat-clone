@@ -13,7 +13,7 @@
     id="lavoraconnoi"
   >
     <div
-      class="col-xxl-5 col-xl-6 col-lg-6 col-md-6 col-sm-8 col-11 t4-card-Info"
+      class="col-xxl-5 col-xl-4 col-lg-6 col-md-7 col-sm-12 col-12 t4-card-Info"
     >
       <h2>Lavora con noi</h2>
       <p class="t4-orange-text t4-fw-6">
@@ -45,7 +45,7 @@ export default {
   background-position-y: center;
   //   padding-top: 50px;
   //   padding-bottom: 200px;
-  padding: 200px;
+  padding: 100px;
 }
 .t4-card-Info {
   background: rgba(0, 0, 0, 0.5);
