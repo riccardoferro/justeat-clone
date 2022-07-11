@@ -37077,7 +37077,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-nav-item img[data-v-153bfd55] {\n  width: 20px;\n}\n.t4-reg-icon[data-v-153bfd55] {\n  width: 22px !important;\n}\n.t4-cart-item[data-v-153bfd55] {\n  border-bottom: 1px solid #fd7d2b;\n}\n.t4-cart-item img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-cart-side img[data-v-153bfd55] {\n  width: 50px;\n}\n.t4-btn-pay img[data-v-153bfd55],\n.t4-logo-pay img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-delete-item img[data-v-153bfd55] {\n  width: 20px;\n}\n.t4-sidecart[data-v-153bfd55] {\n  box-shadow: -15px 0px 12px -5px #000000;\n}\n.t4-nav-toggle[data-v-153bfd55],\n.t4-cart[data-v-153bfd55],\n.t4-close[data-v-153bfd55] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-nav-toggle[data-v-153bfd55]:hover,\n.t4-cart[data-v-153bfd55]:hover,\n.t4-close[data-v-153bfd55]:hover {\n  transform: scale(1.1);\n}", ""]);
+exports.push([module.i, ".t4-nav-item img[data-v-153bfd55] {\n  width: 20px;\n}\n.t4-reg-icon[data-v-153bfd55] {\n  width: 22px !important;\n}\n.t4-cart-item[data-v-153bfd55] {\n  border-bottom: 1px solid #fd7d2b;\n}\n.t4-cart-item img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-cart-side img[data-v-153bfd55] {\n  width: 40px;\n}\n.t4-btn-pay img[data-v-153bfd55],\n.t4-logo-pay img[data-v-153bfd55] {\n  width: 100%;\n}\n.t4-delete-item img[data-v-153bfd55] {\n  width: 20px;\n}\n.t4-sidecart[data-v-153bfd55] {\n  box-shadow: -15px 0px 12px -5px #000000;\n}\n.t4-nav-toggle[data-v-153bfd55],\n.t4-cart[data-v-153bfd55],\n.t4-close[data-v-153bfd55] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-nav-toggle[data-v-153bfd55]:hover,\n.t4-cart[data-v-153bfd55]:hover,\n.t4-close[data-v-153bfd55]:hover {\n  transform: scale(1.1);\n}", ""]);
 
 // exports
 
@@ -70591,7 +70591,9 @@ var render = function () {
                       ],
                       2
                     )
-                  : _c("p", [_vm._v("Il tuo carrello è vuoto!")]),
+                  : _c("p", { staticClass: "text-center" }, [
+                      _vm._v("Il tuo carrello è vuoto!"),
+                    ]),
               ]
             ),
             _vm._v(" "),
@@ -89665,7 +89667,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
