@@ -5889,9 +5889,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent",
   props: {
@@ -70734,7 +70731,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2",
-              attrs: { href: "#home" },
+              attrs: { href: "/" },
             },
             [_vm._v("\n            Home\n          ")]
           ),
@@ -70743,7 +70740,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2",
-              attrs: { href: "#ristoranti" },
+              attrs: { href: "/#ristoranti" },
             },
             [_vm._v("\n            Ristoranti\n          ")]
           ),
@@ -70752,7 +70749,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2",
-              attrs: { href: "#lavoraconnoi" },
+              attrs: { href: "/#lavoraconnoi" },
             },
             [_vm._v("\n            Lavora con noi\n          ")]
           ),
@@ -70761,7 +70758,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2",
-              attrs: { href: "#chisiamo" },
+              attrs: { href: "/#chisiamo" },
             },
             [_vm._v("\n            Chi siamo\n          ")]
           ),
@@ -70770,7 +70767,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-5 ms-md-2 ms-sm-2",
-              attrs: { href: "#contatti" },
+              attrs: { href: "/#contatti" },
             },
             [_vm._v("\n            Contatti\n          ")]
           ),
@@ -89759,7 +89756,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })

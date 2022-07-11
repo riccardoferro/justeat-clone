@@ -180,33 +180,30 @@
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
-            <a
-              class="t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2"
-              href="#home"
-            >
+            <a class="t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2" href="/">
               Home
             </a>
             <a
               class="t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2"
-              href="#ristoranti"
+              href="/#ristoranti"
             >
               Ristoranti
             </a>
             <a
               class="t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2"
-              href="#lavoraconnoi"
+              href="/#lavoraconnoi"
             >
               Lavora con noi
             </a>
             <a
               class="t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2"
-              href="#chisiamo"
+              href="/#chisiamo"
             >
               Chi siamo
             </a>
             <a
               class="t4-nav-item t4-orange-text me-5 ms-md-2 ms-sm-2"
-              href="#contatti"
+              href="/#contatti"
             >
               Contatti
             </a>
