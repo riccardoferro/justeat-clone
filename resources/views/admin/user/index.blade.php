@@ -123,12 +123,20 @@
 
         {{-- Sezione Categorie --}}
         @if (count($user->categories))
-            <div class="row justify-content-center mt-3 ">
+            <div class="row
+            t4-bg-orange
+            justify-content-center ">
                 @foreach ($user->categories as $category)
-                    <div class="col-auto d-flex flex-column align-items-center t4-card-categories">
+                    <div class="col-auto
+                    mb-5
+                    d-flex
+                    flex-column
+                    align-items-center
+                    t4-category-label
+                    t4-card-hover">
                         <span>{{ $category->name }}</span>
                         <img src="{{ asset('storage/images/category_img/' . $category->image) }}"
-                            alt="{{ $category->name }}" style="width:150px">
+                            alt="{{ $category->name }}" style="width:150px; border-radius:20px; ">
                     </div>
                 @endforeach
             </div>

@@ -18,7 +18,7 @@
       >
         <!-- inizio card -->
         <div
-          class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 mb-5"
+          class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 mb-5 "
           v-for="user in users"
           :key="user.id"
         >
@@ -26,19 +26,24 @@
           <router-link
             :to="{ name: 'single-restaurant', params: { slug: user.slug } }"
             class="
-              d-flex
-              flex-column
-              justify-content-center
-              align-items-center
-              t4-card-hover t4-img-company
+              row
+            t4-bg-orange
+            justify-content-center
+            t4-img-company
             "
           >
             <!-- FINE SEZIONE SINGOLO RISTORANTE  -->
 
             <div
-              class="col-xxl-10 col-xl-8 col-lg-7 col-md-10 col-sm-12 col-12"
+              class="col-auto
+                    mb-5
+                    d-flex
+                    flex-column
+                    align-items-center
+                    t4-category-label
+                    t4-card-hover"
             >
-              <img :src="imagePut(user.image)" alt="" />
+              <img class="" style="border-radius:20px;" :src="imagePut(user.image)" alt="" />
             </div>
             <div class="mt-3">
               <h6
@@ -65,6 +70,7 @@
           </router-link>
         </div>
         <!-- fine card -->
+
       </div>
     </div>
   </div>
@@ -144,7 +150,7 @@ export default {
 
 .t4-name-company {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 12px 15px;

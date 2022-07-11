@@ -25,7 +25,7 @@
                     align-items-center
                     t4-category-label
                     t4-card-hover">
-
+                    
                         <span class="t4-title-category">
                             {{ $category->name }}
                         </span>
