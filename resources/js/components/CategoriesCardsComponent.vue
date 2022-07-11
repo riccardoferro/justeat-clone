@@ -23,7 +23,7 @@
       <!-- inizio card -->
       <div
         class="
-          col-xxl-4 col-xl-4 col-lg-3 col-md-6 col-sm-6 col-6
+          col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6
           mb-5
           d-flex
           flex-column

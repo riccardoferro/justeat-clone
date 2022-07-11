@@ -15,28 +15,27 @@
           v-for="category in categories"
           :key="category.slug"
         >
-         <input
-              type="checkbox"
-              :value="category.slug"
-              :id="'category' + category.id"
-              :checked="categoriesArr.includes(category.slug)"
-              class="btn-check"
-
-              @click="
-                () => {
-                  toggleCheckbox(category.slug);
-                  getUsersPerCategories(url_getUsers);
-                }
-              "
+          <input
+            type="checkbox"
+            :value="category.slug"
+            :id="'category' + category.id"
+            :checked="categoriesArr.includes(category.slug)"
+            class="btn-check"
+            @click="
+              () => {
+                toggleCheckbox(category.slug);
+                getUsersPerCategories(url_getUsers);
+              }
+            "
           />
 
-          <label 
-              :class=" categoriesArr.includes(category.slug) ? 'checkedBox' : '' "
-              class="btn t4-add-btn" 
-              :for="'category' + category.id">
-              {{ category.name }}
+          <label
+            :class="categoriesArr.includes(category.slug) ? 'checkedBox' : ''"
+            class="btn t4-add-btn"
+            :for="'category' + category.id"
+          >
+            {{ category.name }}
           </label>
-
         </div>
       </div>
     </div>
@@ -48,7 +47,7 @@
       <!-- inizio card -->
       <div
         class="
-          col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-7 col-10
+          col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-7 col-10
           mb-5
           d-flex
           flex-column
@@ -273,18 +272,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.checkedBox{
+.checkedBox {
   background-color: #fd7d2b !important;
   color: #0b100c !important;
 }
-
 
 .t4-icon-btn {
   img {
     width: 20px;
   }
-
 }
 
 .btn-check:focus + .btn,

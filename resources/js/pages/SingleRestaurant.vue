@@ -45,6 +45,7 @@
         </span>
       </h2>
       <div
+        v-if="plates.length > 0"
         class="
           row
           d-flex
@@ -210,6 +211,12 @@
         </div>
 
         <!-- Fine Piatti -->
+      </div>
+      <div v-else class="row justify-content-center">
+        <div class="col-8 text-center mt-5">
+          <img src="/images/sad.png" alt="" class="t4-empty-plates mb-4" />
+          <h1>Menù in lavorazione...</h1>
+        </div>
       </div>
 
       <div v-if="last_page !== 1" class="row">
