@@ -71,7 +71,7 @@ a {
     }
 }
 
-// Login e Register Navbar
+//Login e Register Navbar
 .nav-item {
     &:hover {
         transform: scale(1.1);
@@ -594,7 +594,8 @@ input:required {
     font-weight: 600;
     text-align: center;
     padding: 5px 10px;
-    margin: 0px 10px;
+    margin-bottom: 20px !important;
+    margin-right: 20px;
 }
 
 //
@@ -723,3 +724,4 @@ input:required {
 .t4-border-bottom {
     border-bottom: 2px solid $t4_orange_text;
 }
+

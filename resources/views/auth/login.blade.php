@@ -71,7 +71,7 @@
                                         {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label t4-checkbox-text" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Ricordami') }}
                                     </label>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                             <div class="col-xl-12 text-center">
                                 @if (Route::has('password.request'))
                                     <a class="t4-forgot" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Hai dimenticato la password?') }}
                                     </a>
                                 @endif
                             </div>

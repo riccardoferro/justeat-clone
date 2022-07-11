@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('navcategory')
-    <div class="t4-nav-links">
+    <div class="t4-link-orange">
         <a class="me-3 t4-orange-text" href="{{ url('admin/user') }}"> PROFILO</a>
         @if (count($user->categories))
             <a class="me-3 t4-orange-text" href="{{ route('admin.categories.edit', $user->id) }}"> CATEGORIE </a>

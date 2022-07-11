@@ -148,7 +148,7 @@
               </div>
             </div>
 
-            <p v-else>Il tuo carrello è vuoto!</p>
+            <p v-else class="text-center">Il tuo carrello è vuoto!</p>
           </div>
 
           <!-- fine carrello -->
@@ -283,7 +283,7 @@ export default {
 }
 .t4-cart-side {
   img {
-    width: 50px;
+    width: 40px;
   }
 }
 
