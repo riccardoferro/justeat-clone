@@ -5,8 +5,10 @@
         row
         mt-5
         justify-content-md-evenly justify-content-start
-        t4-border-bottom t4-border-top
-        pt-3
+        t4-border-bottom
+        pt-5
+        pb-5
+        t4-border-top
       "
       id="contatti"
     >
@@ -49,7 +51,10 @@
 
     <div class="row mt-3 justify-content-center align-items-center pb-3">
       <!--d-flex-->
-      <div class="col-12 text-center t4-orange-text">
+      <div class="col-2 t4-footer-logo">
+        <img src="/images/logo.png" alt="" />
+      </div>
+      <div class="col-4 text-center t4-orange-text">
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-twitter"></i>
         <i class="fa-brands fa-instagram"></i>
@@ -117,6 +122,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.t4-logo-footer {
+  img {
+    width: 50px;
+  }
+}
 .t4-border-top {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -162,5 +172,11 @@ span {
 }
 .t4-border-bottom {
   border-bottom: 1px solid #fd7d2b;
+}
+
+.t4-footer-logo {
+  img {
+    width: 50px;
+  }
 }
 </style>

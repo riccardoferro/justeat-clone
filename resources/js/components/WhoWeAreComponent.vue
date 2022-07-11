@@ -1,6 +1,6 @@
 <template>
-  <div class="container-lg pt-5" id="chisiamo">
-    <div class="row justify-content-center align-items-center">
+  <div class="container-lg pt-5 pb-5" id="chisiamo">
+    <div class="row justify-content-center align-items-center t4-p">
       <div class="col-xxl-7 col-xl-7 col-lg-10 col-md-10 col-sm-12 col-12">
         <img src="/images/team4.jpg" alt="" />
       </div>
@@ -36,12 +36,16 @@ img {
 
 .t4-card-whoweare {
   background: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(18.5px);
   -webkit-backdrop-filter: blur(18.5px);
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 25px;
   margin: 20px;
+}
+
+.t4-p {
+  padding-top: 50px;
 }
 </style>

@@ -5610,6 +5610,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FooterComponent",
   data: function data() {
@@ -37053,7 +37058,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-border-top[data-v-abfbddf2] {\n  border-top: 1px solid rgba(255, 255, 255, 0.1);\n}\nul[data-v-abfbddf2] {\n  list-style-type: none;\n  padding-left: 0px;\n}\nul li[data-v-abfbddf2] {\n  line-height: 28px;\n}\nul li a[data-v-abfbddf2] {\n  color: #fff;\n}\nul li a[data-v-abfbddf2]:hover {\n  color: #fd7d2b;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 0.9rem;\n}\nul li .name[data-v-abfbddf2]:hover {\n  color: #b54702;\n}\nimg[data-v-abfbddf2] {\n  width: 70px;\n}\n.t4-circle-btn img[data-v-abfbddf2] {\n  width: 30px;\n  transition: all 0.2s ease-in-out;\n}\n.t4-circle-btn img[data-v-abfbddf2]:hover {\n  transform: scale(1.1);\n}\ni[data-v-abfbddf2] {\n  margin-right: 5px;\n}\nspan[data-v-abfbddf2] {\n  font-size: 0.8rem;\n}\n.t4-border-bottom[data-v-abfbddf2] {\n  border-bottom: 1px solid #fd7d2b;\n}", ""]);
+exports.push([module.i, ".t4-logo-footer img[data-v-abfbddf2] {\n  width: 50px;\n}\n.t4-border-top[data-v-abfbddf2] {\n  border-top: 1px solid rgba(255, 255, 255, 0.1);\n}\nul[data-v-abfbddf2] {\n  list-style-type: none;\n  padding-left: 0px;\n}\nul li[data-v-abfbddf2] {\n  line-height: 28px;\n}\nul li a[data-v-abfbddf2] {\n  color: #fff;\n}\nul li a[data-v-abfbddf2]:hover {\n  color: #fd7d2b;\n}\nul li .name[data-v-abfbddf2] {\n  font-size: 0.9rem;\n}\nul li .name[data-v-abfbddf2]:hover {\n  color: #b54702;\n}\nimg[data-v-abfbddf2] {\n  width: 70px;\n}\n.t4-circle-btn img[data-v-abfbddf2] {\n  width: 30px;\n  transition: all 0.2s ease-in-out;\n}\n.t4-circle-btn img[data-v-abfbddf2]:hover {\n  transform: scale(1.1);\n}\ni[data-v-abfbddf2] {\n  margin-right: 5px;\n}\nspan[data-v-abfbddf2] {\n  font-size: 0.8rem;\n}\n.t4-border-bottom[data-v-abfbddf2] {\n  border-bottom: 1px solid #fd7d2b;\n}\n.t4-footer-logo img[data-v-abfbddf2] {\n  width: 50px;\n}", ""]);
 
 // exports
 
@@ -37148,7 +37153,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "img[data-v-bd28e60c] {\n  width: 100%;\n}\n.t4-card-whoweare[data-v-bd28e60c] {\n  background: rgba(0, 0, 0, 0.1);\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(18.5px);\n  -webkit-backdrop-filter: blur(18.5px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  padding: 25px;\n  margin: 20px;\n}", ""]);
+exports.push([module.i, "img[data-v-bd28e60c] {\n  width: 100%;\n}\n.t4-card-whoweare[data-v-bd28e60c] {\n  background: rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.37);\n  backdrop-filter: blur(18.5px);\n  -webkit-backdrop-filter: blur(18.5px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  padding: 25px;\n  margin: 20px;\n}\n.t4-p[data-v-bd28e60c] {\n  padding-top: 50px;\n}", ""]);
 
 // exports
 
@@ -70141,7 +70146,7 @@ var render = function () {
       "div",
       {
         staticClass:
-          "\n      row\n      mt-5\n      justify-content-md-evenly justify-content-start\n      t4-border-bottom t4-border-top\n      pt-3\n    ",
+          "\n      row\n      mt-5\n      justify-content-md-evenly justify-content-start\n      t4-border-bottom\n      pt-5\n      pb-5\n      t4-border-top\n    ",
         attrs: { id: "contatti" },
       },
       [
@@ -70257,7 +70262,11 @@ var staticRenderFns = [
         staticClass: "row mt-3 justify-content-center align-items-center pb-3",
       },
       [
-        _c("div", { staticClass: "col-12 text-center t4-orange-text" }, [
+        _c("div", { staticClass: "col-2 t4-footer-logo" }, [
+          _c("img", { attrs: { src: "/images/logo.png", alt: "" } }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-4 text-center t4-orange-text" }, [
           _c("i", { staticClass: "fa-brands fa-facebook" }),
           _vm._v(" "),
           _c("i", { staticClass: "fa-brands fa-twitter" }),
@@ -71142,11 +71151,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "container-lg pt-5", attrs: { id: "chisiamo" } },
+      { staticClass: "container-lg pt-5 pb-5", attrs: { id: "chisiamo" } },
       [
         _c(
           "div",
-          { staticClass: "row justify-content-center align-items-center" },
+          { staticClass: "row justify-content-center align-items-center t4-p" },
           [
             _c(
               "div",
