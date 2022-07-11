@@ -16,12 +16,9 @@
 
             <div class="row
             t4-bg-orange
-            justify-content-center
-            justify-content-lg-start
-            justify-content-md-start
-            justify-content-sm-start">
+            justify-content-center">
                 @foreach ($user->categories as $category)
-                    <div class=" col-xxl-4 col-lg-3 col-md-6 col-sm-6 col-6
+                    <div class=" col-auto
                     mb-5
                     d-flex
                     flex-column
@@ -33,8 +30,8 @@
                             {{ $category->name }}
                         </span>
 
-                        <img class=" rounded  " src="{{ asset('storage/images/category_img/' . $category->image) }}"
-                            alt="{{ $category->name }}" style="width:150px">
+                        <img src="{{ asset('storage/images/category_img/' . $category->image) }}"
+                            alt="{{ $category->name }}" style="width:150px; border-radius: 20px;">
                     </div>
                 @endforeach
             </div>
