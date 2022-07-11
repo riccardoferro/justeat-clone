@@ -7431,6 +7431,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleRestaurant",
   data: function data() {
@@ -37229,7 +37250,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-img-restaurant img[data-v-2ff820ae] {\n  width: 100%;\n  border-radius: 20px;\n}\n.t4-menu-food img[data-v-2ff820ae] {\n  width: 50px;\n}\n.t4-close img[data-v-2ff820ae] {\n  width: 35px;\n}", ""]);
+exports.push([module.i, ".t4-img-restaurant img[data-v-2ff820ae] {\n  width: 100%;\n  border-radius: 20px;\n}\n.t4-menu-food img[data-v-2ff820ae] {\n  width: 50px;\n}\n.t4-close img[data-v-2ff820ae] {\n  width: 35px;\n}\n.t4-icon-mini img[data-v-2ff820ae] {\n  width: 22px;\n}\n.t4-icon-truck img[data-v-2ff820ae] {\n  width: 24px;\n}", ""]);
 
 // exports
 
@@ -72114,7 +72135,10 @@ var render = function () {
   return _c("div", { staticClass: "container-fluid pb-5" }, [
     _c(
       "div",
-      { staticClass: "row pt-5 justify-content-center text-sm-center pb-5" },
+      {
+        staticClass:
+          "\n      row\n      pt-5\n      justify-content-center\n      text-sm-center\n      pb-5\n      align-items-center\n    ",
+      },
       [
         _c(
           "div",
@@ -72149,35 +72173,39 @@ var render = function () {
               _vm._v(_vm._s(_vm.restaurant.address)),
             ]),
             _vm._v(" "),
-            _c("span", { staticClass: "t4-orange-text" }, [
+            _c("h6", { staticClass: "t4-orange-text mb-3" }, [
               _vm._v("Categorie:"),
             ]),
             _vm._v(" "),
-            _vm._l(_vm.categories, function (category) {
-              return _c(
-                "span",
-                { key: category.slug, staticClass: "t4-badge-category" },
-                [_vm._v("\n        " + _vm._s(category.name) + "\n      ")]
-              )
-            }),
+            _c(
+              "div",
+              { staticClass: "d-flex flex-wrap justify-content-center" },
+              _vm._l(_vm.categories, function (category) {
+                return _c(
+                  "span",
+                  { key: category.slug, staticClass: "t4-badge-category" },
+                  [
+                    _vm._v(
+                      "\n          " + _vm._s(category.name) + "\n        "
+                    ),
+                  ]
+                )
+              }),
+              0
+            ),
             _vm._v(" "),
-            _c("p", { staticClass: "mt-3" }, [
-              _vm._v(
-                "\n        Chiude alle ore 23:00 - Consegna gratuita - Minimo d'ordine: 10€\n      "
-              ),
-            ]),
+            _vm._m(1),
             _vm._v(" "),
             _c("p", [
               _vm._v("Ordina i tuoi piatti oppure prenota subito un ritiro"),
             ]),
-          ],
-          2
+          ]
         ),
       ]
     ),
     _vm._v(" "),
     _c("div", { staticClass: "row flex-column justify-content-center mt-5" }, [
-      _vm._m(1),
+      _vm._m(2),
       _vm._v(" "),
       _c(
         "div",
@@ -72318,7 +72346,7 @@ var render = function () {
                             "div",
                             { staticClass: "modal-content t4-bg-black" },
                             [
-                              _vm._m(2, true),
+                              _vm._m(3, true),
                               _vm._v(" "),
                               _c(
                                 "div",
@@ -72448,7 +72476,7 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._m(3), _vm._v("\n          Precedente\n        ")]
+                [_vm._m(4), _vm._v("\n          Precedente\n        ")]
               ),
               _vm._v(" "),
               _c(
@@ -72464,14 +72492,14 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._v("\n          Successivo\n          "), _vm._m(4)]
+                [_vm._v("\n          Successivo\n          "), _vm._m(5)]
               ),
             ]),
           ])
         : _vm._e(),
     ]),
     _vm._v(" "),
-    _vm._m(5),
+    _vm._m(6),
   ])
 }
 var staticRenderFns = [
@@ -72481,6 +72509,22 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "t4-icon-company ms-2" }, [
       _c("img", { attrs: { src: "/images/posate.png", alt: "" } }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "mt-3" }, [
+      _vm._v("\n        Chiude alle ore 23:00\n        "),
+      _c("span", { staticClass: "t4-icon-mini me-1" }, [
+        _c("img", { attrs: { src: "/images/clock.png", alt: "clock" } }),
+      ]),
+      _vm._v("\n        - Consegna gratuita\n        "),
+      _c("span", { staticClass: "t4-icon-truck me-1" }, [
+        _c("img", { attrs: { src: "/images/fast-delivery.png", alt: "free" } }),
+      ]),
+      _vm._v("\n        - Minimo d'ordine: 10 €\n      "),
     ])
   },
   function () {

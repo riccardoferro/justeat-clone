@@ -1,7 +1,16 @@
 <template>
   <div class="container-fluid pb-5">
     <!-- Intro Ristorante -->
-    <div class="row pt-5 justify-content-center text-sm-center pb-5">
+    <div
+      class="
+        row
+        pt-5
+        justify-content-center
+        text-sm-center
+        pb-5
+        align-items-center
+      "
+    >
       <div
         class="
           col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-6
@@ -22,16 +31,28 @@
           </span>
         </h2>
         <h4 class="mt-3 mb-3">{{ restaurant.address }}</h4>
-        <span class="t4-orange-text">Categorie:</span>
-        <span
-          v-for="category in categories"
-          :key="category.slug"
-          class="t4-badge-category"
-        >
-          {{ category.name }}
-        </span>
+
+        <h6 class="t4-orange-text mb-3">Categorie:</h6>
+        <div class="d-flex flex-wrap justify-content-center">
+          <span
+            v-for="category in categories"
+            :key="category.slug"
+            class="t4-badge-category"
+          >
+            {{ category.name }}
+          </span>
+        </div>
+
         <p class="mt-3">
-          Chiude alle ore 23:00 - Consegna gratuita - Minimo d'ordine: 10&euro;
+          Chiude alle ore 23:00
+          <span class="t4-icon-mini me-1"
+            ><img src="/images/clock.png" alt="clock"
+          /></span>
+          - Consegna gratuita
+          <span class="t4-icon-truck me-1"
+            ><img src="/images/fast-delivery.png" alt="free"
+          /></span>
+          - Minimo d'ordine: 10 &euro;
         </p>
         <p>Ordina i tuoi piatti oppure prenota subito un ritiro</p>
       </div>
@@ -383,6 +404,17 @@ export default {
 .t4-close {
   img {
     width: 35px;
+  }
+}
+
+.t4-icon-mini {
+  img {
+    width: 22px;
+  }
+}
+.t4-icon-truck {
+  img {
+    width: 24px;
   }
 }
 </style>
