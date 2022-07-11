@@ -6,7 +6,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -17,28 +17,29 @@ body {
 }
 
 
-body::-webkit-scrollbar{
-    width:10px;
-}
-body::-webkit-scrollbar-track{
-   background-color: rgba( 0, 0, 0, 0.55 );
+body::-webkit-scrollbar {
+    width: 10px;
 }
 
-body::-webkit-scrollbar-thumb{
-    background-color: rgba( 255, 255, 255, 0.18 ) ;
+body::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.18);
     border-radius: 20px;
 }
 
 button:hover,
-img:hover{
+img:hover {
     cursor: pointer;
 }
 
 
 .t4-bg-nav {
     background-color: $t4_bg_black;
-    z-index: 1 ;
-    position: sticky ;
+    z-index: 1;
+    position: sticky;
 }
 
 .t4-nav-items {
@@ -302,8 +303,8 @@ input[type='radio']:checked:after {
 
 
 input[type="file"]::-webkit-file-upload-button {
-    border-radius:25px;
-    background-color:$t4_bg_orange;
+    border-radius: 25px;
+    background-color: $t4_bg_orange;
 
 
 
@@ -333,10 +334,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-input:required{
+input:required {
     background-color: $t4_bg_input;
-    color:red;
-    border:white;
+    color: red;
+    border: white;
 }
 
 // card -index
@@ -407,10 +408,11 @@ input:required{
     padding: 30px;
 }
 
-.t4-link-hover:hover > a{
+.t4-link-hover:hover>a {
     color: rgb(178, 80, 0);
 }
-.t4-link-hover:hover > button {
+
+.t4-link-hover:hover>button {
     border-color: $t4_orange_text;
 }
 
@@ -426,42 +428,41 @@ input:required{
     color: $t4_orange_text;
 }
 
-.t4-glass-card{
-    background: rgba( 19, 18, 18, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 20px );
-    -webkit-backdrop-filter: blur( 20px );
+.t4-glass-card {
+    background: rgba(19, 18, 18, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 50px;
-    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    border: 2px solid rgba(255, 255, 255, 0.18);
     margin-bottom: 50px;
 }
 
 
-.t4-not-category
- {
+.t4-not-category {
     img {
         width: 50px;
     }
 }
 
 .t4-category-icon {
-    img{
+    img {
         width: 40px;
     }
 }
 
-.t4-img-categories{
+.t4-img-categories {
 
-border-radius: 5px;
-height: 100px;
-margin-bottom: 20px;
+    border-radius: 5px;
+    height: 100px;
+    margin-bottom: 20px;
 
 }
 
 // Home
 
 
-.t4-carousel-p{
+.t4-carousel-p {
     position: relative;
 }
 
@@ -472,8 +473,8 @@ margin-bottom: 20px;
     transform: translate(-50%, -20%);
 }
 
-.t4-search{
-    img{
+.t4-search {
+    img {
         width: 25px;
         height: 25px;
     }
@@ -485,25 +486,27 @@ margin-bottom: 20px;
     aspect-ratio: 2.5;
 }
 
-.t4-card-download{
-    background: rgba( 0, 0, 0, 0.55 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 18.5px );
-    -webkit-backdrop-filter: blur( 18.5px );
+.t4-card-download {
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(18.5px);
+    -webkit-backdrop-filter: blur(18.5px);
     border-radius: 25px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 25px;
 }
 
-.t4-text-black{
+.t4-text-black {
     color: $t4_bg_black;
 }
 
 .t4-banner-app,
-.t4-download{
-    img{
-        width:100%;
-    };
+.t4-download {
+    img {
+        width: 100%;
+    }
+
+    ;
 }
 
 
@@ -512,73 +515,77 @@ margin-bottom: 20px;
 // box-shadow: 0px -6px 11px -7px #6E6E6E;
 // }
 
-.t4-logo-nav{
-    img{
+.t4-logo-nav {
+    img {
         width: 50px;
     }
 }
 
-.t4-bg-black{
+.t4-bg-black {
     background-color: $t4_bg_black;
     // -webkit-box-shadow: 0px 1px 5px 1px #6E6E6E;
     // box-shadow: 0px 1px 5px 1px #6E6E6E;
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, -15px 0px 12px -5px rgba(0,0,0,0);
-box-shadow: 0px 10px 13px -7px #000000, -15px 0px 12px -5px rgba(0,0,0,0);
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, -15px 0px 12px -5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, -15px 0px 12px -5px rgba(0, 0, 0, 0);
 
 }
 
 .t4-nav-toggle,
-.t4-icon-company{
-    img{
+.t4-icon-company {
+    img {
         width: 25px;
     }
 }
 
 .t4-nav-item {
-    &:hover{
-        color: #b25000 ;
+    &:hover {
+        color: #b25000;
     }
-    img{
+
+    img {
         width: 25px;
     }
 }
 
 
-.t4-img-company{
-    img{
+.t4-img-company {
+    img {
         width: 100%;
         border-radius: 20px;
     }
 }
 
 .t4-icon-company {
-    img{
+    img {
         width: 50px;
     }
 }
 
 // Categories Component
-.t4-category-label{
-    img{
+.t4-category-label {
+    img {
         width: 100%;
         aspect-ratio: 1.6;
     }
 }
+
 // restaurant-cards
-.t4-resturant-card{
-    color:white;
+.t4-resturant-card {
+    color: white;
 
 }
- .t4-restaurant-label {
-     margin:10px;
-     img{
-        width:100%;
+
+.t4-restaurant-label {
+    margin: 10px;
+
+    img {
+        width: 100%;
         aspect-ratio: 1;
-     }
-     }
+    }
+}
 
 // Single Reastaurant
-.t4-badge-category{
+.t4-badge-category {
     border-radius: 25px;
     color: $t4_bg_black;
     background-color: $t4_bg_orange;
@@ -592,46 +599,52 @@ box-shadow: 0px 10px 13px -7px #000000, -15px 0px 12px -5px rgba(0,0,0,0);
 
 //
 
-.dropdown-menu{
-    background-color: $t4_bg_black !important;
+.dropdown-menu {
+    background-color: $t4_bg_black  !important;
+
     .dropdown-item {
         color: $t4_orange_text;
-        &:hover{
-            background-color: $t4_bg_orange !important;
-            color:$t4_bg_black !important;
+
+        &:hover {
+            background-color: $t4_bg_orange  !important;
+            color: $t4_bg_black  !important;
         }
     }
 }
 
-.btn-check:focus + .btn, .btn:focus {
+.btn-check:focus+.btn,
+.btn:focus {
     outline: 0;
     box-shadow: none !important;
 }
 
-.navbar-toggler:focus{
+.navbar-toggler:focus {
     box-shadow: none !important;
 }
 
-.offcanvas{
-    background-color: $t4_bg_black !important;
+.offcanvas {
+    background-color: $t4_bg_black  !important;
 }
 
-.t4-close{
+.t4-close {
     background-color: transparent !important;
     border: 0 !important;
-    img{
+
+    img {
         width: 35px;
-    };
+    }
+
+    ;
 }
 
-.t4-grad-orange{
+.t4-grad-orange {
     background: -webkit-linear-gradient(315deg, #f9484a 0%, #fbd72b 74%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.t4-jumbo-logo{
-    img{
+.t4-jumbo-logo {
+    img {
         width: 80px;
         height: 80px;
         margin-left: 10px;
@@ -639,70 +652,74 @@ box-shadow: 0px 10px 13px -7px #000000, -15px 0px 12px -5px rgba(0,0,0,0);
     }
 }
 
-.t4-fw{
+.t4-fw {
     font-weight: 400;
 }
 
 //Modal
 
-.modal-content{
-border-radius: 20px !important;
+.modal-content {
+    border-radius: 20px !important;
 }
 
 .modal-header,
-.modal-footer{
-   border: none !important;
+.modal-footer {
+    border: none !important;
 }
 
 
 // pagination Laravel admin/plates
 
 .pagination {
-    margin-top:50px;
+    margin-top: 50px;
     justify-content: center;
 }
 
 .pagination {
-    .page-link{
+    .page-link {
         background-color: #0b100c !important;
-        border-color: #0b100c!important;
+        border-color: #0b100c !important;
 
-        color: $t4_orange_text !important;
+        color: $t4_orange_text  !important;
     }
+
     li {
         color: #0b100c !important;
 
     }
-    .page-item.active{
-            .page-link{
-                    background-color: $t4_bg_orange !important;
-                    border-color: $t4_bg_orange !important;
-                    color: #0b100c !important;
-                    border-radius: 50%;
+
+    .page-item.active {
+        .page-link {
+            background-color: $t4_bg_orange  !important;
+            border-color: $t4_bg_orange  !important;
+            color: #0b100c !important;
+            border-radius: 50%;
 
 
-            }
+        }
     }
 }
 
 // orders idex
-.t4-orders-index{
-    color:white;
-    padding:10px;
-    border:2px solid $t4_bg_input;
-    border-radius:25px;
-    margin-bottom:5px;
-    &:hover{
-        color:white;
+.t4-orders-index {
+    color: white;
+    padding: 10px;
+    border: 2px solid $t4_bg_input;
+    border-radius: 25px;
+    margin-bottom: 5px;
+
+    &:hover {
+        color: white;
         background-color: $t4_bg_input;
         border: 2px solid $t4_orange_text;
 
     }
 }
-.t4-border-right{
-    border-right:2px solid $t4_orange_text;
+
+.t4-border-right {
+    border-right: 2px solid $t4_orange_text;
 }
+
 .t4-border-bottom {
     border-bottom: 2px solid $t4_orange_text;
 }
-
