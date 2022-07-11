@@ -10,14 +10,14 @@
 @section('content')
     <div class="conatainer-fluid">
         <div class="row justify-content-center">
-            <h1 class="col-10 m-auto text-center">Ordini</h1>
+            <h1 class="col-10 m-auto text-center mb-5">Ordini</h1>
         </div>
     </div>
     <div class="container">
         @foreach ($orders as $order)
             <a href='{{ route('admin.order.show', $order->id) }}' class="row t4-orders-index justify-content-between">
                 <div class="col-2">
-                    <span><span class='t4-orange-text'>Id:</span>
+                    <span><span class='t4-orange-text'>Ordine:</span>
                         {{ $order->id }}</span>
                 </div>
                 <div class="col-4">
