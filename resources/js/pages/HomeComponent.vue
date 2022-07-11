@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid" id="home">
     <JumbotronComponent />
 
     <RestaurantCardsComponent v-if="users.length > 0" :users="users" />

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="ristoranti">
     <div class="container-fluid">
       <h2 class="text-center pt-5">
         In evidenza

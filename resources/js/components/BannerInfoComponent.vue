@@ -10,6 +10,7 @@
       justify-content-sm-center
       justify-content-center
     "
+    id="lavoraconnoi"
   >
     <div
       class="col-xxl-5 col-xl-6 col-lg-4 col-md-6 col-sm-8 col-11 t4-card-Info"

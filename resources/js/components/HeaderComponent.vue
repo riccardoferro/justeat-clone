@@ -180,6 +180,30 @@
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
+            <a
+              class="t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2"
+              href="#home"
+            >
+              Home
+            </a>
+            <a
+              class="t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2"
+              href="#ristoranti"
+            >
+              Ristoranti
+            </a>
+            <a
+              class="t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2"
+              href="#lavoraconnoi"
+            >
+              Lavora con noi
+            </a>
+            <a
+              class="t4-nav-item t4-orange-text me-5 ms-md-2 ms-sm-2"
+              href="#contatti"
+            >
+              Contatti
+            </a>
             <a class="t4-nav-item t4-orange-text me-3" href="/login"
               ><img src="/images/user.png" alt="Login Booleat" />
               Login
@@ -187,7 +211,11 @@
             <a
               class="t4-nav-item t4-orange-text mt-lg-0 mt-md-2 mt-sm-2 mt-2"
               href="/register"
-              ><img src="/images/register.png" alt="Register Booleat" />
+              ><img
+                class="t4-reg-icon"
+                src="/images/register.png"
+                alt="Register Booleat"
+              />
               Registrati
             </a>
           </div>
@@ -232,6 +260,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.t4-nav-item {
+  img {
+    width: 20px;
+  }
+}
+
+.t4-reg-icon {
+  width: 22px !important;
+}
 .t4-cart-item {
   border-bottom: 1px solid #fd7d2b;
   img {
