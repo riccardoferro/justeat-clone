@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-center">
 
             <div class="col-xxl-4 col-xl-7 col-md-6 order-md-1 order-sm-2 order-2 col-12 t4-jumbo-login">
@@ -35,10 +35,12 @@
                             </div>
 
                             <div class="col-xl-10 col-md-9 col-sm-10">
+                                <label for="email" class="t4-text-orange mb-2">E-mail</label>
                                 <input id="email" type="email"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
                                     value="{{ old('email') }}" autocomplete="email" autofocus
-                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder='Inserisci E-mail'
+                                    required>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -52,9 +54,10 @@
 
 
                             <div class="col-xl-10 col-md-9 col-sm-10">
+                                <label for="password" class="t4-text-orange mb-2">Password</label>
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password" required
-                                    autocomplete="current-password">
+                                    autocomplete="current-password" placeholder="Inserisci Password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
