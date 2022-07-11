@@ -199,6 +199,12 @@
               Lavora con noi
             </a>
             <a
+              class="t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2"
+              href="#chisiamo"
+            >
+              Chi siamo
+            </a>
+            <a
               class="t4-nav-item t4-orange-text me-5 ms-md-2 ms-sm-2"
               href="#contatti"
             >

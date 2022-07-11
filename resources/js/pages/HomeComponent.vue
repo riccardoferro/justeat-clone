@@ -14,6 +14,7 @@
     <LoaderComponent v-else />
 
     <BannerInfoComponent />
+    <WhoWeAreComponent />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import BannerAppComponent from "../components/BannerAppComponent.vue";
 import BannerInfoComponent from "../components/BannerInfoComponent.vue";
 import RestaurantCardsComponent from "../components/RestaurantCardsComponent.vue";
 import LoaderComponent from "../components/LoaderComponent.vue";
+import WhoWeAreComponent from "../components/WhoWeAreComponent.vue";
 export default {
   name: "HomeComponent",
   components: {
@@ -33,6 +35,7 @@ export default {
     BannerInfoComponent,
     RestaurantCardsComponent,
     LoaderComponent,
+    WhoWeAreComponent,
   },
   data() {
     return {
