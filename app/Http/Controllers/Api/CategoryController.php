@@ -60,7 +60,7 @@ class CategoryController extends Controller
 
         $query = $user->newQuery();
         if (!empty($selectedCategories)) {
-            $query->whereHas("categories", function ($q) use (
+            $query->with('categories')->whereHas("categories", function ($q) use (
                 $selectedCategories
             ) {
                 $q->whereIn("slug", $selectedCategories);

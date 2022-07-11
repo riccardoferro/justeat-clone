@@ -72,7 +72,11 @@
 
             <h6 class="mb-3 t4-fw-6">
               <span class="t4-orange-text">Categorie:</span>
-              <span v-for="category in user.categories" :key="category.slug">
+              <span
+                style="color: white"
+                v-for="category in user.categories"
+                :key="category.slug"
+              >
                 {{ category.name }}
               </span>
             </h6>
@@ -174,7 +178,7 @@ export default {
           },
         })
         .then((results) => {
-          // console.log('dioooooo',results);
+          console.log("dioooooo", results);
           if (results.status === 200) {
             this.users = results.data.data;
             this.nextPage = results.data.next_page_url;
