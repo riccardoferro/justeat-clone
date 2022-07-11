@@ -5889,9 +5889,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HeaderComponent",
   props: {
@@ -6077,6 +6074,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6403,6 +6406,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 // import box category filter
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6439,7 +6445,8 @@ __webpack_require__.r(__webpack_exports__);
           value: this.categoriesArr
         }
       }).then(function (results) {
-        // console.log('dioooooo',results);
+        console.log("dioooooo", results);
+
         if (results.status === 200) {
           _this.users = results.data.data;
           _this.nextPage = results.data.next_page_url;
@@ -7171,6 +7178,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -37155,7 +37169,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-card-hover[data-v-18709962] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-card-hover[data-v-18709962]:hover {\n  transform: scale(0.9);\n}\n.t4-star img[data-v-18709962] {\n  width: 35px;\n}\n.t4-img-company[data-v-18709962] {\n  position: relative;\n}\n.t4-name-company[data-v-18709962] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 12px 15px;\n  -webkit-backdrop-filter: blur(6px);\n  backdrop-filter: blur(6px);\n  background-color: rgba(0, 0, 0, 0.4);\n  border-radius: 20px;\n  font-weight: 600;\n  color: #fd7d2b;\n  text-align: center;\n}", ""]);
+exports.push([module.i, ".t4-card-hover[data-v-18709962] {\n  transition: all 0.2s ease-in-out;\n}\n.t4-card-hover[data-v-18709962]:hover {\n  transform: scale(0.9);\n}\n.t4-star img[data-v-18709962] {\n  width: 35px;\n}\n.t4-img-company[data-v-18709962] {\n  position: relative;\n}\n.t4-name-company[data-v-18709962] {\n  position: absolute;\n  top: 40%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  padding: 12px 15px;\n  -webkit-backdrop-filter: blur(6px);\n  backdrop-filter: blur(6px);\n  background-color: rgba(0, 0, 0, 0.4);\n  border-radius: 20px;\n  font-weight: 600;\n  color: #fd7d2b;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -70071,7 +70085,7 @@ var render = function () {
           {
             key: category.id,
             staticClass:
-              "\n        col-xxl-4 col-xl-4 col-lg-3 col-md-6 col-sm-6 col-6\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-category-label\n      ",
+              "\n        col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-category-label\n      ",
           },
           [
             _c(
@@ -70717,7 +70731,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2",
-              attrs: { href: "#home" },
+              attrs: { href: "/" },
             },
             [_vm._v("\n            Home\n          ")]
           ),
@@ -70726,7 +70740,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2",
-              attrs: { href: "#ristoranti" },
+              attrs: { href: "/#ristoranti" },
             },
             [_vm._v("\n            Ristoranti\n          ")]
           ),
@@ -70735,7 +70749,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2",
-              attrs: { href: "#lavoraconnoi" },
+              attrs: { href: "/#lavoraconnoi" },
             },
             [_vm._v("\n            Lavora con noi\n          ")]
           ),
@@ -70744,7 +70758,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-3 ms-md-2 ms-sm-2",
-              attrs: { href: "#chisiamo" },
+              attrs: { href: "/#chisiamo" },
             },
             [_vm._v("\n            Chi siamo\n          ")]
           ),
@@ -70753,7 +70767,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "t4-nav-item t4-orange-text me-5 ms-md-2 ms-sm-2",
-              attrs: { href: "#contatti" },
+              attrs: { href: "/#contatti" },
             },
             [_vm._v("\n            Contatti\n          ")]
           ),
@@ -71075,14 +71089,14 @@ var render = function () {
             {
               key: user.id,
               staticClass:
-                "col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 mb-5",
+                "col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 mb-5 ",
             },
             [
               _c(
                 "router-link",
                 {
                   staticClass:
-                    "\n            d-flex\n            flex-column\n            justify-content-center\n            align-items-center\n            t4-card-hover t4-img-company\n          ",
+                    "\n            row\n          t4-bg-orange\n          justify-content-center\n          t4-img-company\n          ",
                   attrs: {
                     to: {
                       name: "single-restaurant",
@@ -71095,10 +71109,11 @@ var render = function () {
                     "div",
                     {
                       staticClass:
-                        "col-xxl-10 col-xl-8 col-lg-7 col-md-10 col-sm-12 col-12",
+                        "col-auto\n                  mb-5\n                  d-flex\n                  flex-column\n                  align-items-center\n                  t4-category-label\n                  t4-card-hover",
                     },
                     [
                       _c("img", {
+                        staticStyle: { "border-radius": "20px" },
                         attrs: { src: _vm.imagePut(user.image), alt: "" },
                       }),
                     ]
@@ -71277,11 +71292,7 @@ var render = function () {
                     : "",
                   attrs: { for: "category" + category.id },
                 },
-                [
-                  _vm._v(
-                    "\n            " + _vm._s(category.name) + "\n        "
-                  ),
-                ]
+                [_vm._v("\n          " + _vm._s(category.name) + "\n        ")]
               ),
             ]
           )
@@ -71300,7 +71311,7 @@ var render = function () {
               {
                 key: user.id,
                 staticClass:
-                  "\n        col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-7 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-label\n      ",
+                  "\n        col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-7 col-10\n        mb-5\n        d-flex\n        flex-column\n        align-items-center\n        t4-resturant-label\n      ",
               },
               [
                 _c(
@@ -71346,13 +71357,20 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _vm._l(user.categories, function (category) {
-                            return _c("span", { key: category.slug }, [
-                              _vm._v(
-                                "\n              " +
-                                  _vm._s(category.name) +
-                                  "\n            "
-                              ),
-                            ])
+                            return _c(
+                              "span",
+                              {
+                                key: category.slug,
+                                staticStyle: { color: "white" },
+                              },
+                              [
+                                _vm._v(
+                                  "\n              " +
+                                    _vm._s(category.name) +
+                                    "\n            "
+                                ),
+                              ]
+                            )
                           }),
                         ],
                         2
@@ -72207,185 +72225,221 @@ var render = function () {
     _c("div", { staticClass: "row flex-column justify-content-center mt-5" }, [
       _vm._m(2),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "\n        row\n        d-flex\n        col-xxl-9 col-xl-10 col-lg-8 col-md-9 col-sm-7 col-9\n        m-auto\n        mt-3\n        justify-content-center\n      ",
-        },
-        _vm._l(_vm.plates, function (plate) {
-          return _c(
+      _vm.plates.length > 0
+        ? _c(
             "div",
             {
-              key: plate.name + plate.id,
               staticClass:
-                "row col-sm-10 col-md-5 col-xl-3 d-flex flex-column t4-card",
+                "\n        row\n        d-flex\n        col-xxl-9 col-xl-10 col-lg-8 col-md-9 col-sm-7 col-9\n        m-auto\n        mt-3\n        justify-content-center\n      ",
             },
-            [
-              _c("div", { staticClass: "t4-card-img" }, [
-                _c("img", {
-                  attrs: { src: "/storage/" + plate.image, alt: "" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "t4-card-title" }, [
-                _c("span", { staticClass: "t4-card-label" }, [
-                  _vm._v("Nome Piatto"),
-                ]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(plate.name))]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "t4-card-description" }, [
-                _c("span", { staticClass: "t4-card-label" }, [
-                  _vm._v("Descrizione "),
-                ]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(plate.description))]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "t4-card-info d-flex justify-content-between" },
-                [
-                  _c("p", [
-                    _c("span", [_vm._v("Prezzo: ")]),
-                    _vm._v(_vm._s(plate.price) + " €"),
-                  ]),
-                  _vm._v(" "),
-                  plate.visible == 1
-                    ? _c("div", [
-                        _c("p", { staticStyle: { color: "rgb(4, 165, 4)" } }, [
-                          _vm._v("Disponibile"),
-                        ]),
-                      ])
-                    : _c("div", [
-                        _c("p", { staticStyle: { color: "rgb(165, 4, 4)" } }, [
-                          _vm._v("Non disponibile"),
-                        ]),
-                      ]),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
+            _vm._l(_vm.plates, function (plate) {
+              return _c(
                 "div",
                 {
-                  staticClass: "t4-card-buttons d-flex justify-content-center",
+                  key: plate.name + plate.id,
+                  staticClass:
+                    "row col-sm-10 col-md-5 col-xl-3 d-flex flex-column t4-card",
                 },
                 [
-                  _vm.addButtonControl(_vm.cart, plate) && plate.visible == 1
-                    ? _c(
-                        "button",
-                        {
-                          staticClass: "btn t4-add-btn",
-                          attrs: {
-                            type: "button",
-                            "data-bs-toggle": "modal",
-                            "data-bs-target": "#staticBackdrop",
-                          },
-                          on: {
-                            click: function () {
-                              _vm.currentPlate = plate
-                            },
-                          },
-                        },
-                        [
-                          _c("span", { staticClass: "me-2" }, [
-                            _vm._v("Aggiungi al carrello"),
-                          ]),
-                          _vm._v(" "),
-                          _c("img", {
-                            attrs: {
-                              src: "/images/shopping-bag.png",
-                              alt: "shopping-bag",
-                            },
-                          }),
-                        ]
-                      )
-                    : plate.visible == 0
-                    ? _c(
-                        "div",
-                        {
-                          staticClass:
-                            "btn t4-add-btn d-flex align-items-center",
-                        },
-                        [
-                          _c("span", { staticClass: "me-2" }, [
-                            _vm._v("Piatto non disponibile"),
-                          ]),
-                          _vm._v(" "),
-                          _c("img", {
-                            attrs: {
-                              src: "/images/sad.png",
-                              alt: "shopping-bag",
-                            },
-                          }),
-                        ]
-                      )
-                    : _vm._e(),
+                  _c("div", { staticClass: "t4-card-img" }, [
+                    _c("img", {
+                      attrs: { src: "/storage/" + plate.image, alt: "" },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "t4-card-title" }, [
+                    _c("span", { staticClass: "t4-card-label" }, [
+                      _vm._v("Nome Piatto"),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(plate.name))]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "t4-card-description" }, [
+                    _c("span", { staticClass: "t4-card-label" }, [
+                      _vm._v("Descrizione "),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(plate.description))]),
+                  ]),
                   _vm._v(" "),
                   _c(
                     "div",
                     {
-                      staticClass: "modal fade",
-                      attrs: {
-                        id: "staticBackdrop",
-                        "data-bs-backdrop": "static",
-                        "data-bs-keyboard": "false",
-                        tabindex: "-1",
-                        "aria-labelledby": "staticBackdropLabel",
-                        "aria-hidden": "true",
-                      },
+                      staticClass:
+                        "t4-card-info d-flex justify-content-between",
                     },
                     [
+                      _c("p", [
+                        _c("span", [_vm._v("Prezzo: ")]),
+                        _vm._v(_vm._s(plate.price) + " €"),
+                      ]),
+                      _vm._v(" "),
+                      plate.visible == 1
+                        ? _c("div", [
+                            _c(
+                              "p",
+                              { staticStyle: { color: "rgb(4, 165, 4)" } },
+                              [_vm._v("Disponibile")]
+                            ),
+                          ])
+                        : _c("div", [
+                            _c(
+                              "p",
+                              { staticStyle: { color: "rgb(165, 4, 4)" } },
+                              [_vm._v("Non disponibile")]
+                            ),
+                          ]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "t4-card-buttons d-flex justify-content-center",
+                    },
+                    [
+                      _vm.addButtonControl(_vm.cart, plate) &&
+                      plate.visible == 1
+                        ? _c(
+                            "button",
+                            {
+                              staticClass: "btn t4-add-btn",
+                              attrs: {
+                                type: "button",
+                                "data-bs-toggle": "modal",
+                                "data-bs-target": "#staticBackdrop",
+                              },
+                              on: {
+                                click: function () {
+                                  _vm.currentPlate = plate
+                                },
+                              },
+                            },
+                            [
+                              _c("span", { staticClass: "me-2" }, [
+                                _vm._v("Aggiungi al carrello"),
+                              ]),
+                              _vm._v(" "),
+                              _c("img", {
+                                attrs: {
+                                  src: "/images/shopping-bag.png",
+                                  alt: "shopping-bag",
+                                },
+                              }),
+                            ]
+                          )
+                        : plate.visible == 0
+                        ? _c(
+                            "div",
+                            {
+                              staticClass:
+                                "btn t4-add-btn d-flex align-items-center",
+                            },
+                            [
+                              _c("span", { staticClass: "me-2" }, [
+                                _vm._v("Piatto non disponibile"),
+                              ]),
+                              _vm._v(" "),
+                              _c("img", {
+                                attrs: {
+                                  src: "/images/sad.png",
+                                  alt: "shopping-bag",
+                                },
+                              }),
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "modal-dialog modal-dialog-centered" },
+                        {
+                          staticClass: "modal fade",
+                          attrs: {
+                            id: "staticBackdrop",
+                            "data-bs-backdrop": "static",
+                            "data-bs-keyboard": "false",
+                            tabindex: "-1",
+                            "aria-labelledby": "staticBackdropLabel",
+                            "aria-hidden": "true",
+                          },
+                        },
                         [
                           _c(
                             "div",
-                            { staticClass: "modal-content t4-bg-black" },
+                            {
+                              staticClass: "modal-dialog modal-dialog-centered",
+                            },
                             [
-                              _vm._m(3, true),
-                              _vm._v(" "),
                               _c(
                                 "div",
-                                {
-                                  staticClass:
-                                    "\n                    modal-body\n                    d-flex\n                    justify-content-center\n                    align-items-center\n                  ",
-                                },
+                                { staticClass: "modal-content t4-bg-black" },
                                 [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "t4-w10",
-                                      on: {
-                                        click: function () {
-                                          _vm.decr()
-                                        },
-                                      },
-                                    },
-                                    [
-                                      _c("img", {
-                                        staticClass: "t4-w80",
-                                        attrs: {
-                                          src: "/images/minus1.png",
-                                          alt: "",
-                                        },
-                                      }),
-                                    ]
-                                  ),
+                                  _vm._m(3, true),
                                   _vm._v(" "),
                                   _c(
                                     "div",
-                                    { staticClass: "t4-w40 text-center" },
+                                    {
+                                      staticClass:
+                                        "\n                    modal-body\n                    d-flex\n                    justify-content-center\n                    align-items-center\n                  ",
+                                    },
                                     [
                                       _c(
-                                        "span",
+                                        "div",
                                         {
-                                          staticClass: "t4-orange-text t4-fs-1",
+                                          staticClass: "t4-w10",
+                                          on: {
+                                            click: function () {
+                                              _vm.decr()
+                                            },
+                                          },
                                         },
-                                        [_vm._v(_vm._s(_vm.orederQuantity))]
+                                        [
+                                          _c("img", {
+                                            staticClass: "t4-w80",
+                                            attrs: {
+                                              src: "/images/minus1.png",
+                                              alt: "",
+                                            },
+                                          }),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "t4-w40 text-center" },
+                                        [
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass:
+                                                "t4-orange-text t4-fs-1",
+                                            },
+                                            [_vm._v(_vm._s(_vm.orederQuantity))]
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "t4-w10",
+                                          on: {
+                                            click: function () {
+                                              _vm.incr()
+                                            },
+                                          },
+                                        },
+                                        [
+                                          _c("img", {
+                                            staticClass: "t4-w80",
+                                            attrs: {
+                                              src: "/images/plus1.png",
+                                              alt: "",
+                                            },
+                                          }),
+                                        ]
                                       ),
                                     ]
                                   ),
@@ -72393,57 +72447,36 @@ var render = function () {
                                   _c(
                                     "div",
                                     {
-                                      staticClass: "t4-w10",
-                                      on: {
-                                        click: function () {
-                                          _vm.incr()
-                                        },
-                                      },
+                                      staticClass:
+                                        "modal-footer d-flex justify-content-center",
+                                      attrs: { "data-bs-dismiss": "modal" },
                                     },
                                     [
-                                      _c("img", {
-                                        staticClass: "t4-w80",
-                                        attrs: {
-                                          src: "/images/plus1.png",
-                                          alt: "",
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass: "btn t4-add-btn",
+                                          attrs: { type: "button" },
+                                          on: {
+                                            click: function () {
+                                              _vm.pushToCart(
+                                                _vm.orederQuantity,
+                                                _vm.currentPlate
+                                              )
+                                            },
+                                          },
                                         },
-                                      }),
-                                    ]
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "modal-footer d-flex justify-content-center",
-                                  attrs: { "data-bs-dismiss": "modal" },
-                                },
-                                [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn t4-add-btn",
-                                      attrs: { type: "button" },
-                                      on: {
-                                        click: function () {
-                                          _vm.pushToCart(
-                                            _vm.orederQuantity,
-                                            _vm.currentPlate
-                                          )
-                                        },
-                                      },
-                                    },
-                                    [
-                                      _c("span", {}, [_vm._v("Conferma")]),
-                                      _vm._v(" "),
-                                      _c("img", {
-                                        attrs: {
-                                          src: "/images/check.png",
-                                          alt: "check",
-                                        },
-                                      }),
+                                        [
+                                          _c("span", {}, [_vm._v("Conferma")]),
+                                          _vm._v(" "),
+                                          _c("img", {
+                                            attrs: {
+                                              src: "/images/check.png",
+                                              alt: "check",
+                                            },
+                                          }),
+                                        ]
+                                      ),
                                     ]
                                   ),
                                 ]
@@ -72455,12 +72488,11 @@ var render = function () {
                     ]
                   ),
                 ]
-              ),
-            ]
+              )
+            }),
+            0
           )
-        }),
-        0
-      ),
+        : _c("div", { staticClass: "row justify-content-center" }, [_vm._m(4)]),
       _vm._v(" "),
       _vm.last_page !== 1
         ? _c("div", { staticClass: "row" }, [
@@ -72476,7 +72508,7 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._m(4), _vm._v("\n          Precedente\n        ")]
+                [_vm._m(5), _vm._v("\n          Precedente\n        ")]
               ),
               _vm._v(" "),
               _c(
@@ -72492,14 +72524,14 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._v("\n          Successivo\n          "), _vm._m(5)]
+                [_vm._v("\n          Successivo\n          "), _vm._m(6)]
               ),
             ]),
           ])
         : _vm._e(),
     ]),
     _vm._v(" "),
-    _vm._m(6),
+    _vm._m(7),
   ])
 }
 var staticRenderFns = [
@@ -72577,6 +72609,19 @@ var staticRenderFns = [
         ),
       ]
     )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-8 text-center mt-5" }, [
+      _c("img", {
+        staticClass: "t4-empty-plates mb-4",
+        attrs: { src: "/images/sad.png", alt: "" },
+      }),
+      _vm._v(" "),
+      _c("h1", [_vm._v("Menù in lavorazione...")]),
+    ])
   },
   function () {
     var _vm = this
@@ -89711,7 +89756,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Progetti PHP\booleat\booleat\resources\js\front-app.js */"./resources/js/front-app.js");
+module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/front-app.js */"./resources/js/front-app.js");
 
 
 /***/ })
