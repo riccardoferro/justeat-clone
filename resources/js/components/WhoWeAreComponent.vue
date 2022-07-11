@@ -1,10 +1,15 @@
 <template>
   <div class="container-lg pt-5" id="chisiamo">
     <div class="row justify-content-center align-items-center">
-      <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-10 col-12">
+      <div class="col-xxl-7 col-xl-7 col-lg-10 col-md-10 col-sm-12 col-12">
         <img src="/images/team4.jpg" alt="" />
       </div>
-      <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-10 col-8">
+      <div
+        class="
+          col-xxl-4 col-xl-4 col-lg-6 col-md-7 col-sm-10 col-11
+          t4-card-whoweare
+        "
+      >
         <h4 class="text-center">Chi Siamo?</h4>
         <p class="t4-orange-text">
           Booleat nasce da un progetto sviluppato da cinque ragazzi: Daniele,
@@ -27,5 +32,16 @@ export default {
 <style lang="scss" scoped>
 img {
   width: 100%;
+}
+
+.t4-card-whoweare {
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(18.5px);
+  -webkit-backdrop-filter: blur(18.5px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 25px;
+  margin: 20px;
 }
 </style>

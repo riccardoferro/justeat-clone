@@ -17,6 +17,7 @@
     </div>
     <div class="container mt-5">
         <div class="row flex-wrap ">
+
             <div class="col-xl-6 col-md-12 col-sm-12 t4-border-right">
                 <div class="row flex-column">
                     <div class="8">
@@ -48,6 +49,7 @@
 
                 </div>
             </div>
+
             <div class="col-xl-6 col-md-12 col-sm-12 mt-xl-0 mt-md-5 mt-sm-5 mt-5">
                 <div class="row">
                     @foreach ($order->plates as $plate)
@@ -63,14 +65,19 @@
                         </div>
                     @endforeach
                 </div>
-
             </div>
-
         </div>
     </div>
-    <div class="container">
 
-        <div class="row"></div>
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="{{ route('admin.order.index') }}" class="btn t4-add-btn d-flex align-items-center">
+                    <span class="me-2">Torna agli ordini </span>
+                    <img src="/images/replay.png" alt="">
+                </a>
+            </div>
+        </div>
     </div>
-    </div>
+
 @endsection

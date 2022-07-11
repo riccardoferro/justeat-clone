@@ -6239,6 +6239,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "WhoWeAreComponent"
 });
@@ -37143,7 +37148,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "img[data-v-bd28e60c] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, "img[data-v-bd28e60c] {\n  width: 100%;\n}\n.t4-card-whoweare[data-v-bd28e60c] {\n  background: rgba(0, 0, 0, 0.1);\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(18.5px);\n  -webkit-backdrop-filter: blur(18.5px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  padding: 25px;\n  margin: 20px;\n}", ""]);
 
 // exports
 
@@ -71147,7 +71152,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-10 col-12",
+                  "col-xxl-7 col-xl-7 col-lg-10 col-md-10 col-sm-12 col-12",
               },
               [_c("img", { attrs: { src: "/images/team4.jpg", alt: "" } })]
             ),
@@ -71156,7 +71161,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-10 col-8",
+                  "\n        col-xxl-4 col-xl-4 col-lg-6 col-md-7 col-sm-10 col-11\n        t4-card-whoweare\n      ",
               },
               [
                 _c("h4", { staticClass: "text-center" }, [
