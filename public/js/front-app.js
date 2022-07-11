@@ -37055,7 +37055,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".t4-bg-banner-info[data-v-d8e4eef0] {\n  background-image: url(\"/images/rider.png\");\n  background-size: cover;\n  background-position-y: center;\n  padding-top: 50px;\n  padding-bottom: 200px;\n}\n.t4-card-Info[data-v-d8e4eef0] {\n  background: rgba(0, 0, 0, 0.5);\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(18.5px);\n  -webkit-backdrop-filter: blur(18.5px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  padding: 25px;\n  margin: 20px;\n}\na[data-v-d8e4eef0]:hover {\n  color: #fd7d2b;\n}", ""]);
+exports.push([module.i, ".t4-bg-banner-info[data-v-d8e4eef0] {\n  background-image: url(\"/images/rider.png\");\n  background-size: cover;\n  background-position-y: center;\n  padding: 200px;\n}\n.t4-card-Info[data-v-d8e4eef0] {\n  background: rgba(0, 0, 0, 0.5);\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(18.5px);\n  -webkit-backdrop-filter: blur(18.5px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  padding: 25px;\n  margin: 20px;\n}\na[data-v-d8e4eef0]:hover {\n  color: #fd7d2b;\n}", ""]);
 
 // exports
 
@@ -69969,7 +69969,7 @@ var staticRenderFns = [
           "div",
           {
             staticClass:
-              "col-xxl-5 col-xl-6 col-lg-4 col-md-6 col-sm-8 col-11 t4-card-Info",
+              "col-xxl-5 col-xl-6 col-lg-6 col-md-6 col-sm-8 col-11 t4-card-Info",
           },
           [
             _c("h2", [_vm._v("Lavora con noi")]),
