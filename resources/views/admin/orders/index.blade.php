@@ -14,25 +14,31 @@
         </div>
     </div>
     <div class="container">
-        @foreach ($orders as $order)
-            <a href='{{ route('admin.order.show', $order->id) }}' class="row t4-orders-index justify-content-between">
-                <div class="col-2">
-                    <span><span class='t4-orange-text'>Ordine:</span>
-                        {{ $order->id }}</span>
+        @if (count($orders) > 0)
+            @foreach ($orders as $order)
+                <a href='{{ route('admin.order.show', $order->id) }}' class="row t4-orders-index justify-content-between">
+                    <div class="col-2">
+                        <span><span class='t4-orange-text'>Ordine:</span>
+                            {{ $order->id }}</span>
+                    </div>
+                    <div class="col-4">
+                        <span><span class='t4-orange-text'>Nome:</span> {{ $order->name }} {{ $order->surname }}</span>
+                    </div>
+                    <div class="col-2">
+                        <span><span class='t4-orange-text'>Data:</span> {{ $order->created_at }}</span>
+                    </div>
+                    <div class="col-2">
+                        <span><span class='t4-orange-text'>Totale:</span> {{ $order->total }} &euro;</span>
+                    </div>
+                </a>
+            @endforeach
+        @else
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class='t4-orange-text'>Non hai ricevuto ancora nessun ordine</h2>
                 </div>
-                <div class="col-4">
-                    <span><span class='t4-orange-text'>Nome:</span> {{ $order->name }} {{ $order->surname }}</span>
-                </div>
-                <div class="col-2">
-                    <span><span class='t4-orange-text'>Data:</span> {{ $order->created_at }}</span>
-                </div>
-                <div class="col-2">
-                    <span><span class='t4-orange-text'>Totale:</span> {{ $order->total }} &euro;</span>
-                </div>
-
-
-            </a>
-        @endforeach
+            </div>
+        @endif
     </div>
     {{-- <h1>Benvenuto nella sezione Ordini</h1>
     <p>{{ $orders }}</p>
