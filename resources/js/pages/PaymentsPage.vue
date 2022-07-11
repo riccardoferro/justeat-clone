@@ -139,7 +139,7 @@
           <div
             v-for="(plate, index) in cart"
             :key="plate.id + `${index}`"
-            class="d-flex align-items-center justify-content-between"
+            class="d-flex align-items-center justify-content-between mb-3"
           >
             <div class="t4-w10">
               <img class="t4-w100" :src="/storage/ + `${plate.image}`" alt="" />

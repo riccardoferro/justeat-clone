@@ -72061,7 +72061,7 @@ var render = function () {
                     {
                       key: plate.id + "" + index,
                       staticClass:
-                        "d-flex align-items-center justify-content-between",
+                        "d-flex align-items-center justify-content-between mb-3",
                     },
                     [
                       _c("div", { staticClass: "t4-w10" }, [
