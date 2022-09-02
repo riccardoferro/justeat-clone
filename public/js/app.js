@@ -41215,8 +41215,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/danielegelsomino/Library/Mobile Documents/com~apple~CloudDocs/Desktop/Booleanprojects/booleat/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/PHP_Projects_Boolean/clone-justeat/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/PHP_Projects_Boolean/clone-justeat/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
