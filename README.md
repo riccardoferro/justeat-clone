@@ -1,6 +1,7 @@
 # About this project
 
-This project was made from me and other 4 contributors in a final project of a bootcamp
+This project was made from me and other 4 contributors in a final project of a bootcamp to replicate all the funcionalities of the JustEat app
+where his main goal is to acts as an intermediary between independent takeaway food outlets and customers
 
 ### Stack Tech
 
