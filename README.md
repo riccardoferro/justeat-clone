@@ -18,6 +18,7 @@ For other libraries used take a look at the packaje.json file and the composer.j
 
 ### For a local development we used MAMP
 
+
 <br></br>
 <br></br>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
