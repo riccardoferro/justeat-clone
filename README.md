@@ -18,6 +18,9 @@ For other libraries used take a look at the packaje.json file and the composer.j
 
 ### For a local development we used MAMP
 
+## INITIAL UI OF THE PROJECT
+
+![booleat](https://user-images.githubusercontent.com/92406369/180457498-0365e26f-7c3e-4545-b8fc-57d46c8ac106.png)
 
 <br></br>
 <br></br>
