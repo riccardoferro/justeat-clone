@@ -1,3 +1,25 @@
+# About this project
+
+This project was made from me and other 4 contributors in a final project of a bootcamp to replicate all the funcionalities of the JustEat app
+where his main goal is to acts as an intermediary between independent takeaway food outlets and customers
+
+### Stack Tech
+
+### Frontend Development
+
+-Html,Css/Scss,Js,Vue2.JS
+
+### Backend Development
+
+-PHP 7, Laravel 7
+-And some useful libraries like braintree to simulate fake payments
+
+For other libraries used take a look at the packaje.json file and the composer.json file
+
+### For a local development we used MAMP
+
+<br></br>
+<br></br>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
